@@ -1,0 +1,100 @@
+object Form4: TForm4
+  Left = 317
+  Top = 139
+  Width = 1256
+  Height = 787
+  Caption = 'Proveedores'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 568
+    Top = 152
+    Width = 143
+    Height = 25
+    Caption = 'PROVEEDORES'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Button1: TButton
+    Left = 592
+    Top = 48
+    Width = 89
+    Height = 33
+    Caption = 'Modificar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 752
+    Top = 40
+    Width = 89
+    Height = 49
+    Caption = 'Nuevo Proveedor'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    WordWrap = True
+    OnClick = Button2Click
+  end
+  object BitBtn1: TBitBtn
+    Left = 272
+    Top = 48
+    Width = 89
+    Height = 33
+    Caption = 'Volver'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    OnClick = BitBtn1Click
+    Kind = bkRetry
+  end
+  object ListBox1: TListBox
+    Left = 216
+    Top = 200
+    Width = 849
+    Height = 449
+    ItemHeight = 13
+    TabOrder = 3
+  end
+  object Button3: TButton
+    Left = 888
+    Top = 40
+    Width = 89
+    Height = 49
+    Caption = 'Nuevo Pedido'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 4
+    WordWrap = True
+    OnClick = Button3Click
+  end
+end
