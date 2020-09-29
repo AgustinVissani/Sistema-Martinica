@@ -13,8 +13,14 @@ type
     BitBtn1: TBitBtn;
     Label1: TLabel;
     ADOQuery1: TADOQuery;
-    DBGrid1: TDBGrid;
     DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    ADOQuery1Cdigo_Cliente: TIntegerField;
+    ADOQuery1DNI: TIntegerField;
+    ADOQuery1Nombre: TStringField;
+    ADOQuery1Apellido: TStringField;
+    ADOQuery1Telfono: TStringField;
+    ADOQuery1Domicilio: TStringField;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -26,7 +32,7 @@ var
   Form9: TForm9;
 
 implementation
-uses  Unit2, Unit8;
+uses  Unit1, Unit2, Unit8;
 
 {$R *.dfm}
 

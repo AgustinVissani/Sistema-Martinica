@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 346
-  Top = 198
-  Width = 1229
+  Left = 225
+  Top = 76
+  Width = 1187
   Height = 772
   Caption = 'Inicio'
   Color = clBtnFace
@@ -92,13 +92,14 @@ object Form1: TForm1
     Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
-      'fo=False;Initial Catalog=Martinica_Decoraciones;Data Source=DESK' +
-      'TOP-8SON6QV;Use Procedure for Prepare=1;Auto Translate=True;Pack' +
-      'et Size=4096;Workstation ID=DESKTOP-8SON6QV;Use Encryption for D' +
-      'ata=False;Tag with column collation when possible=False'
+      'fo=False;Initial Catalog=Martinica_Decoraciones;Data Source=GUTY' +
+      ';Use Procedure for Prepare=1;Auto Translate=True;Packet Size=409' +
+      '6;Workstation ID=GUTY;Use Encryption for Data=False;Tag with col' +
+      'umn collation when possible=False'
+    DefaultDatabase = 'Martinica_Decoraciones'
     LoginPrompt = False
     Provider = 'SQLOLEDB.1'
-    Left = 128
-    Top = 104
+    Left = 80
+    Top = 128
   end
 end

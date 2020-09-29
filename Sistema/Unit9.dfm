@@ -1,6 +1,6 @@
 object Form9: TForm9
-  Left = 332
-  Top = 199
+  Left = 223
+  Top = 7
   Width = 1305
   Height = 675
   Caption = 'Listado de Clientes'
@@ -74,9 +74,9 @@ object Form9: TForm9
     Kind = bkRetry
   end
   object DBGrid1: TDBGrid
-    Left = 216
-    Top = 232
-    Width = 921
+    Left = 168
+    Top = 224
+    Width = 881
     Height = 353
     DataSource = DataSource1
     TabOrder = 3
@@ -94,12 +94,33 @@ object Form9: TForm9
     SQL.Strings = (
       'SELECT *'
       'FROM Clientes')
-    Left = 96
-    Top = 136
+    Left = 56
+    Top = 168
+    object ADOQuery1Cdigo_Cliente: TIntegerField
+      FieldName = 'C'#243'digo_Cliente'
+    end
+    object ADOQuery1DNI: TIntegerField
+      FieldName = 'DNI'
+    end
+    object ADOQuery1Nombre: TStringField
+      FieldName = 'Nombre'
+      Size = 30
+    end
+    object ADOQuery1Apellido: TStringField
+      FieldName = 'Apellido'
+      Size = 30
+    end
+    object ADOQuery1Telfono: TStringField
+      FieldName = 'Tel'#233'fono'
+    end
+    object ADOQuery1Domicilio: TStringField
+      FieldName = 'Domicilio'
+      Size = 30
+    end
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
-    Left = 152
-    Top = 136
+    Left = 104
+    Top = 168
   end
 end
