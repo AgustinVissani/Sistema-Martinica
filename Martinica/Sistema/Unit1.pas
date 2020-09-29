@@ -5,7 +5,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls;
+  Dialogs, StdCtrls, DB, ADODB;
 
 type
   TForm1 = class(TForm)
@@ -15,6 +15,7 @@ type
     Label2: TLabel;
     Label3: TLabel;
     Button1: TButton;
+    ADOConnection1: TADOConnection;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }

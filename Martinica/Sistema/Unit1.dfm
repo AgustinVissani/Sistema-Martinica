@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 338
-  Top = 149
+  Left = 346
+  Top = 198
   Width = 1229
   Height = 772
   Caption = 'Inicio'
@@ -87,5 +87,16 @@ object Form1: TForm1
     TabOrder = 2
     WordWrap = True
     OnClick = Button1Click
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
+      'fo=False;Initial Catalog=Martinica_Decoraciones;Data Source=DESK' +
+      'TOP-8SON6QV'
+    LoginPrompt = False
+    Provider = 'SQLOLEDB.1'
+    Left = 128
+    Top = 104
   end
 end

@@ -1,8 +1,8 @@
 object Form4: TForm4
-  Left = 317
-  Top = 139
-  Width = 1256
-  Height = 787
+  Left = 368
+  Top = 196
+  Width = 1279
+  Height = 671
   Caption = 'Proveedores'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,7 +11,6 @@ object Form4: TForm4
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -73,14 +72,6 @@ object Form4: TForm4
     OnClick = BitBtn1Click
     Kind = bkRetry
   end
-  object ListBox1: TListBox
-    Left = 216
-    Top = 200
-    Width = 849
-    Height = 449
-    ItemHeight = 13
-    TabOrder = 3
-  end
   object Button3: TButton
     Left = 888
     Top = 40
@@ -93,8 +84,64 @@ object Form4: TForm4
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 3
     WordWrap = True
     OnClick = Button3Click
+  end
+  object DBGrid1: TDBGrid
+    Left = 224
+    Top = 280
+    Width = 841
+    Height = 137
+    DataSource = DataSource1
+    TabOrder = 4
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object ADOQuery1: TADOQuery
+    Active = True
+    Connection = Form1.ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT *'
+      'FROM Proveedores')
+    Left = 88
+    Top = 120
+    object ADOQuery1Codigo_Proveedor: TIntegerField
+      FieldName = 'Codigo_Proveedor'
+    end
+    object ADOQuery1Nombre: TWideStringField
+      FieldName = 'Nombre'
+      FixedChar = True
+      Size = 25
+    end
+    object ADOQuery1Apellido: TWideStringField
+      FieldName = 'Apellido'
+      FixedChar = True
+      Size = 25
+    end
+    object ADOQuery1Telfono: TWideStringField
+      FieldName = 'Tel'#233'fono'
+      FixedChar = True
+    end
+    object ADOQuery1Domicilio: TWideStringField
+      FieldName = 'Domicilio'
+      FixedChar = True
+      Size = 25
+    end
+    object ADOQuery1CUIT: TWideStringField
+      FieldName = 'CUIT'
+      FixedChar = True
+      Size = 15
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOQuery1
+    Left = 152
+    Top = 120
   end
 end

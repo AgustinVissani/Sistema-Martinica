@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons;
+  Dialogs, StdCtrls, Buttons, Grids, DBGrids, DB, ADODB;
 
 type
   TForm4 = class(TForm)
@@ -12,9 +12,16 @@ type
     Button2: TButton;
     BitBtn1: TBitBtn;
     Label1: TLabel;
-    ListBox1: TListBox;
     Button3: TButton;
-    procedure FormCreate(Sender: TObject);
+    ADOQuery1: TADOQuery;
+    ADOQuery1Codigo_Proveedor: TIntegerField;
+    ADOQuery1Nombre: TWideStringField;
+    ADOQuery1Apellido: TWideStringField;
+    ADOQuery1Telfono: TWideStringField;
+    ADOQuery1Domicilio: TWideStringField;
+    ADOQuery1CUIT: TWideStringField;
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
     procedure Button2Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -33,10 +40,7 @@ uses Unit2,Unit1, Unit5, Unit6;
 
 {$R *.dfm}
 
-procedure TForm4.FormCreate(Sender: TObject);
-begin
-////////////////
-end;
+
 
 procedure TForm4.Button2Click(Sender: TObject);
 begin

@@ -11,6 +11,7 @@ object Form6: TForm6
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -91,20 +92,6 @@ object Form6: TForm6
     Font.Style = []
     ParentFont = False
   end
-  object Edit1: TEdit
-    Left = 544
-    Top = 208
-    Width = 185
-    Height = 33
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -21
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 0
-    Text = '(APELLIDO)'
-  end
   object Button1: TButton
     Left = 792
     Top = 192
@@ -117,7 +104,7 @@ object Form6: TForm6
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 0
     WordWrap = True
   end
   object ListBox1: TListBox
@@ -126,7 +113,7 @@ object Form6: TForm6
     Width = 753
     Height = 313
     ItemHeight = 13
-    TabOrder = 2
+    TabOrder = 1
   end
   object Button2: TButton
     Left = 904
@@ -140,7 +127,7 @@ object Form6: TForm6
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 3
+    TabOrder = 2
     WordWrap = True
     OnClick = Button2Click
   end
@@ -156,8 +143,24 @@ object Form6: TForm6
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 3
     OnClick = BitBtn1Click
     Kind = bkRetry
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 552
+    Top = 208
+    Width = 193
+    Height = 33
+    DataField = 'Apellido'
+    DataSource = Form4.DataSource1
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ListSource = Form4.DataSource1
+    ParentFont = False
+    TabOrder = 4
   end
 end

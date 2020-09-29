@@ -2327,6 +2327,7 @@ object Form2: TForm2
       end
       object Clientes1: TMenuItem
         Caption = 'Clientes'
+        OnClick = Clientes1Click
       end
       object Proveedores1: TMenuItem
         Caption = 'Proveedores'

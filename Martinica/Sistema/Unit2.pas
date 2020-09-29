@@ -18,6 +18,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure CajaDiaria1Click(Sender: TObject);
     procedure Proveedores1Click(Sender: TObject);
+    procedure Clientes1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,7 +30,7 @@ var
 
 implementation
 
-uses  Unit1, Unit3, Unit4;
+uses  Unit1, Unit3, Unit4, Unit8;
 
 {$R *.dfm}
 
@@ -54,7 +55,12 @@ procedure TForm2.Proveedores1Click(Sender: TObject);
 begin
 form2.Hide;
 Form4.ShowModal;
-//Form4.FormCreate(Self);
+end;
+
+procedure TForm2.Clientes1Click(Sender: TObject);
+begin
+form2.Hide;
+Form8.ShowModal;
 end;
 
 end.
