@@ -45,13 +45,13 @@ uses Unit2,Unit1, Unit5, Unit6;
 procedure TForm4.Button2Click(Sender: TObject);
 begin
 form4.Hide;
-Form5.ShowModal;
+Form5.Show;
 end;
 
 procedure TForm4.BitBtn1Click(Sender: TObject);
 begin
 Form4.Hide;
-Form2.ShowModal;
+Form2.Show;
 end;
 
 
@@ -59,7 +59,7 @@ end;
 procedure TForm4.Button3Click(Sender: TObject);
 begin
 form4.Hide;
-Form6.ShowModal;
+Form6.Show;
 end;
 
 end.

@@ -1,6 +1,6 @@
 object Form3: TForm3
-  Left = 337
-  Top = 157
+  Left = 194
+  Top = 109
   Width = 1235
   Height = 760
   Caption = 'Caja Diaria'
@@ -145,41 +145,6 @@ object Form3: TForm3
     ParentFont = False
     TabOrder = 0
   end
-  object TEdit
-    Left = 352
-    Top = 272
-    Width = 145
-    Height = 37
-    TabOrder = 1
-  end
-  object TEdit
-    Left = 352
-    Top = 320
-    Width = 145
-    Height = 37
-    TabOrder = 2
-  end
-  object TEdit
-    Left = 352
-    Top = 360
-    Width = 145
-    Height = 37
-    TabOrder = 3
-  end
-  object TEdit
-    Left = 352
-    Top = 400
-    Width = 145
-    Height = 37
-    TabOrder = 4
-  end
-  object TEdit
-    Left = 352
-    Top = 440
-    Width = 145
-    Height = 37
-    TabOrder = 5
-  end
   object DateTimePicker1: TDateTimePicker
     Left = 352
     Top = 200
@@ -193,7 +158,7 @@ object Form3: TForm3
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 6
+    TabOrder = 1
   end
   object DateTimePicker2: TDateTimePicker
     Left = 352
@@ -208,7 +173,7 @@ object Form3: TForm3
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 2
   end
   object ListBox1: TListBox
     Left = 704
@@ -216,6 +181,44 @@ object Form3: TForm3
     Width = 457
     Height = 353
     ItemHeight = 29
+    TabOrder = 3
+  end
+  object Edit1: TEdit
+    Left = 352
+    Top = 280
+    Width = 145
+    Height = 37
+    TabOrder = 4
+  end
+  object Edit2: TEdit
+    Left = 352
+    Top = 320
+    Width = 145
+    Height = 37
+    TabOrder = 5
+  end
+  object Edit3: TEdit
+    Left = 352
+    Top = 368
+    Width = 145
+    Height = 37
+    TabOrder = 6
+  end
+  object Edit4: TEdit
+    Left = 352
+    Top = 416
+    Width = 145
+    Height = 37
+    TabOrder = 7
+  end
+  object BitBtn1: TBitBtn
+    Left = 184
+    Top = 112
+    Width = 105
+    Height = 41
+    Caption = '&Volver'
     TabOrder = 8
+    OnClick = BitBtn1Click
+    Kind = bkRetry
   end
 end

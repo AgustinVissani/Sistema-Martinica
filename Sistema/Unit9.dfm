@@ -71,6 +71,7 @@ object Form9: TForm9
     ParentFont = False
     TabOrder = 2
     WordWrap = True
+    OnClick = BitBtn1Click
     Kind = bkRetry
   end
   object DBGrid1: TDBGrid

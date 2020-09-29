@@ -49,7 +49,7 @@ end;
 procedure TForm5.BitBtn1Click(Sender: TObject);
 begin
 Form5.Hide;
-Form4.ShowModal;
+Form4.Show;
 end;
 
 end.

@@ -9,7 +9,6 @@ type
   TForm2 = class(TForm)
     MainMenu1: TMainMenu;
     Ventas1: TMenuItem;
-    Strock1: TMenuItem;
     Ventas2: TMenuItem;
     Clientes1: TMenuItem;
     CajaDiaria1: TMenuItem;
@@ -48,19 +47,18 @@ procedure TForm2.CajaDiaria1Click(Sender: TObject);
 begin
 form2.Hide;
 Form3.Show;
-Form3.FormCreate(Self);  //caja diaria
 end;
 
 procedure TForm2.Proveedores1Click(Sender: TObject);
 begin
 form2.Hide;
-Form4.ShowModal;  //proveedores
+Form4.Show;  //proveedores
 end;
 
 procedure TForm2.Clientes1Click(Sender: TObject);
 begin
 form2.Hide;
-Form9.ShowModal;  //clientes
+Form9.Show;  //clientes
 end;
 
 end.

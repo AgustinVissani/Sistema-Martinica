@@ -1,6 +1,6 @@
 object Form8: TForm8
-  Left = 342
-  Top = 195
+  Left = 24
+  Top = 38
   Width = 1296
   Height = 680
   Caption = 'Clientes'

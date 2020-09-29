@@ -39,7 +39,7 @@ uses unit4;
 procedure TForm7.BitBtn1Click(Sender: TObject);
 begin
 Form7.Hide;
-Form4.ShowModal;
+Form4.Show;
 end;
 
 end.

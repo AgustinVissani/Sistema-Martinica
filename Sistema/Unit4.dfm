@@ -102,7 +102,6 @@ object Form4: TForm4
     TitleFont.Style = []
   end
   object ADOQuery1: TADOQuery
-    Connection = Form1.ADOConnection1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (

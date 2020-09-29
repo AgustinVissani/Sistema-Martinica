@@ -22,6 +22,7 @@ type
     ADOQuery1Telfono: TStringField;
     ADOQuery1Domicilio: TStringField;
     procedure Button1Click(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,8 +41,14 @@ procedure TForm9.Button1Click(Sender: TObject);
 begin
 begin
 form9.Hide;
-Form8.ShowModal;
+Form8.Show;
 end;
+end;
+
+procedure TForm9.BitBtn1Click(Sender: TObject);
+begin
+    Form9.Hide;
+    Form2.Show;
 end;
 
 end.

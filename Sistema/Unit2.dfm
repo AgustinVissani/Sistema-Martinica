@@ -1,6 +1,6 @@
 object Form2: TForm2
-  Left = 316
-  Top = 152
+  Left = 128
+  Top = 15
   Width = 1258
   Height = 774
   Caption = 'Sistema Martinica'
@@ -2332,9 +2332,6 @@ object Form2: TForm2
       object Proveedores1: TMenuItem
         Caption = 'Proveedores'
         OnClick = Proveedores1Click
-      end
-      object Strock1: TMenuItem
-        Caption = 'Strock'
       end
       object Ventas2: TMenuItem
         Caption = 'Ventas'

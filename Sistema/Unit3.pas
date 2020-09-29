@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ComCtrls;
+  Dialogs, StdCtrls, ComCtrls, Buttons;
 
 
 type
@@ -22,7 +22,13 @@ type
     DateTimePicker2: TDateTimePicker;
     Label9: TLabel;
     ListBox1: TListBox;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    BitBtn1: TBitBtn;
     procedure FormCreate(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -42,6 +48,12 @@ uses  Unit2,Unit1;
 procedure TForm3.FormCreate(Sender: TObject);
 begin
 //////////
+end;
+
+procedure TForm3.BitBtn1Click(Sender: TObject);
+begin
+  Form3.Hide;
+  Form2.Show;
 end;
 
 end.

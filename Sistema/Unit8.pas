@@ -43,7 +43,7 @@ uses  Unit9;
 procedure TForm8.BitBtn1Click(Sender: TObject);
 begin
 form8.Hide;
-Form9.ShowModal;
+Form9.Show;
 end;
 
 end.

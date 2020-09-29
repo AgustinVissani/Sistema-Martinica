@@ -40,13 +40,13 @@ uses Unit4, Unit7;
 procedure TForm6.BitBtn1Click(Sender: TObject);
 begin
 Form6.Hide;
-Form4.ShowModal;
+Form4.Show;
 end;
 
 procedure TForm6.Button2Click(Sender: TObject);
 begin
 Form6.Hide;
-Form7.ShowModal;
+Form7.Show;
 end;
 
 procedure TForm6.FormCreate(Sender: TObject);
