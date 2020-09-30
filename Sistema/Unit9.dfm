@@ -27,11 +27,11 @@ object Form9: TForm9
     ParentFont = False
   end
   object Button1: TButton
-    Left = 856
+    Left = 824
     Top = 56
-    Width = 89
+    Width = 145
     Height = 33
-    Caption = 'Altas'
+    Caption = 'Nuevo cliente'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -21

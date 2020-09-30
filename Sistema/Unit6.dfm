@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 320
-  Top = 140
+  Left = -33
+  Top = 0
   Width = 1252
   Height = 778
   Caption = 'Pedidos a Proveedores'

@@ -1,8 +1,8 @@
 object Form2: TForm2
-  Left = 128
-  Top = 15
-  Width = 1258
-  Height = 774
+  Left = 205
+  Top = 0
+  Width = 1039
+  Height = 788
   Caption = 'Sistema Martinica'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

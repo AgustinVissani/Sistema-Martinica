@@ -16,9 +16,9 @@ object Form1: TForm1
   object Label1: TLabel
     Left = 320
     Top = 216
-    Width = 550
+    Width = 520
     Height = 58
-    Caption = 'SISTEMAS MARTINICA'
+    Caption = 'SISTEMA MARTINICA'
   end
   object Label2: TLabel
     Left = 296
