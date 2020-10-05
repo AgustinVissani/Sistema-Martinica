@@ -1,6 +1,6 @@
 object Form3: TForm3
-  Left = -19
-  Top = 86
+  Left = 580
+  Top = 178
   Width = 1235
   Height = 760
   Caption = 'Caja Diaria'

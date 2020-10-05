@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = -33
-  Top = 0
+  Left = 724
+  Top = 134
   Width = 1252
   Height = 778
   Caption = 'Pedidos a Proveedores'
@@ -147,20 +147,36 @@ object Form6: TForm6
     OnClick = BitBtn1Click
     Kind = bkRetry
   end
-  object DBLookupComboBox1: TDBLookupComboBox
-    Left = 552
+  object DBComboBox1: TDBComboBox
+    Left = 528
     Top = 208
-    Width = 193
+    Width = 225
     Height = 33
     DataField = 'Apellido'
-    DataSource = Form4.DataSource1
+    DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
     Font.Name = 'Tahoma'
     Font.Style = []
-    ListSource = Form4.DataSource1
+    ItemHeight = 25
     ParentFont = False
     TabOrder = 4
+  end
+  object ADOQuery1: TADOQuery
+    Active = True
+    Connection = Form1.ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT * '
+      'FROM Clientes')
+    Left = 48
+    Top = 88
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOQuery1
+    Left = 88
+    Top = 88
   end
 end

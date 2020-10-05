@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, StdCtrls, ComCtrls, DBCtrls;
+  Dialogs, Buttons, StdCtrls, ComCtrls, DBCtrls, DB, ADODB;
 
 type
   TForm6 = class(TForm)
@@ -18,7 +18,9 @@ type
     BitBtn1: TBitBtn;
     Label5: TLabel;
     Label6: TLabel;
-    DBLookupComboBox1: TDBLookupComboBox;
+    ADOQuery1: TADOQuery;
+    DataSource1: TDataSource;
+    DBComboBox1: TDBComboBox;
     procedure BitBtn1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);

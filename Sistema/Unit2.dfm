@@ -1,6 +1,6 @@
 object Form2: TForm2
-  Left = 205
-  Top = 0
+  Left = 829
+  Top = 170
   Width = 1039
   Height = 788
   Caption = 'Sistema Martinica'

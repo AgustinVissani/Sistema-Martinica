@@ -1,6 +1,6 @@
 object Form5: TForm5
-  Left = 320
-  Top = 136
+  Left = 456
+  Top = 183
   Width = 1256
   Height = 781
   Caption = 'Nuevo Proveedor'
@@ -105,19 +105,6 @@ object Form5: TForm5
     Font.Style = []
     ParentFont = False
   end
-  object Edit1: TEdit
-    Left = 560
-    Top = 216
-    Width = 121
-    Height = 31
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 0
-  end
   object Edit2: TEdit
     Left = 560
     Top = 272
@@ -129,7 +116,7 @@ object Form5: TForm5
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 0
   end
   object Edit3: TEdit
     Left = 560
@@ -142,7 +129,7 @@ object Form5: TForm5
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 2
+    TabOrder = 1
   end
   object Edit4: TEdit
     Left = 560
@@ -155,7 +142,7 @@ object Form5: TForm5
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 3
+    TabOrder = 2
   end
   object Edit5: TEdit
     Left = 560
@@ -168,7 +155,7 @@ object Form5: TForm5
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 3
   end
   object Edit6: TEdit
     Left = 560
@@ -181,7 +168,7 @@ object Form5: TForm5
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 4
   end
   object Button1: TButton
     Left = 792
@@ -195,7 +182,7 @@ object Form5: TForm5
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 6
+    TabOrder = 5
   end
   object Button2: TButton
     Left = 648
@@ -209,7 +196,7 @@ object Form5: TForm5
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 6
   end
   object BitBtn1: TBitBtn
     Left = 464
@@ -223,8 +210,21 @@ object Form5: TForm5
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 8
+    TabOrder = 7
     OnClick = BitBtn1Click
     Kind = bkRetry
+  end
+  object Edit1: TEdit
+    Left = 560
+    Top = 216
+    Width = 209
+    Height = 31
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 8
   end
 end

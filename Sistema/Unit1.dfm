@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 225
-  Top = 76
+  Left = 738
+  Top = 171
   Width = 1187
   Height = 772
   Caption = 'Inicio'
@@ -58,6 +58,7 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 0
+    OnKeyPress = Edit1KeyPress
   end
   object Edit2: TEdit
     Left = 480
@@ -70,7 +71,9 @@ object Form1: TForm1
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
+    PasswordChar = '*'
     TabOrder = 1
+    OnKeyPress = Edit2KeyPress
   end
   object Button1: TButton
     Left = 792
@@ -92,14 +95,23 @@ object Form1: TForm1
     Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
-      'fo=False;Initial Catalog=Martinica_Decoraciones;Data Source=GUTY' +
-      ';Use Procedure for Prepare=1;Auto Translate=True;Packet Size=409' +
-      '6;Workstation ID=GUTY;Use Encryption for Data=False;Tag with col' +
-      'umn collation when possible=False'
+      'fo=False;Initial Catalog=Martinica_Decoraciones;Data Source=Agus' +
+      'tin;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=' +
+      '4096;Workstation ID=GUTY;Use Encryption for Data=False;Tag with ' +
+      'column collation when possible=False'
     DefaultDatabase = 'Martinica_Decoraciones'
     LoginPrompt = False
     Provider = 'SQLOLEDB.1'
-    Left = 80
-    Top = 128
+    Left = 88
+    Top = 120
+  end
+  object ADOQuery1: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT * FROM Usuarios')
+    Left = 160
+    Top = 120
   end
 end

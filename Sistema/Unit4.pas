@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons, Grids, DBGrids, DB, ADODB;
+  Dialogs, StdCtrls, Buttons, Grids, DBGrids, DB, ADODB, ExtCtrls, DBCtrls;
 
 type
   TForm4 = class(TForm)
@@ -13,18 +13,20 @@ type
     BitBtn1: TBitBtn;
     Label1: TLabel;
     Button3: TButton;
+    Button4: TButton;
     ADOQuery1: TADOQuery;
-    ADOQuery1Codigo_Proveedor: TIntegerField;
-    ADOQuery1Nombre: TWideStringField;
-    ADOQuery1Apellido: TWideStringField;
-    ADOQuery1Telfono: TWideStringField;
-    ADOQuery1Domicilio: TWideStringField;
-    ADOQuery1CUIT: TWideStringField;
     DataSource1: TDataSource;
     DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    BitBtn2: TBitBtn;
+    BitBtn3: TBitBtn;
     procedure Button2Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,8 +46,9 @@ uses Unit2,Unit1, Unit5, Unit6;
 
 procedure TForm4.Button2Click(Sender: TObject);
 begin
-form4.Hide;
-Form5.Show;
+//form4.Hide;
+//Form5.Show;
+ADOQuery1.Append;
 end;
 
 procedure TForm4.BitBtn1Click(Sender: TObject);
@@ -60,6 +63,35 @@ procedure TForm4.Button3Click(Sender: TObject);
 begin
 form4.Hide;
 Form6.Show;
+end;
+
+
+
+procedure TForm4.Button1Click(Sender: TObject);
+begin
+  ADOQuery1.Edit;
+end;
+
+
+
+
+procedure TForm4.Button4Click(Sender: TObject);
+begin
+  ADOQuery1.Delete;
+end;
+
+
+
+
+
+procedure TForm4.BitBtn3Click(Sender: TObject);
+begin
+  ADOQuery1.Cancel;
+end;
+
+procedure TForm4.BitBtn2Click(Sender: TObject);
+begin
+      ADOQuery1.Post;
 end;
 
 end.

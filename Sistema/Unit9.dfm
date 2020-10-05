@@ -1,6 +1,6 @@
 object Form9: TForm9
-  Left = 223
-  Top = 7
+  Left = 585
+  Top = 248
   Width = 1305
   Height = 675
   Caption = 'Listado de Clientes'
@@ -75,8 +75,8 @@ object Form9: TForm9
     Kind = bkRetry
   end
   object DBGrid1: TDBGrid
-    Left = 168
-    Top = 224
+    Left = 160
+    Top = 216
     Width = 881
     Height = 353
     DataSource = DataSource1

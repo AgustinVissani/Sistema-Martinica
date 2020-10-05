@@ -15,7 +15,6 @@ type
     Label5: TLabel;
     Label6: TLabel;
     Label7: TLabel;
-    Edit1: TEdit;
     Edit2: TEdit;
     Edit3: TEdit;
     Edit4: TEdit;
@@ -24,6 +23,7 @@ type
     Button1: TButton;
     Button2: TButton;
     BitBtn1: TBitBtn;
+    Edit1: TEdit;
     procedure FormCreate(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
   private
@@ -43,7 +43,7 @@ uses unit1,unit4;
 
 procedure TForm5.FormCreate(Sender: TObject);
 begin
-/////////
+////////
 end;
 
 procedure TForm5.BitBtn1Click(Sender: TObject);
