@@ -1,6 +1,6 @@
 object Form2: TForm2
-  Left = 94
-  Top = 6
+  Left = 405
+  Top = 94
   Width = 1039
   Height = 788
   Caption = 'Sistema Martinica'
@@ -16,7 +16,7 @@ object Form2: TForm2
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
-    Left = 264
+    Left = 184
     Top = 40
     Width = 673
     Height = 617

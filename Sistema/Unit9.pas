@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Grids, DBGrids, Buttons, DB, ADODB;
+  Dialogs, StdCtrls, Grids, DBGrids, Buttons, DB, ADODB, Mask, DBCtrls;
 
 type
   TForm9 = class(TForm)
@@ -23,6 +23,17 @@ type
     Button3: TButton;
     BitBtn3: TBitBtn;
     BitBtn2: TBitBtn;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    BitBtn4: TBitBtn;
     procedure Button1Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -45,11 +56,24 @@ uses  Unit1, Unit2, Unit8;
 {$R *.dfm}
 
 procedure TForm9.Button1Click(Sender: TObject);
+//form9.Hide;
+//Form8.Show;
+const
+  mbYesNoCancel = [mbYes, mbNO, mbCancel];
+var
+    buttonSelected : Integer;
 begin
-begin
-ADOQuery1.Append;
+   buttonSelected := MessageDlg('¿Desea agregar un cliente?',mtConfirmation, mbOKCancel, 0);
+   if buttonSelected = mrOK then
+   begin
+        ShowMessage('Puede agregar un nuevo cliente');
+        ADOQuery1.Append;
+   end
+   else
+    if buttonSelected = mrCancel then
 end;
-end;
+
+
 
 procedure TForm9.BitBtn1Click(Sender: TObject);
 begin
@@ -57,30 +81,65 @@ begin
     Form2.Show;
 end;
 
+
+
 procedure TForm9.FormCreate(Sender: TObject);
 begin
   Left:=(Screen.Width-Width)  div 2;
   Top:=(Screen.Height-Height) div 2;
 end;
 
+
+
 procedure TForm9.Button3Click(Sender: TObject);
+const
+  mbYesNoCancel = [mbYes, mbNO, mbCancel];
+var
+    buttonSelected : Integer;
 begin
-ADOQuery1.Edit;
+   buttonSelected := MessageDlg('¿Desea modificar?',mtConfirmation, mbOKCancel, 0);
+   if buttonSelected = mrOK then
+   begin
+        ShowMessage('Puede modificar');
+        ADOQuery1.Edit;
+   end
+   else
+    if buttonSelected = mrCancel then
 end;
+
+
 
 procedure TForm9.BitBtn3Click(Sender: TObject);
 begin
   ADOQuery1.Cancel;
 end;
 
+
+
 procedure TForm9.BitBtn2Click(Sender: TObject);
 begin
   ADOQuery1.Post;
 end;
 
+
+
 procedure TForm9.Button2Click(Sender: TObject);
+const
+  mbYesNoCancel = [mbYes, mbNO, mbCancel];
+var
+    buttonSelected : Integer;
 begin
-  ADOQuery1.Delete;
+   buttonSelected := MessageDlg('¿Desea eliminar?',mtWarning, mbOKCancel, 0);
+   if buttonSelected = mrOK then
+   begin
+      ShowMessage('El elemento se elimino correctamente');
+      ADOQuery1.Delete;
+   end
+   else
+    if buttonSelected = mrCancel then
+     begin
+       ShowMessage('No se eliminaron elementos');
+     end;
 end;
 
 end.

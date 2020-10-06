@@ -1,6 +1,6 @@
 object Form7: TForm7
-  Left = 187
-  Top = 0
+  Left = 391
+  Top = 190
   Width = 1052
   Height = 778
   Caption = 'Nuevo Pedido'
@@ -15,8 +15,8 @@ object Form7: TForm7
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 512
-    Top = 128
+    Left = 416
+    Top = 112
     Width = 163
     Height = 33
     Caption = 'Nuevo Pedido'
@@ -28,8 +28,8 @@ object Form7: TForm7
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 416
-    Top = 240
+    Left = 320
+    Top = 224
     Width = 94
     Height = 25
     Caption = 'Proveedor'
@@ -41,8 +41,8 @@ object Form7: TForm7
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 416
-    Top = 288
+    Left = 320
+    Top = 272
     Width = 64
     Height = 25
     Caption = 'Detalle'
@@ -54,8 +54,8 @@ object Form7: TForm7
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 416
-    Top = 440
+    Left = 320
+    Top = 424
     Width = 134
     Height = 25
     Caption = 'Observaciones'
@@ -67,8 +67,8 @@ object Form7: TForm7
     ParentFont = False
   end
   object Button1: TButton
-    Left = 632
-    Top = 600
+    Left = 536
+    Top = 584
     Width = 97
     Height = 41
     Caption = 'Cancelar'
@@ -81,16 +81,16 @@ object Form7: TForm7
     TabOrder = 0
   end
   object ListBox1: TListBox
-    Left = 560
-    Top = 296
+    Left = 464
+    Top = 280
     Width = 425
     Height = 129
     ItemHeight = 13
     TabOrder = 1
   end
   object Button3: TButton
-    Left = 816
-    Top = 600
+    Left = 720
+    Top = 584
     Width = 97
     Height = 41
     Caption = 'Guardar'
@@ -103,8 +103,8 @@ object Form7: TForm7
     TabOrder = 2
   end
   object BitBtn1: TBitBtn
-    Left = 400
-    Top = 600
+    Left = 304
+    Top = 584
     Width = 97
     Height = 41
     Caption = 'Volver'
@@ -119,16 +119,16 @@ object Form7: TForm7
     Kind = bkRetry
   end
   object ListBox2: TListBox
-    Left = 560
-    Top = 448
+    Left = 464
+    Top = 432
     Width = 425
     Height = 89
     ItemHeight = 13
     TabOrder = 4
   end
   object DBComboBox1: TDBComboBox
-    Left = 560
-    Top = 248
+    Left = 464
+    Top = 232
     Width = 145
     Height = 21
     DataField = 'Apellido'
@@ -137,8 +137,8 @@ object Form7: TForm7
     TabOrder = 5
   end
   object DBLookupComboBox1: TDBLookupComboBox
-    Left = 728
-    Top = 248
+    Left = 632
+    Top = 232
     Width = 145
     Height = 21
     DataSource = DataSource1
@@ -152,12 +152,12 @@ object Form7: TForm7
     Parameters = <>
     SQL.Strings = (
       'SELECT * FROM Proveedores;')
-    Left = 256
-    Top = 192
+    Left = 160
+    Top = 176
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
-    Left = 304
-    Top = 192
+    Left = 208
+    Top = 176
   end
 end

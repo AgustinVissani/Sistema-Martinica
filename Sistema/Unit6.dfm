@@ -165,6 +165,7 @@ object Form6: TForm6
     TabOrder = 4
   end
   object ADOQuery1: TADOQuery
+    Active = True
     Connection = Form1.ADOConnection1
     CursorType = ctStatic
     Parameters = <>
