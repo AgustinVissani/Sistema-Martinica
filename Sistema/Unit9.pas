@@ -23,6 +23,7 @@ type
     ADOQuery1Domicilio: TStringField;
     procedure Button1Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -49,6 +50,12 @@ procedure TForm9.BitBtn1Click(Sender: TObject);
 begin
     Form9.Hide;
     Form2.Show;
+end;
+
+procedure TForm9.FormCreate(Sender: TObject);
+begin
+  Left:=(Screen.Width-Width)  div 2;
+  Top:=(Screen.Height-Height) div 2;
 end;
 
 end.

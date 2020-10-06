@@ -17,9 +17,9 @@ object Form3: TForm3
   object Label1: TLabel
     Left = 568
     Top = 120
-    Width = 176
+    Width = 148
     Height = 33
-    Caption = 'Cajara Diaria'
+    Caption = 'Caja Diaria'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -27

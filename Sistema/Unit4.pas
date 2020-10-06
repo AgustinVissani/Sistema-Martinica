@@ -27,6 +27,7 @@ type
     procedure Button4Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -92,6 +93,12 @@ end;
 procedure TForm4.BitBtn2Click(Sender: TObject);
 begin
       ADOQuery1.Post;
+end;
+
+procedure TForm4.FormCreate(Sender: TObject);
+begin
+  Left:=(Screen.Width-Width)  div 2;
+  Top:=(Screen.Height-Height) div 2;
 end;
 
 end.

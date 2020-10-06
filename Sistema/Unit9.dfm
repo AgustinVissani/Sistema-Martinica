@@ -11,6 +11,7 @@ object Form9: TForm9
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -88,7 +89,6 @@ object Form9: TForm9
     TitleFont.Style = []
   end
   object ADOQuery1: TADOQuery
-    Active = True
     Connection = Form1.ADOConnection1
     CursorType = ctStatic
     Parameters = <>

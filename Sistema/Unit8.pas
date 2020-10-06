@@ -25,6 +25,7 @@ type
     Button2: TButton;
     BitBtn1: TBitBtn;
     procedure BitBtn1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,6 +45,12 @@ procedure TForm8.BitBtn1Click(Sender: TObject);
 begin
 form8.Hide;
 Form9.Show;
+end;
+
+procedure TForm8.FormCreate(Sender: TObject);
+begin
+  Left:=(Screen.Width-Width)  div 2;
+  Top:=(Screen.Height-Height) div 2;
 end;
 
 end.

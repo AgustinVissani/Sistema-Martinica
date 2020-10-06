@@ -20,6 +20,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Edit1KeyPress(Sender: TObject; var Key: Char);
     procedure Edit2KeyPress(Sender: TObject; var Key: Char);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -93,6 +94,12 @@ if not ADOQuery1.Eof then
   else
   ShowMessage('Usuario o contraseña incorrecto');
 end;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  Left:=(Screen.Width-Width)  div 2;
+  Top:=(Screen.Height-Height) div 2;
 end;
 
 end.

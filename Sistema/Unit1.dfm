@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 738
-  Top = 171
-  Width = 1187
+  Left = 266
+  Top = 3
+  Width = 1097
   Height = 772
   Caption = 'Inicio'
   Color = clBtnFace
@@ -11,6 +11,7 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = [fsBold]
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 58
   object Label1: TLabel
@@ -95,10 +96,10 @@ object Form1: TForm1
     Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
-      'fo=False;Initial Catalog=Martinica_Decoraciones;Data Source=Agus' +
-      'tin;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=' +
-      '4096;Workstation ID=GUTY;Use Encryption for Data=False;Tag with ' +
-      'column collation when possible=False'
+      'fo=False;Initial Catalog=Martinica_Decoraciones;Data Source=GUTY' +
+      ';Use Procedure for Prepare=1;Auto Translate=True;Packet Size=409' +
+      '6;Workstation ID=GUTY;Use Encryption for Data=False;Tag with col' +
+      'umn collation when possible=False'
     DefaultDatabase = 'Martinica_Decoraciones'
     LoginPrompt = False
     Provider = 'SQLOLEDB.1'

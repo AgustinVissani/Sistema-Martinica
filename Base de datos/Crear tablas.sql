@@ -17,5 +17,11 @@
  Domicilio varchar(30) NOT NULL,
  CUIT varchar(30) NOT NULL,
  PRIMARY KEY (Código_Proveedor) );
+
+ CREATE TABLE Usuarios( idUsuario int not null, 
+ Usuario varchar(50) NOT NULL,
+ Contraseña varchar(50) NOT NULL,
+ PRIMARY KEY (idUsuario) );
  */
 
+ SELECT * FROM Usuarios where Usuario='Usuario' and Contraseña='12345';

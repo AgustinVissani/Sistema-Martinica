@@ -37,7 +37,8 @@ uses  Unit1, Unit3, Unit4, Unit8, Unit9;
 
 procedure TForm2.FormCreate(Sender: TObject);
 begin
-//////////
+  Left:=(Screen.Width-Width)  div 2;
+  Top:=(Screen.Height-Height) div 2;
 end;
 
 

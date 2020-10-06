@@ -43,7 +43,8 @@ uses unit1,unit4;
 
 procedure TForm5.FormCreate(Sender: TObject);
 begin
-////////
+  Left:=(Screen.Width-Width)  div 2;
+  Top:=(Screen.Height-Height) div 2;
 end;
 
 procedure TForm5.BitBtn1Click(Sender: TObject);
