@@ -4,23 +4,23 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, StdCtrls, ComCtrls;
+  Dialogs, Buttons, StdCtrls, ComCtrls, DBCtrls, DB, ADODB;
 
 type
   TForm7 = class(TForm)
     Label1: TLabel;
     Label5: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
     Label4: TLabel;
-    Edit2: TEdit;
     Button1: TButton;
-    ComboBox1: TComboBox;
-    Button2: TButton;
-    DateTimePicker1: TDateTimePicker;
     ListBox1: TListBox;
     Button3: TButton;
     BitBtn1: TBitBtn;
+    ListBox2: TListBox;
+    Label2: TLabel;
+    ADOQuery1: TADOQuery;
+    DataSource1: TDataSource;
+    DBComboBox1: TDBComboBox;
+    DBLookupComboBox1: TDBLookupComboBox;
     procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private

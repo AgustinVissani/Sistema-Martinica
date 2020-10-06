@@ -20,6 +20,12 @@ type
     DBNavigator1: TDBNavigator;
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
+    ADOQuery1Cdigo_Proveedor: TIntegerField;
+    ADOQuery1Nombre: TStringField;
+    ADOQuery1Apellido: TStringField;
+    ADOQuery1Telfono: TStringField;
+    ADOQuery1Domicilio: TStringField;
+    ADOQuery1CUIT: TStringField;
     procedure Button2Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);

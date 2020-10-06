@@ -1,7 +1,7 @@
 object Form4: TForm4
-  Left = 639
-  Top = 229
-  Width = 1279
+  Left = 169
+  Top = 21
+  Width = 1122
   Height = 672
   Caption = 'Proveedores'
   Color = clBtnFace
@@ -75,11 +75,11 @@ object Form4: TForm4
     Kind = bkRetry
   end
   object Button3: TButton
-    Left = 1096
-    Top = 104
+    Left = 896
+    Top = 40
     Width = 89
     Height = 49
-    Caption = 'Nuevo Pedido'
+    Caption = 'Pedido a proveedores'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -159,6 +159,7 @@ object Form4: TForm4
     Kind = bkCancel
   end
   object ADOQuery1: TADOQuery
+    Active = True
     Connection = Form1.ADOConnection1
     CursorType = ctStatic
     Parameters = <>
@@ -167,6 +168,28 @@ object Form4: TForm4
       'FROM Proveedores')
     Left = 72
     Top = 128
+    object ADOQuery1Cdigo_Proveedor: TIntegerField
+      FieldName = 'C'#243'digo_Proveedor'
+    end
+    object ADOQuery1Nombre: TStringField
+      FieldName = 'Nombre'
+      Size = 30
+    end
+    object ADOQuery1Apellido: TStringField
+      FieldName = 'Apellido'
+      Size = 30
+    end
+    object ADOQuery1Telfono: TStringField
+      FieldName = 'Tel'#233'fono'
+    end
+    object ADOQuery1Domicilio: TStringField
+      FieldName = 'Domicilio'
+      Size = 30
+    end
+    object ADOQuery1CUIT: TStringField
+      FieldName = 'CUIT'
+      Size = 30
+    end
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1

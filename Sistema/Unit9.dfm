@@ -1,8 +1,8 @@
 object Form9: TForm9
-  Left = 585
-  Top = 248
+  Left = 200
+  Top = 3
   Width = 1305
-  Height = 675
+  Height = 668
   Caption = 'Listado de Clientes'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -48,7 +48,7 @@ object Form9: TForm9
     Top = 56
     Width = 89
     Height = 33
-    Caption = 'Bajas'
+    Caption = 'Borrar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -57,6 +57,7 @@ object Form9: TForm9
     ParentFont = False
     TabOrder = 1
     WordWrap = True
+    OnClick = Button2Click
   end
   object BitBtn1: TBitBtn
     Left = 200
@@ -76,9 +77,9 @@ object Form9: TForm9
     Kind = bkRetry
   end
   object DBGrid1: TDBGrid
-    Left = 160
-    Top = 216
-    Width = 881
+    Left = 184
+    Top = 184
+    Width = 761
     Height = 353
     DataSource = DataSource1
     TabOrder = 3
@@ -88,7 +89,49 @@ object Form9: TForm9
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
   end
+  object Button3: TButton
+    Left = 352
+    Top = 64
+    Width = 75
+    Height = 25
+    Caption = 'Modificar'
+    TabOrder = 4
+    OnClick = Button3Click
+  end
+  object BitBtn3: TBitBtn
+    Left = 352
+    Top = 568
+    Width = 105
+    Height = 33
+    Caption = 'Cancelar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
+    OnClick = BitBtn3Click
+    Kind = bkCancel
+  end
+  object BitBtn2: TBitBtn
+    Left = 792
+    Top = 568
+    Width = 105
+    Height = 33
+    Caption = 'Cargar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
+    OnClick = BitBtn2Click
+    Kind = bkOK
+  end
   object ADOQuery1: TADOQuery
+    Active = True
     Connection = Form1.ADOConnection1
     CursorType = ctStatic
     Parameters = <>
@@ -97,9 +140,6 @@ object Form9: TForm9
       'FROM Clientes')
     Left = 56
     Top = 168
-    object ADOQuery1Cdigo_Cliente: TIntegerField
-      FieldName = 'C'#243'digo_Cliente'
-    end
     object ADOQuery1DNI: TIntegerField
       FieldName = 'DNI'
     end

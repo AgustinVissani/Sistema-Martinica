@@ -13,7 +13,6 @@ type
     Label3: TLabel;
     Button1: TButton;
     Label4: TLabel;
-    ListBox1: TListBox;
     Button2: TButton;
     BitBtn1: TBitBtn;
     Label5: TLabel;
@@ -21,6 +20,7 @@ type
     ADOQuery1: TADOQuery;
     DataSource1: TDataSource;
     DBComboBox1: TDBComboBox;
+    DBListBox1: TDBListBox;
     procedure BitBtn1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);

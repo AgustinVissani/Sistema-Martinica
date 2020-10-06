@@ -15,15 +15,21 @@ type
     ADOQuery1: TADOQuery;
     DataSource1: TDataSource;
     DBGrid1: TDBGrid;
-    ADOQuery1Cdigo_Cliente: TIntegerField;
     ADOQuery1DNI: TIntegerField;
     ADOQuery1Nombre: TStringField;
     ADOQuery1Apellido: TStringField;
     ADOQuery1Telfono: TStringField;
     ADOQuery1Domicilio: TStringField;
+    Button3: TButton;
+    BitBtn3: TBitBtn;
+    BitBtn2: TBitBtn;
     procedure Button1Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,8 +47,7 @@ uses  Unit1, Unit2, Unit8;
 procedure TForm9.Button1Click(Sender: TObject);
 begin
 begin
-form9.Hide;
-Form8.Show;
+ADOQuery1.Append;
 end;
 end;
 
@@ -56,6 +61,26 @@ procedure TForm9.FormCreate(Sender: TObject);
 begin
   Left:=(Screen.Width-Width)  div 2;
   Top:=(Screen.Height-Height) div 2;
+end;
+
+procedure TForm9.Button3Click(Sender: TObject);
+begin
+ADOQuery1.Edit;
+end;
+
+procedure TForm9.BitBtn3Click(Sender: TObject);
+begin
+  ADOQuery1.Cancel;
+end;
+
+procedure TForm9.BitBtn2Click(Sender: TObject);
+begin
+  ADOQuery1.Post;
+end;
+
+procedure TForm9.Button2Click(Sender: TObject);
+begin
+  ADOQuery1.Delete;
 end;
 
 end.

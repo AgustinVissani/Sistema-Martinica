@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 724
-  Top = 134
+  Left = 205
+  Top = 1
   Width = 1252
   Height = 778
   Caption = 'Pedidos a Proveedores'
@@ -107,19 +107,11 @@ object Form6: TForm6
     TabOrder = 0
     WordWrap = True
   end
-  object ListBox1: TListBox
-    Left = 240
-    Top = 344
-    Width = 753
-    Height = 313
-    ItemHeight = 13
-    TabOrder = 1
-  end
   object Button2: TButton
-    Left = 904
+    Left = 880
     Top = 88
-    Width = 81
-    Height = 65
+    Width = 105
+    Height = 41
     Caption = 'Nuevo pedido'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -127,7 +119,7 @@ object Form6: TForm6
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 2
+    TabOrder = 1
     WordWrap = True
     OnClick = Button2Click
   end
@@ -143,7 +135,7 @@ object Form6: TForm6
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 3
+    TabOrder = 2
     OnClick = BitBtn1Click
     Kind = bkRetry
   end
@@ -161,10 +153,18 @@ object Form6: TForm6
     Font.Style = []
     ItemHeight = 25
     ParentFont = False
+    TabOrder = 3
+  end
+  object DBListBox1: TDBListBox
+    Left = 208
+    Top = 368
+    Width = 849
+    Height = 297
+    DataSource = DataSource1
+    ItemHeight = 13
     TabOrder = 4
   end
   object ADOQuery1: TADOQuery
-    Active = True
     Connection = Form1.ADOConnection1
     CursorType = ctStatic
     Parameters = <>
