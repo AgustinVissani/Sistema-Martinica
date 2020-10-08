@@ -8,7 +8,7 @@ uses
 type
   TForm2 = class(TForm)
     MainMenu1: TMainMenu;
-    Ventas1: TMenuItem;
+    Martinica: TMenuItem;
     Ventas2: TMenuItem;
     Clientes1: TMenuItem;
     CajaDiaria1: TMenuItem;
@@ -61,6 +61,8 @@ begin
 form2.Hide;
 Form9.Show;  //clientes
 end;
+
+
 
 end.
 

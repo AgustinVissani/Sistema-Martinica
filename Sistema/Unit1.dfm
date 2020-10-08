@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 266
-  Top = 3
-  Width = 1097
-  Height = 772
+  Left = 305
+  Top = 129
+  Width = 1306
+  Height = 889
   Caption = 'Inicio'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,15 +15,15 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 58
   object Label1: TLabel
-    Left = 320
-    Top = 216
+    Left = 416
+    Top = 280
     Width = 520
     Height = 58
     Caption = 'SISTEMA MARTINICA'
   end
   object Label2: TLabel
-    Left = 296
-    Top = 376
+    Left = 392
+    Top = 440
     Width = 104
     Height = 33
     Caption = 'Usuario'
@@ -35,8 +35,8 @@ object Form1: TForm1
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 296
-    Top = 424
+    Left = 392
+    Top = 488
     Width = 168
     Height = 33
     Caption = 'Constrase'#241'a'
@@ -48,8 +48,8 @@ object Form1: TForm1
     ParentFont = False
   end
   object Edit1: TEdit
-    Left = 480
-    Top = 384
+    Left = 576
+    Top = 448
     Width = 241
     Height = 24
     Font.Charset = DEFAULT_CHARSET
@@ -62,8 +62,8 @@ object Form1: TForm1
     OnKeyPress = Edit1KeyPress
   end
   object Edit2: TEdit
-    Left = 480
-    Top = 432
+    Left = 576
+    Top = 496
     Width = 241
     Height = 24
     Font.Charset = DEFAULT_CHARSET
@@ -77,11 +77,11 @@ object Form1: TForm1
     OnKeyPress = Edit2KeyPress
   end
   object Button1: TButton
-    Left = 792
-    Top = 384
+    Left = 888
+    Top = 448
     Width = 113
     Height = 73
-    Caption = 'Iniciar sesion'
+    Caption = 'Iniciar sesi'#243'n'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -27
@@ -92,7 +92,28 @@ object Form1: TForm1
     WordWrap = True
     OnClick = Button1Click
   end
+  object ComboBox1: TComboBox
+    Left = 1112
+    Top = 48
+    Width = 81
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ItemHeight = 19
+    ItemIndex = 0
+    ParentFont = False
+    TabOrder = 3
+    Text = 'Espa'#241'ol'
+    OnChange = ComboBox1Change
+    Items.Strings = (
+      'Espa'#241'ol'
+      'Ingles')
+  end
   object ADOConnection1: TADOConnection
+    Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
       'fo=False;Initial Catalog=Martinica_Decoraciones;Data Source=Agus' +

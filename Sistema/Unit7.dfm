@@ -1,8 +1,8 @@
 object Form7: TForm7
-  Left = 391
-  Top = 190
-  Width = 1052
-  Height = 778
+  Left = 306
+  Top = 125
+  Width = 1306
+  Height = 889
   Caption = 'Nuevo Pedido'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,8 +15,8 @@ object Form7: TForm7
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 416
-    Top = 112
+    Left = 584
+    Top = 80
     Width = 163
     Height = 33
     Caption = 'Nuevo Pedido'
@@ -28,8 +28,8 @@ object Form7: TForm7
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 320
-    Top = 224
+    Left = 496
+    Top = 208
     Width = 94
     Height = 25
     Caption = 'Proveedor'
@@ -41,8 +41,8 @@ object Form7: TForm7
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 320
-    Top = 272
+    Left = 352
+    Top = 288
     Width = 64
     Height = 25
     Caption = 'Detalle'
@@ -55,7 +55,7 @@ object Form7: TForm7
   end
   object Label2: TLabel
     Left = 320
-    Top = 424
+    Top = 488
     Width = 134
     Height = 25
     Caption = 'Observaciones'
@@ -67,8 +67,8 @@ object Form7: TForm7
     ParentFont = False
   end
   object Button1: TButton
-    Left = 536
-    Top = 584
+    Left = 600
+    Top = 744
     Width = 97
     Height = 41
     Caption = 'Cancelar'
@@ -81,16 +81,16 @@ object Form7: TForm7
     TabOrder = 0
   end
   object ListBox1: TListBox
-    Left = 464
-    Top = 280
+    Left = 472
+    Top = 272
     Width = 425
     Height = 129
     ItemHeight = 13
     TabOrder = 1
   end
   object Button3: TButton
-    Left = 720
-    Top = 584
+    Left = 816
+    Top = 744
     Width = 97
     Height = 41
     Caption = 'Guardar'
@@ -103,8 +103,8 @@ object Form7: TForm7
     TabOrder = 2
   end
   object BitBtn1: TBitBtn
-    Left = 304
-    Top = 584
+    Left = 368
+    Top = 744
     Width = 97
     Height = 41
     Caption = 'Volver'
@@ -119,31 +119,28 @@ object Form7: TForm7
     Kind = bkRetry
   end
   object ListBox2: TListBox
-    Left = 464
-    Top = 432
+    Left = 472
+    Top = 464
     Width = 425
-    Height = 89
+    Height = 201
     ItemHeight = 13
     TabOrder = 4
   end
   object DBComboBox1: TDBComboBox
-    Left = 464
-    Top = 232
-    Width = 145
-    Height = 21
+    Left = 640
+    Top = 208
+    Width = 177
+    Height = 27
     DataField = 'Apellido'
     DataSource = DataSource1
-    ItemHeight = 13
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ItemHeight = 19
+    ParentFont = False
     TabOrder = 5
-  end
-  object DBLookupComboBox1: TDBLookupComboBox
-    Left = 632
-    Top = 232
-    Width = 145
-    Height = 21
-    DataSource = DataSource1
-    ListField = 'Apellido'
-    TabOrder = 6
   end
   object ADOQuery1: TADOQuery
     Active = True

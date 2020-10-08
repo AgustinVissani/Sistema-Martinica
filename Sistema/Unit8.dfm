@@ -1,8 +1,8 @@
 object Form8: TForm8
-  Left = 223
-  Top = 105
-  Width = 1296
-  Height = 680
+  Left = 305
+  Top = 122
+  Width = 1306
+  Height = 889
   Caption = 'Clientes'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,7 +15,7 @@ object Form8: TForm8
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 528
+    Left = 576
     Top = 72
     Width = 197
     Height = 33
@@ -28,8 +28,8 @@ object Form8: TForm8
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 480
-    Top = 168
+    Left = 520
+    Top = 200
     Width = 64
     Height = 25
     Caption = 'C'#243'digo'
@@ -41,8 +41,8 @@ object Form8: TForm8
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 480
-    Top = 224
+    Left = 520
+    Top = 304
     Width = 36
     Height = 25
     Caption = 'DNI'
@@ -54,8 +54,8 @@ object Form8: TForm8
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 480
-    Top = 280
+    Left = 520
+    Top = 384
     Width = 74
     Height = 25
     Caption = 'Nombre'
@@ -67,8 +67,8 @@ object Form8: TForm8
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 480
-    Top = 328
+    Left = 520
+    Top = 456
     Width = 74
     Height = 25
     Caption = 'Apellido'
@@ -80,8 +80,8 @@ object Form8: TForm8
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 480
-    Top = 384
+    Left = 520
+    Top = 528
     Width = 80
     Height = 25
     Caption = 'Tel'#233'fono'
@@ -93,8 +93,8 @@ object Form8: TForm8
     ParentFont = False
   end
   object Label7: TLabel
-    Left = 480
-    Top = 448
+    Left = 512
+    Top = 616
     Width = 84
     Height = 25
     Caption = 'Domicilio'
@@ -106,8 +106,8 @@ object Form8: TForm8
     ParentFont = False
   end
   object Edit1: TEdit
-    Left = 576
-    Top = 160
+    Left = 616
+    Top = 192
     Width = 121
     Height = 33
     Font.Charset = DEFAULT_CHARSET
@@ -119,8 +119,8 @@ object Form8: TForm8
     TabOrder = 0
   end
   object Edit2: TEdit
-    Left = 576
-    Top = 216
+    Left = 616
+    Top = 296
     Width = 193
     Height = 33
     Font.Charset = DEFAULT_CHARSET
@@ -132,8 +132,8 @@ object Form8: TForm8
     TabOrder = 1
   end
   object Edit3: TEdit
-    Left = 576
-    Top = 272
+    Left = 616
+    Top = 376
     Width = 193
     Height = 33
     Font.Charset = DEFAULT_CHARSET
@@ -145,8 +145,8 @@ object Form8: TForm8
     TabOrder = 2
   end
   object Edit4: TEdit
-    Left = 576
-    Top = 328
+    Left = 616
+    Top = 456
     Width = 193
     Height = 33
     Font.Charset = DEFAULT_CHARSET
@@ -158,8 +158,8 @@ object Form8: TForm8
     TabOrder = 3
   end
   object Edit5: TEdit
-    Left = 576
-    Top = 384
+    Left = 616
+    Top = 528
     Width = 193
     Height = 33
     Font.Charset = DEFAULT_CHARSET
@@ -171,8 +171,8 @@ object Form8: TForm8
     TabOrder = 4
   end
   object Edit6: TEdit
-    Left = 576
-    Top = 448
+    Left = 608
+    Top = 616
     Width = 193
     Height = 33
     Font.Charset = DEFAULT_CHARSET
@@ -184,8 +184,8 @@ object Form8: TForm8
     TabOrder = 5
   end
   object Button1: TButton
-    Left = 856
-    Top = 560
+    Left = 880
+    Top = 736
     Width = 89
     Height = 41
     Caption = 'Guardar'
@@ -199,8 +199,8 @@ object Form8: TForm8
     WordWrap = True
   end
   object Button2: TButton
-    Left = 592
-    Top = 560
+    Left = 616
+    Top = 736
     Width = 89
     Height = 41
     Caption = 'Cancelar'
@@ -214,8 +214,8 @@ object Form8: TForm8
     WordWrap = True
   end
   object BitBtn1: TBitBtn
-    Left = 328
-    Top = 560
+    Left = 352
+    Top = 736
     Width = 89
     Height = 41
     Caption = 'Volver'

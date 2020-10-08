@@ -1,8 +1,8 @@
 object Form6: TForm6
-  Left = 205
-  Top = 1
-  Width = 1252
-  Height = 778
+  Left = 306
+  Top = 124
+  Width = 1306
+  Height = 889
   Caption = 'Pedidos a Proveedores'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,8 +15,8 @@ object Form6: TForm6
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 480
-    Top = 96
+    Left = 520
+    Top = 56
     Width = 323
     Height = 33
     Caption = 'PEDIDOS A PROVEEDORES'
@@ -28,8 +28,8 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 368
-    Top = 208
+    Left = 376
+    Top = 264
     Width = 133
     Height = 25
     Caption = 'Buscar pedido'
@@ -41,8 +41,8 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 504
-    Top = 312
+    Left = 544
+    Top = 376
     Width = 64
     Height = 25
     Caption = 'Cliente'
@@ -54,8 +54,8 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 656
-    Top = 312
+    Left = 696
+    Top = 376
     Width = 55
     Height = 25
     Caption = 'Fecha'
@@ -67,8 +67,8 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 328
-    Top = 312
+    Left = 352
+    Top = 376
     Width = 94
     Height = 25
     Caption = 'Proveedor'
@@ -80,8 +80,8 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 816
-    Top = 312
+    Left = 856
+    Top = 376
     Width = 62
     Height = 25
     Caption = 'Estado'
@@ -93,8 +93,8 @@ object Form6: TForm6
     ParentFont = False
   end
   object Button1: TButton
-    Left = 792
-    Top = 192
+    Left = 888
+    Top = 248
     Width = 73
     Height = 57
     Caption = 'BUSCAR CLIENTE'
@@ -108,8 +108,8 @@ object Form6: TForm6
     WordWrap = True
   end
   object Button2: TButton
-    Left = 880
-    Top = 88
+    Left = 1024
+    Top = 112
     Width = 105
     Height = 41
     Caption = 'Nuevo pedido'
@@ -140,8 +140,8 @@ object Form6: TForm6
     Kind = bkRetry
   end
   object DBComboBox1: TDBComboBox
-    Left = 528
-    Top = 208
+    Left = 560
+    Top = 256
     Width = 225
     Height = 33
     DataField = 'Apellido'
@@ -156,8 +156,8 @@ object Form6: TForm6
     TabOrder = 3
   end
   object DBListBox1: TDBListBox
-    Left = 208
-    Top = 368
+    Left = 248
+    Top = 432
     Width = 849
     Height = 297
     DataSource = DataSource1

@@ -1,8 +1,8 @@
 object Form5: TForm5
-  Left = 602
-  Top = 82
-  Width = 1256
-  Height = 781
+  Left = 310
+  Top = 129
+  Width = 1306
+  Height = 889
   Caption = 'Nuevo Proveedor'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,8 +15,8 @@ object Form5: TForm5
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 496
-    Top = 104
+    Left = 520
+    Top = 136
     Width = 245
     Height = 33
     Caption = 'NUEVO PROVEEDOR'
@@ -28,7 +28,7 @@ object Form5: TForm5
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 472
+    Left = 496
     Top = 216
     Width = 57
     Height = 23
@@ -41,8 +41,8 @@ object Form5: TForm5
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 472
-    Top = 272
+    Left = 496
+    Top = 280
     Width = 67
     Height = 23
     Caption = 'Nombre'
@@ -54,8 +54,8 @@ object Form5: TForm5
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 472
-    Top = 328
+    Left = 496
+    Top = 352
     Width = 65
     Height = 23
     Caption = 'Apellido'
@@ -67,8 +67,8 @@ object Form5: TForm5
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 472
-    Top = 384
+    Left = 496
+    Top = 432
     Width = 72
     Height = 23
     Caption = 'Tel'#233'fono'
@@ -80,8 +80,8 @@ object Form5: TForm5
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 472
-    Top = 432
+    Left = 496
+    Top = 504
     Width = 74
     Height = 23
     Caption = 'Domicilio'
@@ -93,8 +93,8 @@ object Form5: TForm5
     ParentFont = False
   end
   object Label7: TLabel
-    Left = 472
-    Top = 480
+    Left = 496
+    Top = 576
     Width = 41
     Height = 23
     Caption = 'CUIT'
@@ -106,8 +106,8 @@ object Form5: TForm5
     ParentFont = False
   end
   object Edit2: TEdit
-    Left = 560
-    Top = 272
+    Left = 584
+    Top = 280
     Width = 209
     Height = 31
     Font.Charset = DEFAULT_CHARSET
@@ -119,8 +119,8 @@ object Form5: TForm5
     TabOrder = 0
   end
   object Edit3: TEdit
-    Left = 560
-    Top = 320
+    Left = 584
+    Top = 344
     Width = 209
     Height = 31
     Font.Charset = DEFAULT_CHARSET
@@ -132,8 +132,8 @@ object Form5: TForm5
     TabOrder = 1
   end
   object Edit4: TEdit
-    Left = 560
-    Top = 376
+    Left = 584
+    Top = 424
     Width = 153
     Height = 31
     Font.Charset = DEFAULT_CHARSET
@@ -145,8 +145,8 @@ object Form5: TForm5
     TabOrder = 2
   end
   object Edit5: TEdit
-    Left = 560
-    Top = 424
+    Left = 584
+    Top = 496
     Width = 217
     Height = 31
     Font.Charset = DEFAULT_CHARSET
@@ -158,8 +158,8 @@ object Form5: TForm5
     TabOrder = 3
   end
   object Edit6: TEdit
-    Left = 560
-    Top = 480
+    Left = 584
+    Top = 576
     Width = 217
     Height = 31
     Font.Charset = DEFAULT_CHARSET
@@ -171,8 +171,8 @@ object Form5: TForm5
     TabOrder = 4
   end
   object Button1: TButton
-    Left = 792
-    Top = 560
+    Left = 816
+    Top = 696
     Width = 81
     Height = 41
     Caption = 'Guardar'
@@ -185,8 +185,8 @@ object Form5: TForm5
     TabOrder = 5
   end
   object Button2: TButton
-    Left = 648
-    Top = 560
+    Left = 608
+    Top = 704
     Width = 81
     Height = 41
     Caption = 'Cancelar'
@@ -199,8 +199,8 @@ object Form5: TForm5
     TabOrder = 6
   end
   object BitBtn1: TBitBtn
-    Left = 464
-    Top = 560
+    Left = 424
+    Top = 704
     Width = 81
     Height = 41
     Caption = 'Volver'
@@ -215,7 +215,7 @@ object Form5: TForm5
     Kind = bkRetry
   end
   object Edit1: TEdit
-    Left = 560
+    Left = 584
     Top = 216
     Width = 209
     Height = 31

@@ -1,8 +1,8 @@
 object Form9: TForm9
   Left = 308
   Top = 128
-  Width = 1305
-  Height = 887
+  Width = 1306
+  Height = 889
   Caption = 'Listado de Clientes'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

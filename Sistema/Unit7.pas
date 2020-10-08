@@ -20,7 +20,6 @@ type
     ADOQuery1: TADOQuery;
     DataSource1: TDataSource;
     DBComboBox1: TDBComboBox;
-    DBLookupComboBox1: TDBLookupComboBox;
     procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
