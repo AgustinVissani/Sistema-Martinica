@@ -3,6 +3,7 @@ object Form8: TForm8
   Top = 122
   Width = 1306
   Height = 889
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Clientes'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

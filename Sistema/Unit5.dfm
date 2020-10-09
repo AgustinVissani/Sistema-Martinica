@@ -3,6 +3,7 @@ object Form5: TForm5
   Top = 129
   Width = 1306
   Height = 889
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Nuevo Proveedor'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

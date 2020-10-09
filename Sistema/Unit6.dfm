@@ -1,8 +1,9 @@
 object Form6: TForm6
-  Left = 306
-  Top = 124
+  Left = 556
+  Top = 91
   Width = 1306
   Height = 889
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Pedidos a Proveedores'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -93,9 +94,9 @@ object Form6: TForm6
     ParentFont = False
   end
   object Button1: TButton
-    Left = 888
+    Left = 864
     Top = 248
-    Width = 73
+    Width = 97
     Height = 57
     Caption = 'BUSCAR CLIENTE'
     Font.Charset = DEFAULT_CHARSET

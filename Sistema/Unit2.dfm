@@ -1,8 +1,9 @@
 object Form2: TForm2
-  Left = 82
-  Top = 1
+  Left = 347
+  Top = 217
   Width = 1306
   Height = 788
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Sistema Martinica'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

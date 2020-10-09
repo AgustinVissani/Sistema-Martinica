@@ -1,8 +1,9 @@
 object Form9: TForm9
-  Left = 308
-  Top = 128
+  Left = 503
+  Top = 140
   Width = 1306
   Height = 889
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Listado de Clientes'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -69,9 +70,9 @@ object Form9: TForm9
   object Label6: TLabel
     Left = 648
     Top = 304
-    Width = 66
+    Width = 65
     Height = 19
-    Caption = 'Domicilio'
+    Caption = 'Direcci'#243'n'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -80,7 +81,7 @@ object Form9: TForm9
     ParentFont = False
   end
   object Label7: TLabel
-    Left = 272
+    Left = 232
     Top = 208
     Width = 28
     Height = 19
@@ -93,7 +94,7 @@ object Form9: TForm9
     ParentFont = False
   end
   object Button1: TButton
-    Left = 824
+    Left = 832
     Top = 56
     Width = 145
     Height = 33
@@ -126,8 +127,8 @@ object Form9: TForm9
   end
   object BitBtn1: TBitBtn
     Left = 80
-    Top = 152
-    Width = 89
+    Top = 104
+    Width = 113
     Height = 33
     Caption = 'Volver'
     Font.Charset = DEFAULT_CHARSET
@@ -196,7 +197,7 @@ object Form9: TForm9
     Top = 784
     Width = 105
     Height = 33
-    Caption = 'Cargar'
+    Caption = 'Confirmar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15

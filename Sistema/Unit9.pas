@@ -49,6 +49,11 @@ type
 
 var
   Form9: TForm9;
+  NuevoCliente: string;
+  QuiereEliminar: string;
+  QuiereEditar: string;
+  SiElimino: string;
+  NoElimino: string;
 
 implementation
 uses  Unit1, Unit2, Unit8;
@@ -63,10 +68,9 @@ const
 var
     buttonSelected : Integer;
 begin
-   buttonSelected := MessageDlg('¿Desea agregar un cliente?',mtConfirmation, mbOKCancel, 0);
+   buttonSelected := MessageDlg(NuevoCliente,mtConfirmation, mbOKCancel, 0);
    if buttonSelected = mrOK then
    begin
-        ShowMessage('Puede agregar un nuevo cliente');
         ADOQuery1.Append;
    end
    else
@@ -87,6 +91,13 @@ procedure TForm9.FormCreate(Sender: TObject);
 begin
   Left:=(Screen.Width-Width)  div 2;
   Top:=(Screen.Height-Height) div 2;
+
+  NuevoCliente:='¿Quiere agregar un cliente?';
+  QuiereEliminar:='¿Quiere eliminar un cliente?';
+  QuiereEditar:='¿Quiere editar un cliente?';
+  SiElimino:= 'Se eliminó correctamente';
+  NoElimino:= 'No se eliminó el cliente';
+
 end;
 
 
@@ -97,10 +108,9 @@ const
 var
     buttonSelected : Integer;
 begin
-   buttonSelected := MessageDlg('¿Desea modificar?',mtConfirmation, mbOKCancel, 0);
+   buttonSelected := MessageDlg(QuiereEditar,mtConfirmation, mbOKCancel, 0);
    if buttonSelected = mrOK then
    begin
-        ShowMessage('Puede modificar');
         ADOQuery1.Edit;
    end
    else
@@ -129,16 +139,16 @@ const
 var
     buttonSelected : Integer;
 begin
-   buttonSelected := MessageDlg('¿Desea eliminar?',mtWarning, mbOKCancel, 0);
+   buttonSelected := MessageDlg(QuiereEliminar,mtWarning, mbOKCancel, 0);
    if buttonSelected = mrOK then
    begin
-      ShowMessage('El elemento se elimino correctamente');
+      ShowMessage(SiElimino);
       ADOQuery1.Delete;
    end
    else
     if buttonSelected = mrCancel then
      begin
-       ShowMessage('No se eliminaron elementos');
+       ShowMessage(NoElimino);
      end;
 end;
 

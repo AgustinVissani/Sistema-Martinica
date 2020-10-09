@@ -1,8 +1,9 @@
 object Form7: TForm7
-  Left = 306
-  Top = 125
+  Left = 269
+  Top = 108
   Width = 1306
   Height = 889
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Nuevo Pedido'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,11 +16,11 @@ object Form7: TForm7
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 584
+    Left = 608
     Top = 80
-    Width = 163
+    Width = 189
     Height = 33
-    Caption = 'Nuevo Pedido'
+    Caption = 'NUEVO PEDIDO'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -27
@@ -67,8 +68,8 @@ object Form7: TForm7
     ParentFont = False
   end
   object Button1: TButton
-    Left = 600
-    Top = 744
+    Left = 408
+    Top = 728
     Width = 97
     Height = 41
     Caption = 'Cancelar'
@@ -90,7 +91,7 @@ object Form7: TForm7
   end
   object Button3: TButton
     Left = 816
-    Top = 744
+    Top = 728
     Width = 97
     Height = 41
     Caption = 'Guardar'
@@ -103,8 +104,8 @@ object Form7: TForm7
     TabOrder = 2
   end
   object BitBtn1: TBitBtn
-    Left = 368
-    Top = 744
+    Left = 160
+    Top = 88
     Width = 97
     Height = 41
     Caption = 'Volver'

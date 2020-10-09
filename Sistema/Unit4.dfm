@@ -1,9 +1,10 @@
 object Form4: TForm4
-  Left = 158
-  Top = 0
-  Width = 1232
-  Height = 788
-  Caption = 'Proveedores'
+  Left = 354
+  Top = 116
+  Width = 1306
+  Height = 889
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Direcci'#243'n'
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
@@ -15,7 +16,7 @@ object Form4: TForm4
   PixelsPerInch = 96
   TextHeight = 20
   object Label1: TLabel
-    Left = 552
+    Left = 592
     Top = 48
     Width = 143
     Height = 25
@@ -28,8 +29,8 @@ object Form4: TForm4
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 176
-    Top = 216
+    Left = 224
+    Top = 232
     Width = 57
     Height = 19
     Caption = 'Nombre'
@@ -41,8 +42,8 @@ object Form4: TForm4
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 472
-    Top = 216
+    Left = 544
+    Top = 232
     Width = 58
     Height = 19
     Caption = 'Apellido'
@@ -54,8 +55,8 @@ object Form4: TForm4
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 800
-    Top = 216
+    Left = 872
+    Top = 232
     Width = 62
     Height = 19
     Caption = 'Tel'#233'fono'
@@ -67,11 +68,11 @@ object Form4: TForm4
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 352
-    Top = 320
-    Width = 66
+    Left = 416
+    Top = 336
+    Width = 65
     Height = 19
-    Caption = 'Domicilio'
+    Caption = 'Direcci'#243'n'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -80,8 +81,8 @@ object Form4: TForm4
     ParentFont = False
   end
   object Label7: TLabel
-    Left = 704
-    Top = 320
+    Left = 776
+    Top = 336
     Width = 37
     Height = 19
     Caption = 'CUIT'
@@ -93,8 +94,8 @@ object Form4: TForm4
     ParentFont = False
   end
   object Button1: TButton
-    Left = 280
-    Top = 104
+    Left = 352
+    Top = 120
     Width = 89
     Height = 33
     Caption = 'Modificar'
@@ -108,8 +109,8 @@ object Form4: TForm4
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 392
-    Top = 104
+    Left = 464
+    Top = 120
     Width = 161
     Height = 33
     Caption = 'Nuevo Proveedor'
@@ -140,8 +141,8 @@ object Form4: TForm4
     Kind = bkRetry
   end
   object Button3: TButton
-    Left = 672
-    Top = 104
+    Left = 744
+    Top = 120
     Width = 201
     Height = 33
     Caption = 'Pedido a proveedores'
@@ -156,8 +157,8 @@ object Form4: TForm4
     OnClick = Button3Click
   end
   object Button4: TButton
-    Left = 576
-    Top = 104
+    Left = 648
+    Top = 120
     Width = 75
     Height = 33
     Caption = 'Borrar'
@@ -171,8 +172,8 @@ object Form4: TForm4
     OnClick = Button4Click
   end
   object DBGrid1: TDBGrid
-    Left = 144
-    Top = 392
+    Left = 216
+    Top = 408
     Width = 953
     Height = 329
     DataSource = DataSource1
@@ -190,8 +191,8 @@ object Form4: TForm4
     TitleFont.Style = []
   end
   object BitBtn2: TBitBtn
-    Left = 832
-    Top = 744
+    Left = 904
+    Top = 768
     Width = 105
     Height = 33
     Caption = 'Confirmar'
@@ -206,8 +207,8 @@ object Form4: TForm4
     Kind = bkOK
   end
   object BitBtn3: TBitBtn
-    Left = 240
-    Top = 744
+    Left = 312
+    Top = 768
     Width = 105
     Height = 33
     Caption = 'Cancelar'
@@ -222,8 +223,8 @@ object Form4: TForm4
     Kind = bkCancel
   end
   object DBEdit1: TDBEdit
-    Left = 248
-    Top = 208
+    Left = 320
+    Top = 224
     Width = 137
     Height = 27
     DataField = 'Nombre'
@@ -237,8 +238,8 @@ object Form4: TForm4
     TabOrder = 0
   end
   object DBEdit2: TDBEdit
-    Left = 552
-    Top = 208
+    Left = 624
+    Top = 224
     Width = 169
     Height = 27
     DataField = 'Apellido'
@@ -252,8 +253,8 @@ object Form4: TForm4
     TabOrder = 1
   end
   object DBEdit3: TDBEdit
-    Left = 880
-    Top = 208
+    Left = 952
+    Top = 224
     Width = 137
     Height = 27
     DataField = 'Tel'#233'fono'
@@ -267,8 +268,8 @@ object Form4: TForm4
     TabOrder = 2
   end
   object DBEdit4: TDBEdit
-    Left = 440
-    Top = 312
+    Left = 512
+    Top = 328
     Width = 129
     Height = 27
     DataField = 'Domicilio'
@@ -282,8 +283,8 @@ object Form4: TForm4
     TabOrder = 3
   end
   object DBEdit5: TDBEdit
-    Left = 768
-    Top = 312
+    Left = 840
+    Top = 328
     Width = 161
     Height = 27
     DataField = 'CUIT'
@@ -297,8 +298,8 @@ object Form4: TForm4
     TabOrder = 4
   end
   object BitBtn4: TBitBtn
-    Left = 896
-    Top = 104
+    Left = 968
+    Top = 120
     Width = 105
     Height = 33
     Caption = 'Paso atras'
