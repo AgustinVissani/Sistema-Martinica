@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, Grids, DBGrids, Buttons, DB, ADODB, Mask, DBCtrls;
-
+type THackDBGrid = class(TDBGrid);
 type
   TForm9 = class(TForm)
     Button1: TButton;
@@ -41,6 +41,10 @@ type
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure DBGrid1MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
   private
     { Private declarations }
   public
@@ -150,6 +154,30 @@ begin
      begin
        ShowMessage(NoElimino);
      end;
+end;
+
+procedure TForm9.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+  DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+if (THackDBGrid(DBGrid1).DataLink.ActiveRecord + 1 = THackDBGrid(DBGrid1).Row)
+ or (gdFocused in State) or (gdSelected in State) then
+ begin
+ DBGrid1.Canvas.Brush.Color := clSkyBlue;
+ DBGrid1.Canvas.Font.Style := DBGrid1.Canvas.Font.Style + [fsBold];
+ DBGrid1.Canvas.Font.Color := clGreen;
+ end;
+end;
+
+procedure TForm9.DBGrid1MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+var
+ gc: TGridCoord;
+begin
+ gc:= DBGrid1.MouseCoord(x, y);
+ if (gc.X > 0) AND (gc.Y > 0) then
+ begin
+ DBGrid1.DataSource.DataSet.MoveBy (gc.Y - THackDBGrid(DBGrid1).Row);
+ end;
 end;
 
 end.

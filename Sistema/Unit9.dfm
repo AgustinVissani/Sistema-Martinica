@@ -160,6 +160,8 @@ object Form9: TForm9
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnDrawColumnCell = DBGrid1DrawColumnCell
+    OnMouseMove = DBGrid1MouseMove
   end
   object Button3: TButton
     Left = 352
