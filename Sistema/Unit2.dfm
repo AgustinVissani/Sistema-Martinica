@@ -1,8 +1,8 @@
 object Form2: TForm2
-  Left = 309
-  Top = 126
+  Left = 82
+  Top = 1
   Width = 1306
-  Height = 909
+  Height = 788
   Caption = 'Sistema Martinica'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -2335,6 +2335,14 @@ object Form2: TForm2
       end
       object Ventas2: TMenuItem
         Caption = 'Ventas'
+      end
+      object Cerrarsesin1: TMenuItem
+        Caption = 'Cerrar sesi'#243'n'
+        OnClick = Cerrarsesin1Click
+      end
+      object Salir1: TMenuItem
+        Caption = 'Salir'
+        OnClick = Salir1Click
       end
     end
   end

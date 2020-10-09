@@ -14,10 +14,14 @@ type
     CajaDiaria1: TMenuItem;
     Proveedores1: TMenuItem;
     Image1: TImage;
+    Salir1: TMenuItem;
+    Cerrarsesin1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure CajaDiaria1Click(Sender: TObject);
     procedure Proveedores1Click(Sender: TObject);
     procedure Clientes1Click(Sender: TObject);
+    procedure Salir1Click(Sender: TObject);
+    procedure Cerrarsesin1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -63,6 +67,17 @@ Form9.Show;  //clientes
 end;
 
 
+
+procedure TForm2.Salir1Click(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure TForm2.Cerrarsesin1Click(Sender: TObject);
+begin
+form2.Hide;
+form1.Show;
+end;
 
 end.
 

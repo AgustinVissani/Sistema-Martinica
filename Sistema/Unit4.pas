@@ -53,6 +53,11 @@ type
 
 var
   Form4: TForm4;
+  NuevoProveedor: string;
+  QuiereEliminar: string;
+  QuiereEditar: string;
+  SiElimino: string;
+  NoElimino: string;
 
 implementation
 
@@ -71,10 +76,9 @@ const
 var
     buttonSelected : Integer;
 begin
-   buttonSelected := MessageDlg('¿Desea agregar un proveedor?',mtConfirmation, mbOKCancel, 0);
+   buttonSelected := MessageDlg(NuevoProveedor,mtConfirmation, mbOKCancel, 0);
    if buttonSelected = mrOK then
    begin
-        ShowMessage('Puede agregar un nuevo proveedor');
         ADOQuery1.Append;
    end
    else
@@ -104,10 +108,9 @@ const
 var
     buttonSelected : Integer;
 begin
-   buttonSelected := MessageDlg('¿Desea modificar?',mtConfirmation, mbOKCancel, 0);
+   buttonSelected := MessageDlg(QuiereEditar,mtConfirmation, mbOKCancel, 0);
    if buttonSelected = mrOK then
    begin
-        ShowMessage('Puede modificar');
         ADOQuery1.Edit;
    end
    else
@@ -122,16 +125,16 @@ const
 var
     buttonSelected : Integer;
 begin
-   buttonSelected := MessageDlg('¿Desea eliminar?',mtWarning, mbOKCancel, 0);
+   buttonSelected := MessageDlg(QuiereEliminar,mtWarning, mbOKCancel, 0);
    if buttonSelected = mrOK then
    begin
-      ShowMessage('El elemento se elimino correctamente');
+      ShowMessage(SiElimino);
       ADOQuery1.Delete;
    end
    else
     if buttonSelected = mrCancel then
      begin
-       ShowMessage('No se eliminaron elementos');
+       ShowMessage(NoElimino);
      end;
 end;
 
@@ -154,6 +157,13 @@ procedure TForm4.FormCreate(Sender: TObject);
 begin
   Left:=(Screen.Width-Width)  div 2;
   Top:=(Screen.Height-Height) div 2;
+
+  NuevoProveedor:='¿Quiere agregar un proveedor?';
+  QuiereEliminar:='¿Quiere eliminar un proveedor?';
+  QuiereEditar:='¿Quiere editar un proveedor?';
+  SiElimino:= 'Se eliminó correctamente';
+  NoElimino:= 'No se eliminó el proveedor';
+
 end;
 
 procedure TForm4.BitBtn4Click(Sender: TObject);

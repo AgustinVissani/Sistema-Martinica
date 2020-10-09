@@ -1,8 +1,8 @@
 object Form4: TForm4
-  Left = 320
-  Top = 158
+  Left = 158
+  Top = 0
   Width = 1232
-  Height = 846
+  Height = 788
   Caption = 'Proveedores'
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
@@ -15,8 +15,8 @@ object Form4: TForm4
   PixelsPerInch = 96
   TextHeight = 20
   object Label1: TLabel
-    Left = 560
-    Top = 136
+    Left = 552
+    Top = 48
     Width = 143
     Height = 25
     Caption = 'PROVEEDORES'
@@ -93,8 +93,8 @@ object Form4: TForm4
     ParentFont = False
   end
   object Button1: TButton
-    Left = 368
-    Top = 56
+    Left = 280
+    Top = 104
     Width = 89
     Height = 33
     Caption = 'Modificar'
@@ -108,10 +108,10 @@ object Form4: TForm4
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 528
-    Top = 48
-    Width = 105
-    Height = 49
+    Left = 392
+    Top = 104
+    Width = 161
+    Height = 33
     Caption = 'Nuevo Proveedor'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -140,10 +140,10 @@ object Form4: TForm4
     Kind = bkRetry
   end
   object Button3: TButton
-    Left = 848
-    Top = 48
-    Width = 113
-    Height = 49
+    Left = 672
+    Top = 104
+    Width = 201
+    Height = 33
     Caption = 'Pedido a proveedores'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -156,10 +156,10 @@ object Form4: TForm4
     OnClick = Button3Click
   end
   object Button4: TButton
-    Left = 704
-    Top = 64
+    Left = 576
+    Top = 104
     Width = 75
-    Height = 25
+    Height = 33
     Caption = 'Borrar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -297,10 +297,10 @@ object Form4: TForm4
     TabOrder = 4
   end
   object BitBtn4: TBitBtn
-    Left = 1048
-    Top = 112
+    Left = 896
+    Top = 104
     Width = 105
-    Height = 25
+    Height = 33
     Caption = 'Paso atras'
     TabOrder = 13
     OnClick = BitBtn4Click

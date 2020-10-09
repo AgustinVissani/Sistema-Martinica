@@ -51,10 +51,12 @@ begin
   Top:=(Screen.Height-Height) div 2;
 end;
 
+
+
 procedure TForm3.BitBtn1Click(Sender: TObject);
 begin
-  Form3.Hide;
-  Form2.Show;
+  form3.Hide;
+  form2.Show;
 end;
 
 end.

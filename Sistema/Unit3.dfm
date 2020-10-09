@@ -1,8 +1,8 @@
 object Form3: TForm3
-  Left = 308
-  Top = 130
+  Left = 60
+  Top = 29
   Width = 1306
-  Height = 889
+  Height = 788
   Caption = 'Caja Diaria'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -29,7 +29,7 @@ object Form3: TForm3
   end
   object Label2: TLabel
     Left = 192
-    Top = 272
+    Top = 232
     Width = 84
     Height = 19
     Caption = 'Fecha Inicio'
@@ -42,7 +42,7 @@ object Form3: TForm3
   end
   object Label3: TLabel
     Left = 192
-    Top = 312
+    Top = 272
     Width = 66
     Height = 19
     Caption = 'Fecha Fin'
@@ -55,7 +55,7 @@ object Form3: TForm3
   end
   object Label4: TLabel
     Left = 192
-    Top = 352
+    Top = 312
     Width = 136
     Height = 19
     Caption = 'Cantidad de Ventas'
@@ -68,7 +68,7 @@ object Form3: TForm3
   end
   object Label5: TLabel
     Left = 192
-    Top = 392
+    Top = 352
     Width = 95
     Height = 19
     Caption = 'Total efectivo'
@@ -81,7 +81,7 @@ object Form3: TForm3
   end
   object Label6: TLabel
     Left = 192
-    Top = 432
+    Top = 392
     Width = 137
     Height = 19
     Caption = 'Total tarjeta d'#233'bico'
@@ -94,7 +94,7 @@ object Form3: TForm3
   end
   object Label7: TLabel
     Left = 192
-    Top = 472
+    Top = 432
     Width = 139
     Height = 19
     Caption = 'Total tarjeta cr'#233'dito'
@@ -107,7 +107,7 @@ object Form3: TForm3
   end
   object Label8: TLabel
     Left = 224
-    Top = 512
+    Top = 472
     Width = 71
     Height = 29
     Caption = 'TOTAL'
@@ -120,7 +120,7 @@ object Form3: TForm3
   end
   object Label9: TLabel
     Left = 904
-    Top = 248
+    Top = 208
     Width = 84
     Height = 29
     Caption = 'VENTAS'
@@ -133,7 +133,7 @@ object Form3: TForm3
   end
   object Button1: TButton
     Left = 160
-    Top = 632
+    Top = 592
     Width = 169
     Height = 49
     Caption = 'FORMAS DE PAGO'
@@ -147,7 +147,7 @@ object Form3: TForm3
   end
   object DateTimePicker1: TDateTimePicker
     Left = 360
-    Top = 272
+    Top = 232
     Width = 186
     Height = 26
     Date = 44082.602709421300000000
@@ -162,7 +162,7 @@ object Form3: TForm3
   end
   object DateTimePicker2: TDateTimePicker
     Left = 360
-    Top = 312
+    Top = 272
     Width = 186
     Height = 26
     Date = 44082.602709421300000000
@@ -177,7 +177,7 @@ object Form3: TForm3
   end
   object ListBox1: TListBox
     Left = 712
-    Top = 304
+    Top = 264
     Width = 457
     Height = 353
     ItemHeight = 29
@@ -185,36 +185,36 @@ object Form3: TForm3
   end
   object Edit1: TEdit
     Left = 360
-    Top = 352
+    Top = 312
     Width = 145
     Height = 37
     TabOrder = 4
   end
   object Edit2: TEdit
     Left = 360
-    Top = 392
+    Top = 352
     Width = 145
     Height = 37
     TabOrder = 5
   end
   object Edit3: TEdit
     Left = 360
-    Top = 440
+    Top = 400
     Width = 145
     Height = 37
     TabOrder = 6
   end
   object Edit4: TEdit
     Left = 360
-    Top = 488
+    Top = 448
     Width = 145
     Height = 37
     TabOrder = 7
   end
   object BitBtn1: TBitBtn
     Left = 192
-    Top = 184
-    Width = 105
+    Top = 104
+    Width = 121
     Height = 41
     Caption = '&Volver'
     TabOrder = 8
