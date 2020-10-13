@@ -41,10 +41,15 @@
 
  */
  
-
  /*
    CREATE TABLE Pedidos_Clientes( Código_Pedidos_Clientes int not null identity(1, 1) primary key, 
  Código_Proveedor INT CONSTRAINT FK_id_Proveedor FOREIGN KEY(Código_Proveedor) REFERENCES Proveedores(Código_Proveedor), 
- Código_Estado INT CONSTRAINT FK_id_Estado FOREIGN KEY(Código_Estado) REFERENCES Estados(Código_Estado) );
- */
+ Código_Cliente INT CONSTRAINT FK_id_Cliente FOREIGN KEY(Código_Cliente) REFERENCES Clientes(Código_Cliente) );
 
+
+
+ SELECT * 
+FROM Pedidos,Pedidos_Clientes
+WHERE (Código_Cliente= Pedidos_Clientes.Código_Cliente);
+
+*/

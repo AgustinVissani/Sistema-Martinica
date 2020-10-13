@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, StdCtrls, ComCtrls, DBCtrls, DB, ADODB;
+  Dialogs, Buttons, StdCtrls, ComCtrls, DBCtrls, DB, ADODB, Grids, DBGrids;
 
 type
   TForm6 = class(TForm)
@@ -18,9 +18,18 @@ type
     Label5: TLabel;
     Label6: TLabel;
     ADOQuery1: TADOQuery;
-    DataSource1: TDataSource;
     DBComboBox1: TDBComboBox;
-    DBListBox1: TDBListBox;
+    DBGrid1: TDBGrid;
+    ADOQuery2: TADOQuery;
+    DataSource1: TDataSource;
+    ADOQuery2Cdigo_Pedidos: TAutoIncField;
+    ADOQuery2Cdigo_Proveedor: TIntegerField;
+    ADOQuery2Fecha: TWideStringField;
+    ADOQuery2Cdigo_Estado: TIntegerField;
+    ADOQuery2Cdigo_Pedidos_Clientes: TAutoIncField;
+    ADOQuery2Cdigo_Proveedor_1: TIntegerField;
+    ADOQuery2Cdigo_Cliente: TIntegerField;
+    DataSource2: TDataSource;
     procedure BitBtn1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);

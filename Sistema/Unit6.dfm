@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 556
-  Top = 91
+  Left = 404
+  Top = 110
   Width = 1306
   Height = 889
   BorderIcons = [biSystemMenu, biMinimize]
@@ -147,7 +147,7 @@ object Form6: TForm6
     Width = 225
     Height = 33
     DataField = 'Apellido'
-    DataSource = DataSource1
+    DataSource = DataSource2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -157,14 +157,18 @@ object Form6: TForm6
     ParentFont = False
     TabOrder = 3
   end
-  object DBListBox1: TDBListBox
-    Left = 248
-    Top = 432
-    Width = 849
-    Height = 297
+  object DBGrid1: TDBGrid
+    Left = 176
+    Top = 416
+    Width = 969
+    Height = 369
     DataSource = DataSource1
-    ItemHeight = 13
     TabOrder = 4
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
   end
   object ADOQuery1: TADOQuery
     Active = True
@@ -177,9 +181,58 @@ object Form6: TForm6
     Left = 48
     Top = 88
   end
+  object ADOQuery2: TADOQuery
+    Active = True
+    Connection = Form1.ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      ''
+      ' SELECT * '
+      'FROM Pedidos,Pedidos_Clientes'
+      'WHERE (C'#243'digo_Cliente= Pedidos_Clientes.C'#243'digo_Cliente);')
+    Left = 56
+    Top = 192
+    object ADOQuery2Cdigo_Pedidos: TAutoIncField
+      DisplayWidth = 24
+      FieldName = 'C'#243'digo_Pedidos'
+      ReadOnly = True
+    end
+    object ADOQuery2Cdigo_Proveedor: TIntegerField
+      DisplayWidth = 28
+      FieldName = 'C'#243'digo_Proveedor'
+    end
+    object ADOQuery2Cdigo_Cliente: TIntegerField
+      DisplayWidth = 37
+      FieldName = 'C'#243'digo_Cliente'
+    end
+    object ADOQuery2Fecha: TWideStringField
+      DisplayWidth = 22
+      FieldName = 'Fecha'
+      Size = 10
+    end
+    object ADOQuery2Cdigo_Pedidos_Clientes: TAutoIncField
+      DisplayWidth = 29
+      FieldName = 'C'#243'digo_Pedidos_Clientes'
+      ReadOnly = True
+    end
+    object ADOQuery2Cdigo_Proveedor_1: TIntegerField
+      DisplayWidth = 24
+      FieldName = 'C'#243'digo_Proveedor_1'
+    end
+    object ADOQuery2Cdigo_Estado: TIntegerField
+      DisplayWidth = 42
+      FieldName = 'C'#243'digo_Estado'
+    end
+  end
   object DataSource1: TDataSource
+    DataSet = ADOQuery2
+    Left = 104
+    Top = 192
+  end
+  object DataSource2: TDataSource
     DataSet = ADOQuery1
-    Left = 88
-    Top = 88
+    Left = 112
+    Top = 80
   end
 end
