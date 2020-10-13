@@ -13,6 +13,7 @@ object Form7: TForm7
   Font.Style = []
   OldCreateOrder = False
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -149,7 +150,7 @@ object Form7: TForm7
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT * FROM Proveedores;')
+      'SELECT Apellido FROM Proveedores;')
     Left = 160
     Top = 176
   end

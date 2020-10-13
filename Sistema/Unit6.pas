@@ -24,6 +24,7 @@ type
     procedure BitBtn1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -56,5 +57,16 @@ begin
   Left:=(Screen.Width-Width)  div 2;
   Top:=(Screen.Height-Height) div 2;
 end;
+
+procedure TForm6.FormShow(Sender: TObject);
+begin
+ADOQuery1.Active:= True;
+while not ADOQuery1.Eof do
+  begin
+    DBComboBox1.Items.Add(ADOQuery1.Fields[0].Text);
+    ADOQuery1.Next;
+  end;
+end;
+
 
 end.
