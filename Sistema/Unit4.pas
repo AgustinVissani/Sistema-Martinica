@@ -45,8 +45,6 @@ type
     procedure BitBtn2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
-    procedure DBGrid1MouseMove(Sender: TObject; Shift: TShiftState; X,
-      Y: Integer);
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
   private
@@ -175,17 +173,7 @@ begin
       ADOQuery1.Prior;
 end;
 
-procedure TForm4.DBGrid1MouseMove(Sender: TObject; Shift: TShiftState; X,
-  Y: Integer);
-  var
- gc: TGridCoord;
-begin
- gc:= DBGrid1.MouseCoord(x, y);
- if (gc.X > 0) AND (gc.Y > 0) then
- begin
- DBGrid1.DataSource.DataSet.MoveBy (gc.Y - THackDBGrid(DBGrid1).Row);
- end;
-end;
+
 
 procedure TForm4.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
   DataCol: Integer; Column: TColumn; State: TGridDrawState);

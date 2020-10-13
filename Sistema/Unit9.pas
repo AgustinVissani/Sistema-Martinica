@@ -43,8 +43,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
-    procedure DBGrid1MouseMove(Sender: TObject; Shift: TShiftState; X,
-      Y: Integer);
+    procedure BitBtn4Click(Sender: TObject);                 
   private
     { Private declarations }
   public
@@ -155,7 +154,7 @@ begin
        ShowMessage(NoElimino);
      end;
 end;
-
+              
 procedure TForm9.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
   DataCol: Integer; Column: TColumn; State: TGridDrawState);
 begin
@@ -168,16 +167,11 @@ if (THackDBGrid(DBGrid1).DataLink.ActiveRecord + 1 = THackDBGrid(DBGrid1).Row)
  end;
 end;
 
-procedure TForm9.DBGrid1MouseMove(Sender: TObject; Shift: TShiftState; X,
-  Y: Integer);
-var
- gc: TGridCoord;
+
+
+procedure TForm9.BitBtn4Click(Sender: TObject);
 begin
- gc:= DBGrid1.MouseCoord(x, y);
- if (gc.X > 0) AND (gc.Y > 0) then
- begin
- DBGrid1.DataSource.DataSet.MoveBy (gc.Y - THackDBGrid(DBGrid1).Row);
- end;
+      ADOQuery1.Prior;
 end;
 
 end.

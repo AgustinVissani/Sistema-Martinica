@@ -190,7 +190,6 @@ object Form4: TForm4
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
     OnDrawColumnCell = DBGrid1DrawColumnCell
-    OnMouseMove = DBGrid1MouseMove
   end
   object BitBtn2: TBitBtn
     Left = 904

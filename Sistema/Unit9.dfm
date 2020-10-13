@@ -1,6 +1,6 @@
 object Form9: TForm9
-  Left = 503
-  Top = 140
+  Left = 271
+  Top = 74
   Width = 1306
   Height = 889
   BorderIcons = [biSystemMenu, biMinimize]
@@ -161,7 +161,6 @@ object Form9: TForm9
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
     OnDrawColumnCell = DBGrid1DrawColumnCell
-    OnMouseMove = DBGrid1MouseMove
   end
   object Button3: TButton
     Left = 352
@@ -298,6 +297,7 @@ object Form9: TForm9
     Font.Style = []
     ParentFont = False
     TabOrder = 12
+    OnClick = BitBtn4Click
     Kind = bkIgnore
   end
   object ADOQuery1: TADOQuery
