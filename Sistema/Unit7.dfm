@@ -1,8 +1,8 @@
 object Form7: TForm7
-  Left = 269
-  Top = 108
-  Width = 1306
-  Height = 889
+  Left = 160
+  Top = 13
+  Width = 1280
+  Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Nuevo Pedido'
   Color = clBtnFace
@@ -18,7 +18,7 @@ object Form7: TForm7
   TextHeight = 13
   object Label1: TLabel
     Left = 608
-    Top = 80
+    Top = 32
     Width = 189
     Height = 33
     Caption = 'NUEVO PEDIDO'
@@ -31,7 +31,7 @@ object Form7: TForm7
   end
   object Label5: TLabel
     Left = 496
-    Top = 208
+    Top = 112
     Width = 94
     Height = 25
     Caption = 'Proveedor'
@@ -44,7 +44,7 @@ object Form7: TForm7
   end
   object Label4: TLabel
     Left = 352
-    Top = 288
+    Top = 192
     Width = 64
     Height = 25
     Caption = 'Detalle'
@@ -57,7 +57,7 @@ object Form7: TForm7
   end
   object Label2: TLabel
     Left = 320
-    Top = 488
+    Top = 368
     Width = 134
     Height = 25
     Caption = 'Observaciones'
@@ -69,8 +69,8 @@ object Form7: TForm7
     ParentFont = False
   end
   object Button1: TButton
-    Left = 408
-    Top = 728
+    Left = 472
+    Top = 592
     Width = 97
     Height = 41
     Caption = 'Cancelar'
@@ -84,15 +84,15 @@ object Form7: TForm7
   end
   object ListBox1: TListBox
     Left = 472
-    Top = 272
+    Top = 176
     Width = 425
     Height = 129
     ItemHeight = 13
     TabOrder = 1
   end
   object Button3: TButton
-    Left = 816
-    Top = 728
+    Left = 800
+    Top = 592
     Width = 97
     Height = 41
     Caption = 'Guardar'
@@ -106,7 +106,7 @@ object Form7: TForm7
   end
   object BitBtn1: TBitBtn
     Left = 160
-    Top = 88
+    Top = 40
     Width = 97
     Height = 41
     Caption = 'Volver'
@@ -122,7 +122,7 @@ object Form7: TForm7
   end
   object ListBox2: TListBox
     Left = 472
-    Top = 464
+    Top = 344
     Width = 425
     Height = 201
     ItemHeight = 13
@@ -130,7 +130,7 @@ object Form7: TForm7
   end
   object DBComboBox1: TDBComboBox
     Left = 640
-    Top = 208
+    Top = 112
     Width = 177
     Height = 27
     DataField = 'Apellido'

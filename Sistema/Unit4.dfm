@@ -1,8 +1,8 @@
 object Form4: TForm4
-  Left = 354
-  Top = 116
-  Width = 1306
-  Height = 889
+  Left = 36
+  Top = 8
+  Width = 1313
+  Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Direcci'#243'n'
   Color = clBtnFace
@@ -17,7 +17,7 @@ object Form4: TForm4
   TextHeight = 20
   object Label1: TLabel
     Left = 592
-    Top = 48
+    Top = 24
     Width = 143
     Height = 25
     Caption = 'PROVEEDORES'
@@ -30,7 +30,7 @@ object Form4: TForm4
   end
   object Label3: TLabel
     Left = 224
-    Top = 232
+    Top = 168
     Width = 57
     Height = 19
     Caption = 'Nombre'
@@ -43,7 +43,7 @@ object Form4: TForm4
   end
   object Label4: TLabel
     Left = 544
-    Top = 232
+    Top = 168
     Width = 58
     Height = 19
     Caption = 'Apellido'
@@ -56,7 +56,7 @@ object Form4: TForm4
   end
   object Label5: TLabel
     Left = 872
-    Top = 232
+    Top = 168
     Width = 62
     Height = 19
     Caption = 'Tel'#233'fono'
@@ -68,8 +68,8 @@ object Form4: TForm4
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 416
-    Top = 336
+    Left = 424
+    Top = 240
     Width = 65
     Height = 19
     Caption = 'Direcci'#243'n'
@@ -81,8 +81,8 @@ object Form4: TForm4
     ParentFont = False
   end
   object Label7: TLabel
-    Left = 776
-    Top = 336
+    Left = 784
+    Top = 240
     Width = 37
     Height = 19
     Caption = 'CUIT'
@@ -95,7 +95,7 @@ object Form4: TForm4
   end
   object Button1: TButton
     Left = 352
-    Top = 120
+    Top = 80
     Width = 89
     Height = 33
     Caption = 'Modificar'
@@ -110,7 +110,7 @@ object Form4: TForm4
   end
   object Button2: TButton
     Left = 464
-    Top = 120
+    Top = 80
     Width = 161
     Height = 33
     Caption = 'Nuevo Proveedor'
@@ -125,8 +125,8 @@ object Form4: TForm4
     OnClick = Button2Click
   end
   object BitBtn1: TBitBtn
-    Left = 120
-    Top = 104
+    Left = 144
+    Top = 80
     Width = 89
     Height = 33
     Caption = 'Volver'
@@ -142,7 +142,7 @@ object Form4: TForm4
   end
   object Button3: TButton
     Left = 744
-    Top = 120
+    Top = 80
     Width = 201
     Height = 33
     Caption = 'Pedido a proveedores'
@@ -158,7 +158,7 @@ object Form4: TForm4
   end
   object Button4: TButton
     Left = 648
-    Top = 120
+    Top = 80
     Width = 75
     Height = 33
     Caption = 'Borrar'
@@ -172,8 +172,8 @@ object Form4: TForm4
     OnClick = Button4Click
   end
   object DBGrid1: TDBGrid
-    Left = 216
-    Top = 408
+    Left = 208
+    Top = 296
     Width = 953
     Height = 329
     DataSource = DataSource1
@@ -192,8 +192,8 @@ object Form4: TForm4
     OnDrawColumnCell = DBGrid1DrawColumnCell
   end
   object BitBtn2: TBitBtn
-    Left = 904
-    Top = 768
+    Left = 928
+    Top = 640
     Width = 105
     Height = 33
     Caption = 'Confirmar'
@@ -208,8 +208,8 @@ object Form4: TForm4
     Kind = bkOK
   end
   object BitBtn3: TBitBtn
-    Left = 312
-    Top = 768
+    Left = 336
+    Top = 640
     Width = 105
     Height = 33
     Caption = 'Cancelar'
@@ -225,7 +225,7 @@ object Form4: TForm4
   end
   object DBEdit1: TDBEdit
     Left = 320
-    Top = 224
+    Top = 160
     Width = 137
     Height = 27
     DataField = 'Nombre'
@@ -240,7 +240,7 @@ object Form4: TForm4
   end
   object DBEdit2: TDBEdit
     Left = 624
-    Top = 224
+    Top = 160
     Width = 169
     Height = 27
     DataField = 'Apellido'
@@ -255,7 +255,7 @@ object Form4: TForm4
   end
   object DBEdit3: TDBEdit
     Left = 952
-    Top = 224
+    Top = 160
     Width = 137
     Height = 27
     DataField = 'Tel'#233'fono'
@@ -269,8 +269,8 @@ object Form4: TForm4
     TabOrder = 2
   end
   object DBEdit4: TDBEdit
-    Left = 512
-    Top = 328
+    Left = 520
+    Top = 232
     Width = 129
     Height = 27
     DataField = 'Domicilio'
@@ -284,8 +284,8 @@ object Form4: TForm4
     TabOrder = 3
   end
   object DBEdit5: TDBEdit
-    Left = 840
-    Top = 328
+    Left = 848
+    Top = 232
     Width = 161
     Height = 27
     DataField = 'CUIT'
@@ -300,7 +300,7 @@ object Form4: TForm4
   end
   object BitBtn4: TBitBtn
     Left = 968
-    Top = 120
+    Top = 80
     Width = 105
     Height = 33
     Caption = 'Paso atras'

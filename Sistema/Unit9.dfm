@@ -1,8 +1,8 @@
 object Form9: TForm9
-  Left = 271
-  Top = 74
-  Width = 1306
-  Height = 889
+  Left = 55
+  Top = 0
+  Width = 1313
+  Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Listado de Clientes'
   Color = clBtnFace
@@ -16,8 +16,8 @@ object Form9: TForm9
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 592
-    Top = 104
+    Left = 544
+    Top = 56
     Width = 118
     Height = 33
     Caption = 'CLIENTES'
@@ -30,7 +30,7 @@ object Form9: TForm9
   end
   object Label3: TLabel
     Left = 488
-    Top = 208
+    Top = 144
     Width = 57
     Height = 19
     Caption = 'Nombre'
@@ -43,7 +43,7 @@ object Form9: TForm9
   end
   object Label4: TLabel
     Left = 768
-    Top = 208
+    Top = 144
     Width = 58
     Height = 19
     Caption = 'Apellido'
@@ -55,8 +55,8 @@ object Form9: TForm9
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 368
-    Top = 304
+    Left = 376
+    Top = 208
     Width = 62
     Height = 19
     Caption = 'Tel'#233'fono'
@@ -68,8 +68,8 @@ object Form9: TForm9
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 648
-    Top = 304
+    Left = 656
+    Top = 208
     Width = 65
     Height = 19
     Caption = 'Direcci'#243'n'
@@ -82,7 +82,7 @@ object Form9: TForm9
   end
   object Label7: TLabel
     Left = 232
-    Top = 208
+    Top = 144
     Width = 28
     Height = 19
     Caption = 'DNI'
@@ -94,7 +94,7 @@ object Form9: TForm9
     ParentFont = False
   end
   object Button1: TButton
-    Left = 832
+    Left = 776
     Top = 56
     Width = 145
     Height = 33
@@ -110,7 +110,7 @@ object Form9: TForm9
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 1048
+    Left = 968
     Top = 56
     Width = 89
     Height = 33
@@ -126,8 +126,8 @@ object Form9: TForm9
     OnClick = Button2Click
   end
   object BitBtn1: TBitBtn
-    Left = 80
-    Top = 104
+    Left = 96
+    Top = 56
     Width = 113
     Height = 33
     Caption = 'Volver'
@@ -144,7 +144,7 @@ object Form9: TForm9
   end
   object DBGrid1: TDBGrid
     Left = 248
-    Top = 400
+    Top = 272
     Width = 817
     Height = 353
     DataSource = DataSource1
@@ -179,7 +179,7 @@ object Form9: TForm9
   end
   object BitBtn3: TBitBtn
     Left = 416
-    Top = 784
+    Top = 640
     Width = 105
     Height = 33
     Caption = 'Cancelar'
@@ -195,7 +195,7 @@ object Form9: TForm9
   end
   object BitBtn2: TBitBtn
     Left = 856
-    Top = 784
+    Top = 640
     Width = 105
     Height = 33
     Caption = 'Confirmar'
@@ -211,7 +211,7 @@ object Form9: TForm9
   end
   object DBEdit1: TDBEdit
     Left = 312
-    Top = 200
+    Top = 136
     Width = 145
     Height = 27
     DataField = 'DNI'
@@ -226,7 +226,7 @@ object Form9: TForm9
   end
   object DBEdit2: TDBEdit
     Left = 568
-    Top = 200
+    Top = 136
     Width = 169
     Height = 27
     DataField = 'Nombre'
@@ -241,7 +241,7 @@ object Form9: TForm9
   end
   object DBEdit3: TDBEdit
     Left = 840
-    Top = 200
+    Top = 136
     Width = 185
     Height = 27
     DataField = 'Apellido'
@@ -255,8 +255,8 @@ object Form9: TForm9
     TabOrder = 2
   end
   object DBEdit4: TDBEdit
-    Left = 448
-    Top = 304
+    Left = 456
+    Top = 208
     Width = 145
     Height = 27
     DataField = 'Tel'#233'fono'
@@ -270,8 +270,8 @@ object Form9: TForm9
     TabOrder = 3
   end
   object DBEdit5: TDBEdit
-    Left = 744
-    Top = 304
+    Left = 752
+    Top = 208
     Width = 169
     Height = 27
     DataField = 'Domicilio'
@@ -285,10 +285,10 @@ object Form9: TForm9
     TabOrder = 4
   end
   object BitBtn4: TBitBtn
-    Left = 1112
-    Top = 168
-    Width = 105
-    Height = 25
+    Left = 1152
+    Top = 56
+    Width = 113
+    Height = 33
     Caption = 'Paso atras'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText

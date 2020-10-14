@@ -1,8 +1,8 @@
 object Form6: TForm6
-  Left = 404
-  Top = 110
-  Width = 1306
-  Height = 889
+  Left = 58
+  Top = 6
+  Width = 1280
+  Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Pedidos a Proveedores'
   Color = clBtnFace
@@ -31,7 +31,7 @@ object Form6: TForm6
   end
   object Label2: TLabel
     Left = 376
-    Top = 264
+    Top = 192
     Width = 133
     Height = 25
     Caption = 'Buscar pedido'
@@ -44,7 +44,7 @@ object Form6: TForm6
   end
   object Label3: TLabel
     Left = 544
-    Top = 376
+    Top = 264
     Width = 64
     Height = 25
     Caption = 'Cliente'
@@ -57,7 +57,7 @@ object Form6: TForm6
   end
   object Label4: TLabel
     Left = 696
-    Top = 376
+    Top = 264
     Width = 55
     Height = 25
     Caption = 'Fecha'
@@ -70,7 +70,7 @@ object Form6: TForm6
   end
   object Label5: TLabel
     Left = 352
-    Top = 376
+    Top = 264
     Width = 94
     Height = 25
     Caption = 'Proveedor'
@@ -83,7 +83,7 @@ object Form6: TForm6
   end
   object Label6: TLabel
     Left = 856
-    Top = 376
+    Top = 264
     Width = 62
     Height = 25
     Caption = 'Estado'
@@ -96,7 +96,7 @@ object Form6: TForm6
   end
   object Button1: TButton
     Left = 864
-    Top = 248
+    Top = 176
     Width = 97
     Height = 57
     Caption = 'BUSCAR CLIENTE'
@@ -143,7 +143,7 @@ object Form6: TForm6
   end
   object DBComboBox1: TDBComboBox
     Left = 560
-    Top = 256
+    Top = 184
     Width = 225
     Height = 33
     DataField = 'Apellido'
@@ -159,7 +159,7 @@ object Form6: TForm6
   end
   object DBGrid1: TDBGrid
     Left = 176
-    Top = 416
+    Top = 304
     Width = 969
     Height = 369
     DataSource = DataSource1
