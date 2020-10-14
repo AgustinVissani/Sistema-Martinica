@@ -139,9 +139,9 @@ object Form6: TForm6
     Kind = bkRetry
   end
   object DBGrid1: TDBGrid
-    Left = 184
+    Left = 152
     Top = 296
-    Width = 817
+    Width = 913
     Height = 369
     DataSource = DataSource2
     TabOrder = 2
