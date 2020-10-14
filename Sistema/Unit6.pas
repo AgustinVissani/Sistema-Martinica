@@ -34,6 +34,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    
   private
     { Private declarations }
   public

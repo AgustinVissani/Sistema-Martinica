@@ -1,7 +1,7 @@
 object Form6: TForm6
-  Left = 58
-  Top = 6
-  Width = 1280
+  Left = 61
+  Top = 11
+  Width = 1244
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Pedidos a Proveedores'
@@ -147,7 +147,7 @@ object Form6: TForm6
     Width = 225
     Height = 33
     DataField = 'Apellido'
-    DataSource = DataSource2
+    DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -162,7 +162,7 @@ object Form6: TForm6
     Top = 304
     Width = 969
     Height = 369
-    DataSource = DataSource1
+    DataSource = DataSource2
     TabOrder = 4
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -171,26 +171,25 @@ object Form6: TForm6
     TitleFont.Style = []
   end
   object ADOQuery1: TADOQuery
-    Active = True
     Connection = Form1.ADOConnection1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT Apellido '
+      'SELECT Apellido'
       'FROM Clientes')
     Left = 48
     Top = 88
   end
   object ADOQuery2: TADOQuery
-    Active = True
     Connection = Form1.ADOConnection1
     CursorType = ctStatic
+    DataSource = DataSource2
     Parameters = <>
     SQL.Strings = (
-      ''
-      ' SELECT * '
-      'FROM Pedidos,Pedidos_Clientes'
-      'WHERE (C'#243'digo_Cliente= Pedidos_Clientes.C'#243'digo_Cliente);')
+      
+        'SELECT C'#243'digo_Proveedor, Fecha, C'#243'digo_Estado, Detalle, Observac' +
+        'iones '
+      'FROM Pedidos')
     Left = 56
     Top = 192
     object ADOQuery2Cdigo_Pedidos: TAutoIncField
@@ -226,13 +225,13 @@ object Form6: TForm6
     end
   end
   object DataSource1: TDataSource
-    DataSet = ADOQuery2
+    DataSet = ADOQuery1
     Left = 104
-    Top = 192
+    Top = 88
   end
   object DataSource2: TDataSource
-    DataSet = ADOQuery1
-    Left = 112
-    Top = 80
+    DataSet = Form7.ADOQuery2
+    Left = 104
+    Top = 192
   end
 end

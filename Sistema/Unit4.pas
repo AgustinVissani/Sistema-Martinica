@@ -187,4 +187,6 @@ if (THackDBGrid(DBGrid1).DataLink.ActiveRecord + 1 = THackDBGrid(DBGrid1).Row)
  end;
 end;
 
+
+
 end.

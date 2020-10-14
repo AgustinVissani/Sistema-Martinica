@@ -12,17 +12,20 @@ type
     Label5: TLabel;
     Label4: TLabel;
     Button1: TButton;
-    ListBox1: TListBox;
     Button3: TButton;
     BitBtn1: TBitBtn;
-    ListBox2: TListBox;
     Label2: TLabel;
     ADOQuery1: TADOQuery;
     DataSource1: TDataSource;
     DBComboBox1: TDBComboBox;
+    DBMemo1: TDBMemo;
+    DBMemo2: TDBMemo;
+    ADOQuery2: TADOQuery;
+    DataSource2: TDataSource;
     procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,5 +62,27 @@ while not ADOQuery1.Eof do
   end;
 end;
 
+
+procedure TForm7.Button3Click(Sender: TObject);
+var
+  query: string;
+begin
+
+  query:='INSERT INTO Pedidos (idProveedor, Detalle, Observaciones, Código_Estado) VALUES (123, "14/10/2020", "Detalle de prueba", "Detalle de observaciones")';
+
+
+  ADOQuery2.Close;
+  ADOQuery2.SQL.Clear;
+
+
+  ADOQuery2.SQL.Add('INSERT INTO Pedidos (Código_Proveedor, Detalle, Observaciones, ');
+  ADOQuery2.SQL.Add('Código_Estado) VALUES (1, ''Detalle de prueba'', ');
+  ADOQuery2.SQL.Add('''Detalle de observaciones'', 1)');
+  ADOQuery2.ExecSQL;
+
+  ADOQuery2.Close;
+  ADOQuery2.SQL.Clear;
+  
+end;
 
 end.

@@ -1,6 +1,6 @@
 object Form7: TForm7
-  Left = 160
-  Top = 13
+  Left = 193
+  Top = 11
   Width = 1280
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -82,14 +82,6 @@ object Form7: TForm7
     ParentFont = False
     TabOrder = 0
   end
-  object ListBox1: TListBox
-    Left = 472
-    Top = 176
-    Width = 425
-    Height = 129
-    ItemHeight = 13
-    TabOrder = 1
-  end
   object Button3: TButton
     Left = 800
     Top = 592
@@ -102,7 +94,8 @@ object Form7: TForm7
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 2
+    TabOrder = 1
+    OnClick = Button3Click
   end
   object BitBtn1: TBitBtn
     Left = 160
@@ -116,17 +109,9 @@ object Form7: TForm7
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 3
+    TabOrder = 2
     OnClick = BitBtn1Click
     Kind = bkRetry
-  end
-  object ListBox2: TListBox
-    Left = 472
-    Top = 344
-    Width = 425
-    Height = 201
-    ItemHeight = 13
-    TabOrder = 4
   end
   object DBComboBox1: TDBComboBox
     Left = 640
@@ -142,6 +127,20 @@ object Form7: TForm7
     Font.Style = []
     ItemHeight = 19
     ParentFont = False
+    TabOrder = 3
+  end
+  object DBMemo1: TDBMemo
+    Left = 496
+    Top = 192
+    Width = 337
+    Height = 145
+    TabOrder = 4
+  end
+  object DBMemo2: TDBMemo
+    Left = 496
+    Top = 368
+    Width = 337
+    Height = 153
     TabOrder = 5
   end
   object ADOQuery1: TADOQuery
@@ -158,5 +157,23 @@ object Form7: TForm7
     DataSet = ADOQuery1
     Left = 208
     Top = 176
+  end
+  object ADOQuery2: TADOQuery
+    Active = True
+    Connection = Form1.ADOConnection1
+    CursorType = ctStatic
+    DataSource = DataSource2
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT C'#243'digo_Proveedor, Fecha, C'#243'digo_Estado, Detalle, Observac' +
+        'iones '
+      'FROM Pedidos')
+    Left = 160
+    Top = 248
+  end
+  object DataSource2: TDataSource
+    Left = 208
+    Top = 248
   end
 end
