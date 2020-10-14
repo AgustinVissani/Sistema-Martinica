@@ -52,15 +52,24 @@
 FROM Pedidos,Pedidos_Clientes
 WHERE (Código_Cliente= Pedidos_Clientes.Código_Cliente);
 
-CREATE TABLE Pagos( Código_Pago int not null identity(1, 1) primary key,
- Código_Pedido INT CONSTRAINT FK_Código_Pedidos FOREIGN KEY(Código_Pedido) REFERENCES Pedidos(Código_Pedidos),
- Código_Cliente INT CONSTRAINT FK_id_Cliente FOREIGN KEY(Código_Cliente) REFERENCES Clientes(Código_Cliente), 
- Fecha date NOT NULL,
- Monto int NOT NULL );
 
-*/
 
 CREATE TABLE Alertas( Código_Alerta int not null identity(1, 1) primary key,
  Código_Pedido INT CONSTRAINT FK_Código_Pedido FOREIGN KEY(Código_Pedido) REFERENCES Pedidos(Código_Pedidos), 
  Fecha date NOT NULL,
 Detalle varchar (100) NOT NULL );
+*/
+
+
+CREATE TABLE Pagos( Código_Pago int not null identity(1, 1) primary key,
+ Código_Pedido INT CONSTRAINT FK_Código_Pedidos FOREIGN KEY(Código_Pedido) REFERENCES Pedidos(Código_Pedidos),
+ Código_Cliente INT CONSTRAINT FK_id_Cliente_ FOREIGN KEY(Código_Cliente) REFERENCES Clientes(Código_Cliente), 
+ Fecha date NOT NULL,
+ Monto int NOT NULL );
+
+
+SELECT Proveedores.Apellido,Clientes.Apellido,Pedidos.Fecha,Estados.Detalle
+FROM Proveedores,Pedidos_Clientes,Clientes,Pedidos,Estados
+ 
+
+

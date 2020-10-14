@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, StdCtrls, ComCtrls, DBCtrls, DB, ADODB, ActnList;
+  Dialogs, Buttons, StdCtrls, ComCtrls, DBCtrls, DB, ADODB, ActnList, Mask;
 
 type
   TForm7 = class(TForm)
@@ -17,14 +17,21 @@ type
     Label2: TLabel;
     ADOQuery1: TADOQuery;
     DataSource1: TDataSource;
-    DBComboBox1: TDBComboBox;
     DBMemo1: TDBMemo;
     DBMemo2: TDBMemo;
     ADOQuery2: TADOQuery;
     DataSource2: TDataSource;
+    DBLookupComboBox1: TDBLookupComboBox;
+    ADOQuery1Cdigo_Proveedor: TAutoIncField;
+    ADOQuery1Nombre: TStringField;
+    ADOQuery1Apellido: TStringField;
+    ADOQuery1Telfono: TStringField;
+    ADOQuery1Domicilio: TStringField;
+    ADOQuery1CUIT: TStringField;
+    Label3: TLabel;
+    DBEdit1: TDBEdit;
     procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure FormShow(Sender: TObject);
     procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
@@ -52,15 +59,6 @@ begin
   Top:=(Screen.Height-Height) div 2;
 end;
 
-procedure TForm7.FormShow(Sender: TObject);
-begin
-  ADOQuery1.Active:= True;
-while not ADOQuery1.Eof do
-  begin
-    DBComboBox1.Items.Add(ADOQuery1.Fields[0].Text);
-    ADOQuery1.Next;
-  end;
-end;
 
 
 procedure TForm7.Button3Click(Sender: TObject);
@@ -82,7 +80,9 @@ begin
 
   ADOQuery2.Close;
   ADOQuery2.SQL.Clear;
-  
+
 end;
+
+
 
 end.

@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 61
-  Top = 11
+  Left = 354
+  Top = 144
   Width = 1244
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -13,7 +13,6 @@ object Form6: TForm6
   Font.Style = []
   OldCreateOrder = False
   OnCreate = FormCreate
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -30,11 +29,11 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 376
-    Top = 192
-    Width = 133
+    Left = 384
+    Top = 144
+    Width = 145
     Height = 25
-    Caption = 'Buscar pedido'
+    Caption = 'Apellido Cliente'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -56,7 +55,7 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 696
+    Left = 768
     Top = 264
     Width = 55
     Height = 25
@@ -82,7 +81,7 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 856
+    Left = 872
     Top = 264
     Width = 62
     Height = 25
@@ -94,20 +93,18 @@ object Form6: TForm6
     Font.Style = []
     ParentFont = False
   end
-  object Button1: TButton
-    Left = 864
-    Top = 176
-    Width = 97
-    Height = 57
-    Caption = 'BUSCAR CLIENTE'
+  object Label7: TLabel
+    Left = 520
+    Top = 184
+    Width = 36
+    Height = 25
+    Caption = 'DNI'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
+    Font.Height = -21
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 0
-    WordWrap = True
   end
   object Button2: TButton
     Left = 1024
@@ -121,7 +118,7 @@ object Form6: TForm6
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 0
     WordWrap = True
     OnClick = Button2Click
   end
@@ -137,90 +134,117 @@ object Form6: TForm6
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 2
+    TabOrder = 1
     OnClick = BitBtn1Click
     Kind = bkRetry
   end
-  object DBComboBox1: TDBComboBox
-    Left = 560
-    Top = 184
-    Width = 225
-    Height = 33
-    DataField = 'Apellido'
-    DataSource = DataSource1
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -21
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ItemHeight = 25
-    ParentFont = False
-    TabOrder = 3
-  end
   object DBGrid1: TDBGrid
-    Left = 176
-    Top = 304
-    Width = 969
+    Left = 184
+    Top = 296
+    Width = 817
     Height = 369
     DataSource = DataSource2
-    TabOrder = 4
+    TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
   end
+  object DBEdit1: TDBEdit
+    Left = 576
+    Top = 184
+    Width = 121
+    Height = 27
+    DataField = 'DNI'
+    DataSource = DataSource1
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 3
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 560
+    Top = 136
+    Width = 241
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    KeyField = 'DNI'
+    ListField = 'Apellido'
+    ListSource = DataSource1
+    ParentFont = False
+    TabOrder = 4
+  end
   object ADOQuery1: TADOQuery
+    Active = True
     Connection = Form1.ADOConnection1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT Apellido'
+      'SELECT *'
       'FROM Clientes')
     Left = 48
     Top = 88
+    object ADOQuery1Apellido: TStringField
+      FieldName = 'Apellido'
+      Size = 30
+    end
+    object ADOQuery1DNI: TIntegerField
+      FieldName = 'DNI'
+    end
   end
   object ADOQuery2: TADOQuery
+    Active = True
     Connection = Form1.ADOConnection1
     CursorType = ctStatic
-    DataSource = DataSource2
     Parameters = <>
     SQL.Strings = (
+      'Select * from  Pedidos_Clientes'
       
-        'SELECT C'#243'digo_Proveedor, Fecha, C'#243'digo_Estado, Detalle, Observac' +
-        'iones '
-      'FROM Pedidos')
+        'left join Proveedores on Proveedores.C'#243'digo_Proveedor = Pedidos_' +
+        'Clientes.C'#243'digo_Proveedor'
+      
+        'left join Clientes on Clientes.C'#243'digo_Cliente = Pedidos_Clientes' +
+        '.C'#243'digo_Cliente '
+      
+        'left join Pedidos on Pedidos.C'#243'digo_Proveedor = Proveedores.C'#243'di' +
+        'go_Proveedor')
     Left = 56
-    Top = 192
-    object ADOQuery2Cdigo_Pedidos: TAutoIncField
-      DisplayWidth = 24
-      FieldName = 'C'#243'digo_Pedidos'
-      ReadOnly = True
+    Top = 200
+    object ADOQuery2Apellido: TStringField
+      DisplayWidth = 36
+      FieldName = 'Apellido'
+      Size = 30
     end
-    object ADOQuery2Cdigo_Proveedor: TIntegerField
-      DisplayWidth = 28
-      FieldName = 'C'#243'digo_Proveedor'
+    object ADOQuery2CUIT: TStringField
+      DisplayWidth = 30
+      FieldName = 'CUIT'
+      Size = 30
     end
-    object ADOQuery2Cdigo_Cliente: TIntegerField
-      DisplayWidth = 37
-      FieldName = 'C'#243'digo_Cliente'
+    object ADOQuery2Apellido_1: TStringField
+      DisplayWidth = 36
+      FieldName = 'Apellido_1'
+      Size = 30
+    end
+    object ADOQuery2DNI: TIntegerField
+      DisplayWidth = 12
+      FieldName = 'DNI'
     end
     object ADOQuery2Fecha: TWideStringField
-      DisplayWidth = 22
+      DisplayWidth = 15
       FieldName = 'Fecha'
       Size = 10
     end
-    object ADOQuery2Cdigo_Pedidos_Clientes: TAutoIncField
-      DisplayWidth = 29
-      FieldName = 'C'#243'digo_Pedidos_Clientes'
-      ReadOnly = True
-    end
-    object ADOQuery2Cdigo_Proveedor_1: TIntegerField
-      DisplayWidth = 24
-      FieldName = 'C'#243'digo_Proveedor_1'
-    end
     object ADOQuery2Cdigo_Estado: TIntegerField
-      DisplayWidth = 42
+      DisplayWidth = 21
       FieldName = 'C'#243'digo_Estado'
     end
   end
@@ -230,8 +254,8 @@ object Form6: TForm6
     Top = 88
   end
   object DataSource2: TDataSource
-    DataSet = Form7.ADOQuery2
+    DataSet = ADOQuery2
     Left = 104
-    Top = 192
+    Top = 200
   end
 end

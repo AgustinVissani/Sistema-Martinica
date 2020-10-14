@@ -4,37 +4,44 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, StdCtrls, ComCtrls, DBCtrls, DB, ADODB, Grids, DBGrids;
+  Dialogs, Buttons, StdCtrls, ComCtrls, DBCtrls, DB, ADODB, Grids, DBGrids,
+  Mask;
 
 type
+TADOSQLThread = class(TThread);
+type
+
   TForm6 = class(TForm)
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
-    Button1: TButton;
     Label4: TLabel;
     Button2: TButton;
     BitBtn1: TBitBtn;
     Label5: TLabel;
     Label6: TLabel;
     ADOQuery1: TADOQuery;
-    DBComboBox1: TDBComboBox;
     DBGrid1: TDBGrid;
     ADOQuery2: TADOQuery;
     DataSource1: TDataSource;
-    ADOQuery2Cdigo_Pedidos: TAutoIncField;
-    ADOQuery2Cdigo_Proveedor: TIntegerField;
+    DataSource2: TDataSource;
+    ADOQuery2Apellido: TStringField;
+    ADOQuery2CUIT: TStringField;
+    ADOQuery2DNI: TIntegerField;
+    ADOQuery2Apellido_1: TStringField;
     ADOQuery2Fecha: TWideStringField;
     ADOQuery2Cdigo_Estado: TIntegerField;
-    ADOQuery2Cdigo_Pedidos_Clientes: TAutoIncField;
-    ADOQuery2Cdigo_Proveedor_1: TIntegerField;
-    ADOQuery2Cdigo_Cliente: TIntegerField;
-    DataSource2: TDataSource;
+    Label7: TLabel;
+    DBEdit1: TDBEdit;
+    ADOQuery1DNI: TIntegerField;
+    ADOQuery1Apellido: TStringField;
+    DBLookupComboBox1: TDBLookupComboBox;
     procedure BitBtn1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure FormShow(Sender: TObject);
-    
+
+
+
   private
     { Private declarations }
   public
@@ -67,16 +74,8 @@ begin
   Left:=(Screen.Width-Width)  div 2;
   Top:=(Screen.Height-Height) div 2;
 end;
+     
 
-procedure TForm6.FormShow(Sender: TObject);
-begin
-ADOQuery1.Active:= True;
-while not ADOQuery1.Eof do
-  begin
-    DBComboBox1.Items.Add(ADOQuery1.Fields[0].Text);
-    ADOQuery1.Next;
-  end;
-end;
 
 
 end.

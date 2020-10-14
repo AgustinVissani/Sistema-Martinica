@@ -172,9 +172,9 @@ object Form4: TForm4
     OnClick = Button4Click
   end
   object DBGrid1: TDBGrid
-    Left = 208
+    Left = 200
     Top = 296
-    Width = 953
+    Width = 1041
     Height = 329
     DataSource = DataSource1
     Font.Charset = ANSI_CHARSET
@@ -182,12 +182,13 @@ object Form4: TForm4
     Font.Height = -16
     Font.Name = 'Arial Narrow'
     Font.Style = []
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
     ParentFont = False
     TabOrder = 12
-    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Charset = ANSI_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -16
-    TitleFont.Name = 'Tahoma'
+    TitleFont.Name = 'Arial Narrow'
     TitleFont.Style = []
     OnDrawColumnCell = DBGrid1DrawColumnCell
   end

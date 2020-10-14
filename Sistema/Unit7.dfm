@@ -1,6 +1,6 @@
 object Form7: TForm7
-  Left = 193
-  Top = 11
+  Left = 356
+  Top = 121
   Width = 1280
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -13,7 +13,6 @@ object Form7: TForm7
   Font.Style = []
   OldCreateOrder = False
   OnCreate = FormCreate
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -31,7 +30,7 @@ object Form7: TForm7
   end
   object Label5: TLabel
     Left = 496
-    Top = 112
+    Top = 104
     Width = 94
     Height = 25
     Caption = 'Proveedor'
@@ -61,6 +60,19 @@ object Form7: TForm7
     Width = 134
     Height = 25
     Caption = 'Observaciones'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 536
+    Top = 144
+    Width = 47
+    Height = 25
+    Caption = 'CUIT'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -113,35 +125,52 @@ object Form7: TForm7
     OnClick = BitBtn1Click
     Kind = bkRetry
   end
-  object DBComboBox1: TDBComboBox
-    Left = 640
-    Top = 112
-    Width = 177
-    Height = 27
-    DataField = 'Apellido'
-    DataSource = DataSource1
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ItemHeight = 19
-    ParentFont = False
-    TabOrder = 3
-  end
   object DBMemo1: TDBMemo
     Left = 496
     Top = 192
     Width = 337
     Height = 145
-    TabOrder = 4
+    DataSource = DataSource2
+    TabOrder = 3
   end
   object DBMemo2: TDBMemo
     Left = 496
     Top = 368
     Width = 337
     Height = 153
+    DataSource = DataSource2
+    TabOrder = 4
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 616
+    Top = 104
+    Width = 185
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    KeyField = 'CUIT'
+    ListField = 'Apellido'
+    ListSource = DataSource1
+    ParentFont = False
     TabOrder = 5
+  end
+  object DBEdit1: TDBEdit
+    Left = 608
+    Top = 144
+    Width = 145
+    Height = 27
+    DataField = 'CUIT'
+    DataSource = DataSource1
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
   end
   object ADOQuery1: TADOQuery
     Active = True
@@ -149,9 +178,32 @@ object Form7: TForm7
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT Apellido FROM Proveedores;')
+      'SELECT * FROM Proveedores;')
     Left = 160
     Top = 176
+    object ADOQuery1Cdigo_Proveedor: TAutoIncField
+      FieldName = 'C'#243'digo_Proveedor'
+      ReadOnly = True
+    end
+    object ADOQuery1Nombre: TStringField
+      FieldName = 'Nombre'
+      Size = 30
+    end
+    object ADOQuery1Apellido: TStringField
+      FieldName = 'Apellido'
+      Size = 30
+    end
+    object ADOQuery1Telfono: TStringField
+      FieldName = 'Tel'#233'fono'
+    end
+    object ADOQuery1Domicilio: TStringField
+      FieldName = 'Domicilio'
+      Size = 30
+    end
+    object ADOQuery1CUIT: TStringField
+      FieldName = 'CUIT'
+      Size = 30
+    end
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
@@ -159,7 +211,6 @@ object Form7: TForm7
     Top = 176
   end
   object ADOQuery2: TADOQuery
-    Active = True
     Connection = Form1.ADOConnection1
     CursorType = ctStatic
     DataSource = DataSource2

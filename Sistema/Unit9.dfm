@@ -1,6 +1,6 @@
 object Form9: TForm9
-  Left = 72
-  Top = 33
+  Left = 347
+  Top = 84
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -153,12 +153,13 @@ object Form9: TForm9
     Font.Height = -16
     Font.Name = 'Arial Narrow'
     Font.Style = []
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
     ParentFont = False
     TabOrder = 10
-    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Charset = ANSI_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
+    TitleFont.Height = -16
+    TitleFont.Name = 'Arial Narrow'
     TitleFont.Style = []
     OnDrawColumnCell = DBGrid1DrawColumnCell
   end
@@ -311,20 +312,25 @@ object Form9: TForm9
     Left = 64
     Top = 24
     object ADOQuery1DNI: TIntegerField
+      DisplayWidth = 12
       FieldName = 'DNI'
     end
     object ADOQuery1Nombre: TStringField
+      DisplayWidth = 35
       FieldName = 'Nombre'
       Size = 30
     end
     object ADOQuery1Apellido: TStringField
+      DisplayWidth = 35
       FieldName = 'Apellido'
       Size = 30
     end
     object ADOQuery1Telfono: TStringField
+      DisplayWidth = 24
       FieldName = 'Tel'#233'fono'
     end
     object ADOQuery1Domicilio: TStringField
+      DisplayWidth = 21
       FieldName = 'Domicilio'
       Size = 30
     end

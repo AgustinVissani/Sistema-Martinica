@@ -161,10 +161,10 @@ begin
 
     // FORM 6
   Form6.BitBtn1.Caption:='Go back';
-  Form6.Button1.Caption:='SEARCH CUSTOMER';
+ // Form6.Button1.Caption:='Search order';
   Form6.Button2.Caption:='New order';
   Form6.Label1.Caption:='ORDERS TO SUPPLIERS';
-  Form6.Label2.Caption:='Search order';
+  Form6.Label2.Caption:='Lastname Customer';
   Form6.Label4.Caption:='Lastname';
   Form6.Label5.Caption:='Supplier';
   Form6.Label3.Caption:='Customer';
@@ -256,10 +256,10 @@ begin
 
   // FORM 6
   Form6.BitBtn1.Caption:='Volver';
-  Form6.Button1.Caption:='BUSCAR CLIENTE';
+//  Form6.Button1.Caption:='Buscar Cliente';
   Form6.Button2.Caption:='Nuevo pedido';
   Form6.Label1.Caption:='PEDIDOS A PROVEEDORES';
-  Form6.Label2.Caption:='Buscar pedido';
+  Form6.Label2.Caption:='Apellido Cliente';
   Form6.Label4.Caption:='Apellido';
   Form6.Label5.Caption:='Proveedor';
   Form6.Label3.Caption:='Cliente';
