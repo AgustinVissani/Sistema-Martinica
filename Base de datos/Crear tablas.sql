@@ -72,4 +72,3 @@ SELECT Proveedores.Apellido,Clientes.Apellido,Pedidos.Fecha,Estados.Detalle
 FROM Proveedores,Pedidos_Clientes,Clientes,Pedidos,Estados
  
 
-

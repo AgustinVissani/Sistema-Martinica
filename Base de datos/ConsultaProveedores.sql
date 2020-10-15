@@ -11,4 +11,9 @@ VALUES ('Proveedor1','Apellido',1111111,'Domicilio',11-11111111-1),
  --select * from Proveedores
 
 
+ //Pedidos a proveedores
 
+SELECT DISTINCT Proveedores.Apellido AS Proveedor, Pedidos.Fecha, Pedidos.Detalle, Pedidos.Observaciones, Estados.Detalle 
+FROM  Pedidos 
+LEFT JOIN Proveedores ON (Proveedores.Código_Proveedor = Pedidos.Código_Proveedor)
+LEFT JOIN Estados ON (Estados.Código_Estado = Pedidos.Código_Estado)

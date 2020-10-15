@@ -167,7 +167,7 @@ begin
   Form6.Label2.Caption:='Lastname Customer';
   Form6.Label4.Caption:='Lastname';
   Form6.Label5.Caption:='Supplier';
-  Form6.Label3.Caption:='Customer';
+  //Form6.Label3.Caption:='Customer';
   Form6.Label4.Caption:='Date';
   Form6.Label6.Caption:='State';
 
@@ -262,7 +262,7 @@ begin
   Form6.Label2.Caption:='Apellido Cliente';
   Form6.Label4.Caption:='Apellido';
   Form6.Label5.Caption:='Proveedor';
-  Form6.Label3.Caption:='Cliente';
+  //Form6.Label3.Caption:='Cliente';
   Form6.Label4.Caption:='Fecha';
   Form6.Label6.Caption:='Estado';
 

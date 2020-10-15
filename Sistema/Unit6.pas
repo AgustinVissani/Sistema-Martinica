@@ -14,7 +14,6 @@ type
   TForm6 = class(TForm)
     Label1: TLabel;
     Label2: TLabel;
-    Label3: TLabel;
     Label4: TLabel;
     Button2: TButton;
     BitBtn1: TBitBtn;
@@ -36,10 +35,11 @@ type
     ADOQuery1DNI: TIntegerField;
     ADOQuery1Apellido: TStringField;
     DBLookupComboBox1: TDBLookupComboBox;
+    ADOQuery2Detalle: TStringField;
     procedure BitBtn1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-
+    
 
 
   private
@@ -75,6 +75,8 @@ begin
   Top:=(Screen.Height-Height) div 2;
 end;
      
+
+
 
 
 

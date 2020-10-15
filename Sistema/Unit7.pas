@@ -17,8 +17,6 @@ type
     Label2: TLabel;
     ADOQuery1: TADOQuery;
     DataSource1: TDataSource;
-    DBMemo1: TDBMemo;
-    DBMemo2: TDBMemo;
     ADOQuery2: TADOQuery;
     DataSource2: TDataSource;
     DBLookupComboBox1: TDBLookupComboBox;
@@ -30,6 +28,8 @@ type
     ADOQuery1CUIT: TStringField;
     Label3: TLabel;
     DBEdit1: TDBEdit;
+    RichEdit1: TRichEdit;
+    RichEdit2: TRichEdit;
     procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -62,20 +62,23 @@ end;
 
 
 procedure TForm7.Button3Click(Sender: TObject);
-var
-  query: string;
+var  
+  detalle: string;
+  observaciones: string;
 begin
 
-  query:='INSERT INTO Pedidos (idProveedor, Detalle, Observaciones, Código_Estado) VALUES (123, "14/10/2020", "Detalle de prueba", "Detalle de observaciones")';
-
+  detalle:= RichEdit1.Text;
+  observaciones:= RichEdit2.Text;
 
   ADOQuery2.Close;
   ADOQuery2.SQL.Clear;
 
-
   ADOQuery2.SQL.Add('INSERT INTO Pedidos (Código_Proveedor, Detalle, Observaciones, ');
-  ADOQuery2.SQL.Add('Código_Estado) VALUES (1, ''Detalle de prueba'', ');
-  ADOQuery2.SQL.Add('''Detalle de observaciones'', 1)');
+  ADOQuery2.SQL.Add('Código_Estado) VALUES (');
+  ADOQuery2.SQL.Add('1, '); //Código proveedor
+  ADOQuery2.SQL.Add(''''+detalle+''',');  //Detalle
+  ADOQuery2.SQL.Add(''''+observaciones+''',');  //Observaciones
+  ADOQuery2.SQL.Add('1)');  //Código estado
   ADOQuery2.ExecSQL;
 
   ADOQuery2.Close;

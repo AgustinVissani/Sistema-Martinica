@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 354
-  Top = 144
+  Left = 110
+  Top = 9
   Width = 1244
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -41,21 +41,8 @@ object Form6: TForm6
     Font.Style = []
     ParentFont = False
   end
-  object Label3: TLabel
-    Left = 544
-    Top = 264
-    Width = 64
-    Height = 25
-    Caption = 'Cliente'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -21
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
   object Label4: TLabel
-    Left = 768
+    Left = 712
     Top = 264
     Width = 55
     Height = 25
@@ -202,21 +189,17 @@ object Form6: TForm6
     end
   end
   object ADOQuery2: TADOQuery
-    Active = True
     Connection = Form1.ADOConnection1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'Select * from  Pedidos_Clientes'
       
-        'left join Proveedores on Proveedores.C'#243'digo_Proveedor = Pedidos_' +
-        'Clientes.C'#243'digo_Proveedor'
+        'SELECT DISTINCT Proveedores.Apellido, Pedidos.Fecha, Pedidos.Det' +
+        'alle '
+      'FROM  Pedidos '
       
-        'left join Clientes on Clientes.C'#243'digo_Cliente = Pedidos_Clientes' +
-        '.C'#243'digo_Cliente '
-      
-        'left join Pedidos on Pedidos.C'#243'digo_Proveedor = Proveedores.C'#243'di' +
-        'go_Proveedor')
+        'LEFT JOIN Proveedores ON Proveedores.C'#243'digo_Proveedor = Pedidos.' +
+        'C'#243'digo_Proveedor')
     Left = 56
     Top = 200
     object ADOQuery2Apellido: TStringField
@@ -246,6 +229,10 @@ object Form6: TForm6
     object ADOQuery2Cdigo_Estado: TIntegerField
       DisplayWidth = 21
       FieldName = 'C'#243'digo_Estado'
+    end
+    object ADOQuery2Detalle: TStringField
+      FieldName = 'Detalle'
+      Size = 100
     end
   end
   object DataSource1: TDataSource

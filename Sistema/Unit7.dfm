@@ -1,6 +1,6 @@
 object Form7: TForm7
-  Left = 356
-  Top = 121
+  Left = 30
+  Top = 15
   Width = 1280
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -125,22 +125,6 @@ object Form7: TForm7
     OnClick = BitBtn1Click
     Kind = bkRetry
   end
-  object DBMemo1: TDBMemo
-    Left = 496
-    Top = 192
-    Width = 337
-    Height = 145
-    DataSource = DataSource2
-    TabOrder = 3
-  end
-  object DBMemo2: TDBMemo
-    Left = 496
-    Top = 368
-    Width = 337
-    Height = 153
-    DataSource = DataSource2
-    TabOrder = 4
-  end
   object DBLookupComboBox1: TDBLookupComboBox
     Left = 616
     Top = 104
@@ -155,7 +139,7 @@ object Form7: TForm7
     ListField = 'Apellido'
     ListSource = DataSource1
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 3
   end
   object DBEdit1: TDBEdit
     Left = 608
@@ -170,6 +154,23 @@ object Form7: TForm7
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
+    TabOrder = 4
+  end
+  object RichEdit1: TRichEdit
+    Left = 496
+    Top = 192
+    Width = 337
+    Height = 129
+    Lines.Strings = (
+      '')
+    PlainText = True
+    TabOrder = 5
+  end
+  object RichEdit2: TRichEdit
+    Left = 496
+    Top = 368
+    Width = 337
+    Height = 121
     TabOrder = 6
   end
   object ADOQuery1: TADOQuery
