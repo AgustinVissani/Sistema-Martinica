@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 110
-  Top = 9
+  Left = 305
+  Top = 166
   Width = 1244
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -42,8 +42,8 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 712
-    Top = 264
+    Left = 312
+    Top = 248
     Width = 55
     Height = 25
     Caption = 'Fecha'
@@ -55,8 +55,8 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 352
-    Top = 264
+    Left = 120
+    Top = 248
     Width = 94
     Height = 25
     Caption = 'Proveedor'
@@ -68,8 +68,8 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 872
-    Top = 264
+    Left = 1072
+    Top = 256
     Width = 62
     Height = 25
     Caption = 'Estado'
@@ -93,9 +93,22 @@ object Form6: TForm6
     Font.Style = []
     ParentFont = False
   end
+  object Label3: TLabel
+    Left = 576
+    Top = 256
+    Width = 64
+    Height = 25
+    Caption = 'Detalle'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
   object Button2: TButton
-    Left = 1024
-    Top = 112
+    Left = 1032
+    Top = 96
     Width = 105
     Height = 41
     Caption = 'Nuevo pedido'
@@ -110,8 +123,8 @@ object Form6: TForm6
     OnClick = Button2Click
   end
   object BitBtn1: TBitBtn
-    Left = 224
-    Top = 104
+    Left = 160
+    Top = 96
     Width = 105
     Height = 49
     Caption = 'Volver'
@@ -126,17 +139,25 @@ object Form6: TForm6
     Kind = bkRetry
   end
   object DBGrid1: TDBGrid
-    Left = 152
-    Top = 296
-    Width = 913
+    Left = 64
+    Top = 280
+    Width = 1113
     Height = 369
     DataSource = DataSource2
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Arial Narrow'
+    Font.Style = []
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+    ParentFont = False
     TabOrder = 2
-    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Charset = ANSI_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
+    TitleFont.Height = -16
+    TitleFont.Name = 'Arial Narrow'
     TitleFont.Style = []
+    OnDrawColumnCell = DBGrid1DrawColumnCell
   end
   object DBEdit1: TDBEdit
     Left = 576
@@ -195,45 +216,20 @@ object Form6: TForm6
     SQL.Strings = (
       
         'SELECT DISTINCT Proveedores.Apellido, Pedidos.Fecha, Pedidos.Det' +
-        'alle '
+        'alle,Estados.Detalle as [Estado]'
       'FROM  Pedidos '
       
         'LEFT JOIN Proveedores ON Proveedores.C'#243'digo_Proveedor = Pedidos.' +
-        'C'#243'digo_Proveedor')
+        'C'#243'digo_Proveedor'
+      
+        'LEFT JOIN Estados ON Estados.C'#243'digo_Estado = Pedidos.C'#243'digo_Esta' +
+        'do'
+      
+        'LEFT JOIN Clientes ON Clientes.C'#243'digo_Cliente = Pedidos.C'#243'digo_C' +
+        'liente'
+      'WHERE Cliente.Apellido='#39'DBLookupComboBox1.Text'#39)
     Left = 56
     Top = 200
-    object ADOQuery2Apellido: TStringField
-      DisplayWidth = 36
-      FieldName = 'Apellido'
-      Size = 30
-    end
-    object ADOQuery2CUIT: TStringField
-      DisplayWidth = 30
-      FieldName = 'CUIT'
-      Size = 30
-    end
-    object ADOQuery2Apellido_1: TStringField
-      DisplayWidth = 36
-      FieldName = 'Apellido_1'
-      Size = 30
-    end
-    object ADOQuery2DNI: TIntegerField
-      DisplayWidth = 12
-      FieldName = 'DNI'
-    end
-    object ADOQuery2Fecha: TWideStringField
-      DisplayWidth = 15
-      FieldName = 'Fecha'
-      Size = 10
-    end
-    object ADOQuery2Cdigo_Estado: TIntegerField
-      DisplayWidth = 21
-      FieldName = 'C'#243'digo_Estado'
-    end
-    object ADOQuery2Detalle: TStringField
-      FieldName = 'Detalle'
-      Size = 100
-    end
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1

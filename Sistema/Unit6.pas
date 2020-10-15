@@ -9,6 +9,7 @@ uses
 
 type
 TADOSQLThread = class(TThread);
+type THackDBGrid = class(TDBGrid);
 type
 
   TForm6 = class(TForm)
@@ -24,21 +25,17 @@ type
     ADOQuery2: TADOQuery;
     DataSource1: TDataSource;
     DataSource2: TDataSource;
-    ADOQuery2Apellido: TStringField;
-    ADOQuery2CUIT: TStringField;
-    ADOQuery2DNI: TIntegerField;
-    ADOQuery2Apellido_1: TStringField;
-    ADOQuery2Fecha: TWideStringField;
-    ADOQuery2Cdigo_Estado: TIntegerField;
     Label7: TLabel;
     DBEdit1: TDBEdit;
     ADOQuery1DNI: TIntegerField;
     ADOQuery1Apellido: TStringField;
     DBLookupComboBox1: TDBLookupComboBox;
-    ADOQuery2Detalle: TStringField;
+    Label3: TLabel;
     procedure BitBtn1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
     
 
 
@@ -76,6 +73,21 @@ begin
 end;
      
 
+
+
+
+
+procedure TForm6.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+  DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+if (THackDBGrid(DBGrid1).DataLink.ActiveRecord + 1 = THackDBGrid(DBGrid1).Row)
+ or (gdFocused in State) or (gdSelected in State) then
+ begin
+ DBGrid1.Canvas.Brush.Color := clSkyBlue;
+ DBGrid1.Canvas.Font.Style := DBGrid1.Canvas.Font.Style + [fsBold];
+ DBGrid1.Canvas.Font.Color := clGreen;
+ end;
+end;
 
 
 

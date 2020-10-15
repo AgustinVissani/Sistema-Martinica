@@ -1,0 +1,12 @@
+SELECT DISTINCT Proveedores.Apellido, Pedidos.Fecha, Pedidos.Detalle,Estados.Detalle as [Estado]
+FROM  Pedidos 
+LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor
+LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado
+LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente
+WHERE Cliente.Apellido='DBLookupComboBox1.Text'
+
+
+eliminado 
+LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente
+WHERE Cliente.Apellido='DBLookupComboBox1.Text'
+funciona

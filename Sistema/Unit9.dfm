@@ -143,9 +143,9 @@ object Form9: TForm9
     Kind = bkRetry
   end
   object DBGrid1: TDBGrid
-    Left = 248
+    Left = 288
     Top = 272
-    Width = 817
+    Width = 769
     Height = 353
     DataSource = DataSource1
     Font.Charset = ANSI_CHARSET
@@ -312,25 +312,25 @@ object Form9: TForm9
     Left = 64
     Top = 24
     object ADOQuery1DNI: TIntegerField
-      DisplayWidth = 12
+      DisplayWidth = 14
       FieldName = 'DNI'
     end
     object ADOQuery1Nombre: TStringField
-      DisplayWidth = 35
+      DisplayWidth = 17
       FieldName = 'Nombre'
       Size = 30
     end
     object ADOQuery1Apellido: TStringField
-      DisplayWidth = 35
+      DisplayWidth = 33
       FieldName = 'Apellido'
       Size = 30
     end
     object ADOQuery1Telfono: TStringField
-      DisplayWidth = 24
+      DisplayWidth = 28
       FieldName = 'Tel'#233'fono'
     end
     object ADOQuery1Domicilio: TStringField
-      DisplayWidth = 21
+      DisplayWidth = 25
       FieldName = 'Domicilio'
       Size = 30
     end

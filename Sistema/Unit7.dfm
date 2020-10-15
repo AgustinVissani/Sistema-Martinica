@@ -1,6 +1,6 @@
 object Form7: TForm7
-  Left = 30
-  Top = 15
+  Left = 308
+  Top = 130
   Width = 1280
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -80,6 +80,19 @@ object Form7: TForm7
     Font.Style = []
     ParentFont = False
   end
+  object Label6: TLabel
+    Left = 488
+    Top = 512
+    Width = 56
+    Height = 23
+    Caption = 'Cliente'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
   object Button1: TButton
     Left = 472
     Top = 592
@@ -93,6 +106,7 @@ object Form7: TForm7
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    OnClick = Button1Click
   end
   object Button3: TButton
     Left = 800
@@ -173,6 +187,30 @@ object Form7: TForm7
     Height = 121
     TabOrder = 6
   end
+  object DBLookupComboBox2: TDBLookupComboBox
+    Left = 568
+    Top = 512
+    Width = 185
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    KeyField = 'C'#243'digo_Cliente'
+    ListField = 'Apellido'
+    ListSource = DataSource3
+    ParentFont = False
+    TabOrder = 7
+  end
+  object Button2: TButton
+    Left = 1032
+    Top = 320
+    Width = 75
+    Height = 25
+    Caption = 'Button2'
+    TabOrder = 8
+  end
   object ADOQuery1: TADOQuery
     Active = True
     Connection = Form1.ADOConnection1
@@ -212,6 +250,7 @@ object Form7: TForm7
     Top = 176
   end
   object ADOQuery2: TADOQuery
+    Active = True
     Connection = Form1.ADOConnection1
     CursorType = ctStatic
     DataSource = DataSource2
@@ -227,5 +266,55 @@ object Form7: TForm7
   object DataSource2: TDataSource
     Left = 208
     Top = 248
+  end
+  object ADOQuery3: TADOQuery
+    Active = True
+    Connection = Form1.ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT *'
+      'FROM  Clientes '
+      '')
+    Left = 144
+    Top = 560
+    object ADOQuery3Apellido: TStringField
+      FieldName = 'Apellido'
+      Size = 30
+    end
+    object ADOQuery3Cdigo_Cliente: TAutoIncField
+      FieldName = 'C'#243'digo_Cliente'
+      ReadOnly = True
+    end
+    object ADOQuery3DNI: TIntegerField
+      FieldName = 'DNI'
+    end
+    object ADOQuery3Nombre: TStringField
+      FieldName = 'Nombre'
+      Size = 30
+    end
+    object ADOQuery3Telfono: TStringField
+      FieldName = 'Tel'#233'fono'
+    end
+    object ADOQuery3Domicilio: TStringField
+      FieldName = 'Domicilio'
+      Size = 30
+    end
+  end
+  object DataSource3: TDataSource
+    DataSet = ADOQuery3
+    Left = 200
+    Top = 560
+  end
+  object ADOQuery4: TADOQuery
+    Connection = Form1.ADOConnection1
+    Parameters = <>
+    Left = 144
+    Top = 600
+  end
+  object DataSource4: TDataSource
+    DataSet = ADOQuery4
+    Left = 192
+    Top = 600
   end
 end
