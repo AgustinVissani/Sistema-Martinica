@@ -1,8 +1,8 @@
 object Form6: TForm6
-  Left = 305
-  Top = 166
+  Left = 124
+  Top = 11
   Width = 1244
-  Height = 720
+  Height = 729
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Pedidos a Proveedores'
   Color = clBtnFace
@@ -42,7 +42,7 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 312
+    Left = 80
     Top = 248
     Width = 55
     Height = 25
@@ -55,7 +55,7 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 120
+    Left = 168
     Top = 248
     Width = 94
     Height = 25
@@ -68,8 +68,8 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 1072
-    Top = 256
+    Left = 568
+    Top = 248
     Width = 62
     Height = 25
     Caption = 'Estado'
@@ -94,11 +94,24 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 576
-    Top = 256
+    Left = 656
+    Top = 248
     Width = 64
     Height = 25
     Caption = 'Detalle'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 408
+    Top = 248
+    Width = 64
+    Height = 25
+    Caption = 'Cliente'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -140,7 +153,7 @@ object Form6: TForm6
   end
   object DBGrid1: TDBGrid
     Left = 64
-    Top = 280
+    Top = 288
     Width = 1113
     Height = 369
     DataSource = DataSource2
@@ -190,6 +203,7 @@ object Form6: TForm6
     ListSource = DataSource1
     ParentFont = False
     TabOrder = 4
+    OnClick = DBLookupComboBox1Click
   end
   object ADOQuery1: TADOQuery
     Active = True
@@ -208,15 +222,32 @@ object Form6: TForm6
     object ADOQuery1DNI: TIntegerField
       FieldName = 'DNI'
     end
+    object ADOQuery1Cdigo_Cliente: TAutoIncField
+      FieldName = 'C'#243'digo_Cliente'
+      ReadOnly = True
+    end
+    object ADOQuery1Nombre: TStringField
+      FieldName = 'Nombre'
+      Size = 30
+    end
+    object ADOQuery1Telfono: TStringField
+      FieldName = 'Tel'#233'fono'
+    end
+    object ADOQuery1Domicilio: TStringField
+      FieldName = 'Domicilio'
+      Size = 30
+    end
   end
   object ADOQuery2: TADOQuery
+    Active = True
     Connection = Form1.ADOConnection1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
       
-        'SELECT DISTINCT Proveedores.Apellido, Pedidos.Fecha, Pedidos.Det' +
-        'alle,Estados.Detalle as [Estado]'
+        'SELECT DISTINCT Proveedores.Apellido as [Proveedor], Clientes.Ap' +
+        'ellido as [Cliente], Pedidos.Fecha, Pedidos.Detalle, Estados.Det' +
+        'alle as [Estado]'
       'FROM  Pedidos '
       
         'LEFT JOIN Proveedores ON Proveedores.C'#243'digo_Proveedor = Pedidos.' +
@@ -226,10 +257,28 @@ object Form6: TForm6
         'do'
       
         'LEFT JOIN Clientes ON Clientes.C'#243'digo_Cliente = Pedidos.C'#243'digo_C' +
-        'liente'
-      'WHERE Cliente.Apellido='#39'DBLookupComboBox1.Text'#39)
+        'liente')
     Left = 56
     Top = 200
+    object ADOQuery2Proveedor: TStringField
+      FieldName = 'Proveedor'
+      Size = 30
+    end
+    object ADOQuery2Cliente: TStringField
+      FieldName = 'Cliente'
+      Size = 30
+    end
+    object ADOQuery2Fecha: TWideStringField
+      FieldName = 'Fecha'
+      Size = 10
+    end
+    object ADOQuery2Detalle: TStringField
+      FieldName = 'Detalle'
+      Size = 100
+    end
+    object ADOQuery2Estado: TStringField
+      FieldName = 'Estado'
+    end
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1

@@ -34,6 +34,7 @@
 /*
   CREATE TABLE Pedidos( Código_Pedidos int not null identity(1, 1) primary key,
  Código_Proveedor INT CONSTRAINT FK_Código_Proveedor FOREIGN KEY(Código_Proveedor) REFERENCES Proveedores(Código_Proveedor), 
+ Código_Cliente INT CONSTRAINT FK_Código_Cliente FOREIGN KEY(Código_Cliente) REFERENCES Clientes(Código_Cliente), 
  Fecha date NOT NULL,
  Detalle varchar(100) NOT NULL,
  Código_Estado INT CONSTRAINT FK_Código_Estado FOREIGN KEY(Código_Estado) REFERENCES Estados(Código_Estado), 
@@ -71,4 +72,14 @@ CREATE TABLE Pagos( Código_Pago int not null identity(1, 1) primary key,
 SELECT Proveedores.Apellido,Clientes.Apellido,Pedidos.Fecha,Estados.Detalle
 FROM Proveedores,Pedidos_Clientes,Clientes,Pedidos,Estados
  
+
+SELECT DISTINCT Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente], Pedidos.Fecha, Pedidos.Detalle,Estados.Detalle as [Estado]
+FROM  Pedidos 
+LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor
+LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado
+LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente
+WHERE Pedidos.Código_Cliente=2
+
+
+
 

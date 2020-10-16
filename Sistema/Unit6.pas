@@ -31,11 +31,22 @@ type
     ADOQuery1Apellido: TStringField;
     DBLookupComboBox1: TDBLookupComboBox;
     Label3: TLabel;
+    Label8: TLabel;
+    ADOQuery1Cdigo_Cliente: TAutoIncField;
+    ADOQuery1Nombre: TStringField;
+    ADOQuery1Telfono: TStringField;
+    ADOQuery1Domicilio: TStringField;
+    ADOQuery2Proveedor: TStringField;
+    ADOQuery2Cliente: TStringField;
+    ADOQuery2Fecha: TWideStringField;
+    ADOQuery2Detalle: TStringField;
+    ADOQuery2Estado: TStringField;
     procedure BitBtn1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure DBLookupComboBox1Click(Sender: TObject);
     
 
 
@@ -91,5 +102,39 @@ end;
 
 
 
+
+procedure TForm6.DBLookupComboBox1Click(Sender: TObject);
+begin
+          ADOQuery2.Close;
+          ADOQuery2.SQL.Clear;
+
+          ADOQuery2.SQL.add('SELECT Código_Cliente FROM Clientes WHERE Clientes.Apellido='''+DBLookupComboBox1.Text+'''');
+          ADOQuery2.Open;
+          apellidoCliente:=StrToInt(ADOQuery2.FieldByname('Código_Cliente').AsString);
+          ADOQuery2.Close;
+          ADOQuery2.SQL.Clear;
+
+          ADOQuery2.SQL.add('SELECT DISTINCT Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente], ');
+          ADOQuery2.SQL.add('Pedidos.Fecha, Pedidos.Detalle, Estados.Detalle as [Estado] ');
+          ADOQuery2.SQL.add('FROM  Pedidos ');
+          ADOQuery2.SQL.add('LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor ');
+          ADOQuery2.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');
+          ADOQuery2.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
+          ADOQuery2.SQL.add('WHERE Pedidos.Código_Cliente='+IntToStr(apellidoCliente));
+          ADOQuery2.ExecSQL;
+
+          ADOQuery2.Refresh;
+
+
+
+  {
+  SELECT DISTINCT Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente], Pedidos.Fecha, Pedidos.Detalle,Estados.Detalle as [Estado]
+FROM  Pedidos
+LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor
+LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado
+LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente
+
+  }
+end;
 
 end.

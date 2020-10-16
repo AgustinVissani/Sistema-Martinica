@@ -39,14 +39,17 @@ type
     ADOQuery3Nombre: TStringField;
     ADOQuery3Telfono: TStringField;
     ADOQuery3Domicilio: TStringField;
-    ADOQuery4: TADOQuery;
-    DataSource4: TDataSource;
     Label6: TLabel;
     Button2: TButton;
+    DBEdit2: TDBEdit;
+    Label7: TLabel;
     procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure DBLookupComboBox1Click(Sender: TObject);
+    procedure DBLookupComboBox2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -57,17 +60,18 @@ var
   Form7: TForm7;
   NuevoPedido: string;
   apellidoProveedor:integer;
+  apellidoCliente:integer;
 
 
 implementation
-uses unit4;
+uses unit4, Unit6;
 
 {$R *.dfm}
 
 procedure TForm7.BitBtn1Click(Sender: TObject);
 begin
 Form7.Hide;
-Form4.Show;
+Form6.Show;
 end;
 
 procedure TForm7.FormCreate(Sender: TObject);
@@ -76,9 +80,7 @@ begin
   Top:=(Screen.Height-Height) div 2;
 
   NuevoPedido:='¿Quiere agregar un pedido?';
-  DBLookupComboBox2.Visible:=false;
-  Label6.Visible:=false;
-
+  
 end;
 
 
@@ -98,16 +100,17 @@ begin
           begin //relacion de tabla Pedidos
           detalle:= RichEdit1.Text;
           observaciones:= RichEdit2.Text;
-          apellidoProveedor:= ADOQuery2.SQL.add('SELECT Código_Proveedor FROM Proveedores WHERE Provedores.Apellido='''+DBLookupComboBox1.Text);
+          //apellidoProveedor:= ADOQuery2.SQL.add('SELECT Código_Proveedor FROM Proveedores WHERE Provedores.Apellido='''+DBLookupComboBox1.Text);
 
           ADOQuery2.Close;
           ADOQuery2.SQL.Clear;
 
-          ADOQuery2.SQL.Add('INSERT INTO Pedidos (Código_Proveedor,Fecha, Detalle, Observaciones, ');
+          ADOQuery2.SQL.Add('INSERT INTO Pedidos (Código_Proveedor,Código_Cliente, Fecha, Detalle, Observaciones, ');
           ADOQuery2.SQL.Add('Código_Estado) VALUES (');
       //    ADOQuery2.SQL.Add('1');
 
           ADOQuery2.SQL.Add(inttostr(apellidoProveedor)); //Código proveedor
+          ADOQuery2.SQL.Add(','+inttostr(apellidoCliente)); //Código cliente
           ADOQuery2.SQL.Add(',GETDATE(),'); //Fecha actual
           ADOQuery2.SQL.Add(''''+detalle+''',');  //Detalle
           ADOQuery2.SQL.Add(''''+observaciones+''',');  //Observaciones
@@ -116,15 +119,14 @@ begin
 
           ADOQuery2.Close;
           ADOQuery2.SQL.Clear;
+          
                        {
           begin   //relacion de tabla Pedidos_clientes EN PROCESO!!!!!!!!!!!!!!!!!!!!!!
            ShowMessage('Selecciones cliente para guardar el pedido');
-           Label6.Visible:=false;
 
            ADOQuery4.Close;
            ADOQuery4.SQL.Clear;
 
-           DBLookupComboBox2.Visible:=true;
            ADOQuery4.SQL.Add('INSERT INTO Pedidos_Clientes (Código_Proveedor,Código_Cliente ');
            ADOQuery4.SQL.Add('1, '); //Código proveedor
            ADOQuery4.SQL.Add('1)');  //Código cliente
@@ -135,7 +137,6 @@ begin
 
          end;                    }
    end
-     
 
    else
     if buttonSelected = mrCancel then
@@ -152,5 +153,36 @@ begin
 ADOQuery2.Cancel;
 end;
 
+
+procedure TForm7.Button2Click(Sender: TObject);
+begin
+  ShowMessage(IntToStr(apellidoProveedor));
+end;
+
+procedure TForm7.DBLookupComboBox1Click(Sender: TObject);
+begin
+
+          ADOQuery2.Close;
+          ADOQuery2.SQL.Clear;
+
+          ADOQuery2.SQL.add('SELECT Código_Proveedor FROM Proveedores WHERE Proveedores.Apellido='''+DBLookupComboBox1.Text+'''');
+          ADOQuery2.Open;
+          apellidoProveedor:=StrToInt(ADOQuery2.FieldByname('Código_Proveedor').AsString);
+          ADOQuery2.Close;
+          ADOQuery2.SQL.Clear;
+
+end;
+
+procedure TForm7.DBLookupComboBox2Click(Sender: TObject);
+begin
+          ADOQuery2.Close;
+          ADOQuery2.SQL.Clear;
+
+          ADOQuery2.SQL.add('SELECT Código_Cliente FROM Clientes WHERE Clientes.Apellido='''+DBLookupComboBox2.Text+'''');
+          ADOQuery2.Open;
+          apellidoCliente:=StrToInt(ADOQuery2.FieldByname('Código_Cliente').AsString);
+          ADOQuery2.Close;
+          ADOQuery2.SQL.Clear;
+end;
 
 end.

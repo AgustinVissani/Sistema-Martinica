@@ -1,6 +1,6 @@
 object Form9: TForm9
-  Left = 347
-  Top = 84
+  Left = 44
+  Top = 11
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
