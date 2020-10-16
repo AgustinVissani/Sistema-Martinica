@@ -40,7 +40,6 @@ type
     ADOQuery3Telfono: TStringField;
     ADOQuery3Domicilio: TStringField;
     Label6: TLabel;
-    Button2: TButton;
     DBEdit2: TDBEdit;
     Label7: TLabel;
     procedure BitBtn1Click(Sender: TObject);
@@ -80,7 +79,7 @@ begin
   Top:=(Screen.Height-Height) div 2;
 
   NuevoPedido:='¿Quiere agregar un pedido?';
-  
+
 end;
 
 
@@ -92,7 +91,7 @@ const
 var
   detalle,observaciones: string;
   buttonSelected : Integer;
-begin
+
 
 begin
    buttonSelected := MessageDlg(NuevoPedido,mtConfirmation, mbOKCancel, 0);
@@ -100,14 +99,12 @@ begin
           begin //relacion de tabla Pedidos
           detalle:= RichEdit1.Text;
           observaciones:= RichEdit2.Text;
-          //apellidoProveedor:= ADOQuery2.SQL.add('SELECT Código_Proveedor FROM Proveedores WHERE Provedores.Apellido='''+DBLookupComboBox1.Text);
 
           ADOQuery2.Close;
           ADOQuery2.SQL.Clear;
 
           ADOQuery2.SQL.Add('INSERT INTO Pedidos (Código_Proveedor,Código_Cliente, Fecha, Detalle, Observaciones, ');
           ADOQuery2.SQL.Add('Código_Estado) VALUES (');
-      //    ADOQuery2.SQL.Add('1');
 
           ADOQuery2.SQL.Add(inttostr(apellidoProveedor)); //Código proveedor
           ADOQuery2.SQL.Add(','+inttostr(apellidoCliente)); //Código cliente
@@ -119,23 +116,8 @@ begin
 
           ADOQuery2.Close;
           ADOQuery2.SQL.Clear;
-          
-                       {
-          begin   //relacion de tabla Pedidos_clientes EN PROCESO!!!!!!!!!!!!!!!!!!!!!!
-           ShowMessage('Selecciones cliente para guardar el pedido');
 
-           ADOQuery4.Close;
-           ADOQuery4.SQL.Clear;
 
-           ADOQuery4.SQL.Add('INSERT INTO Pedidos_Clientes (Código_Proveedor,Código_Cliente ');
-           ADOQuery4.SQL.Add('1, '); //Código proveedor
-           ADOQuery4.SQL.Add('1)');  //Código cliente
-           ADOQuery4.ExecSQL;
-
-           ADOQuery4.Close;
-           ADOQuery4.SQL.Clear;
-
-         end;                    }
    end
 
    else
@@ -143,8 +125,6 @@ begin
 
 end;
 
-
-end;
 
 
 

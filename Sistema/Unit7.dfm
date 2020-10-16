@@ -1,8 +1,8 @@
 object Form7: TForm7
-  Left = 127
-  Top = 21
+  Left = 180
+  Top = 122
   Width = 1280
-  Height = 788
+  Height = 789
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Nuevo Pedido'
   Color = clBtnFace
@@ -218,15 +218,6 @@ object Form7: TForm7
     TabOrder = 7
     OnClick = DBLookupComboBox2Click
   end
-  object Button2: TButton
-    Left = 1032
-    Top = 320
-    Width = 75
-    Height = 25
-    Caption = 'Button2'
-    TabOrder = 8
-    OnClick = Button2Click
-  end
   object DBEdit2: TDBEdit
     Left = 616
     Top = 224
@@ -240,7 +231,7 @@ object Form7: TForm7
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 9
+    TabOrder = 8
   end
   object ADOQuery1: TADOQuery
     Active = True

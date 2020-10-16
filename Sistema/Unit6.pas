@@ -50,6 +50,7 @@ type
     ADOQuery3Estado: TStringField;
     ADOQuery4: TADOQuery;
     DataSource4: TDataSource;
+    Button1: TButton;
     procedure BitBtn1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -57,6 +58,7 @@ type
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
     procedure DBLookupComboBox1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
     
     
 
@@ -69,11 +71,10 @@ type
 
 var
   Form6: TForm6;
-  agregarConsulta: boolean;
 
 implementation
 
-uses Unit4, Unit7;
+uses Unit4, Unit7,Unit11;
 
 {$R *.dfm}
 
@@ -93,9 +94,8 @@ procedure TForm6.FormCreate(Sender: TObject);
 begin
   Left:=(Screen.Width-Width)  div 2;
   Top:=(Screen.Height-Height) div 2;
-  agregarConsulta:=true;
 end;
-     
+
 
 
 
@@ -139,7 +139,6 @@ begin
           ADOQuery3.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
           ADOQuery3.SQL.add('WHERE Pedidos.Código_Cliente='+IntToStr(apellidoCliente));
 
-          agregarConsulta:=false;
 
           ADOQuery3.Open;
           ADOQuery3.ExecSQL;
@@ -153,11 +152,16 @@ end;
 
 procedure TForm6.FormShow(Sender: TObject);
 begin
-  ShowMessage('form6 show');
   ADOQuery2.Open;
   ADOQuery2.ExecSQL;
   DBGrid1.DataSource:=DataSource2;
   DBGrid1.Refresh;
+end;
+
+procedure TForm6.Button1Click(Sender: TObject);
+begin
+Form6.Hide;
+Form10.Show;
 end;
 
 end.

@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 59
-  Top = 15
+  Left = 281
+  Top = 79
   Width = 1244
   Height = 729
   BorderIcons = [biSystemMenu, biMinimize]
@@ -121,8 +121,8 @@ object Form6: TForm6
     ParentFont = False
   end
   object Button2: TButton
-    Left = 1032
-    Top = 96
+    Left = 920
+    Top = 56
     Width = 105
     Height = 41
     Caption = 'Nuevo pedido'
@@ -138,7 +138,7 @@ object Form6: TForm6
   end
   object BitBtn1: TBitBtn
     Left = 160
-    Top = 96
+    Top = 56
     Width = 105
     Height = 49
     Caption = 'Volver'
@@ -153,9 +153,9 @@ object Form6: TForm6
     Kind = bkRetry
   end
   object DBGrid1: TDBGrid
-    Left = 64
+    Left = 48
     Top = 288
-    Width = 1113
+    Width = 1161
     Height = 369
     DataSource = DataSource2
     Font.Charset = ANSI_CHARSET
@@ -199,12 +199,28 @@ object Form6: TForm6
     Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
-    KeyField = 'DNI'
+    KeyField = 'C'#243'digo_Cliente'
     ListField = 'Apellido'
     ListSource = DataSource1
     ParentFont = False
     TabOrder = 4
     OnClick = DBLookupComboBox1Click
+  end
+  object Button1: TButton
+    Left = 1088
+    Top = 48
+    Width = 113
+    Height = 65
+    Caption = 'Cambiar estado del pedido'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
+    WordWrap = True
+    OnClick = Button1Click
   end
   object ADOQuery1: TADOQuery
     Active = True
@@ -214,7 +230,7 @@ object Form6: TForm6
     SQL.Strings = (
       'SELECT *'
       'FROM Clientes')
-    Left = 48
+    Left = 56
     Top = 88
     object ADOQuery1Apellido: TStringField
       FieldName = 'Apellido'
@@ -344,7 +360,9 @@ object Form6: TForm6
     Top = 200
   end
   object ADOQuery4: TADOQuery
+    Active = True
     Connection = Form1.ADOConnection1
+    CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
       'SELECT * '
