@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 295
-  Top = 205
+  Left = 59
+  Top = 15
   Width = 1244
   Height = 729
   BorderIcons = [biSystemMenu, biMinimize]
@@ -340,6 +340,20 @@ object Form6: TForm6
   object DataSource3: TDataSource
     DataSet = ADOQuery3
     Left = 288
+    Top = 200
+  end
+  object ADOQuery4: TADOQuery
+    Connection = Form1.ADOConnection1
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT * '
+      'FROM Clientes')
+    Left = 376
+    Top = 200
+  end
+  object DataSource4: TDataSource
+    DataSet = ADOQuery4
+    Left = 424
     Top = 200
   end
 end
