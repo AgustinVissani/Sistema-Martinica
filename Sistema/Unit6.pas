@@ -56,6 +56,7 @@ type
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
     procedure DBLookupComboBox1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     
     
 
@@ -68,6 +69,7 @@ type
 
 var
   Form6: TForm6;
+  agregarConsulta: boolean;
 
 implementation
 
@@ -91,6 +93,7 @@ procedure TForm6.FormCreate(Sender: TObject);
 begin
   Left:=(Screen.Width-Width)  div 2;
   Top:=(Screen.Height-Height) div 2;
+  agregarConsulta:=true;
 end;
      
 
@@ -121,23 +124,25 @@ begin
           ADOQuery4.SQL.add('SELECT Código_Cliente FROM Clientes WHERE Clientes.Apellido='''+DBLookupComboBox1.Text+'''');
           ADOQuery4.Open;
           ADOQuery4.ExecSQL;
+
           apellidoCliente:=StrToInt(ADOQuery4.FieldByname('Código_Cliente').AsString);
           ADOQuery4.Close;
           ADOQuery4.SQL.Clear;
-          
-          {
+
+          ADOQuery3.SQL.Clear;
+
           ADOQuery3.SQL.add('SELECT DISTINCT Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente], ');
           ADOQuery3.SQL.add('Pedidos.Fecha, Pedidos.Detalle, Estados.Detalle as [Estado] ');
           ADOQuery3.SQL.add('FROM  Pedidos ');
           ADOQuery3.SQL.add('LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor ');
           ADOQuery3.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');
           ADOQuery3.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
-          }
           ADOQuery3.SQL.add('WHERE Pedidos.Código_Cliente='+IntToStr(apellidoCliente));
+
+          agregarConsulta:=false;
+
           ADOQuery3.Open;
           ADOQuery3.ExecSQL;
-
-
           DBGrid1.DataSource:=DataSource3;
 
           DBGrid1.Refresh;
@@ -146,8 +151,13 @@ begin
 
 end;
 
-
-
-
+procedure TForm6.FormShow(Sender: TObject);
+begin
+  ShowMessage('form6 show');
+  ADOQuery2.Open;
+  ADOQuery2.ExecSQL;
+  DBGrid1.DataSource:=DataSource2;
+  DBGrid1.Refresh;
+end;
 
 end.
