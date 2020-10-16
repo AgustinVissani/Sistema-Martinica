@@ -1,6 +1,6 @@
 object Form9: TForm9
-  Left = 44
-  Top = 11
+  Left = 243
+  Top = 145
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -217,6 +217,7 @@ object Form9: TForm9
     Height = 27
     DataField = 'DNI'
     DataSource = DataSource1
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -232,6 +233,7 @@ object Form9: TForm9
     Height = 27
     DataField = 'Nombre'
     DataSource = DataSource1
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -247,6 +249,7 @@ object Form9: TForm9
     Height = 27
     DataField = 'Apellido'
     DataSource = DataSource1
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -262,6 +265,7 @@ object Form9: TForm9
     Height = 27
     DataField = 'Tel'#233'fono'
     DataSource = DataSource1
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -277,6 +281,7 @@ object Form9: TForm9
     Height = 27
     DataField = 'Domicilio'
     DataSource = DataSource1
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16

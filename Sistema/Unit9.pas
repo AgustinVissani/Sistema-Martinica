@@ -74,10 +74,18 @@ begin
    buttonSelected := MessageDlg(NuevoCliente,mtConfirmation, mbOKCancel, 0);
    if buttonSelected = mrOK then
    begin
+        DBEdit1.Enabled:=true;
+        DBEdit2.Enabled:=true;
+        DBEdit3.Enabled:=true;
+        DBEdit4.Enabled:=true;
+        DBEdit5.Enabled:=true;
         ADOQuery1.Append;
    end
    else
     if buttonSelected = mrCancel then
+    begin
+    end;
+
 end;
 
 
@@ -114,6 +122,11 @@ begin
    buttonSelected := MessageDlg(QuiereEditar,mtConfirmation, mbOKCancel, 0);
    if buttonSelected = mrOK then
    begin
+        DBEdit1.Enabled:=true;
+        DBEdit2.Enabled:=true;
+        DBEdit3.Enabled:=true;
+        DBEdit4.Enabled:=true;
+        DBEdit5.Enabled:=true;
         ADOQuery1.Edit;
    end
    else
@@ -132,6 +145,11 @@ end;
 procedure TForm9.BitBtn2Click(Sender: TObject);
 begin
   ADOQuery1.Post;
+  DBEdit1.Enabled:=false;
+  DBEdit2.Enabled:=false;
+  DBEdit3.Enabled:=false;
+  DBEdit4.Enabled:=false;
+  DBEdit5.Enabled:=false;
 end;
 
 

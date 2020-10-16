@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 72
-  Top = 29
+  Left = 277
+  Top = 176
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -94,7 +94,7 @@ object Form4: TForm4
     ParentFont = False
   end
   object Button1: TButton
-    Left = 352
+    Left = 336
     Top = 80
     Width = 89
     Height = 33
@@ -109,7 +109,7 @@ object Form4: TForm4
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 464
+    Left = 472
     Top = 80
     Width = 161
     Height = 33
@@ -125,8 +125,8 @@ object Form4: TForm4
     OnClick = Button2Click
   end
   object BitBtn1: TBitBtn
-    Left = 144
-    Top = 80
+    Left = 72
+    Top = 96
     Width = 89
     Height = 33
     Caption = 'Volver'
@@ -141,7 +141,7 @@ object Form4: TForm4
     Kind = bkRetry
   end
   object Button3: TButton
-    Left = 744
+    Left = 808
     Top = 80
     Width = 201
     Height = 33
@@ -157,7 +157,7 @@ object Form4: TForm4
     OnClick = Button3Click
   end
   object Button4: TButton
-    Left = 648
+    Left = 680
     Top = 80
     Width = 75
     Height = 33
@@ -231,6 +231,7 @@ object Form4: TForm4
     Height = 27
     DataField = 'Nombre'
     DataSource = DataSource1
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -246,6 +247,7 @@ object Form4: TForm4
     Height = 27
     DataField = 'Apellido'
     DataSource = DataSource1
+    Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -261,6 +263,7 @@ object Form4: TForm4
     Height = 27
     DataField = 'Tel'#233'fono'
     DataSource = DataSource1
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -276,6 +279,7 @@ object Form4: TForm4
     Height = 27
     DataField = 'Domicilio'
     DataSource = DataSource1
+    Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -291,6 +295,7 @@ object Form4: TForm4
     Height = 27
     DataField = 'CUIT'
     DataSource = DataSource1
+    Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -300,8 +305,8 @@ object Form4: TForm4
     TabOrder = 4
   end
   object BitBtn4: TBitBtn
-    Left = 968
-    Top = 80
+    Left = 1112
+    Top = 96
     Width = 105
     Height = 33
     Caption = 'Paso atras'
@@ -318,7 +323,7 @@ object Form4: TForm4
       'SELECT *'
       'FROM Proveedores')
     Left = 48
-    Top = 64
+    Top = 24
     object ADOQuery1Nombre: TStringField
       FieldName = 'Nombre'
       Size = 30
@@ -342,6 +347,6 @@ object Form4: TForm4
   object DataSource1: TDataSource
     DataSet = ADOQuery1
     Left = 104
-    Top = 64
+    Top = 24
   end
 end

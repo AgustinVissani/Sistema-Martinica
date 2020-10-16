@@ -281,6 +281,7 @@ object Form7: TForm7
     Top = 176
   end
   object ADOQuery2: TADOQuery
+    Active = True
     Connection = Form1.ADOConnection1
     CursorType = ctStatic
     DataSource = DataSource2

@@ -41,12 +41,20 @@ type
     ADOQuery2Fecha: TWideStringField;
     ADOQuery2Detalle: TStringField;
     ADOQuery2Estado: TStringField;
+    ADOQuery3: TADOQuery;
+    DataSource3: TDataSource;
+    ADOQuery3Proveedor: TStringField;
+    ADOQuery3Cliente: TStringField;
+    ADOQuery3Fecha: TWideStringField;
+    ADOQuery3Detalle: TStringField;
+    ADOQuery3Estado: TStringField;
     procedure BitBtn1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
     procedure DBLookupComboBox1Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
     
 
 
@@ -105,36 +113,33 @@ end;
 
 procedure TForm6.DBLookupComboBox1Click(Sender: TObject);
 begin
-          ADOQuery2.Close;
-          ADOQuery2.SQL.Clear;
+          ADOQuery3.Close;
+          ADOQuery3.SQL.Clear;
 
-          ADOQuery2.SQL.add('SELECT Código_Cliente FROM Clientes WHERE Clientes.Apellido='''+DBLookupComboBox1.Text+'''');
-          ADOQuery2.Open;
+          ADOQuery3.SQL.add('SELECT Código_Cliente FROM Clientes WHERE Clientes.Apellido='''+DBLookupComboBox1.Text+'''');
+          ADOQuery3.Open;
+          ADOQuery3.ExecSQL;
           apellidoCliente:=StrToInt(ADOQuery2.FieldByname('Código_Cliente').AsString);
-          ADOQuery2.Close;
-          ADOQuery2.SQL.Clear;
+          ADOQuery3.Close;
+          ADOQuery3.SQL.Clear;
+          ADOQuery3.SQL.add('SELECT DISTINCT Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente], ');
+          ADOQuery3.SQL.add('Pedidos.Fecha, Pedidos.Detalle, Estados.Detalle as [Estado] ');
+          ADOQuery3.SQL.add('FROM  Pedidos ');
+          ADOQuery3.SQL.add('LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor ');
+          ADOQuery3.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');
+          ADOQuery3.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
+          ADOQuery3.SQL.add('WHERE Pedidos.Código_Cliente='+IntToStr(apellidoCliente));
+          ADOQuery3.Open;
+          ADOQuery3.ExecSQL;
 
-          ADOQuery2.SQL.add('SELECT DISTINCT Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente], ');
-          ADOQuery2.SQL.add('Pedidos.Fecha, Pedidos.Detalle, Estados.Detalle as [Estado] ');
-          ADOQuery2.SQL.add('FROM  Pedidos ');
-          ADOQuery2.SQL.add('LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor ');
-          ADOQuery2.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');
-          ADOQuery2.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
-          ADOQuery2.SQL.add('WHERE Pedidos.Código_Cliente='+IntToStr(apellidoCliente));
-          ADOQuery2.ExecSQL;
-
-          ADOQuery2.Refresh;
+          DBGrid1.DataSource.DataSet.Refresh;
 
 
 
-  {
-  SELECT DISTINCT Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente], Pedidos.Fecha, Pedidos.Detalle,Estados.Detalle as [Estado]
-FROM  Pedidos
-LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor
-LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado
-LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente
-
-  }
 end;
+
+
+
+
 
 end.

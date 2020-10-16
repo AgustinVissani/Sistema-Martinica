@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 124
-  Top = 11
+  Left = 295
+  Top = 205
   Width = 1244
   Height = 729
   BorderIcons = [biSystemMenu, biMinimize]
@@ -42,7 +42,7 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 80
+    Left = 568
     Top = 248
     Width = 55
     Height = 25
@@ -55,7 +55,7 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 168
+    Left = 88
     Top = 248
     Width = 94
     Height = 25
@@ -68,8 +68,8 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 568
-    Top = 248
+    Left = 1080
+    Top = 240
     Width = 62
     Height = 25
     Caption = 'Estado'
@@ -94,7 +94,7 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 656
+    Left = 768
     Top = 248
     Width = 64
     Height = 25
@@ -107,7 +107,7 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label8: TLabel
-    Left = 408
+    Left = 304
     Top = 248
     Width = 64
     Height = 25
@@ -261,22 +261,27 @@ object Form6: TForm6
     Left = 56
     Top = 200
     object ADOQuery2Proveedor: TStringField
+      DisplayWidth = 35
       FieldName = 'Proveedor'
       Size = 30
     end
     object ADOQuery2Cliente: TStringField
+      DisplayWidth = 35
       FieldName = 'Cliente'
       Size = 30
     end
     object ADOQuery2Fecha: TWideStringField
+      DisplayWidth = 27
       FieldName = 'Fecha'
       Size = 10
     end
     object ADOQuery2Detalle: TStringField
+      DisplayWidth = 45
       FieldName = 'Detalle'
       Size = 100
     end
     object ADOQuery2Estado: TStringField
+      DisplayWidth = 33
       FieldName = 'Estado'
     end
   end
@@ -288,6 +293,53 @@ object Form6: TForm6
   object DataSource2: TDataSource
     DataSet = ADOQuery2
     Left = 104
+    Top = 200
+  end
+  object ADOQuery3: TADOQuery
+    Active = True
+    Connection = Form1.ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT DISTINCT Proveedores.Apellido as [Proveedor], Clientes.Ap' +
+        'ellido as [Cliente], Pedidos.Fecha, Pedidos.Detalle, Estados.Det' +
+        'alle as [Estado]'
+      'FROM  Pedidos '
+      
+        'LEFT JOIN Proveedores ON Proveedores.C'#243'digo_Proveedor = Pedidos.' +
+        'C'#243'digo_Proveedor'
+      
+        'LEFT JOIN Estados ON Estados.C'#243'digo_Estado = Pedidos.C'#243'digo_Esta' +
+        'do'
+      
+        'LEFT JOIN Clientes ON Clientes.C'#243'digo_Cliente = Pedidos.C'#243'digo_C' +
+        'liente')
+    Left = 248
+    Top = 200
+    object ADOQuery3Proveedor: TStringField
+      FieldName = 'Proveedor'
+      Size = 30
+    end
+    object ADOQuery3Cliente: TStringField
+      FieldName = 'Cliente'
+      Size = 30
+    end
+    object ADOQuery3Fecha: TWideStringField
+      FieldName = 'Fecha'
+      Size = 10
+    end
+    object ADOQuery3Detalle: TStringField
+      FieldName = 'Detalle'
+      Size = 100
+    end
+    object ADOQuery3Estado: TStringField
+      FieldName = 'Estado'
+    end
+  end
+  object DataSource3: TDataSource
+    DataSet = ADOQuery3
+    Left = 288
     Top = 200
   end
 end
