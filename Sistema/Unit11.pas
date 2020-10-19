@@ -105,18 +105,18 @@ begin
           indicador:=StrToInt(ADOQuery2.FieldByname('Código_Pedidos').AsString);
 
 
-          ADOQuery1.Close;
-          ADOQuery1.SQL.Clear;
+          ADOQuery2.Close;
+          ADOQuery2.SQL.Clear;
 
-          ADOQuery1.SQL.Add('UPDATE Pedidos SET ');
-          ADOQuery1.SQL.Add('Pedidos.Código_Estado='+IntToStr(estado));
-          ADOQuery1.SQL.Add('WHERE Pedidos.Código_Pedidos='+IntToStr(indicador));
+          ADOQuery2.SQL.Add('UPDATE Pedidos SET ');
+          ADOQuery2.SQL.Add('Pedidos.Código_Estado='+IntToStr(estado));
+          ADOQuery2.SQL.Add('WHERE Pedidos.Código_Pedidos='+IntToStr(indicador));
 
 
-           ADOQuery1.ExecSQL;
+           ADOQuery2.ExecSQL;
 
-           ADOQuery1.Close;
-          ADOQuery1.SQL.Clear;
+           ADOQuery2.Close;
+          ADOQuery2.SQL.Clear;
          end
    else
     if buttonSelected = mrCancel then
