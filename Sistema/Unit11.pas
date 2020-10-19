@@ -17,7 +17,6 @@ type
     DBLookupComboBox2: TDBLookupComboBox;
     ADOQuery3: TADOQuery;
     DataSource3: TDataSource;
-    ADOQuery2Proveedor: TStringField;
     ADOQuery2Cliente: TStringField;
     ADOQuery2Fecha: TWideStringField;
     ADOQuery2Estado: TStringField;
@@ -41,11 +40,19 @@ type
     DBEdit7: TDBEdit;
     ADOQuery1: TADOQuery;
     DataSource1: TDataSource;
+    ADOQuery4: TADOQuery;
+    DataSource4: TDataSource;
+    ADOQuery2Proveedor: TStringField;
+    Label10: TLabel;
+    DBLookupComboBox1: TDBLookupComboBox;
+    DataSource5: TDataSource;
+    ADOQuery5: TADOQuery;
     procedure FormCreate(Sender: TObject);
-    procedure DBLookupComboBox1Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
  //   procedure BitBtn2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure DBLookupComboBox2Click(Sender: TObject);
+    procedure DBLookupComboBox1Click(Sender: TObject);
 //    procedure Label8Click(Sender: TObject);
 //    procedure DBEdit6Change(Sender: TObject);
    // procedure BitBtn2Click(Sender: TObject);
@@ -57,7 +64,8 @@ type
 
 var
   Form10: TForm10;
-  apellidoCliente:integer;
+  apellidoCliente,estado,indicador:integer;
+  NuevoEstado:string;
 implementation
 
 uses Unit6;
@@ -68,38 +76,9 @@ procedure TForm10.FormCreate(Sender: TObject);
 begin
   Left:=(Screen.Width-Width)  div 2;
   Top:=(Screen.Height-Height) div 2;
+  NuevoEstado:='¿Quiere cambiar el estado del pedido?';
 end;
 
-procedure TForm10.DBLookupComboBox1Click(Sender: TObject);
-begin           {
-          ADOQuery5.Close;
-          ADOQuery5.SQL.Clear;
-
-          ADOQuery5.SQL.add('SELECT Código_Cliente FROM Clientes WHERE Clientes.Apellido='''+DBLookupComboBox1.Text+'''');
-          ADOQuery5.Open;
-          ADOQuery5.ExecSQL;
-
-          apellidoCliente:=StrToInt(ADOQuery5.FieldByname('Código_Cliente').AsString);
-          ADOQuery5.Close;
-          ADOQuery5.SQL.Clear;
-
-          ADOQuery4.SQL.Clear;
-
-          ADOQuery4.SQL.add('SELECT DISTINCT  Proveedores.Apellido as [Proveedor],Clientes.Apellido as [Cliente], ');
-          ADOQuery4.SQL.add('Pedidos.Fecha, Estados.Detalle as [Estado] ');
-          ADOQuery4.SQL.add('FROM  Pedidos ');
-          ADOQuery4.SQL.add('LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor ');
-          ADOQuery4.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');
-          ADOQuery4.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
-          ADOQuery4.SQL.add('WHERE Pedidos.Código_Cliente='+IntToStr(apellidoCliente));
-
-
-          ADOQuery4.Open;
-          ADOQuery4.ExecSQL;
-          DBGrid1.DataSource:=DataSource4;
-
-          DBGrid1.Refresh;    }
-end;
 
 procedure TForm10.BitBtn1Click(Sender: TObject);
 begin
@@ -114,24 +93,91 @@ end;
 
 
 procedure TForm10.Button1Click(Sender: TObject);
+const
+  mbYesNoCancel = [mbYes, mbNO, mbCancel];
+  var
+  buttonSelected : Integer;
+
 begin
-         ADOQuery1.Close;
-         ADOQuery1.SQL.Clear;
-
-        ADOQuery1.SQL.Add('UPDATE Pedidos SET ');
-        ADOQuery1.SQL.Add('Pedidos.Código_Estado=4 ');
-        ADOQuery1.SQL.Add('WHERE Pedidos.Código_Pedidos=1');   //cambiar el 1 por el valor id del dbcombobox de estados
-
-        ADOQuery1.ExecSQL;
-
-        ADOQuery1.Close;
-        ADOQuery1.SQL.Clear;
+   buttonSelected := MessageDlg(NuevoEstado,mtConfirmation, mbOKCancel, 0);
+   if buttonSelected = mrOK then
+         begin
+          indicador:=StrToInt(ADOQuery2.FieldByname('Código_Pedidos').AsString);
 
 
+          ADOQuery1.Close;
+          ADOQuery1.SQL.Clear;
+
+          ADOQuery1.SQL.Add('UPDATE Pedidos SET ');
+          ADOQuery1.SQL.Add('Pedidos.Código_Estado='+IntToStr(estado));
+          ADOQuery1.SQL.Add('WHERE Pedidos.Código_Pedidos='+IntToStr(indicador));
+
+
+           ADOQuery1.ExecSQL;
+
+           ADOQuery1.Close;
+          ADOQuery1.SQL.Clear;
+         end
+   else
+    if buttonSelected = mrCancel then
 end;
 
 
 
 
+procedure TForm10.DBLookupComboBox2Click(Sender: TObject);
+begin
+          ADOQuery4.Close;
+         ADOQuery4.SQL.Clear;
+
+          ADOQuery4.SQL.add('SELECT Código_Estado FROM Estados WHERE Estados.Detalle='''+DBLookupComboBox2.Text+'''');
+         ADOQuery4.Open;
+         ADOQuery4.ExecSQL;
+
+          estado:=StrToInt(ADOQuery4.FieldByname('Código_Estado').AsString);
+          ADOQuery4.Close;
+          ADOQuery4.SQL.Clear;
+
+          ADOQuery4.Close;
+          ADOQuery4.SQL.Clear;
+
+
+
+
+end;
+
+procedure TForm10.DBLookupComboBox1Click(Sender: TObject);
+begin
+
+          ADOQuery5.Close;
+          ADOQuery5.SQL.Clear;
+
+          ADOQuery5.SQL.add('SELECT Código_Cliente FROM Clientes WHERE Clientes.Apellido='''+DBLookupComboBox1.Text+'''');
+          ADOQuery5.Open;
+          ADOQuery5.ExecSQL;
+
+          apellidoCliente:=StrToInt(ADOQuery5.FieldByname('Código_Cliente').AsString);
+          ADOQuery5.Close;
+          ADOQuery5.SQL.Clear;
+
+          ADOQuery2.SQL.Clear;
+
+          ADOQuery2.SQL.add('SELECT DISTINCT Código_Pedidos, Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente],  ');
+          ADOQuery2.SQL.add('Pedidos.Fecha, Pedidos.Detalle,Pedidos.Observaciones ,Estados.Detalle as [Estado] ');
+          ADOQuery2.SQL.add('FROM  Pedidos ');
+          ADOQuery2.SQL.add('LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor ');
+          ADOQuery2.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');
+          ADOQuery2.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
+          ADOQuery2.SQL.add('WHERE Pedidos.Código_Cliente='+IntToStr(apellidoCliente));
+
+
+
+          ADOQuery2.Open;
+          ADOQuery2.ExecSQL;
+          DBGrid1.DataSource:=DataSource2;
+
+          DBGrid1.Refresh;
+
+end;
 
 end.

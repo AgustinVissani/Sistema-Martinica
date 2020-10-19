@@ -43,7 +43,7 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 568
+    Left = 576
     Top = 248
     Width = 55
     Height = 25
@@ -56,7 +56,7 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 88
+    Left = 280
     Top = 248
     Width = 94
     Height = 25
@@ -69,8 +69,8 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 1080
-    Top = 240
+    Left = 896
+    Top = 248
     Width = 62
     Height = 25
     Caption = 'Estado'
@@ -95,7 +95,7 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 768
+    Left = 688
     Top = 248
     Width = 64
     Height = 25
@@ -108,7 +108,7 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label8: TLabel
-    Left = 304
+    Left = 456
     Top = 248
     Width = 64
     Height = 25
@@ -153,10 +153,10 @@ object Form6: TForm6
     Kind = bkRetry
   end
   object DBGrid1: TDBGrid
-    Left = 48
-    Top = 288
-    Width = 1161
-    Height = 369
+    Left = 280
+    Top = 320
+    Width = 721
+    Height = 249
     DataSource = DataSource2
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -278,27 +278,27 @@ object Form6: TForm6
     Left = 56
     Top = 200
     object ADOQuery2Proveedor: TStringField
-      DisplayWidth = 35
+      DisplayWidth = 25
       FieldName = 'Proveedor'
       Size = 30
     end
     object ADOQuery2Cliente: TStringField
-      DisplayWidth = 35
+      DisplayWidth = 21
       FieldName = 'Cliente'
       Size = 30
     end
     object ADOQuery2Fecha: TWideStringField
-      DisplayWidth = 27
+      DisplayWidth = 14
       FieldName = 'Fecha'
       Size = 10
     end
     object ADOQuery2Detalle: TStringField
-      DisplayWidth = 45
+      DisplayWidth = 37
       FieldName = 'Detalle'
       Size = 100
     end
     object ADOQuery2Estado: TStringField
-      DisplayWidth = 33
+      DisplayWidth = 14
       FieldName = 'Estado'
     end
   end

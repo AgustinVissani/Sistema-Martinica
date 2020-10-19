@@ -16,7 +16,7 @@ object Form10: TForm10
   TextHeight = 13
   object Label1: TLabel
     Left = 528
-    Top = 32
+    Top = 24
     Width = 273
     Height = 33
     Caption = 'ESTADOS DE PEDIDOS'
@@ -29,7 +29,7 @@ object Form10: TForm10
   end
   object Label3: TLabel
     Left = 456
-    Top = 304
+    Top = 352
     Width = 62
     Height = 25
     Caption = 'Estado'
@@ -41,8 +41,8 @@ object Form10: TForm10
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 264
-    Top = 136
+    Left = 224
+    Top = 152
     Width = 72
     Height = 19
     Caption = 'Proveedor'
@@ -54,8 +54,8 @@ object Form10: TForm10
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 584
-    Top = 136
+    Left = 544
+    Top = 152
     Width = 48
     Height = 19
     Caption = 'Cliente'
@@ -67,8 +67,8 @@ object Form10: TForm10
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 912
-    Top = 136
+    Left = 872
+    Top = 152
     Width = 40
     Height = 19
     Caption = 'Fecha'
@@ -80,8 +80,8 @@ object Form10: TForm10
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 416
-    Top = 208
+    Left = 376
+    Top = 224
     Width = 48
     Height = 19
     Caption = 'Detalle'
@@ -93,8 +93,8 @@ object Form10: TForm10
     ParentFont = False
   end
   object Label7: TLabel
-    Left = 776
-    Top = 208
+    Left = 736
+    Top = 224
     Width = 102
     Height = 19
     Caption = 'Observaciones'
@@ -106,8 +106,8 @@ object Form10: TForm10
     ParentFont = False
   end
   object Label8: TLabel
-    Left = 568
-    Top = 264
+    Left = 528
+    Top = 280
     Width = 54
     Height = 19
     Caption = 'Estados'
@@ -119,8 +119,8 @@ object Form10: TForm10
     ParentFont = False
   end
   object Label9: TLabel
-    Left = 128
-    Top = 192
+    Left = 88
+    Top = 208
     Width = 81
     Height = 19
     Caption = 'Cod Pedido'
@@ -131,17 +131,31 @@ object Form10: TForm10
     Font.Style = []
     ParentFont = False
   end
+  object Label10: TLabel
+    Left = 472
+    Top = 88
+    Width = 64
+    Height = 25
+    Caption = 'Cliente'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
   object DBGrid1: TDBGrid
     Left = 144
-    Top = 368
-    Width = 1033
-    Height = 297
+    Top = 416
+    Width = 1025
+    Height = 265
     DataSource = DataSource2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
     ParentFont = False
     TabOrder = 0
     TitleFont.Charset = ANSI_CHARSET
@@ -151,8 +165,8 @@ object Form10: TForm10
     TitleFont.Style = []
   end
   object BitBtn1: TBitBtn
-    Left = 152
-    Top = 88
+    Left = 56
+    Top = 56
     Width = 97
     Height = 33
     Caption = 'Volver'
@@ -168,7 +182,7 @@ object Form10: TForm10
   end
   object DBLookupComboBox2: TDBLookupComboBox
     Left = 552
-    Top = 304
+    Top = 352
     Width = 241
     Height = 33
     Font.Charset = DEFAULT_CHARSET
@@ -181,10 +195,11 @@ object Form10: TForm10
     ListSource = DataSource3
     ParentFont = False
     TabOrder = 2
+    OnClick = DBLookupComboBox2Click
   end
   object DBEdit1: TDBEdit
-    Left = 360
-    Top = 136
+    Left = 320
+    Top = 152
     Width = 137
     Height = 27
     DataField = 'Proveedor'
@@ -199,8 +214,8 @@ object Form10: TForm10
     TabOrder = 3
   end
   object DBEdit2: TDBEdit
-    Left = 664
-    Top = 128
+    Left = 624
+    Top = 144
     Width = 169
     Height = 27
     DataField = 'Cliente'
@@ -215,8 +230,8 @@ object Form10: TForm10
     TabOrder = 4
   end
   object DBEdit3: TDBEdit
-    Left = 992
-    Top = 128
+    Left = 952
+    Top = 144
     Width = 137
     Height = 27
     DataField = 'Fecha'
@@ -231,8 +246,8 @@ object Form10: TForm10
     TabOrder = 5
   end
   object DBEdit4: TDBEdit
-    Left = 480
-    Top = 208
+    Left = 440
+    Top = 224
     Width = 217
     Height = 27
     DataField = 'Detalle'
@@ -247,8 +262,8 @@ object Form10: TForm10
     TabOrder = 6
   end
   object DBEdit5: TDBEdit
-    Left = 920
-    Top = 200
+    Left = 880
+    Top = 216
     Width = 241
     Height = 27
     DataField = 'Observaciones'
@@ -263,8 +278,8 @@ object Form10: TForm10
     TabOrder = 7
   end
   object Button1: TButton
-    Left = 856
-    Top = 304
+    Left = 872
+    Top = 344
     Width = 89
     Height = 41
     Caption = 'Cambiar estado'
@@ -279,8 +294,8 @@ object Form10: TForm10
     OnClick = Button1Click
   end
   object DBEdit6: TDBEdit
-    Left = 712
-    Top = 256
+    Left = 672
+    Top = 272
     Width = 161
     Height = 27
     DataField = 'Estado'
@@ -295,8 +310,8 @@ object Form10: TForm10
     TabOrder = 9
   end
   object DBEdit7: TDBEdit
-    Left = 224
-    Top = 192
+    Left = 184
+    Top = 208
     Width = 137
     Height = 27
     DataField = 'C'#243'digo_Pedidos'
@@ -309,6 +324,23 @@ object Form10: TForm10
     Font.Style = []
     ParentFont = False
     TabOrder = 10
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 568
+    Top = 88
+    Width = 233
+    Height = 33
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    KeyField = 'C'#243'digo_Cliente'
+    ListField = 'Cliente'
+    ListSource = DataSource1
+    ParentFont = False
+    TabOrder = 11
+    OnClick = DBLookupComboBox1Click
   end
   object ADOQuery2: TADOQuery
     Active = True
@@ -331,24 +363,24 @@ object Form10: TForm10
         'LEFT JOIN Clientes ON Clientes.C'#243'digo_Cliente = Pedidos.C'#243'digo_C' +
         'liente')
     Left = 40
-    Top = 328
+    Top = 400
     object ADOQuery2Cdigo_Pedidos: TAutoIncField
       DisplayWidth = 15
       FieldName = 'C'#243'digo_Pedidos'
       ReadOnly = True
     end
     object ADOQuery2Proveedor: TStringField
-      DisplayWidth = 28
+      DisplayWidth = 21
       FieldName = 'Proveedor'
       Size = 30
     end
     object ADOQuery2Cliente: TStringField
-      DisplayWidth = 23
+      DisplayWidth = 19
       FieldName = 'Cliente'
       Size = 30
     end
     object ADOQuery2Detalle: TStringField
-      DisplayWidth = 22
+      DisplayWidth = 34
       FieldName = 'Detalle'
       Size = 100
     end
@@ -358,19 +390,19 @@ object Form10: TForm10
       Size = 30
     end
     object ADOQuery2Fecha: TWideStringField
-      DisplayWidth = 13
+      DisplayWidth = 17
       FieldName = 'Fecha'
       Size = 10
     end
     object ADOQuery2Estado: TStringField
-      DisplayWidth = 27
+      DisplayWidth = 15
       FieldName = 'Estado'
     end
   end
   object DataSource2: TDataSource
     DataSet = ADOQuery2
     Left = 88
-    Top = 328
+    Top = 400
   end
   object ADOQuery3: TADOQuery
     Active = True
@@ -380,13 +412,13 @@ object Form10: TForm10
     SQL.Strings = (
       'SELECT * '
       'FROM Estados')
-    Left = 336
-    Top = 296
+    Left = 344
+    Top = 312
   end
   object DataSource3: TDataSource
     DataSet = ADOQuery3
-    Left = 384
-    Top = 296
+    Left = 392
+    Top = 312
   end
   object ADOQuery1: TADOQuery
     Active = True
@@ -395,9 +427,10 @@ object Form10: TForm10
     Parameters = <>
     SQL.Strings = (
       
-        'SELECT DISTINCT C'#243'digo_Pedidos, Proveedores.Apellido as [Proveed' +
-        'or], Clientes.Apellido as [Cliente], Pedidos.Fecha, Pedidos.Deta' +
-        'lle,  Pedidos.Observaciones, Estados.Detalle as [Estado]'
+        'SELECT DISTINCT C'#243'digo_Pedidos,Clientes.C'#243'digo_Cliente,Proveedor' +
+        'es.Apellido as [Proveedor], Clientes.Apellido as [Cliente], Pedi' +
+        'dos.Fecha, Pedidos.Detalle,  Pedidos.Observaciones, Estados.Deta' +
+        'lle as [Estado]'
       'FROM  Pedidos '
       
         'LEFT JOIN Proveedores ON Proveedores.C'#243'digo_Proveedor = Pedidos.' +
@@ -409,11 +442,43 @@ object Form10: TForm10
         'LEFT JOIN Clientes ON Clientes.C'#243'digo_Cliente = Pedidos.C'#243'digo_C' +
         'liente')
     Left = 40
-    Top = 464
+    Top = 360
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
     Left = 88
-    Top = 464
+    Top = 360
+  end
+  object ADOQuery4: TADOQuery
+    Active = True
+    Connection = Form1.ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT * '
+      'FROM Estados')
+    Left = 344
+    Top = 360
+  end
+  object DataSource4: TDataSource
+    DataSet = ADOQuery4
+    Left = 400
+    Top = 360
+  end
+  object DataSource5: TDataSource
+    DataSet = ADOQuery5
+    Left = 296
+    Top = 80
+  end
+  object ADOQuery5: TADOQuery
+    Active = True
+    Connection = Form1.ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT *'
+      'FROM Clientes')
+    Left = 240
+    Top = 80
   end
 end
