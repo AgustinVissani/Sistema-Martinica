@@ -76,10 +76,12 @@ begin
    if buttonSelected = mrOK then
    begin
         DBEdit1.Enabled:=true;
+        DBEdit1.SetFocus;
         DBEdit2.Enabled:=true;
         DBEdit3.Enabled:=true;
         DBEdit4.Enabled:=true;
         DBEdit5.Enabled:=true;
+        BitBtn2.Enabled:=true;
         ADOQuery1.Append;
    end
    else
@@ -145,12 +147,20 @@ end;
 
 procedure TForm9.BitBtn2Click(Sender: TObject);
 begin
+
+  
+
   ADOQuery1.Post;
   DBEdit1.Enabled:=false;
+  DBEdit1.Text:='';
   DBEdit2.Enabled:=false;
+  DBEdit2.Text:='';
   DBEdit3.Enabled:=false;
+  DBEdit3.Text:='';
   DBEdit4.Enabled:=false;
+  DBEdit4.Text:='';
   DBEdit5.Enabled:=false;
+  DBEdit5.Text:='';
 end;
 
 

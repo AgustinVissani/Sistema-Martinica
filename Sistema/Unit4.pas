@@ -61,6 +61,7 @@ var
   QuiereEditar: string;
   SiElimino: string;
   NoElimino: string;
+  CompletarCampos: string;
 
 implementation
 
@@ -163,6 +164,21 @@ end;
 
 procedure TForm4.BitBtn2Click(Sender: TObject);
 begin
+      {
+      //Validaciones
+      if DBEdit1.Text='' or
+        DBEdit2.Text='' or
+        DBEdit3.Text='' or
+        DBEdit4.Text='' or
+        DBEdit5.Text=''
+      then
+        showmessage(CompletarCampos)
+      else
+      begin
+
+      end;  //else
+      }
+
       ADOQuery1.Post;
       DBEdit1.Enabled:=false;
       DBEdit2.Enabled:=false;
@@ -181,6 +197,7 @@ begin
   QuiereEditar:='¿Quiere editar un proveedor?';
   SiElimino:= 'Se eliminó correctamente';
   NoElimino:= 'No se eliminó el proveedor';
+  CompletarCampos:= 'Complete todos los campos';
 
 end;
 

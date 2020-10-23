@@ -107,21 +107,6 @@ object Form7: TForm7
     Font.Style = []
     ParentFont = False
   end
-  object Button1: TButton
-    Left = 472
-    Top = 592
-    Width = 97
-    Height = 41
-    Caption = 'Cancelar'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 0
-    OnClick = Button1Click
-  end
   object Button3: TButton
     Left = 800
     Top = 592
@@ -134,7 +119,7 @@ object Form7: TForm7
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 0
     OnClick = Button3Click
   end
   object BitBtn1: TBitBtn
@@ -149,7 +134,7 @@ object Form7: TForm7
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 2
+    TabOrder = 1
     OnClick = BitBtn1Click
     Kind = bkRetry
   end
@@ -167,7 +152,7 @@ object Form7: TForm7
     ListField = 'Apellido'
     ListSource = DataSource1
     ParentFont = False
-    TabOrder = 3
+    TabOrder = 2
     OnClick = DBLookupComboBox1Click
   end
   object DBEdit1: TDBEdit
@@ -183,7 +168,7 @@ object Form7: TForm7
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 3
   end
   object RichEdit1: TRichEdit
     Left = 536
@@ -193,14 +178,14 @@ object Form7: TForm7
     Lines.Strings = (
       '')
     PlainText = True
-    TabOrder = 5
+    TabOrder = 4
   end
   object RichEdit2: TRichEdit
     Left = 536
     Top = 432
     Width = 337
     Height = 121
-    TabOrder = 6
+    TabOrder = 5
   end
   object DBLookupComboBox2: TDBLookupComboBox
     Left = 616
@@ -216,7 +201,7 @@ object Form7: TForm7
     ListField = 'Apellido'
     ListSource = DataSource3
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 6
     OnClick = DBLookupComboBox2Click
   end
   object DBEdit2: TDBEdit
@@ -232,7 +217,27 @@ object Form7: TForm7
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
+    TabOrder = 7
+  end
+  object BitBtn2: TBitBtn
+    Left = 536
+    Top = 592
+    Width = 89
+    Height = 41
+    Caption = 'Cancelar'
     TabOrder = 8
+    OnClick = BitBtn2Click
+    Kind = bkCancel
+  end
+  object BitBtn3: TBitBtn
+    Left = 688
+    Top = 592
+    Width = 97
+    Height = 41
+    Caption = 'Guardar'
+    TabOrder = 9
+    OnClick = BitBtn3Click
+    Kind = bkOK
   end
   object ADOQuery1: TADOQuery
     Active = True

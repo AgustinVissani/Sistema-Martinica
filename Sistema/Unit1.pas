@@ -174,7 +174,7 @@ begin
 
     // FORM 7
   Form7.BitBtn1.Caption:='Go back';
-  Form7.Button1.Caption:='Cancel';
+  Form7.BitBtn2.Caption:='Cancel';
   Form7.Button3.Caption:='Save';
   Form7.Label1.Caption:='NEW ORDER';
   Form7.Label2.Caption:='Observations';
@@ -269,7 +269,7 @@ begin
 
   // FORM 7
   Form7.BitBtn1.Caption:='Volver';
-  Form7.Button1.Caption:='Cancelar';
+  Form7.BitBtn2.Caption:='Cancelar';
   Form7.Button3.Caption:='Guardar';
   Form7.Label1.Caption:='NUEVO PEDIDO';
   Form7.Label2.Caption:='Observaciones';

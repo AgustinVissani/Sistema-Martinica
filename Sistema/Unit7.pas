@@ -11,7 +11,6 @@ type
     Label1: TLabel;
     Label5: TLabel;
     Label4: TLabel;
-    Button1: TButton;
     Button3: TButton;
     BitBtn1: TBitBtn;
     Label2: TLabel;
@@ -42,6 +41,8 @@ type
     Label6: TLabel;
     DBEdit2: TDBEdit;
     Label7: TLabel;
+    BitBtn2: TBitBtn;
+    BitBtn3: TBitBtn;
     procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -50,6 +51,8 @@ type
     procedure DBLookupComboBox1Click(Sender: TObject);
     procedure DBLookupComboBox2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure BitBtn2Click(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -169,6 +172,51 @@ end;
 procedure TForm7.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
     Application.Terminate;
+end;
+
+procedure TForm7.BitBtn2Click(Sender: TObject);
+begin
+  ADOQuery2.Cancel;
+end;
+
+procedure TForm7.BitBtn3Click(Sender: TObject);
+const
+  mbYesNoCancel = [mbYes, mbNO, mbCancel];
+var
+  detalle,observaciones: string;
+  buttonSelected : Integer;
+
+
+begin
+   buttonSelected := MessageDlg(NuevoPedido,mtConfirmation, mbOKCancel, 0);
+   if buttonSelected = mrOK then
+          begin //relacion de tabla Pedidos
+          detalle:= RichEdit1.Text;
+          observaciones:= RichEdit2.Text;
+
+          ADOQuery2.Close;
+          ADOQuery2.SQL.Clear;
+
+          ADOQuery2.SQL.Add('INSERT INTO Pedidos (Código_Proveedor,Código_Cliente, Fecha, Detalle, Observaciones, ');
+          ADOQuery2.SQL.Add('Código_Estado) VALUES (');
+
+          ADOQuery2.SQL.Add(inttostr(apellidoProveedor)); //Código proveedor
+          ADOQuery2.SQL.Add(','+inttostr(apellidoCliente)); //Código cliente
+          ADOQuery2.SQL.Add(',GETDATE(),'); //Fecha actual
+          ADOQuery2.SQL.Add(''''+detalle+''',');  //Detalle
+          ADOQuery2.SQL.Add(''''+observaciones+''',');  //Observaciones
+          ADOQuery2.SQL.Add('1)');  //Código estado
+          ADOQuery2.ExecSQL;
+
+          ADOQuery2.Close;
+          ADOQuery2.SQL.Clear;
+
+
+   end
+
+   else
+    if buttonSelected = mrCancel then
+
 end;
 
 end.

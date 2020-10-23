@@ -1,6 +1,6 @@
 object Form10: TForm10
-  Left = 69
-  Top = 21
+  Left = 58
+  Top = 0
   Width = 1271
   Height = 785
   Caption = 'ESTADOS'
@@ -29,11 +29,11 @@ object Form10: TForm10
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 456
+    Left = 400
     Top = 352
-    Width = 62
+    Width = 127
     Height = 25
-    Caption = 'Estado'
+    Caption = 'Nuevo Estado'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -107,14 +107,14 @@ object Form10: TForm10
     ParentFont = False
   end
   object Label8: TLabel
-    Left = 528
-    Top = 280
-    Width = 54
-    Height = 19
-    Caption = 'Estados'
+    Left = 400
+    Top = 272
+    Width = 125
+    Height = 25
+    Caption = 'Estado actual'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -21
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -263,8 +263,8 @@ object Form10: TForm10
     TabOrder = 6
   end
   object DBEdit5: TDBEdit
-    Left = 880
-    Top = 216
+    Left = 872
+    Top = 224
     Width = 241
     Height = 27
     DataField = 'Observaciones'
@@ -295,7 +295,7 @@ object Form10: TForm10
     OnClick = Button1Click
   end
   object DBEdit6: TDBEdit
-    Left = 672
+    Left = 552
     Top = 272
     Width = 161
     Height = 27
@@ -371,33 +371,33 @@ object Form10: TForm10
       ReadOnly = True
     end
     object ADOQuery2Proveedor: TStringField
-      DisplayWidth = 21
+      DisplayWidth = 23
       FieldName = 'Proveedor'
       Size = 30
     end
     object ADOQuery2Cliente: TStringField
-      DisplayWidth = 19
+      DisplayWidth = 20
       FieldName = 'Cliente'
       Size = 30
     end
+    object ADOQuery2Estado: TStringField
+      DisplayWidth = 10
+      FieldName = 'Estado'
+    end
+    object ADOQuery2Fecha: TWideStringField
+      DisplayWidth = 14
+      FieldName = 'Fecha'
+      Size = 10
+    end
     object ADOQuery2Detalle: TStringField
-      DisplayWidth = 34
+      DisplayWidth = 47
       FieldName = 'Detalle'
       Size = 100
     end
     object ADOQuery2Observaciones: TStringField
-      DisplayWidth = 16
+      DisplayWidth = 46
       FieldName = 'Observaciones'
       Size = 30
-    end
-    object ADOQuery2Fecha: TWideStringField
-      DisplayWidth = 17
-      FieldName = 'Fecha'
-      Size = 10
-    end
-    object ADOQuery2Estado: TStringField
-      DisplayWidth = 15
-      FieldName = 'Estado'
     end
   end
   object DataSource2: TDataSource
@@ -413,12 +413,12 @@ object Form10: TForm10
     SQL.Strings = (
       'SELECT * '
       'FROM Estados')
-    Left = 344
+    Left = 240
     Top = 312
   end
   object DataSource3: TDataSource
     DataSet = ADOQuery3
-    Left = 392
+    Left = 296
     Top = 312
   end
   object ADOQuery1: TADOQuery
@@ -446,13 +446,13 @@ object Form10: TForm10
     SQL.Strings = (
       'SELECT * '
       'FROM Estados')
-    Left = 344
-    Top = 360
+    Left = 240
+    Top = 368
   end
   object DataSource4: TDataSource
     DataSet = ADOQuery4
-    Left = 400
-    Top = 360
+    Left = 296
+    Top = 368
   end
   object DataSource5: TDataSource
     DataSet = ADOQuery5

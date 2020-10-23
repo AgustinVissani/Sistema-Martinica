@@ -1,6 +1,6 @@
 object Form9: TForm9
   Left = 42
-  Top = 31
+  Top = 10
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -144,9 +144,9 @@ object Form9: TForm9
     Kind = bkRetry
   end
   object DBGrid1: TDBGrid
-    Left = 288
+    Left = 208
     Top = 272
-    Width = 769
+    Width = 921
     Height = 353
     DataSource = DataSource1
     Font.Charset = ANSI_CHARSET
@@ -201,6 +201,7 @@ object Form9: TForm9
     Width = 105
     Height = 33
     Caption = 'Confirmar'
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15

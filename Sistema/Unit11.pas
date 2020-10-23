@@ -17,9 +17,6 @@ type
     DBLookupComboBox2: TDBLookupComboBox;
     ADOQuery3: TADOQuery;
     DataSource3: TDataSource;
-    ADOQuery2Cliente: TStringField;
-    ADOQuery2Fecha: TWideStringField;
-    ADOQuery2Estado: TStringField;
     Label2: TLabel;
     Label4: TLabel;
     Label5: TLabel;
@@ -30,23 +27,26 @@ type
     DBEdit3: TDBEdit;
     DBEdit4: TDBEdit;
     DBEdit5: TDBEdit;
-    ADOQuery2Detalle: TStringField;
-    ADOQuery2Observaciones: TStringField;
     Button1: TButton;
     Label8: TLabel;
     DBEdit6: TDBEdit;
-    ADOQuery2Cdigo_Pedidos: TAutoIncField;
     Label9: TLabel;
     DBEdit7: TDBEdit;
     ADOQuery1: TADOQuery;
     DataSource1: TDataSource;
     ADOQuery4: TADOQuery;
     DataSource4: TDataSource;
-    ADOQuery2Proveedor: TStringField;
     Label10: TLabel;
     DBLookupComboBox1: TDBLookupComboBox;
     DataSource5: TDataSource;
     ADOQuery5: TADOQuery;
+    ADOQuery2Proveedor: TStringField;
+    ADOQuery2Cliente: TStringField;
+    ADOQuery2Estado: TStringField;
+    ADOQuery2Cdigo_Pedidos: TAutoIncField;
+    ADOQuery2Fecha: TWideStringField;
+    ADOQuery2Detalle: TStringField;
+    ADOQuery2Observaciones: TStringField;
     procedure FormCreate(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
  //   procedure BitBtn2Click(Sender: TObject);
@@ -118,6 +118,8 @@ begin
 
            ADOQuery2.Close;
           ADOQuery2.SQL.Clear;
+
+          
          end
    else
     if buttonSelected = mrCancel then
