@@ -22,6 +22,7 @@ type
     procedure Clientes1Click(Sender: TObject);
     procedure Salir1Click(Sender: TObject);
     procedure Cerrarsesin1Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -77,6 +78,11 @@ procedure TForm2.Cerrarsesin1Click(Sender: TObject);
 begin
 form2.Hide;
 form1.Show;
+end;
+
+procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+    Application.Terminate;
 end;
 
 end.

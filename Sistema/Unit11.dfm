@@ -1,6 +1,6 @@
 object Form10: TForm10
-  Left = 137
-  Top = 14
+  Left = 69
+  Top = 21
   Width = 1271
   Height = 785
   Caption = 'ESTADOS'
@@ -11,6 +11,7 @@ object Form10: TForm10
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13

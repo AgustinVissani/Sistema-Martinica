@@ -26,6 +26,7 @@ type
     BitBtn1: TBitBtn;
     procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -51,6 +52,11 @@ procedure TForm8.FormCreate(Sender: TObject);
 begin
   Left:=(Screen.Width-Width)  div 2;
   Top:=(Screen.Height-Height) div 2;
+end;
+
+procedure TForm8.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+    Application.Terminate;
 end;
 
 end.

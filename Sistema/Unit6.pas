@@ -59,6 +59,7 @@ type
     procedure DBLookupComboBox1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
     
     
 
@@ -162,6 +163,11 @@ procedure TForm6.Button1Click(Sender: TObject);
 begin
 Form6.Hide;
 Form10.Show;
+end;
+
+procedure TForm6.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Application.Terminate;
 end;
 
 end.

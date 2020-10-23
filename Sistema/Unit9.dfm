@@ -1,6 +1,6 @@
 object Form9: TForm9
-  Left = 83
-  Top = 59
+  Left = 42
+  Top = 31
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -12,6 +12,7 @@ object Form9: TForm9
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13

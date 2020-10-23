@@ -1,8 +1,8 @@
 object Form7: TForm7
-  Left = 180
-  Top = 122
+  Left = 78
+  Top = 13
   Width = 1280
-  Height = 789
+  Height = 788
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Nuevo Pedido'
   Color = clBtnFace
@@ -12,6 +12,7 @@ object Form7: TForm7
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13

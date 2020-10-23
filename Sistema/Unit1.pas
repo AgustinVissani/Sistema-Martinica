@@ -23,6 +23,7 @@ type
     procedure Edit2KeyPress(Sender: TObject; var Key: Char);
     procedure FormCreate(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -164,7 +165,7 @@ begin
  // Form6.Button1.Caption:='Search order';
   Form6.Button2.Caption:='New order';
   Form6.Label1.Caption:='ORDERS TO SUPPLIERS';
-  Form6.Label2.Caption:='Lastname Customer';
+  Form6.Label2.Caption:='Customer';
   Form6.Label4.Caption:='Lastname';
   Form6.Label5.Caption:='Supplier';
   //Form6.Label3.Caption:='Customer';
@@ -259,7 +260,7 @@ begin
 //  Form6.Button1.Caption:='Buscar Cliente';
   Form6.Button2.Caption:='Nuevo pedido';
   Form6.Label1.Caption:='PEDIDOS A PROVEEDORES';
-  Form6.Label2.Caption:='Apellido Cliente';
+  Form6.Label2.Caption:='Cliente';
   Form6.Label4.Caption:='Apellido';
   Form6.Label5.Caption:='Proveedor';
   //Form6.Label3.Caption:='Cliente';
@@ -298,5 +299,10 @@ begin
 end;
 end;
 
+
+procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Application.Terminate;
+end;
 
 end.

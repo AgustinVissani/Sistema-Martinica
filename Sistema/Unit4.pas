@@ -47,6 +47,7 @@ type
     procedure BitBtn4Click(Sender: TObject);
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -203,5 +204,10 @@ if (THackDBGrid(DBGrid1).DataLink.ActiveRecord + 1 = THackDBGrid(DBGrid1).Row)
 end;
 
 
+
+procedure TForm4.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+    Application.Terminate;
+end;
 
 end.

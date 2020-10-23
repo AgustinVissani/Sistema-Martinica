@@ -43,7 +43,8 @@ type
     procedure Button2Click(Sender: TObject);
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
-    procedure BitBtn4Click(Sender: TObject);                 
+    procedure BitBtn4Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -190,6 +191,11 @@ end;
 procedure TForm9.BitBtn4Click(Sender: TObject);
 begin
       ADOQuery1.Prior;
+end;
+
+procedure TForm9.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+    Application.Terminate;
 end;
 
 end.

@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 253
-  Top = 122
+  Left = 28
+  Top = 48
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -12,6 +12,7 @@ object Form4: TForm4
   Font.Name = 'Arial Narrow'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 20

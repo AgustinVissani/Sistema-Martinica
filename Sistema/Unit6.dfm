@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 169
-  Top = 10
+  Left = 69
+  Top = 4
   Width = 1244
   Height = 729
   BorderIcons = [biSystemMenu, biMinimize]
@@ -12,6 +12,7 @@ object Form6: TForm6
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
@@ -30,11 +31,11 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 384
-    Top = 144
-    Width = 145
+    Left = 440
+    Top = 136
+    Width = 64
     Height = 25
-    Caption = 'Apellido Cliente'
+    Caption = 'Cliente'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -21
@@ -190,7 +191,7 @@ object Form6: TForm6
     TabOrder = 3
   end
   object DBLookupComboBox1: TDBLookupComboBox
-    Left = 560
+    Left = 544
     Top = 136
     Width = 241
     Height = 27

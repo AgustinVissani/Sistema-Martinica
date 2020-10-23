@@ -26,6 +26,7 @@ type
     Edit1: TEdit;
     procedure FormCreate(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -51,6 +52,11 @@ procedure TForm5.BitBtn1Click(Sender: TObject);
 begin
 Form5.Hide;
 Form4.Show;
+end;
+
+procedure TForm5.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+    Application.Terminate;
 end;
 
 end.

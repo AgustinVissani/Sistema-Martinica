@@ -53,6 +53,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure DBLookupComboBox2Click(Sender: TObject);
     procedure DBLookupComboBox1Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
 //    procedure Label8Click(Sender: TObject);
 //    procedure DBEdit6Change(Sender: TObject);
    // procedure BitBtn2Click(Sender: TObject);
@@ -178,6 +179,11 @@ begin
 
           DBGrid1.Refresh;
 
+end;
+
+procedure TForm10.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+    Application.Terminate;
 end;
 
 end.

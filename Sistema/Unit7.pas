@@ -49,6 +49,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure DBLookupComboBox1Click(Sender: TObject);
     procedure DBLookupComboBox2Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -163,6 +164,11 @@ begin
           apellidoCliente:=StrToInt(ADOQuery2.FieldByname('Código_Cliente').AsString);
           ADOQuery2.Close;
           ADOQuery2.SQL.Clear;
+end;
+
+procedure TForm7.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+    Application.Terminate;
 end;
 
 end.
