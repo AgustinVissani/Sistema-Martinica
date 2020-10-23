@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 281
-  Top = 79
+  Left = 169
+  Top = 10
   Width = 1244
   Height = 729
   BorderIcons = [biSystemMenu, biMinimize]
@@ -155,8 +155,8 @@ object Form6: TForm6
   object DBGrid1: TDBGrid
     Left = 280
     Top = 320
-    Width = 721
-    Height = 249
+    Width = 841
+    Height = 233
     DataSource = DataSource2
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText

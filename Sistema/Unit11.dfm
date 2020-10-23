@@ -1,6 +1,6 @@
 object Form10: TForm10
-  Left = 314
-  Top = 131
+  Left = 137
+  Top = 14
   Width = 1271
   Height = 785
   Caption = 'ESTADOS'
@@ -426,21 +426,9 @@ object Form10: TForm10
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      
-        'SELECT DISTINCT C'#243'digo_Pedidos,Clientes.C'#243'digo_Cliente,Proveedor' +
-        'es.Apellido as [Proveedor], Clientes.Apellido as [Cliente], Pedi' +
-        'dos.Fecha, Pedidos.Detalle,  Pedidos.Observaciones, Estados.Deta' +
-        'lle as [Estado]'
-      'FROM  Pedidos '
-      
-        'LEFT JOIN Proveedores ON Proveedores.C'#243'digo_Proveedor = Pedidos.' +
-        'C'#243'digo_Proveedor'
-      
-        'LEFT JOIN Estados ON Estados.C'#243'digo_Estado = Pedidos.C'#243'digo_Esta' +
-        'do'
-      
-        'LEFT JOIN Clientes ON Clientes.C'#243'digo_Cliente = Pedidos.C'#243'digo_C' +
-        'liente')
+      'SELECT Clientes.C'#243'digo_Cliente, Clientes.Apellido AS Cliente'
+      'FROM Clientes'
+      'ORDER BY Clientes.Apellido ASC')
     Left = 40
     Top = 360
   end
