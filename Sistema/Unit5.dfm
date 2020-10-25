@@ -1,6 +1,6 @@
 object Form5: TForm5
-  Left = 69
-  Top = 16
+  Left = -1490
+  Top = -138
   Width = 1306
   Height = 788
   BorderIcons = [biSystemMenu, biMinimize]

@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 280
-  Top = 255
-  Width = 1216
+  Left = -1680
+  Top = -179
+  Width = 1218
   Height = 700
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Inicio'
@@ -116,10 +116,10 @@ object Form1: TForm1
     Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
-      'fo=False;Initial Catalog=Martinica_Decoraciones;Data Source=Agus' +
-      'tin;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=' +
-      '4096;Workstation ID=GUTY;Use Encryption for Data=False;Tag with ' +
-      'column collation when possible=False'
+      'fo=False;Initial Catalog=Martinica_Decoraciones;Data Source=DESK' +
+      'TOP-UOMDSV1\SQLEXPRESS;Use Procedure for Prepare=1;Auto Translat' +
+      'e=True;Packet Size=4096;Workstation ID=GUTY;Use Encryption for D' +
+      'ata=False;Tag with column collation when possible=False'
     DefaultDatabase = 'Martinica_Decoraciones'
     LoginPrompt = False
     Provider = 'SQLOLEDB.1'

@@ -54,6 +54,7 @@ if not ADOQuery1.Eof then
   end
 else
   ShowMessage(contrasenaErronea);
+// FALTA modificar campo activo en tabla usuarios
 end;
 
 
@@ -107,7 +108,7 @@ end;
 
 procedure TForm1.ComboBox1Change(Sender: TObject);
 begin
-  
+
 
 if ComboBox1.ItemIndex = 1 then //English
 begin
@@ -120,11 +121,19 @@ begin
   Button1.Caption:='Log In';
 
   // FORM 2
-  Form2.Martinica.Caption:='Martinica system';
-  Form2.Proveedores1.Caption:='Suppliers';
-  Form2.Ventas2.Caption:='Sales';
-  Form2.Clientes1.Caption:='Customers';
-  Form2.CajaDiaria1.Caption:='Cash counts';
+  Form2.sesion.Caption:='Session';
+  Form2.cerrarSesion.Caption:='Log out';
+  Form2.salir.Caption:='Exit';
+  Form2.egresos.Caption:='Expenditures';
+  Form2.cargarEgresos.Caption:='Add expenditures';
+  Form2.consultarEgresos.Caption:='Check expenditures';
+  Form2.cajadiaria.Caption:='Cash';
+  Form2.cerrarCajaDiaria.Caption:='Close cash desk';
+  Form2.consultarCaja.Caption:='Check cash desk';
+  Form2.clientes.Caption:='Customers';
+  Form2.proveedores.Caption:='Suppliers';
+  Form2.estadisticas.Caption:='Statistics';
+  Form2.diezMasVendidos.Caption:='Top ten sold products';
 
   // FORM 3
   Form3.Label1.Caption:='Cash counts';
@@ -215,11 +224,19 @@ begin
   Button1.Caption:='Iniciar sesión';
 
   // FORM 2
-  Form2.Martinica.Caption:='Martinica';
-  Form2.Proveedores1.Caption:='Proveedores';
-  Form2.Ventas2.Caption:='Ventas';
-  Form2.Clientes1.Caption:='Clientes';
-  Form2.CajaDiaria1.Caption:='Caja diaria';
+  Form2.sesion.Caption:='Sesión';
+  Form2.cerrarSesion.Caption:='Cerrar sesión';
+  Form2.salir.Caption:='Salir';
+  Form2.egresos.Caption:='Egresos';
+  Form2.cargarEgresos.Caption:='Cargar egresos';
+  Form2.consultarEgresos.Caption:='Consultar egresos';
+  Form2.cajadiaria.Caption:='Caja diaria';
+  Form2.cerrarCajaDiaria.Caption:='Cerrar caja diaria';
+  Form2.consultarCaja.Caption:='Consultar caja';
+  Form2.clientes.Caption:='Clientes';
+  Form2.proveedores.Caption:='Proveedores';
+  Form2.estadisticas.Caption:='Estadísticas';
+  Form2.diezMasVendidos.Caption:='10 productos más vendidos';
 
   // FORM 3
   Form3.Label1.Caption:='Caja diaria';
