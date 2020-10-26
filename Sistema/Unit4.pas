@@ -37,6 +37,10 @@ type
     Button1: TButton;
     Button4: TButton;
     Button2: TButton;
+    ADOQuery2: TADOQuery;
+    ADOQuery1Cdigo_Proveedor: TAutoIncField;
+    DBEdit6: TDBEdit;
+    Label2: TLabel;
     procedure Button2Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -64,6 +68,7 @@ var
   SiElimino: string;
   NoElimino: string;
   CompletarCampos: string;
+  NoEliminarProveedor: string;
 
 implementation
 
@@ -144,20 +149,33 @@ const
   mbYesNoCancel = [mbYes, mbNO, mbCancel];
 var
     buttonSelected : Integer;
+    proveedor:string;
 begin
-   buttonSelected := MessageDlg(QuiereEliminar,mtWarning, mbOKCancel, 0);
-   if buttonSelected = mrOK then
-   begin
+
+    ADOQuery2.Close;
+    ADOQuery2.SQL.Clear;
+    ADOQuery2.SQL.add('SELECT Pedidos.Código_Proveedor FROM Pedidos WHERE Pedidos.Código_Proveedor = '+DBEdit6.Text);
+    ADOQuery2.Open;
+    ADOQuery2.ExecSQL;
+
+    proveedor:=ADOQuery2.FieldByname('Código_Proveedor').AsString;
+    
+    if proveedor <> '' then
+    begin
+      showmessage('No se puede eliminar un proveedor con pedidos asociados.');
+    end
+    else
+    begin
+    buttonSelected := MessageDlg(QuiereEliminar,mtWarning, mbOKCancel, 0);
+    if buttonSelected = mrOK then
+    begin
       ShowMessage(SiElimino);
       ADOQuery1.Delete;
       BitBtn2.Enabled:=true;
       BitBtn3.Enabled:=true;
-   end
-   else
-    if buttonSelected = mrCancel then
-     begin
-       ShowMessage(NoElimino);
-     end;
+    end
+    end;
+
 end;
 
 
@@ -207,6 +225,7 @@ begin
   SiElimino:= 'Se eliminó correctamente';
   NoElimino:= 'No se eliminó el proveedor';
   CompletarCampos:= 'Complete todos los campos';
+  NoEliminarProveedor:='No se puede eliminar un proveedor con pedidos asociados.';
 
 end;
 

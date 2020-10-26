@@ -104,7 +104,7 @@ object Form4: TForm4
     Left = 224
     Top = 104
     Width = 865
-    Height = 121
+    Height = 145
     Caption = 'Datos Proveedor'
     TabOrder = 4
     object Label3: TLabel
@@ -147,8 +147,8 @@ object Form4: TForm4
       ParentFont = False
     end
     object Label6: TLabel
-      Left = 192
-      Top = 88
+      Left = 264
+      Top = 80
       Width = 65
       Height = 19
       Caption = 'Direcci'#243'n'
@@ -160,12 +160,25 @@ object Form4: TForm4
       ParentFont = False
     end
     object Label7: TLabel
-      Left = 512
-      Top = 88
+      Left = 624
+      Top = 80
       Width = 37
       Height = 19
       Caption = 'CUIT'
       Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 40
+      Top = 80
+      Width = 50
+      Height = 19
+      Caption = 'C'#243'digo'
+      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Tahoma'
@@ -222,9 +235,9 @@ object Form4: TForm4
       OnKeyPress = DBEdit3KeyPress
     end
     object DBEdit4: TDBEdit
-      Left = 280
+      Left = 352
       Top = 80
-      Width = 185
+      Width = 233
       Height = 27
       DataField = 'Domicilio'
       DataSource = DataSource1
@@ -238,7 +251,7 @@ object Form4: TForm4
       TabOrder = 3
     end
     object DBEdit5: TDBEdit
-      Left = 576
+      Left = 688
       Top = 80
       Width = 161
       Height = 27
@@ -253,6 +266,16 @@ object Form4: TForm4
       ParentFont = False
       TabOrder = 4
       OnKeyPress = DBEdit5KeyPress
+    end
+    object DBEdit6: TDBEdit
+      Left = 120
+      Top = 80
+      Width = 121
+      Height = 28
+      DataField = 'C'#243'digo_Proveedor'
+      DataSource = DataSource1
+      Enabled = False
+      TabOrder = 5
     end
   end
   object Panel1: TPanel
@@ -334,6 +357,10 @@ object Form4: TForm4
       'FROM Proveedores')
     Left = 48
     Top = 24
+    object ADOQuery1Cdigo_Proveedor: TAutoIncField
+      FieldName = 'C'#243'digo_Proveedor'
+      ReadOnly = True
+    end
     object ADOQuery1Nombre: TStringField
       FieldName = 'Nombre'
       Size = 30
@@ -358,5 +385,16 @@ object Form4: TForm4
     DataSet = ADOQuery1
     Left = 104
     Top = 24
+  end
+  object ADOQuery2: TADOQuery
+    Active = True
+    Connection = Form1.ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT Pedidos.C'#243'digo_Proveedor'
+      'FROM Pedidos')
+    Left = 56
+    Top = 176
   end
 end

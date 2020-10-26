@@ -127,7 +127,6 @@ begin
           ADOQuery4.SQL.add('SELECT Código_Cliente FROM Clientes WHERE Clientes.Apellido='''+DBLookupComboBox1.Text+'''');
           ADOQuery4.Open;
           ADOQuery4.ExecSQL;
-
           apellidoCliente:=StrToInt(ADOQuery4.FieldByname('Código_Cliente').AsString);
           ADOQuery4.Close;
           ADOQuery4.SQL.Clear;
