@@ -48,6 +48,8 @@ type
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure DBEdit3KeyPress(Sender: TObject; var Key: Char);
+    procedure DBEdit5KeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -226,5 +228,31 @@ procedure TForm4.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
     Application.Terminate;
 end;
+
+
+
+procedure TForm4.DBEdit3KeyPress(Sender: TObject; var Key: Char);
+begin
+if Key in ['a'..'z', 'A'..'Z'] then
+  begin
+   messagedlg('Error debe ingresar solo numeros',mterror,[mbretry],0);
+   Key := #0;
+   DBEdit3.clear;
+  end;
+end;
+
+
+
+procedure TForm4.DBEdit5KeyPress(Sender: TObject; var Key: Char);
+begin
+
+if Key in ['a'..'z', 'A'..'Z'] then
+  begin
+   messagedlg('Error debe ingresar solo numeros',mterror,[mbretry],0);
+   Key := #0;
+   DBEdit5.clear;
+  end;
+end;
+
 
 end.

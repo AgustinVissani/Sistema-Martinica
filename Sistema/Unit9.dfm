@@ -1,6 +1,6 @@
 object Form9: TForm9
-  Left = 42
-  Top = 10
+  Left = 307
+  Top = 104
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -227,6 +227,7 @@ object Form9: TForm9
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    OnKeyPress = DBEdit1KeyPress
   end
   object DBEdit2: TDBEdit
     Left = 568
@@ -275,11 +276,12 @@ object Form9: TForm9
     Font.Style = []
     ParentFont = False
     TabOrder = 3
+    OnKeyPress = DBEdit4KeyPress
   end
   object DBEdit5: TDBEdit
     Left = 752
     Top = 208
-    Width = 169
+    Width = 233
     Height = 27
     DataField = 'Domicilio'
     DataSource = DataSource1

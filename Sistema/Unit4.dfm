@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 28
-  Top = 30
+  Left = 180
+  Top = 123
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -272,11 +272,12 @@ object Form4: TForm4
     Font.Style = []
     ParentFont = False
     TabOrder = 2
+    OnKeyPress = DBEdit3KeyPress
   end
   object DBEdit4: TDBEdit
     Left = 520
     Top = 232
-    Width = 129
+    Width = 185
     Height = 27
     DataField = 'Domicilio'
     DataSource = DataSource1
@@ -304,6 +305,7 @@ object Form4: TForm4
     Font.Style = []
     ParentFont = False
     TabOrder = 4
+    OnKeyPress = DBEdit5KeyPress
   end
   object BitBtn4: TBitBtn
     Left = 1112
