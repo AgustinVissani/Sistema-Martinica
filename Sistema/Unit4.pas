@@ -33,7 +33,6 @@ type
     DBEdit4: TDBEdit;
     DBEdit5: TDBEdit;
     Panel1: TPanel;
-    BitBtn4: TBitBtn;
     Button3: TButton;
     Button1: TButton;
     Button4: TButton;
@@ -46,7 +45,6 @@ type
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure BitBtn4Click(Sender: TObject);
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -205,13 +203,6 @@ begin
 
 end;
 
-procedure TForm4.BitBtn4Click(Sender: TObject);
-begin
-      ADOQuery1.Prior;
-end;
-
-
-
 procedure TForm4.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
   DataCol: Integer; Column: TColumn; State: TGridDrawState);
 begin
@@ -239,7 +230,6 @@ if Key in ['a'..'z', 'A'..'Z'] then
   begin
    messagedlg('Error debe ingresar solo numeros',mterror,[mbretry],0);
    Key := #0;
-   DBEdit3.clear;
   end;
 end;
 
@@ -252,7 +242,6 @@ if Key in ['a'..'z', 'A'..'Z'] then
   begin
    messagedlg('Error debe ingresar solo numeros',mterror,[mbretry],0);
    Key := #0;
-   DBEdit5.clear;
   end;
 end;
 

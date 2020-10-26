@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 384
-  Top = 213
+  Left = 18
+  Top = 65
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -257,18 +257,8 @@ object Form4: TForm4
     Left = 1152
     Top = 16
     Width = 137
-    Height = 265
+    Height = 217
     TabOrder = 5
-    object BitBtn4: TBitBtn
-      Left = 24
-      Top = 216
-      Width = 105
-      Height = 33
-      Caption = 'Paso atras'
-      TabOrder = 0
-      OnClick = BitBtn4Click
-      Kind = bkIgnore
-    end
     object Button3: TButton
       Left = 16
       Top = 152
@@ -281,7 +271,7 @@ object Form4: TForm4
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 1
+      TabOrder = 0
       WordWrap = True
       OnClick = Button3Click
     end
@@ -297,7 +287,7 @@ object Form4: TForm4
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 2
+      TabOrder = 1
       OnClick = Button1Click
     end
     object Button4: TButton
@@ -312,7 +302,7 @@ object Form4: TForm4
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 2
       OnClick = Button4Click
     end
     object Button2: TButton
@@ -327,7 +317,7 @@ object Form4: TForm4
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 4
+      TabOrder = 3
       WordWrap = True
       OnClick = Button2Click
     end

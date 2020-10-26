@@ -147,7 +147,6 @@ begin
   Form4.Button2.Caption:='New supplier';
   Form4.Button4.Caption:='Delete';
   Form4.Button3.Caption:='Orders of suppliers';
-  Form4.BitBtn4.Caption:='Step back';
   Form4.Label1.Caption:='SUPPLIERS';
   Form4.Label3.Caption:='Name';
   Form4.Label4.Caption:='Lastname';
@@ -188,7 +187,6 @@ begin
   Form9.Button1.Caption:='New client';
   Form9.Button2.Caption:='Delete';
   Form9.Button3.Caption:='Edit';
-  Form9.BitBtn4.Caption:='Step back';
   Form9.Label1.Caption:='CUSTOMERS';
   Form9.Label3.Caption:='Name';
   Form9.Label4.Caption:='Lastname';
@@ -242,7 +240,6 @@ begin
   Form4.Button2.Caption:='Nuevo proveedor';
   Form4.Button4.Caption:='Borrar';
   Form4.Button3.Caption:='Pedido a proveedores';
-  Form4.BitBtn4.Caption:='Paso atrás';
   Form4.Label1.Caption:='PROVEEDORES';
   Form4.Label3.Caption:='Nombre';
   Form4.Label4.Caption:='Apellido';
@@ -283,7 +280,6 @@ begin
   Form9.Button1.Caption:='Nuevo cliente';
   Form9.Button2.Caption:='Borrar';
   Form9.Button3.Caption:='Modificar';
-  Form9.BitBtn4.Caption:='Paso atrás';
   Form9.Label1.Caption:='CLIENTES';
   Form9.Label3.Caption:='Nombre';
   Form9.Label4.Caption:='Apellido';

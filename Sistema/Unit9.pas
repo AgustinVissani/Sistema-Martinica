@@ -34,7 +34,6 @@ type
     DBEdit5: TDBEdit;
     Panel1: TPanel;
     Button3: TButton;
-    BitBtn4: TBitBtn;
     Button2: TButton;
     Button1: TButton;
     procedure Button1Click(Sender: TObject);
@@ -46,7 +45,6 @@ type
     procedure Button2Click(Sender: TObject);
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
-    procedure BitBtn4Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure DBEdit4KeyPress(Sender: TObject; var Key: Char);
     procedure DBEdit1KeyPress(Sender: TObject; var Key: Char);
@@ -199,12 +197,6 @@ if (THackDBGrid(DBGrid1).DataLink.ActiveRecord + 1 = THackDBGrid(DBGrid1).Row)
 end;
 
 
-
-procedure TForm9.BitBtn4Click(Sender: TObject);
-begin
-      ADOQuery1.Prior;
-end;
-
 procedure TForm9.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
     Application.Terminate;
@@ -216,7 +208,6 @@ if Key in ['a'..'z', 'A'..'Z'] then
   begin
    messagedlg('Error debe ingresar solo numeros',mterror,[mbretry],0);
    Key := #0;
-   DBEdit4.clear;
   end;
 
 end;
@@ -227,7 +218,6 @@ begin
   begin
    messagedlg('Error debe ingresar solo numeros',mterror,[mbretry],0);
    Key := #0;
-   DBEdit4.clear;
   end;
 end;
 
