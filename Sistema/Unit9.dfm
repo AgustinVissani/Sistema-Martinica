@@ -1,6 +1,6 @@
 object Form9: TForm9
-  Left = 41
-  Top = 22
+  Left = 42
+  Top = 6
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -73,6 +73,7 @@ object Form9: TForm9
     Width = 105
     Height = 33
     Caption = 'Cancelar'
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -89,6 +90,7 @@ object Form9: TForm9
     Width = 105
     Height = 33
     Caption = 'Confirmar'
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15

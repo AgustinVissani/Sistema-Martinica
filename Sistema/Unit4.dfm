@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 18
-  Top = 65
+  Left = 71
+  Top = 14
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -72,6 +72,7 @@ object Form4: TForm4
     Width = 105
     Height = 33
     Caption = 'Confirmar'
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -88,6 +89,7 @@ object Form4: TForm4
     Width = 105
     Height = 33
     Caption = 'Cancelar'
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15

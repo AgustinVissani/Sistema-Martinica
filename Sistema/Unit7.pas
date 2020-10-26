@@ -65,6 +65,7 @@ var
   NuevoPedido: string;
   apellidoProveedor:integer;
   apellidoCliente:integer;
+  Saved: string;
 
 
 implementation
@@ -84,7 +85,9 @@ begin
   Top:=(Screen.Height-Height) div 2;
 
   NuevoPedido:='¿Quiere agregar un pedido?';
-
+  Saved:= 'Se guardó con éxito.';
+  RichEdit1.Text:='';
+  RichEdit2.Text:='';
 end;
 
 
@@ -150,27 +153,33 @@ begin
    buttonSelected := MessageDlg(NuevoPedido,mtConfirmation, mbOKCancel, 0);
    if buttonSelected = mrOK then
           begin //relacion de tabla Pedidos
-          detalle:= RichEdit1.Text;
-          observaciones:= RichEdit2.Text;
+          if (apellidoProveedor = 0) or (apellidoCliente = 0)
+             or (RichEdit1.Text = '') then
+            showmessage(CompletarCampos)
+          else
+          begin
+            detalle:= RichEdit1.Text;
+            observaciones:= RichEdit2.Text;
+            ADOQuery2.Close;
+            ADOQuery2.SQL.Clear;
 
-          ADOQuery2.Close;
-          ADOQuery2.SQL.Clear;
+            ADOQuery2.SQL.Add('INSERT INTO Pedidos (Código_Proveedor,Código_Cliente, Fecha, Detalle, Observaciones, ');
+            ADOQuery2.SQL.Add('Código_Estado) VALUES (');
 
-          ADOQuery2.SQL.Add('INSERT INTO Pedidos (Código_Proveedor,Código_Cliente, Fecha, Detalle, Observaciones, ');
-          ADOQuery2.SQL.Add('Código_Estado) VALUES (');
+            ADOQuery2.SQL.Add(inttostr(apellidoProveedor)); //Código proveedor
+            ADOQuery2.SQL.Add(','+inttostr(apellidoCliente)); //Código cliente
+            ADOQuery2.SQL.Add(',GETDATE(),'); //Fecha actual
+            ADOQuery2.SQL.Add(''''+detalle+''',');  //Detalle
+            ADOQuery2.SQL.Add(''''+observaciones+''',');  //Observaciones
+            ADOQuery2.SQL.Add('1)');  //Código estado
+            ADOQuery2.ExecSQL;
 
-          ADOQuery2.SQL.Add(inttostr(apellidoProveedor)); //Código proveedor
-          ADOQuery2.SQL.Add(','+inttostr(apellidoCliente)); //Código cliente
-          ADOQuery2.SQL.Add(',GETDATE(),'); //Fecha actual
-          ADOQuery2.SQL.Add(''''+detalle+''',');  //Detalle
-          ADOQuery2.SQL.Add(''''+observaciones+''',');  //Observaciones
-          ADOQuery2.SQL.Add('1)');  //Código estado
-          ADOQuery2.ExecSQL;
-
-          ADOQuery2.Close;
-          ADOQuery2.SQL.Clear;
-
-
+            ADOQuery2.Close;
+            ADOQuery2.SQL.Clear;
+            RichEdit1.Text:='';
+            RichEdit2.Text:='';
+            showmessage(Saved);
+          end;  //else
    end
 
    else

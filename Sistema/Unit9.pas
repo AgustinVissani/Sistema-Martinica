@@ -63,7 +63,7 @@ var
   NoElimino: string;
 
 implementation
-uses  Unit1, Unit2, Unit8;
+uses  Unit1, Unit2, Unit8, Unit4, Unit7;
 
 {$R *.dfm}
 
@@ -86,6 +86,8 @@ begin
         DBEdit5.Enabled:=true;
         BitBtn2.Enabled:=true;
         ADOQuery1.Append;
+        BitBtn2.Enabled:=true;
+        BitBtn3.Enabled:=true;
    end
    else
     if buttonSelected = mrCancel then
@@ -134,6 +136,8 @@ begin
         DBEdit4.Enabled:=true;
         DBEdit5.Enabled:=true;
         ADOQuery1.Edit;
+        BitBtn2.Enabled:=true;
+        BitBtn3.Enabled:=true;
    end
    else
     if buttonSelected = mrCancel then
@@ -144,23 +148,40 @@ end;
 procedure TForm9.BitBtn3Click(Sender: TObject);
 begin
   ADOQuery1.Cancel;
+  BitBtn2.Enabled:=false;
+  BitBtn3.Enabled:=false;
 end;
 
 
 
 procedure TForm9.BitBtn2Click(Sender: TObject);
 begin
-  ADOQuery1.Post;
-  DBEdit1.Enabled:=false;
-  DBEdit1.Text:='';
-  DBEdit2.Enabled:=false;
-  DBEdit2.Text:='';
-  DBEdit3.Enabled:=false;
-  DBEdit3.Text:='';
-  DBEdit4.Enabled:=false;
-  DBEdit4.Text:='';
-  DBEdit5.Enabled:=false;
-  DBEdit5.Text:='';
+  if (DBEdit1.Text='') or
+    (DBEdit2.Text='') or
+    (DBEdit3.Text='') or
+    (DBEdit4.Text='') or
+    (DBEdit5.Text='') then
+  begin
+    showmessage(CompletarCampos)
+  end
+  else
+  begin
+    ADOQuery1.Post;
+    DBEdit1.Enabled:=false;
+    DBEdit1.Text:='';
+    DBEdit2.Enabled:=false;
+    DBEdit2.Text:='';
+    DBEdit3.Enabled:=false;
+    DBEdit3.Text:='';
+    DBEdit4.Enabled:=false;
+    DBEdit4.Text:='';
+    DBEdit5.Enabled:=false;
+    DBEdit5.Text:='';
+    BitBtn2.Enabled:=false;
+    BitBtn3.Enabled:=false;
+    ShowMessage(Saved);
+  end;
+
 end;
 
 
@@ -176,6 +197,8 @@ begin
    begin
       ShowMessage(SiElimino);
       ADOQuery1.Delete;
+      BitBtn2.Enabled:=true;
+      BitBtn3.Enabled:=true;
    end
    else
     if buttonSelected = mrCancel then
