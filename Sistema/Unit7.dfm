@@ -1,8 +1,8 @@
 object Form7: TForm7
-  Left = -1428
-  Top = -157
-  Width = 1280
-  Height = 789
+  Left = 101
+  Top = 11
+  Width = 1225
+  Height = 711
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Nuevo Pedido'
   Color = clBtnFace

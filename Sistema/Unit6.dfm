@@ -1,8 +1,8 @@
 object Form6: TForm6
-  Left = -1617
-  Top = -123
+  Left = 111
+  Top = 38
   Width = 1244
-  Height = 729
+  Height = 685
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Pedidos a Proveedores'
   Color = clBtnFace

@@ -1,8 +1,8 @@
 object Form5: TForm5
-  Left = -1490
-  Top = -138
-  Width = 1306
-  Height = 788
+  Left = 110
+  Top = 16
+  Width = 1209
+  Height = 709
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Nuevo Proveedor'
   Color = clBtnFace

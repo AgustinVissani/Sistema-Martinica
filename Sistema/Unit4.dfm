@@ -1,7 +1,7 @@
 object Form4: TForm4
-  Left = -1713
-  Top = -68
-  Width = 1313
+  Left = 83
+  Top = 8
+  Width = 1267
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Direcci'#243'n'
@@ -228,7 +228,7 @@ object Form4: TForm4
     Left = 288
     Top = 144
     Width = 123
-    Height = 27
+    Height = 26
     DataField = 'Nombre'
     DataSource = DataSource1
     Enabled = False
@@ -244,7 +244,7 @@ object Form4: TForm4
     Left = 562
     Top = 144
     Width = 152
-    Height = 27
+    Height = 26
     DataField = 'Apellido'
     DataSource = DataSource1
     Enabled = False
@@ -260,7 +260,7 @@ object Form4: TForm4
     Left = 857
     Top = 144
     Width = 123
-    Height = 27
+    Height = 26
     DataField = 'Tel'#233'fono'
     DataSource = DataSource1
     Enabled = False
@@ -276,7 +276,7 @@ object Form4: TForm4
     Left = 468
     Top = 209
     Width = 116
-    Height = 27
+    Height = 26
     DataField = 'Domicilio'
     DataSource = DataSource1
     Enabled = False
@@ -292,7 +292,7 @@ object Form4: TForm4
     Left = 763
     Top = 209
     Width = 145
-    Height = 27
+    Height = 26
     DataField = 'CUIT'
     DataSource = DataSource1
     Enabled = False

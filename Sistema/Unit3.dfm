@@ -1,8 +1,8 @@
 object Form3: TForm3
-  Left = -1495
-  Top = -119
-  Width = 1306
-  Height = 788
+  Left = 273
+  Top = 129
+  Width = 869
+  Height = 546
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Caja Diaria'
   Color = clBtnFace

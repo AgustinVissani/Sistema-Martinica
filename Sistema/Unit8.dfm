@@ -1,8 +1,8 @@
 object Form8: TForm8
-  Left = -1705
-  Top = -184
-  Width = 1306
-  Height = 828
+  Left = 88
+  Top = 41
+  Width = 1262
+  Height = 669
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Clientes'
   Color = clBtnFace

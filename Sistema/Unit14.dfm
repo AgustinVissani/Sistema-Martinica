@@ -1,6 +1,6 @@
 object Form14: TForm14
-  Left = -692
-  Top = -101
+  Left = 358
+  Top = 284
   Width = 537
   Height = 219
   Caption = 'Consulta de egresos'

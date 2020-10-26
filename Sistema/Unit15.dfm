@@ -1,6 +1,6 @@
 object Form15: TForm15
-  Left = -749
-  Top = 93
+  Left = 340
+  Top = 273
   Width = 556
   Height = 251
   Caption = '10 productos m'#225's vendidos'
