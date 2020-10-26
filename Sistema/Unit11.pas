@@ -13,25 +13,8 @@ type
     DataSource2: TDataSource;
     DBGrid1: TDBGrid;
     BitBtn1: TBitBtn;
-    Label3: TLabel;
-    DBLookupComboBox2: TDBLookupComboBox;
     ADOQuery3: TADOQuery;
     DataSource3: TDataSource;
-    Label2: TLabel;
-    Label4: TLabel;
-    Label5: TLabel;
-    Label6: TLabel;
-    Label7: TLabel;
-    DBEdit1: TDBEdit;
-    DBEdit2: TDBEdit;
-    DBEdit3: TDBEdit;
-    DBEdit4: TDBEdit;
-    DBEdit5: TDBEdit;
-    Button1: TButton;
-    Label8: TLabel;
-    DBEdit6: TDBEdit;
-    Label9: TLabel;
-    DBEdit7: TDBEdit;
     ADOQuery1: TADOQuery;
     DataSource1: TDataSource;
     ADOQuery4: TADOQuery;
@@ -46,6 +29,25 @@ type
     ADOQuery2Cdigo_Pedidos: TAutoIncField;
     ADOQuery2Fecha: TWideStringField;
     ADOQuery2Detalle: TStringField;
+    GroupBox1: TGroupBox;
+    Label2: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label9: TLabel;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit7: TDBEdit;
+    Label8: TLabel;
+    DBEdit6: TDBEdit;
+    GroupBox2: TGroupBox;
+    Label3: TLabel;
+    DBLookupComboBox2: TDBLookupComboBox;
+    Button1: TButton;
     ADOQuery2Observaciones: TStringField;
     procedure FormCreate(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -187,5 +189,9 @@ procedure TForm10.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
     Application.Terminate;
 end;
+
+
+
+
 
 end.

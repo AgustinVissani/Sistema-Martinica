@@ -4,12 +4,11 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Grids, DBGrids, Buttons, DB, ADODB, Mask, DBCtrls;
+  Dialogs, StdCtrls, Grids, DBGrids, Buttons, DB, ADODB, Mask, DBCtrls,
+  ExtCtrls;
 type THackDBGrid = class(TDBGrid);
 type
   TForm9 = class(TForm)
-    Button1: TButton;
-    Button2: TButton;
     BitBtn1: TBitBtn;
     Label1: TLabel;
     ADOQuery1: TADOQuery;
@@ -20,9 +19,9 @@ type
     ADOQuery1Apellido: TStringField;
     ADOQuery1Telfono: TStringField;
     ADOQuery1Domicilio: TStringField;
-    Button3: TButton;
     BitBtn3: TBitBtn;
     BitBtn2: TBitBtn;
+    GroupBox1: TGroupBox;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
@@ -33,7 +32,11 @@ type
     DBEdit3: TDBEdit;
     DBEdit4: TDBEdit;
     DBEdit5: TDBEdit;
+    Panel1: TPanel;
+    Button3: TButton;
     BitBtn4: TBitBtn;
+    Button2: TButton;
+    Button1: TButton;
     procedure Button1Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -149,9 +152,6 @@ end;
 
 procedure TForm9.BitBtn2Click(Sender: TObject);
 begin
-
-  
-
   ADOQuery1.Post;
   DBEdit1.Enabled:=false;
   DBEdit1.Text:='';

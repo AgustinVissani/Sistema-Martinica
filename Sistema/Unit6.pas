@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Buttons, StdCtrls, ComCtrls, DBCtrls, DB, ADODB, Grids, DBGrids,
-  Mask;
+  Mask, ExtCtrls;
 
 type
 TADOSQLThread = class(TThread);
@@ -14,9 +14,7 @@ type
 
   TForm6 = class(TForm)
     Label1: TLabel;
-    Label2: TLabel;
     Label4: TLabel;
-    Button2: TButton;
     BitBtn1: TBitBtn;
     Label5: TLabel;
     Label6: TLabel;
@@ -25,11 +23,8 @@ type
     ADOQuery2: TADOQuery;
     DataSource1: TDataSource;
     DataSource2: TDataSource;
-    Label7: TLabel;
-    DBEdit1: TDBEdit;
     ADOQuery1DNI: TIntegerField;
     ADOQuery1Apellido: TStringField;
-    DBLookupComboBox1: TDBLookupComboBox;
     Label3: TLabel;
     Label8: TLabel;
     ADOQuery1Cdigo_Cliente: TAutoIncField;
@@ -50,6 +45,13 @@ type
     ADOQuery3Estado: TStringField;
     ADOQuery4: TADOQuery;
     DataSource4: TDataSource;
+    GroupBox1: TGroupBox;
+    Label7: TLabel;
+    Label2: TLabel;
+    DBLookupComboBox1: TDBLookupComboBox;
+    DBEdit1: TDBEdit;
+    Panel1: TPanel;
+    Button2: TButton;
     Button1: TButton;
     procedure BitBtn1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);

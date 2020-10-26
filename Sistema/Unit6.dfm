@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 293
-  Top = 108
+  Left = 428
+  Top = 147
   Width = 1244
   Height = 729
   BorderIcons = [biSystemMenu, biMinimize]
@@ -18,8 +18,8 @@ object Form6: TForm6
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 520
-    Top = 56
+    Left = 480
+    Top = 24
     Width = 323
     Height = 33
     Caption = 'PEDIDOS A PROVEEDORES'
@@ -30,22 +30,9 @@ object Form6: TForm6
     Font.Style = []
     ParentFont = False
   end
-  object Label2: TLabel
-    Left = 440
-    Top = 136
-    Width = 64
-    Height = 25
-    Caption = 'Cliente'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -21
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
   object Label4: TLabel
-    Left = 576
-    Top = 248
+    Left = 592
+    Top = 304
     Width = 55
     Height = 25
     Caption = 'Fecha'
@@ -57,8 +44,8 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 280
-    Top = 248
+    Left = 296
+    Top = 304
     Width = 94
     Height = 25
     Caption = 'Proveedor'
@@ -70,8 +57,8 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 896
-    Top = 248
+    Left = 936
+    Top = 304
     Width = 62
     Height = 25
     Caption = 'Estado'
@@ -82,22 +69,9 @@ object Form6: TForm6
     Font.Style = []
     ParentFont = False
   end
-  object Label7: TLabel
-    Left = 520
-    Top = 184
-    Width = 36
-    Height = 25
-    Caption = 'DNI'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -21
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
   object Label3: TLabel
-    Left = 688
-    Top = 248
+    Left = 696
+    Top = 304
     Width = 64
     Height = 25
     Caption = 'Detalle'
@@ -109,8 +83,8 @@ object Form6: TForm6
     ParentFont = False
   end
   object Label8: TLabel
-    Left = 456
-    Top = 248
+    Left = 472
+    Top = 304
     Width = 64
     Height = 25
     Caption = 'Cliente'
@@ -120,22 +94,6 @@ object Form6: TForm6
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-  end
-  object Button2: TButton
-    Left = 920
-    Top = 56
-    Width = 105
-    Height = 41
-    Caption = 'Nuevo pedido'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 0
-    WordWrap = True
-    OnClick = Button2Click
   end
   object BitBtn1: TBitBtn
     Left = 160
@@ -149,13 +107,13 @@ object Form6: TForm6
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 0
     OnClick = BitBtn1Click
     Kind = bkRetry
   end
   object DBGrid1: TDBGrid
-    Left = 280
-    Top = 320
+    Left = 232
+    Top = 344
     Width = 841
     Height = 233
     DataSource = DataSource2
@@ -166,7 +124,7 @@ object Form6: TForm6
     Font.Style = []
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
     ParentFont = False
-    TabOrder = 2
+    TabOrder = 1
     TitleFont.Charset = ANSI_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -16
@@ -174,54 +132,117 @@ object Form6: TForm6
     TitleFont.Style = []
     OnDrawColumnCell = DBGrid1DrawColumnCell
   end
-  object DBEdit1: TDBEdit
-    Left = 576
-    Top = 184
-    Width = 121
-    Height = 27
-    DataField = 'DNI'
-    DataSource = DataSource1
+  object GroupBox1: TGroupBox
+    Left = 464
+    Top = 112
+    Width = 361
+    Height = 145
+    Caption = 'Busqueda de pedidos por cliente'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ReadOnly = True
+    TabOrder = 2
+    object Label7: TLabel
+      Left = 88
+      Top = 88
+      Width = 36
+      Height = 25
+      Caption = 'DNI'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -21
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 8
+      Top = 40
+      Width = 64
+      Height = 25
+      Caption = 'Cliente'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -21
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 112
+      Top = 40
+      Width = 241
+      Height = 27
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      KeyField = 'C'#243'digo_Cliente'
+      ListField = 'Apellido'
+      ListSource = DataSource1
+      ParentFont = False
+      TabOrder = 0
+      OnClick = DBLookupComboBox1Click
+    end
+    object DBEdit1: TDBEdit
+      Left = 144
+      Top = 88
+      Width = 121
+      Height = 27
+      DataField = 'DNI'
+      DataSource = DataSource1
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 1
+    end
+  end
+  object Panel1: TPanel
+    Left = 1008
+    Top = 104
+    Width = 145
+    Height = 153
     TabOrder = 3
-  end
-  object DBLookupComboBox1: TDBLookupComboBox
-    Left = 544
-    Top = 136
-    Width = 241
-    Height = 27
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    KeyField = 'C'#243'digo_Cliente'
-    ListField = 'Apellido'
-    ListSource = DataSource1
-    ParentFont = False
-    TabOrder = 4
-    OnClick = DBLookupComboBox1Click
-  end
-  object Button1: TButton
-    Left = 1088
-    Top = 48
-    Width = 113
-    Height = 65
-    Caption = 'Cambiar estado del pedido'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 5
-    WordWrap = True
-    OnClick = Button1Click
+    object Button2: TButton
+      Left = 16
+      Top = 8
+      Width = 105
+      Height = 41
+      Caption = 'Nuevo pedido'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      WordWrap = True
+      OnClick = Button2Click
+    end
+    object Button1: TButton
+      Left = 16
+      Top = 64
+      Width = 113
+      Height = 65
+      Caption = 'Cambiar estado del pedido'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      WordWrap = True
+      OnClick = Button1Click
+    end
   end
   object ADOQuery1: TADOQuery
     Active = True
@@ -333,8 +354,8 @@ object Form6: TForm6
       
         'LEFT JOIN Clientes ON Clientes.C'#243'digo_Cliente = Pedidos.C'#243'digo_C' +
         'liente')
-    Left = 248
-    Top = 200
+    Left = 176
+    Top = 120
     object ADOQuery3Proveedor: TStringField
       FieldName = 'Proveedor'
       Size = 30
@@ -357,8 +378,8 @@ object Form6: TForm6
   end
   object DataSource3: TDataSource
     DataSet = ADOQuery3
-    Left = 288
-    Top = 200
+    Left = 216
+    Top = 120
   end
   object ADOQuery4: TADOQuery
     Active = True
@@ -368,12 +389,12 @@ object Form6: TForm6
     SQL.Strings = (
       'SELECT * '
       'FROM Clientes')
-    Left = 376
-    Top = 200
+    Left = 304
+    Top = 120
   end
   object DataSource4: TDataSource
     DataSet = ADOQuery4
-    Left = 424
-    Top = 200
+    Left = 352
+    Top = 120
   end
 end

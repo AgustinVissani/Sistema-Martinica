@@ -9,12 +9,8 @@ uses
 type THackDBGrid = class(TDBGrid);
 type
   TForm4 = class(TForm)
-    Button1: TButton;
-    Button2: TButton;
     BitBtn1: TBitBtn;
     Label1: TLabel;
-    Button3: TButton;
-    Button4: TButton;
     ADOQuery1: TADOQuery;
     DataSource1: TDataSource;
     DBGrid1: TDBGrid;
@@ -25,6 +21,7 @@ type
     ADOQuery1Telfono: TStringField;
     ADOQuery1Domicilio: TStringField;
     ADOQuery1CUIT: TStringField;
+    GroupBox1: TGroupBox;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
@@ -35,7 +32,12 @@ type
     DBEdit3: TDBEdit;
     DBEdit4: TDBEdit;
     DBEdit5: TDBEdit;
+    Panel1: TPanel;
     BitBtn4: TBitBtn;
+    Button3: TButton;
+    Button1: TButton;
+    Button4: TButton;
+    Button2: TButton;
     procedure Button2Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
