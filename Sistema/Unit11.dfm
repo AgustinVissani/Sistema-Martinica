@@ -1,6 +1,6 @@
 object Form10: TForm10
-  Left = 45
-  Top = 18
+  Left = 363
+  Top = 125
   Width = 1271
   Height = 785
   Caption = 'ESTADOS'

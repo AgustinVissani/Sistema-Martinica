@@ -137,6 +137,7 @@ begin
         ADOQuery1.Edit;
         BitBtn2.Enabled:=true;
         BitBtn3.Enabled:=true;
+        DBGrid1.Refresh;
    end
    else
     if buttonSelected = mrCancel then
@@ -188,6 +189,13 @@ begin
   ADOQuery1.Cancel;
   BitBtn2.Enabled:=false;
   BitBtn3.Enabled:=false;
+  DBEdit1.Enabled:=false;
+  DBEdit2.Enabled:=false;
+  DBEdit3.Enabled:=false;
+  DBEdit4.Enabled:=false;
+  DBEdit5.Enabled:=false;
+  BitBtn2.Enabled:=false;
+  BitBtn3.Enabled:=false;
 end;
 
 procedure TForm4.BitBtn2Click(Sender: TObject);
@@ -211,6 +219,7 @@ begin
         BitBtn2.Enabled:=false;
         BitBtn3.Enabled:=false;
         ShowMessage(Saved);
+        DBGrid1.Refresh;
       end;  //else
 end;
 

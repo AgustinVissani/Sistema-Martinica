@@ -1,6 +1,6 @@
 object Form9: TForm9
-  Left = 42
-  Top = 6
+  Left = 405
+  Top = 127
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -47,9 +47,9 @@ object Form9: TForm9
     Kind = bkRetry
   end
   object DBGrid1: TDBGrid
-    Left = 208
+    Left = 296
     Top = 256
-    Width = 921
+    Width = 761
     Height = 353
     DataSource = DataSource1
     Font.Charset = ANSI_CHARSET
@@ -327,25 +327,25 @@ object Form9: TForm9
     Left = 64
     Top = 24
     object ADOQuery1DNI: TIntegerField
-      DisplayWidth = 14
+      DisplayWidth = 17
       FieldName = 'DNI'
     end
     object ADOQuery1Nombre: TStringField
-      DisplayWidth = 17
+      DisplayWidth = 20
       FieldName = 'Nombre'
       Size = 30
     end
     object ADOQuery1Apellido: TStringField
-      DisplayWidth = 33
+      DisplayWidth = 39
       FieldName = 'Apellido'
       Size = 30
     end
     object ADOQuery1Telfono: TStringField
-      DisplayWidth = 28
+      DisplayWidth = 33
       FieldName = 'Tel'#233'fono'
     end
     object ADOQuery1Domicilio: TStringField
-      DisplayWidth = 25
+      DisplayWidth = 10
       FieldName = 'Domicilio'
       Size = 30
     end

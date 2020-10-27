@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 71
-  Top = 14
+  Left = 336
+  Top = 199
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]

@@ -88,6 +88,7 @@ begin
         ADOQuery1.Append;
         BitBtn2.Enabled:=true;
         BitBtn3.Enabled:=true;
+        DBGrid1.Refresh;
    end
    else
     if buttonSelected = mrCancel then
@@ -138,7 +139,9 @@ begin
         ADOQuery1.Edit;
         BitBtn2.Enabled:=true;
         BitBtn3.Enabled:=true;
+        DBGrid1.Refresh;
    end
+
    else
     if buttonSelected = mrCancel then
 end;
@@ -150,6 +153,12 @@ begin
   ADOQuery1.Cancel;
   BitBtn2.Enabled:=false;
   BitBtn3.Enabled:=false;
+  DBEdit1.Enabled:=false;
+  DBEdit2.Enabled:=false;
+  DBEdit3.Enabled:=false;
+  DBEdit4.Enabled:=false;
+  DBEdit5.Enabled:=false;
+
 end;
 
 

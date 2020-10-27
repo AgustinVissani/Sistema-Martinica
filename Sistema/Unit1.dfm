@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 72
-  Top = 9
+  Left = 335
+  Top = 147
   Width = 1216
   Height = 700
   BorderIcons = [biSystemMenu, biMinimize]
@@ -99,12 +99,14 @@ object Form1: TForm1
     Top = 48
     Width = 81
     Height = 27
+    Style = csDropDownList
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
     ItemHeight = 19
+    ItemIndex = 0
     ParentFont = False
     TabOrder = 3
     Text = 'Espa'#241'ol'
@@ -117,10 +119,10 @@ object Form1: TForm1
     Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
-      'fo=False;Initial Catalog=Martinica_Decoraciones;Data Source=GUTY' +
-      ';Use Procedure for Prepare=1;Auto Translate=True;Packet Size=409' +
-      '6;Workstation ID=GUTY;Use Encryption for Data=False;Tag with col' +
-      'umn collation when possible=False'
+      'fo=False;Initial Catalog=Martinica_Decoraciones;Data Source=Agus' +
+      'tin;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=' +
+      '4096;Workstation ID=GUTY;Use Encryption for Data=False;Tag with ' +
+      'column collation when possible=False'
     DefaultDatabase = 'Martinica_Decoraciones'
     LoginPrompt = False
     Provider = 'SQLOLEDB.1'

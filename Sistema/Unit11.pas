@@ -71,7 +71,7 @@ var
   NuevoEstado:string;
 implementation
 
-uses Unit6;
+uses Unit6,unit7;
 
 {$R *.dfm}
 
@@ -119,8 +119,21 @@ begin
            ADOQuery2.ExecSQL;
 
            ADOQuery2.Close;
-          ADOQuery2.SQL.Clear;
+           ADOQuery2.SQL.Clear;
+          showmessage(Saved);
+       //   ADOQuery2.Open;             //agregadooo
+          ADOQuery2.SQL.add('SELECT DISTINCT Código_Pedidos, Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente],  ');
+          ADOQuery2.SQL.add('Pedidos.Fecha, Pedidos.Detalle,Pedidos.Observaciones ,Estados.Detalle as [Estado] ');
+          ADOQuery2.SQL.add('FROM  Pedidos ');
+          ADOQuery2.SQL.add('LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor ');
+          ADOQuery2.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');
+          ADOQuery2.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
 
+          ADOQuery2.Open;
+          ADOQuery2.ExecSQL;
+          DBGrid1.DataSource:=DataSource2;
+          DBGrid1.Refresh;
+          
           
          end
    else
@@ -143,8 +156,6 @@ begin
           ADOQuery4.Close;
           ADOQuery4.SQL.Clear;
 
-          ADOQuery4.Close;
-          ADOQuery4.SQL.Clear;
 
 
 

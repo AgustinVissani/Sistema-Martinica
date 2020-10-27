@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 59
-  Top = 19
+  Left = 337
+  Top = 200
   Width = 1244
   Height = 729
   BorderIcons = [biSystemMenu, biMinimize]
@@ -136,7 +136,7 @@ object Form6: TForm6
     Left = 464
     Top = 112
     Width = 361
-    Height = 145
+    Height = 177
     Caption = 'Busqueda de pedidos por cliente'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -203,6 +203,16 @@ object Form6: TForm6
       ParentFont = False
       ReadOnly = True
       TabOrder = 1
+    end
+    object CheckBox1: TCheckBox
+      Left = 136
+      Top = 136
+      Width = 97
+      Height = 17
+      Caption = 'Ver todos'
+      TabOrder = 2
+      Visible = False
+      OnClick = CheckBox1Click
     end
   end
   object Panel1: TPanel

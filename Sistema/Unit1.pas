@@ -108,7 +108,7 @@ end;
 
 procedure TForm1.ComboBox1Change(Sender: TObject);
 begin
-  
+
 
 if ComboBox1.ItemIndex = 1 then //English
 begin
