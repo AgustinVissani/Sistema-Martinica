@@ -168,7 +168,24 @@ end;
 
 
 procedure TForm9.BitBtn2Click(Sender: TObject);
+var
+    clienteDNI:string;
 begin
+   begin
+      ADOQuery2.Close;
+      ADOQuery2.SQL.Clear;
+
+      ADOQuery2.SQL.add('SELECT * FROM Clientes WHERE Clientes.DNI='''+DBEdit1.Text+'''');
+      ADOQuery2.Open;
+      clienteDNI:=ADOQuery2.FieldByname('Código_Cliente').AsString;
+      ADOQuery2.Close;
+      ADOQuery2.SQL.Clear;
+    if clienteDNI <> '' then
+    begin
+      showmessage('No se puede agregar un cliente con mismo DNI.');
+    end
+    else
+    begin
   if (DBEdit1.Text='') or
     (DBEdit2.Text='') or
     (DBEdit3.Text='') or
@@ -194,9 +211,9 @@ begin
     BitBtn3.Enabled:=false;
     ShowMessage(Saved);
   end;
-
+ end;
 end;
-
+end;
 
 
 procedure TForm9.Button2Click(Sender: TObject);
