@@ -139,6 +139,8 @@ end;
 procedure TForm7.BitBtn2Click(Sender: TObject);
 begin
   ADOQuery2.Cancel;
+  RichEdit1.Clear;
+  RichEdit2.Clear;
 end;
 
 procedure TForm7.BitBtn3Click(Sender: TObject);

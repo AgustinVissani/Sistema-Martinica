@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 336
-  Top = 199
+  Left = 245
+  Top = 200
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -104,7 +104,7 @@ object Form4: TForm4
     Left = 224
     Top = 104
     Width = 865
-    Height = 145
+    Height = 121
     Caption = 'Datos Proveedor'
     TabOrder = 4
     object Label3: TLabel

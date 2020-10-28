@@ -36,6 +36,10 @@ type
     Button3: TButton;
     Button2: TButton;
     Button1: TButton;
+    ADOQuery2: TADOQuery;
+    Label2: TLabel;
+    DBEdit6: TDBEdit;
+    ADOQuery1Cdigo_Cliente: TAutoIncField;
     procedure Button1Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -200,7 +204,22 @@ const
   mbYesNoCancel = [mbYes, mbNO, mbCancel];
 var
     buttonSelected : Integer;
+    cliente:string;
 begin
+    ADOQuery2.Close;
+    ADOQuery2.SQL.Clear;
+    ADOQuery2.SQL.add('SELECT Pedidos.Código_Cliente FROM Pedidos WHERE Pedidos.Código_Cliente = '+DBEdit6.Text);
+    ADOQuery2.Open;
+    ADOQuery2.ExecSQL;
+
+    cliente:=ADOQuery2.FieldByname('Código_Cliente').AsString;
+    
+    if cliente <> '' then
+    begin
+      showmessage('No se puede eliminar un cliente con pedidos asociados.');
+    end
+    else
+    begin
    buttonSelected := MessageDlg(QuiereEliminar,mtWarning, mbOKCancel, 0);
    if buttonSelected = mrOK then
    begin
@@ -208,14 +227,13 @@ begin
       ADOQuery1.Delete;
       BitBtn2.Enabled:=true;
       BitBtn3.Enabled:=true;
-   end
-   else
-    if buttonSelected = mrCancel then
-     begin
-       ShowMessage(NoElimino);
-     end;
+    end;
+      BitBtn2.Enabled:=false;
+      BitBtn3.Enabled:=false;
+    end;
+
 end;
-              
+
 procedure TForm9.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
   DataCol: Integer; Column: TColumn; State: TGridDrawState);
 begin
@@ -252,5 +270,7 @@ begin
    Key := #0;
   end;
 end;
+
+
 
 end.

@@ -294,7 +294,7 @@ object Form10: TForm10
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 5
+      TabOrder = 6
     end
     object DBEdit6: TDBEdit
       Left = 488
@@ -310,7 +310,7 @@ object Form10: TForm10
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 6
+      TabOrder = 5
     end
   end
   object GroupBox2: TGroupBox

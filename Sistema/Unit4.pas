@@ -86,10 +86,14 @@ const
   mbYesNoCancel = [mbYes, mbNO, mbCancel];
 var
     buttonSelected : Integer;
+    proveedorCuit:string;
 begin
    buttonSelected := MessageDlg(NuevoProveedor,mtConfirmation, mbOKCancel, 0);
+
+
+
    if buttonSelected = mrOK then
-   begin
+      begin
         DBEdit1.Enabled:=true;
         DBEdit2.Enabled:=true;
         DBEdit3.Enabled:=true;
@@ -98,7 +102,7 @@ begin
         ADOQuery1.Append;
         BitBtn2.Enabled:=true;
         BitBtn3.Enabled:=true;
-   end
+      end
    else
     if buttonSelected = mrCancel then
 end;
@@ -160,7 +164,7 @@ begin
     ADOQuery2.ExecSQL;
 
     proveedor:=ADOQuery2.FieldByname('Código_Proveedor').AsString;
-    
+
     if proveedor <> '' then
     begin
       showmessage('No se puede eliminar un proveedor con pedidos asociados.');
@@ -174,7 +178,9 @@ begin
       ADOQuery1.Delete;
       BitBtn2.Enabled:=true;
       BitBtn3.Enabled:=true;
-    end
+    end;
+      BitBtn2.Enabled:=false;
+      BitBtn3.Enabled:=false;
     end;
 
 end;

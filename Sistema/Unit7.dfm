@@ -341,7 +341,7 @@ object Form7: TForm7
   end
   object DataSource3: TDataSource
     DataSet = ADOQuery3
-    Left = 64
-    Top = 464
+    Left = 72
+    Top = 480
   end
 end

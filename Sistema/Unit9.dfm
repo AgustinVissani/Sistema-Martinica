@@ -1,6 +1,6 @@
 object Form9: TForm9
-  Left = 405
-  Top = 127
+  Left = 225
+  Top = 531
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -47,9 +47,9 @@ object Form9: TForm9
     Kind = bkRetry
   end
   object DBGrid1: TDBGrid
-    Left = 296
+    Left = 256
     Top = 256
-    Width = 761
+    Width = 857
     Height = 353
     DataSource = DataSource1
     Font.Charset = ANSI_CHARSET
@@ -141,7 +141,7 @@ object Form9: TForm9
       ParentFont = False
     end
     object Label5: TLabel
-      Left = 160
+      Left = 256
       Top = 110
       Width = 62
       Height = 19
@@ -154,7 +154,7 @@ object Form9: TForm9
       ParentFont = False
     end
     object Label6: TLabel
-      Left = 472
+      Left = 512
       Top = 110
       Width = 65
       Height = 19
@@ -172,6 +172,19 @@ object Form9: TForm9
       Width = 28
       Height = 19
       Caption = 'DNI'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 24
+      Top = 102
+      Width = 50
+      Height = 19
+      Caption = 'Codigo'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -229,7 +242,7 @@ object Form9: TForm9
       TabOrder = 2
     end
     object DBEdit4: TDBEdit
-      Left = 240
+      Left = 336
       Top = 102
       Width = 145
       Height = 27
@@ -246,7 +259,7 @@ object Form9: TForm9
       OnKeyPress = DBEdit4KeyPress
     end
     object DBEdit5: TDBEdit
-      Left = 560
+      Left = 592
       Top = 102
       Width = 233
       Height = 27
@@ -260,6 +273,15 @@ object Form9: TForm9
       Font.Style = []
       ParentFont = False
       TabOrder = 4
+    end
+    object DBEdit6: TDBEdit
+      Left = 88
+      Top = 96
+      Width = 121
+      Height = 27
+      DataField = 'C'#243'digo_Cliente'
+      DataSource = DataSource1
+      TabOrder = 5
     end
   end
   object Panel1: TPanel
@@ -326,26 +348,31 @@ object Form9: TForm9
       'FROM Clientes')
     Left = 64
     Top = 24
+    object ADOQuery1Cdigo_Cliente: TAutoIncField
+      DisplayWidth = 16
+      FieldName = 'C'#243'digo_Cliente'
+      ReadOnly = True
+    end
     object ADOQuery1DNI: TIntegerField
-      DisplayWidth = 17
+      DisplayWidth = 20
       FieldName = 'DNI'
     end
     object ADOQuery1Nombre: TStringField
-      DisplayWidth = 20
+      DisplayWidth = 24
       FieldName = 'Nombre'
       Size = 30
     end
     object ADOQuery1Apellido: TStringField
-      DisplayWidth = 39
+      DisplayWidth = 21
       FieldName = 'Apellido'
       Size = 30
     end
     object ADOQuery1Telfono: TStringField
-      DisplayWidth = 33
+      DisplayWidth = 39
       FieldName = 'Tel'#233'fono'
     end
     object ADOQuery1Domicilio: TStringField
-      DisplayWidth = 10
+      DisplayWidth = 12
       FieldName = 'Domicilio'
       Size = 30
     end
@@ -354,5 +381,16 @@ object Form9: TForm9
     DataSet = ADOQuery1
     Left = 112
     Top = 24
+  end
+  object ADOQuery2: TADOQuery
+    Active = True
+    Connection = Form1.ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT Pedidos.C'#243'digo_Cliente'
+      'FROM Pedidos')
+    Left = 64
+    Top = 184
   end
 end
