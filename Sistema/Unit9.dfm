@@ -1,6 +1,6 @@
 object Form9: TForm9
-  Left = 215
-  Top = 203
+  Left = 22
+  Top = 70
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -102,8 +102,8 @@ object Form9: TForm9
     Kind = bkOK
   end
   object GroupBox1: TGroupBox
-    Left = 240
-    Top = 88
+    Left = 256
+    Top = 80
     Width = 865
     Height = 145
     Caption = 'Datos cliente'
@@ -141,8 +141,8 @@ object Form9: TForm9
       ParentFont = False
     end
     object Label5: TLabel
-      Left = 256
-      Top = 110
+      Left = 120
+      Top = 102
       Width = 62
       Height = 19
       Caption = 'Tel'#233'fono'
@@ -154,8 +154,8 @@ object Form9: TForm9
       ParentFont = False
     end
     object Label6: TLabel
-      Left = 512
-      Top = 110
+      Left = 376
+      Top = 102
       Width = 65
       Height = 19
       Caption = 'Direcci'#243'n'
@@ -180,7 +180,7 @@ object Form9: TForm9
       ParentFont = False
     end
     object Label2: TLabel
-      Left = 24
+      Left = 8
       Top = 102
       Width = 50
       Height = 19
@@ -191,6 +191,7 @@ object Form9: TForm9
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
+      Visible = False
     end
     object DBEdit1: TDBEdit
       Left = 80
@@ -242,7 +243,7 @@ object Form9: TForm9
       TabOrder = 2
     end
     object DBEdit4: TDBEdit
-      Left = 336
+      Left = 200
       Top = 102
       Width = 145
       Height = 27
@@ -259,7 +260,7 @@ object Form9: TForm9
       OnKeyPress = DBEdit4KeyPress
     end
     object DBEdit5: TDBEdit
-      Left = 592
+      Left = 456
       Top = 102
       Width = 233
       Height = 27
@@ -275,13 +276,14 @@ object Form9: TForm9
       TabOrder = 4
     end
     object DBEdit6: TDBEdit
-      Left = 88
+      Left = 72
       Top = 96
-      Width = 121
+      Width = 33
       Height = 27
       DataField = 'C'#243'digo_Cliente'
       DataSource = DataSource1
       TabOrder = 5
+      Visible = False
     end
   end
   object Panel1: TPanel

@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 337
-  Top = 200
+  Left = 80
+  Top = 110
   Width = 1244
   Height = 729
   BorderIcons = [biSystemMenu, biMinimize]
@@ -204,15 +204,14 @@ object Form6: TForm6
       ReadOnly = True
       TabOrder = 1
     end
-    object CheckBox1: TCheckBox
+    object Button3: TButton
       Left = 136
-      Top = 136
-      Width = 97
-      Height = 17
+      Top = 128
+      Width = 83
+      Height = 33
       Caption = 'Ver todos'
       TabOrder = 2
-      Visible = False
-      OnClick = CheckBox1Click
+      OnClick = Button3Click
     end
   end
   object Panel1: TPanel

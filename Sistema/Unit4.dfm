@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 245
-  Top = 200
+  Left = 40
+  Top = 12
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -147,7 +147,7 @@ object Form4: TForm4
       ParentFont = False
     end
     object Label6: TLabel
-      Left = 264
+      Left = 96
       Top = 80
       Width = 65
       Height = 19
@@ -160,7 +160,7 @@ object Form4: TForm4
       ParentFont = False
     end
     object Label7: TLabel
-      Left = 624
+      Left = 448
       Top = 80
       Width = 37
       Height = 19
@@ -173,7 +173,7 @@ object Form4: TForm4
       ParentFont = False
     end
     object Label2: TLabel
-      Left = 40
+      Left = 8
       Top = 80
       Width = 50
       Height = 19
@@ -184,6 +184,7 @@ object Form4: TForm4
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
+      Visible = False
     end
     object DBEdit1: TDBEdit
       Left = 120
@@ -235,7 +236,7 @@ object Form4: TForm4
       OnKeyPress = DBEdit3KeyPress
     end
     object DBEdit4: TDBEdit
-      Left = 352
+      Left = 184
       Top = 80
       Width = 233
       Height = 27
@@ -251,7 +252,7 @@ object Form4: TForm4
       TabOrder = 3
     end
     object DBEdit5: TDBEdit
-      Left = 688
+      Left = 512
       Top = 80
       Width = 161
       Height = 27
@@ -268,14 +269,15 @@ object Form4: TForm4
       OnKeyPress = DBEdit5KeyPress
     end
     object DBEdit6: TDBEdit
-      Left = 120
+      Left = 64
       Top = 80
-      Width = 121
+      Width = 25
       Height = 28
       DataField = 'C'#243'digo_Proveedor'
       DataSource = DataSource1
       Enabled = False
       TabOrder = 5
+      Visible = False
     end
   end
   object Panel1: TPanel

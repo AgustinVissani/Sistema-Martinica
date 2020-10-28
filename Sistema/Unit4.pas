@@ -219,6 +219,8 @@ begin
     if proveedorCuit <> '' then
     begin
       showmessage('No se puede agregar un proveedor con mismo CUIT.');
+      DBEdit5.Clear;
+      DBEdit5.SetFocus;
     end
     else
     begin

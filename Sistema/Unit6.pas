@@ -53,7 +53,7 @@ type
     Panel1: TPanel;
     Button2: TButton;
     Button1: TButton;
-    CheckBox1: TCheckBox;
+    Button3: TButton;
     procedure BitBtn1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -63,10 +63,8 @@ type
     procedure FormShow(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure CheckBox1Click(Sender: TObject);
-  //  procedure CheckBox1Click(Sender: TObject);
-    
-    
+
+    procedure Button3Click(Sender: TObject);
 
 
   private
@@ -150,14 +148,7 @@ begin
           DBGrid1.DataSource:=DataSource3;
 
           DBGrid1.Refresh;
-
-         If DBLookupComboBox1.Text <>'' then
-          begin
-              CheckBox1.Visible:=true;
-          end;
-         if CheckBox1.Checked=true then
-         CheckBox1.Checked:=false;
-
+          
 end;
 
 procedure TForm6.FormShow(Sender: TObject);
@@ -179,27 +170,23 @@ begin
   Application.Terminate;
 end;
 
-procedure TForm6.CheckBox1Click(Sender: TObject);
+procedure TForm6.Button3Click(Sender: TObject);
 begin
-          DBLookupComboBox1.KeyValue:=-1;
-          ADOQuery2.SQL.Clear;
+  DBLookupComboBox1.KeyValue:=-1;
+  ADOQuery2.SQL.Clear;
 
-          ADOQuery2.SQL.add('SELECT DISTINCT Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente], ');
-          ADOQuery2.SQL.add('Pedidos.Fecha, Pedidos.Detalle, Estados.Detalle as [Estado] ');
-          ADOQuery2.SQL.add('FROM  Pedidos ');
-          ADOQuery2.SQL.add('LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor ');
-          ADOQuery2.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');
-          ADOQuery2.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
+  ADOQuery2.SQL.add('SELECT DISTINCT Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente], ');
+  ADOQuery2.SQL.add('Pedidos.Fecha, Pedidos.Detalle, Estados.Detalle as [Estado] ');
+  ADOQuery2.SQL.add('FROM  Pedidos ');
+  ADOQuery2.SQL.add('LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor ');
+  ADOQuery2.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');
+  ADOQuery2.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
 
+  ADOQuery2.Open;
+  ADOQuery2.ExecSQL;
+  DBGrid1.DataSource:=DataSource2;
 
-          ADOQuery2.Open;
-          ADOQuery2.ExecSQL;
-          DBGrid1.DataSource:=DataSource2;
-
-          DBGrid1.Refresh;
-
+  DBGrid1.Refresh;
 end;
-
-
 
 end.
