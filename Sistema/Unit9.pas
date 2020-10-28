@@ -52,6 +52,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure DBEdit4KeyPress(Sender: TObject; var Key: Char);
     procedure DBEdit1KeyPress(Sender: TObject; var Key: Char);
+
   private
     { Private declarations }
   public
@@ -65,6 +66,7 @@ var
   QuiereEditar: string;
   SiElimino: string;
   NoElimino: string;
+  AgregarCliente: boolean;
 
 implementation
 uses  Unit1, Unit2, Unit8, Unit4, Unit7;
@@ -72,13 +74,13 @@ uses  Unit1, Unit2, Unit8, Unit4, Unit7;
 {$R *.dfm}
 
 procedure TForm9.Button1Click(Sender: TObject);
-//form9.Hide;
-//Form8.Show;
+
 const
   mbYesNoCancel = [mbYes, mbNO, mbCancel];
 var
     buttonSelected : Integer;
 begin
+   AgregarCliente:=true;
    buttonSelected := MessageDlg(NuevoCliente,mtConfirmation, mbOKCancel, 0);
    if buttonSelected = mrOK then
    begin
@@ -121,6 +123,7 @@ begin
   QuiereEditar:='¿Quiere editar un cliente?';
   SiElimino:= 'Se eliminó correctamente';
   NoElimino:= 'No se eliminó el cliente';
+  AgregarCliente:=false;
 
 end;
 
@@ -132,6 +135,8 @@ const
 var
     buttonSelected : Integer;
 begin
+   DBGrid1.Enabled:=false;
+   AgregarCliente:=false;
    buttonSelected := MessageDlg(QuiereEditar,mtConfirmation, mbOKCancel, 0);
    if buttonSelected = mrOK then
    begin
@@ -171,21 +176,7 @@ procedure TForm9.BitBtn2Click(Sender: TObject);
 var
     clienteDNI:string;
 begin
-   begin
-      ADOQuery2.Close;
-      ADOQuery2.SQL.Clear;
-
-      ADOQuery2.SQL.add('SELECT * FROM Clientes WHERE Clientes.DNI='''+DBEdit1.Text+'''');
-      ADOQuery2.Open;
-      clienteDNI:=ADOQuery2.FieldByname('Código_Cliente').AsString;
-      ADOQuery2.Close;
-      ADOQuery2.SQL.Clear;
-    if clienteDNI <> '' then
-    begin
-      showmessage('No se puede agregar un cliente con mismo DNI.');
-    end
-    else
-    begin
+  DBGrid1.Enabled:=true;
   if (DBEdit1.Text='') or
     (DBEdit2.Text='') or
     (DBEdit3.Text='') or
@@ -196,7 +187,57 @@ begin
   end
   else
   begin
-    ADOQuery1.Post;
+
+    if (AgregarCliente = true) then
+    begin
+      ADOQuery2.Close;
+      ADOQuery2.SQL.Clear;
+
+      ADOQuery2.SQL.add('SELECT * FROM Clientes WHERE Clientes.DNI='''+DBEdit1.Text+'''');
+      ADOQuery2.Open;
+      clienteDNI:=ADOQuery2.FieldByname('Código_Cliente').AsString;
+      ADOQuery2.Close;
+      ADOQuery2.SQL.Clear;
+
+      if clienteDNI <> '' then
+      begin
+        showmessage('No se puede agregar un cliente con mismo DNI.');
+        DBEdit1.Clear;
+        DBEdit1.SetFocus;
+      end
+      else
+      begin
+        ADOQuery1.Post;
+        ShowMessage(Saved);
+      end;
+    end
+    else  //Modificando
+    begin
+      ADOQuery2.Close;
+      ADOQuery2.SQL.Clear;
+
+      ADOQuery2.SQL.add('SELECT * FROM Clientes WHERE Clientes.DNI='''+DBEdit1.Text+'''');
+      ADOQuery2.Open;
+      clienteDNI:=ADOQuery2.FieldByname('Código_Cliente').AsString;
+      ADOQuery2.Close;
+      ADOQuery2.SQL.Clear;
+
+      if clienteDNI <> '' then
+      begin
+        showmessage('No se puede modificar el DNI de otro ya cargado.');
+        DBEdit1.Clear;
+        DBEdit1.SetFocus;
+        DBEdit1.Refresh;
+      end
+      else
+      begin
+        ADOQuery1.Post;
+        ShowMessage(Saved);
+        DBEdit1.Refresh;
+      end;
+
+    end;
+
     DBEdit1.Enabled:=false;
     DBEdit1.Text:='';
     DBEdit2.Enabled:=false;
@@ -209,11 +250,11 @@ begin
     DBEdit5.Text:='';
     BitBtn2.Enabled:=false;
     BitBtn3.Enabled:=false;
-    ShowMessage(Saved);
-  end;
+
+
  end;
 end;
-end;
+
 
 
 procedure TForm9.Button2Click(Sender: TObject);
@@ -287,7 +328,5 @@ begin
    Key := #0;
   end;
 end;
-
-
 
 end.

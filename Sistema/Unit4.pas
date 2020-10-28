@@ -207,23 +207,7 @@ procedure TForm4.BitBtn2Click(Sender: TObject);
 var
     proveedorCuit:string;
 begin
-   begin
-      ADOQuery2.Close;
-      ADOQuery2.SQL.Clear;
 
-      ADOQuery2.SQL.add('SELECT * FROM Proveedores WHERE Proveedores.CUIT='''+DBEdit5.Text+'''');
-      ADOQuery2.Open;
-      proveedorCuit:=ADOQuery2.FieldByname('Código_Proveedor').AsString;
-      ADOQuery2.Close;
-      ADOQuery2.SQL.Clear;
-    if proveedorCuit <> '' then
-    begin
-      showmessage('No se puede agregar un proveedor con mismo CUIT.');
-      DBEdit5.Clear;
-      DBEdit5.SetFocus;
-    end
-    else
-    begin
       //Validaciones
       if (DBEdit1.Text='') or
         (DBEdit2.Text='') or
@@ -232,6 +216,24 @@ begin
         (DBEdit5.Text='')
       then
         showmessage(CompletarCampos)
+      else
+      begin
+
+        ADOQuery2.Close;
+        ADOQuery2.SQL.Clear;
+
+        ADOQuery2.SQL.add('SELECT * FROM Proveedores WHERE Proveedores.CUIT='''+DBEdit5.Text+'''');
+        ADOQuery2.Open;
+        proveedorCuit:=ADOQuery2.FieldByname('Código_Proveedor').AsString;
+        ADOQuery2.Close;
+        ADOQuery2.SQL.Clear;
+
+      if proveedorCuit <> '' then
+      begin
+        showmessage('No se puede agregar un proveedor con mismo CUIT.');
+        DBEdit5.Clear;
+        DBEdit5.SetFocus;
+      end
       else
       begin
         ADOQuery1.Post;
@@ -244,10 +246,10 @@ begin
         BitBtn3.Enabled:=false;
         ShowMessage(Saved);
         DBGrid1.Refresh;
-      end;  //else
+      end;
   end;
 end;
-end;
+
 procedure TForm4.FormCreate(Sender: TObject);
 begin
   Left:=(Screen.Width-Width)  div 2;
