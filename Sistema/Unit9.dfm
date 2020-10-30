@@ -196,7 +196,7 @@ object Form9: TForm9
     object DBEdit1: TDBEdit
       Left = 80
       Top = 38
-      Width = 145
+      Width = 89
       Height = 27
       DataField = 'DNI'
       DataSource = DataSource1

@@ -67,6 +67,7 @@ var
   SiElimino: string;
   NoElimino: string;
   AgregarCliente: boolean;
+  ClienteAModificar: string;
 
 implementation
 uses  Unit1, Unit2, Unit8, Unit4, Unit7;
@@ -124,6 +125,7 @@ begin
   SiElimino:= 'Se eliminó correctamente';
   NoElimino:= 'No se eliminó el cliente';
   AgregarCliente:=false;
+  ClienteAModificar:='';
 
 end;
 
@@ -140,6 +142,7 @@ begin
    buttonSelected := MessageDlg(QuiereEditar,mtConfirmation, mbOKCancel, 0);
    if buttonSelected = mrOK then
    begin
+        ClienteAModificar:=DBEdit6.Text;
         DBEdit1.Enabled:=true;
         DBEdit2.Enabled:=true;
         DBEdit3.Enabled:=true;
@@ -150,7 +153,6 @@ begin
         BitBtn3.Enabled:=true;
         DBGrid1.Refresh;
    end
-
    else
     if buttonSelected = mrCancel then
 end;
@@ -167,7 +169,7 @@ begin
   DBEdit3.Enabled:=false;
   DBEdit4.Enabled:=false;
   DBEdit5.Enabled:=false;
-
+  DBGrid1.Enabled:=true;
 end;
 
 
@@ -175,6 +177,8 @@ end;
 procedure TForm9.BitBtn2Click(Sender: TObject);
 var
     clienteDNI:string;
+    codigoCliente:string;
+    query:string;
 begin
   DBGrid1.Enabled:=true;
   if (DBEdit1.Text='') or
@@ -198,58 +202,74 @@ begin
       clienteDNI:=ADOQuery2.FieldByname('Código_Cliente').AsString;
       ADOQuery2.Close;
       ADOQuery2.SQL.Clear;
-
       if clienteDNI <> '' then
       begin
         showmessage('No se puede agregar un cliente con mismo DNI.');
         DBEdit1.Clear;
         DBEdit1.SetFocus;
+        ADOQuery1.Cancel;
       end
       else
       begin
         ADOQuery1.Post;
         ShowMessage(Saved);
+        DBEdit1.Enabled:=false;
+        DBEdit1.Text:='';
+        DBEdit2.Enabled:=false;
+        DBEdit2.Text:='';
+        DBEdit3.Enabled:=false;
+        DBEdit3.Text:='';
+        DBEdit4.Enabled:=false;
+        DBEdit4.Text:='';
+        DBEdit5.Enabled:=false;
+        DBEdit5.Text:='';
       end;
     end
-    else  //Modificando
+    else  // MODIFICANDO 
     begin
       ADOQuery2.Close;
       ADOQuery2.SQL.Clear;
 
-      ADOQuery2.SQL.add('SELECT * FROM Clientes WHERE Clientes.DNI='''+DBEdit1.Text+'''');
+      query:='SELECT Código_Cliente, DNI FROM Clientes WHERE Clientes.DNI='''+DBEdit1.Text+'''';
+
+      ADOQuery2.SQL.add(query);
       ADOQuery2.Open;
-      clienteDNI:=ADOQuery2.FieldByname('Código_Cliente').AsString;
-      ADOQuery2.Close;
+      clienteDNI:=ADOQuery2.FieldByname('DNI').AsString;
+      codigoCliente:=ADOQuery2.FieldByname('Código_Cliente').AsString;
       ADOQuery2.SQL.Clear;
 
-      if clienteDNI <> '' then
+      if (clienteDNI <> '') then
       begin
-        showmessage('No se puede modificar el DNI de otro ya cargado.');
-        DBEdit1.Clear;
-        DBEdit1.SetFocus;
-        DBEdit1.Refresh;
+        if codigoCliente = ClienteAModificar then // Modificando al mismo cliente
+        begin
+          ADOQuery1.Post;
+          ShowMessage(Saved);
+          DBEdit1.Refresh;
+        end
+        else
+        begin
+          showmessage('No se puede modificar el DNI de otro ya cargado.');
+          DBEdit1.Clear;
+          DBEdit1.SetFocus;
+          DBEdit1.Refresh;
+          ADOQuery1.CancelUpdates;
+          BitBtn3.Enabled:=true;;
+        end;
       end
       else
-      begin
+      begin //Modificando al cliente con nuevo dni
         ADOQuery1.Post;
         ShowMessage(Saved);
         DBEdit1.Refresh;
-      end;
-
+        DBEdit1.Enabled:=false;
+        DBEdit2.Enabled:=false;
+        DBEdit3.Enabled:=false;
+        DBEdit4.Enabled:=false;
+        DBEdit5.Enabled:=false;
+        BitBtn2.Enabled:=false;
+        BitBtn3.Enabled:=false;
+        end;
     end;
-
-    DBEdit1.Enabled:=false;
-    DBEdit1.Text:='';
-    DBEdit2.Enabled:=false;
-    DBEdit2.Text:='';
-    DBEdit3.Enabled:=false;
-    DBEdit3.Text:='';
-    DBEdit4.Enabled:=false;
-    DBEdit4.Text:='';
-    DBEdit5.Enabled:=false;
-    DBEdit5.Text:='';
-    BitBtn2.Enabled:=false;
-    BitBtn3.Enabled:=false;
 
 
  end;
