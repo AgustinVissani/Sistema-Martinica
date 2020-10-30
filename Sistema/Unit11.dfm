@@ -436,7 +436,7 @@ object Form10: TForm10
       
         'LEFT JOIN Clientes ON Clientes.C'#243'digo_Cliente = Pedidos.C'#243'digo_C' +
         'liente'
-      'ORDER BY Estados.Detalle, Clientes.Apellido')
+      'ORDER BY Estados.Detalle, Clientes.Apellido, Pedidos.Fecha DESC')
     Left = 40
     Top = 448
     object ADOQuery2Cdigo_Pedidos: TAutoIncField
@@ -564,7 +564,7 @@ object Form10: TForm10
       
         'LEFT JOIN Clientes ON Clientes.C'#243'digo_Cliente = Pedidos.C'#243'digo_C' +
         'liente'
-      'ORDER BY Estados.Detalle')
+      'ORDER BY Estados.Detalle, Pedidos.Fecha DESC')
     Left = 1176
     Top = 392
     object ADOQuery6Estado: TStringField

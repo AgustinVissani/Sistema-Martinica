@@ -240,7 +240,8 @@ object Form6: TForm6
         'do'
       
         'LEFT JOIN Clientes ON Clientes.C'#243'digo_Cliente = Pedidos.C'#243'digo_C' +
-        'liente')
+        'liente'
+      'ORDER BY Pedidos.Fecha DESC')
     Left = 56
     Top = 200
     object ADOQuery2Proveedor: TStringField
@@ -301,7 +302,8 @@ object Form6: TForm6
         'do'
       
         'LEFT JOIN Clientes ON Clientes.C'#243'digo_Cliente = Pedidos.C'#243'digo_C' +
-        'liente')
+        'liente'
+      'ORDER BY Pedidos.Fecha DESC')
     Left = 176
     Top = 120
     object ADOQuery3Proveedor: TStringField

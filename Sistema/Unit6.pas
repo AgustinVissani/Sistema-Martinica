@@ -137,6 +137,7 @@ begin
           ADOQuery3.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');
           ADOQuery3.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
           ADOQuery3.SQL.add('WHERE Pedidos.Código_Cliente='+IntToStr(apellidoCliente));
+          ADOQuery3.SQL.add(' ORDER BY Pedidos.Fecha');
 
 
           ADOQuery3.Open;

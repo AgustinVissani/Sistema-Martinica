@@ -137,7 +137,7 @@ begin
           ADOQuery2.SQL.add('LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor ');
           ADOQuery2.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');
           ADOQuery2.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
-          ADOQuery2.SQL.add('ORDER BY Estados.Detalle, Clientes.Apellido');
+          ADOQuery2.SQL.add('ORDER BY Estados.Detalle, Clientes.Apellido, Pedidos.Fecha DESC');
 
           ADOQuery2.Open;
           ADOQuery2.ExecSQL;
@@ -194,7 +194,7 @@ begin
           ADOQuery2.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');
           ADOQuery2.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
           ADOQuery2.SQL.add('WHERE Pedidos.Código_Cliente='+IntToStr(apellidoCliente));
-          ADOQuery2.SQL.add('ORDER BY Estados.Detalle, Clientes.Apellido');
+          ADOQuery2.SQL.add('ORDER BY Estados.Detalle, Clientes.Apellido, Pedidos.Fecha DESC');
 
           ADOQuery2.Open;
           ADOQuery2.ExecSQL;
