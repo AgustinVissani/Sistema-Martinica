@@ -14,10 +14,7 @@ type
 
   TForm6 = class(TForm)
     Label1: TLabel;
-    Label4: TLabel;
     BitBtn1: TBitBtn;
-    Label5: TLabel;
-    Label6: TLabel;
     ADOQuery1: TADOQuery;
     DBGrid1: TDBGrid;
     ADOQuery2: TADOQuery;
@@ -25,8 +22,6 @@ type
     DataSource2: TDataSource;
     ADOQuery1DNI: TIntegerField;
     ADOQuery1Apellido: TStringField;
-    Label3: TLabel;
-    Label8: TLabel;
     ADOQuery1Cdigo_Cliente: TAutoIncField;
     ADOQuery1Nombre: TStringField;
     ADOQuery1Telfono: TStringField;
@@ -54,6 +49,7 @@ type
     Button2: TButton;
     Button1: TButton;
     Button3: TButton;
+    ADOQuery2Observaciones: TStringField;
     procedure BitBtn1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -153,8 +149,10 @@ end;
 
 procedure TForm6.FormShow(Sender: TObject);
 begin
+  //ADOQuery2.Open;
+  //ADOQuery2.ExecSQL;
+  ADOQuery2.Close;
   ADOQuery2.Open;
-  ADOQuery2.ExecSQL;
   DBGrid1.DataSource:=DataSource2;
   DBGrid1.Refresh;
 end;
@@ -176,7 +174,7 @@ begin
   ADOQuery2.SQL.Clear;
 
   ADOQuery2.SQL.add('SELECT DISTINCT Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente], ');
-  ADOQuery2.SQL.add('Pedidos.Fecha, Pedidos.Detalle, Estados.Detalle as [Estado] ');
+  ADOQuery2.SQL.add('Pedidos.Fecha, Pedidos.Detalle, Estados.Detalle as [Estado], Pedidos.Observaciones ');
   ADOQuery2.SQL.add('FROM  Pedidos ');
   ADOQuery2.SQL.add('LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor ');
   ADOQuery2.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');

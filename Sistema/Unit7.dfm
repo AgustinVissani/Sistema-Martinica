@@ -1,6 +1,6 @@
 object Form7: TForm7
-  Left = 362
-  Top = 190
+  Left = 44
+  Top = 6
   Width = 1280
   Height = 788
   BorderIcons = [biSystemMenu, biMinimize]
@@ -18,13 +18,26 @@ object Form7: TForm7
   TextHeight = 13
   object Label1: TLabel
     Left = 608
-    Top = 32
+    Top = 16
     Width = 189
     Height = 33
     Caption = 'NUEVO PEDIDO'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -27
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label10: TLabel
+    Left = 928
+    Top = 248
+    Width = 74
+    Height = 16
+    Caption = '* Obligatorio'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -47,7 +60,7 @@ object Form7: TForm7
   end
   object BitBtn2: TBitBtn
     Left = 472
-    Top = 664
+    Top = 624
     Width = 89
     Height = 41
     Caption = 'Cancelar'
@@ -63,7 +76,7 @@ object Form7: TForm7
   end
   object BitBtn3: TBitBtn
     Left = 864
-    Top = 664
+    Top = 624
     Width = 97
     Height = 41
     Caption = 'Confirmar'
@@ -79,7 +92,7 @@ object Form7: TForm7
   end
   object Panel1: TPanel
     Left = 504
-    Top = 96
+    Top = 64
     Width = 409
     Height = 193
     TabOrder = 3
@@ -191,6 +204,7 @@ object Form7: TForm7
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
+      ReadOnly = True
       TabOrder = 1
     end
     object DBLookupComboBox2: TDBLookupComboBox
@@ -223,12 +237,13 @@ object Form7: TForm7
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
+      ReadOnly = True
       TabOrder = 3
     end
   end
   object Panel2: TPanel
     Left = 424
-    Top = 328
+    Top = 288
     Width = 569
     Height = 321
     TabOrder = 4
@@ -258,22 +273,9 @@ object Form7: TForm7
       Font.Style = []
       ParentFont = False
     end
-    object Label10: TLabel
-      Left = 488
-      Top = 296
-      Width = 74
-      Height = 16
-      Caption = '* Obligatorio'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clRed
-      Font.Height = -13
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-    end
     object Label11: TLabel
       Left = 495
-      Top = 56
+      Top = 32
       Width = 9
       Height = 19
       Caption = '*'

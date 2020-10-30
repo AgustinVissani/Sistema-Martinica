@@ -1,7 +1,7 @@
 object Form4: TForm4
-  Left = 258
-  Top = 92
-  Width = 1313
+  Left = 26
+  Top = 16
+  Width = 1321
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Direcci'#243'n'

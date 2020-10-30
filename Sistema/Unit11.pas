@@ -54,17 +54,21 @@ type
     Button2: TButton;
     ADOQuery6: TADOQuery;
     DataSource6: TDataSource;
+    ADOQuery6Estado: TStringField;
+    ADOQuery6Cdigo_Pedidos: TAutoIncField;
+    ADOQuery6Proveedor: TStringField;
+    ADOQuery6Cliente: TStringField;
+    ADOQuery6Fecha: TWideStringField;
+    ADOQuery6Detalle: TStringField;
+    ADOQuery6Observaciones: TStringField;
     procedure FormCreate(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
- //   procedure BitBtn2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure DBLookupComboBox2Click(Sender: TObject);
     procedure DBLookupComboBox1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button2Click(Sender: TObject);
-//    procedure Label8Click(Sender: TObject);
-//    procedure DBEdit6Change(Sender: TObject);
-   // procedure BitBtn2Click(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -127,13 +131,13 @@ begin
            ADOQuery2.Close;
            ADOQuery2.SQL.Clear;
           showmessage(Saved);
-       //   ADOQuery2.Open;             //agregadooo
           ADOQuery2.SQL.add('SELECT DISTINCT Código_Pedidos, Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente],  ');
           ADOQuery2.SQL.add('Pedidos.Fecha, Pedidos.Detalle,Pedidos.Observaciones ,Estados.Detalle as [Estado] ');
           ADOQuery2.SQL.add('FROM  Pedidos ');
           ADOQuery2.SQL.add('LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor ');
           ADOQuery2.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');
           ADOQuery2.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
+          ADOQuery2.SQL.add('ORDER BY Estados.Detalle, Clientes.Apellido');
 
           ADOQuery2.Open;
           ADOQuery2.ExecSQL;
@@ -184,20 +188,23 @@ begin
 
           ADOQuery2.SQL.Clear;
 
-          ADOQuery2.SQL.add('SELECT DISTINCT Código_Pedidos, Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente],  ');
-          ADOQuery2.SQL.add('Pedidos.Fecha, Pedidos.Detalle,Pedidos.Observaciones ,Estados.Detalle as [Estado] ');
+          ADOQuery2.SQL.add('SELECT DISTINCT Estados.Detalle as [Estado], Código_Pedidos, Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente], Pedidos.Fecha, Pedidos.Detalle,  Pedidos.Observaciones ');
           ADOQuery2.SQL.add('FROM  Pedidos ');
           ADOQuery2.SQL.add('LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor ');
           ADOQuery2.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');
           ADOQuery2.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
           ADOQuery2.SQL.add('WHERE Pedidos.Código_Cliente='+IntToStr(apellidoCliente));
-
-
+          ADOQuery2.SQL.add('ORDER BY Estados.Detalle, Clientes.Apellido');
 
           ADOQuery2.Open;
           ADOQuery2.ExecSQL;
           DBGrid1.DataSource:=DataSource2;
-
+          DBEdit2.DataSource:=DataSource2;
+          DBEdit3.DataSource:=DataSource2;
+          DBEdit4.DataSource:=DataSource2;
+          DBEdit5.DataSource:=DataSource2;
+          DBEdit6.DataSource:=DataSource2;
+          DBEdit7.DataSource:=DataSource2;
           DBGrid1.Refresh;
 
 end;
@@ -207,25 +214,21 @@ begin
     Application.Terminate;
 end;
 
-
-
-
-
 procedure TForm10.Button2Click(Sender: TObject);
 begin
-          ADOQuery6.SQL.Clear;
-          ADOQuery6.SQL.add('SELECT DISTINCT Estados.Detalle as [Estado],Código_Pedidos, Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente]  ');
-          ADOQuery6.SQL.add('FROM  Pedidos ');
-          ADOQuery6.SQL.add('LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor ');
-          ADOQuery6.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');
-          ADOQuery6.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
-          ADOQuery6.SQL.Add('ORDER BY Estados.Detalle');
 
-          ADOQuery6.Open;
-          ADOQuery6.ExecSQL;
-          DBGrid1.DataSource:=DataSource6;
-          DBGrid1.Refresh;
+  ADOQuery2.SQL.Clear;
 
+  ADOQuery2.SQL.add('SELECT DISTINCT Estados.Detalle as [Estado], Código_Pedidos, Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente], Pedidos.Fecha, Pedidos.Detalle,  Pedidos.Observaciones ');
+  ADOQuery2.SQL.add('FROM  Pedidos ');
+  ADOQuery2.SQL.add('LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor ');
+  ADOQuery2.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');
+  ADOQuery2.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
+  ADOQuery2.SQL.add('ORDER BY Estados.Detalle, Clientes.Apellido');
+
+  ADOQuery2.Open;
+  ADOQuery2.ExecSQL;
+
+  DBGrid1.Refresh;
 end;
-
 end.

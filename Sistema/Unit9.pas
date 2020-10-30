@@ -225,7 +225,6 @@ begin
         showmessage('No se puede agregar un cliente con mismo DNI.');
         DBEdit1.Clear;
         DBEdit1.SetFocus;
-        ADOQuery1.Cancel;
       end
       else
       begin
@@ -269,6 +268,8 @@ begin
           ADOQuery1.Post;
           ShowMessage(Saved);
           DBEdit1.Refresh;
+          BitBtn2.Enabled:=false;
+          BitBtn3.Enabled:=false;
         end
         else
         begin
@@ -277,7 +278,7 @@ begin
           DBEdit1.SetFocus;
           DBEdit1.Refresh;
           ADOQuery1.CancelUpdates;
-          BitBtn3.Enabled:=true;;
+          BitBtn3.Enabled:=true;
         end;
       end
       else
@@ -292,7 +293,6 @@ begin
         DBEdit5.Enabled:=false;
         BitBtn2.Enabled:=false;
         BitBtn3.Enabled:=false;
-
         end;
     end;
 

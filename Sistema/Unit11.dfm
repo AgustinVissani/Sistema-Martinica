@@ -1,8 +1,9 @@
 object Form10: TForm10
-  Left = 420
-  Top = 110
+  Left = 56
+  Top = 10
   Width = 1271
-  Height = 788
+  Height = 749
+  VertScrollBar.Position = 11
   Caption = 'ESTADOS'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -17,7 +18,7 @@ object Form10: TForm10
   TextHeight = 13
   object Label1: TLabel
     Left = 528
-    Top = 16
+    Top = 5
     Width = 273
     Height = 33
     Caption = 'ESTADOS DE PEDIDOS'
@@ -30,7 +31,7 @@ object Form10: TForm10
   end
   object Label10: TLabel
     Left = 480
-    Top = 80
+    Top = 69
     Width = 64
     Height = 25
     Caption = 'Cliente'
@@ -42,8 +43,8 @@ object Form10: TForm10
     ParentFont = False
   end
   object DBGrid1: TDBGrid
-    Left = 160
-    Top = 440
+    Left = 136
+    Top = 413
     Width = 1025
     Height = 297
     DataSource = DataSource2
@@ -63,7 +64,7 @@ object Form10: TForm10
   end
   object BitBtn1: TBitBtn
     Left = 56
-    Top = 56
+    Top = 45
     Width = 97
     Height = 33
     Caption = 'Volver'
@@ -79,7 +80,7 @@ object Form10: TForm10
   end
   object DBLookupComboBox1: TDBLookupComboBox
     Left = 576
-    Top = 80
+    Top = 69
     Width = 233
     Height = 33
     Font.Charset = DEFAULT_CHARSET
@@ -96,7 +97,7 @@ object Form10: TForm10
   end
   object GroupBox1: TGroupBox
     Left = 136
-    Top = 136
+    Top = 125
     Width = 1017
     Height = 177
     Caption = 'Datos cliente'
@@ -315,7 +316,7 @@ object Form10: TForm10
   end
   object GroupBox2: TGroupBox
     Left = 368
-    Top = 320
+    Top = 309
     Width = 585
     Height = 89
     Caption = 'Cambiar el estado acutal'
@@ -400,11 +401,11 @@ object Form10: TForm10
     end
   end
   object Button2: TButton
-    Left = 1088
-    Top = 392
+    Left = 840
+    Top = 69
     Width = 75
     Height = 33
-    Caption = 'Filtrar por estado'
+    Caption = 'Ver todos'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -422,9 +423,9 @@ object Form10: TForm10
     Parameters = <>
     SQL.Strings = (
       
-        'SELECT DISTINCT C'#243'digo_Pedidos, Proveedores.Apellido as [Proveed' +
-        'or], Clientes.Apellido as [Cliente], Pedidos.Fecha, Pedidos.Deta' +
-        'lle,  Pedidos.Observaciones, Estados.Detalle as [Estado]'
+        'SELECT DISTINCT Estados.Detalle as [Estado], C'#243'digo_Pedidos, Pro' +
+        'veedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente]' +
+        ', Pedidos.Fecha, Pedidos.Detalle,  Pedidos.Observaciones '
       'FROM  Pedidos '
       
         'LEFT JOIN Proveedores ON Proveedores.C'#243'digo_Proveedor = Pedidos.' +
@@ -434,7 +435,8 @@ object Form10: TForm10
         'do'
       
         'LEFT JOIN Clientes ON Clientes.C'#243'digo_Cliente = Pedidos.C'#243'digo_C' +
-        'liente')
+        'liente'
+      'ORDER BY Estados.Detalle, Clientes.Apellido')
     Left = 40
     Top = 448
     object ADOQuery2Cdigo_Pedidos: TAutoIncField
@@ -549,9 +551,9 @@ object Form10: TForm10
     Parameters = <>
     SQL.Strings = (
       
-        'SELECT DISTINCT Estados.Detalle as [Estado],Proveedores.Apellido' +
-        ' as [Proveedor], Clientes.Apellido as [Cliente], Pedidos.Fecha, ' +
-        'Pedidos.Detalle'
+        'SELECT DISTINCT Estados.Detalle as [Estado], C'#243'digo_Pedidos, Pro' +
+        'veedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente]' +
+        ', Pedidos.Fecha, Pedidos.Detalle,  Pedidos.Observaciones'
       'FROM  Pedidos '
       
         'LEFT JOIN Proveedores ON Proveedores.C'#243'digo_Proveedor = Pedidos.' +
@@ -565,6 +567,33 @@ object Form10: TForm10
       'ORDER BY Estados.Detalle')
     Left = 1176
     Top = 392
+    object ADOQuery6Estado: TStringField
+      FieldName = 'Estado'
+    end
+    object ADOQuery6Cdigo_Pedidos: TAutoIncField
+      FieldName = 'C'#243'digo_Pedidos'
+      ReadOnly = True
+    end
+    object ADOQuery6Proveedor: TStringField
+      FieldName = 'Proveedor'
+      Size = 30
+    end
+    object ADOQuery6Cliente: TStringField
+      FieldName = 'Cliente'
+      Size = 30
+    end
+    object ADOQuery6Fecha: TWideStringField
+      FieldName = 'Fecha'
+      Size = 10
+    end
+    object ADOQuery6Detalle: TStringField
+      FieldName = 'Detalle'
+      Size = 100
+    end
+    object ADOQuery6Observaciones: TStringField
+      FieldName = 'Observaciones'
+      Size = 30
+    end
   end
   object DataSource6: TDataSource
     DataSet = ADOQuery6

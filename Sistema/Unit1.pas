@@ -165,11 +165,7 @@ begin
   Form6.Button2.Caption:='New order';
   Form6.Label1.Caption:='ORDERS TO SUPPLIERS';
   Form6.Label2.Caption:='Customer';
-  Form6.Label4.Caption:='Lastname';
-  Form6.Label5.Caption:='Supplier';
   //Form6.Label3.Caption:='Customer';
-  Form6.Label4.Caption:='Date';
-  Form6.Label6.Caption:='State';
 
     // FORM 7
   Form7.BitBtn1.Caption:='Go back';
@@ -254,15 +250,9 @@ begin
 
   // FORM 6
   Form6.BitBtn1.Caption:='Volver';
-//  Form6.Button1.Caption:='Buscar Cliente';
   Form6.Button2.Caption:='Nuevo pedido';
   Form6.Label1.Caption:='PEDIDOS A PROVEEDORES';
   Form6.Label2.Caption:='Cliente';
-  Form6.Label4.Caption:='Apellido';
-  Form6.Label5.Caption:='Proveedor';
-  //Form6.Label3.Caption:='Cliente';
-  Form6.Label4.Caption:='Fecha';
-  Form6.Label6.Caption:='Estado';
 
   // FORM 7
   Form7.BitBtn1.Caption:='Volver';

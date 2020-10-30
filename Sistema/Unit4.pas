@@ -75,6 +75,8 @@ var
   NoElimino: string;
   CompletarCampos: string;
   NoEliminarProveedor: string;
+  ProveedorAModificar: string;
+  AgregarProveedor:boolean;
 
 implementation
 
@@ -112,6 +114,7 @@ begin
         ADOQuery1.Append;
         BitBtn2.Enabled:=true;
         BitBtn3.Enabled:=true;
+        AgregarProveedor:=true;
       end
    else
     if buttonSelected = mrCancel then
@@ -144,6 +147,7 @@ begin
    buttonSelected := MessageDlg(QuiereEditar,mtConfirmation, mbOKCancel, 0);
    if buttonSelected = mrOK then
    begin
+        ProveedorAModificar:=DBEdit6.Text;
         DBEdit1.Enabled:=true;
         DBEdit2.Enabled:=true;
         DBEdit3.Enabled:=true;
@@ -153,6 +157,7 @@ begin
         BitBtn2.Enabled:=true;
         BitBtn3.Enabled:=true;
         DBGrid1.Refresh;
+        AgregarProveedor:=false;
    end
    else
     if buttonSelected = mrCancel then
@@ -164,36 +169,111 @@ procedure TForm4.Button4Click(Sender: TObject);
 const
   mbYesNoCancel = [mbYes, mbNO, mbCancel];
 var
-    buttonSelected : Integer;
-    proveedor:string;
+    proveedorCuit:string;
+    codigoProveedor:string;
+    query:string;
 begin
+  DBGrid1.Enabled:=true;
+  if (DBEdit1.Text='') or
+    (DBEdit2.Text='') or
+    (DBEdit3.Text='') or
+    (DBEdit4.Text='') or
+    (DBEdit5.Text='') then
+  begin
+    showmessage(CompletarCampos)
+  end
+  else
+  begin
 
-    ADOQuery2.Close;
-    ADOQuery2.SQL.Clear;
-    ADOQuery2.SQL.add('SELECT Pedidos.Código_Proveedor FROM Pedidos WHERE Pedidos.Código_Proveedor = '+DBEdit6.Text);
-    ADOQuery2.Open;
-    ADOQuery2.ExecSQL;
-
-    proveedor:=ADOQuery2.FieldByname('Código_Proveedor').AsString;
-
-    if proveedor <> '' then
+    if (AgregarProveedor = true) then
     begin
-      showmessage('No se puede eliminar un proveedor con pedidos asociados.');
+      ADOQuery2.Close;
+      ADOQuery2.SQL.Clear;
+
+      ADOQuery2.SQL.add('SELECT * FROM Proveedores WHERE Proveedores.CUIT='''+DBEdit5.Text+'''');
+      ADOQuery2.Open;
+      proveedorCuit:=ADOQuery2.FieldByname('Código_Proveedor').AsString;
+      ADOQuery2.Close;
+      ADOQuery2.SQL.Clear;
+      if proveedorCuit <> '' then
+      begin
+        showmessage('No se puede agregar un proveedor con mismo CUIT.');
+        ADOQuery1.CancelUpdates;
+        DBEdit1.Clear;
+        DBEdit1.SetFocus;
+      end
+      else
+      begin
+        ADOQuery1.Post;
+        ShowMessage(Saved);
+        DBEdit1.Enabled:=false;
+        DBEdit1.Text:='';
+        DBEdit2.Enabled:=false;
+        DBEdit2.Text:='';
+        DBEdit3.Enabled:=false;
+        DBEdit3.Text:='';
+        DBEdit4.Enabled:=false;
+        DBEdit4.Text:='';
+        DBEdit5.Enabled:=false;
+        DBEdit5.Text:='';
+        Label8.Visible:=false;
+        Label9.Visible:=false;
+        Label10.Visible:=false;
+        Label11.Visible:=false;
+        Label12.Visible:=false;
+        Label13.Visible:=false;
+      end;
     end
-    else
+    else  // MODIFICANDO 
     begin
-    buttonSelected := MessageDlg(QuiereEliminar,mtWarning, mbOKCancel, 0);
-    if buttonSelected = mrOK then
-    begin
-      ShowMessage(SiElimino);
-      ADOQuery1.Delete;
-      BitBtn2.Enabled:=true;
-      BitBtn3.Enabled:=true;
-    end;
-      BitBtn2.Enabled:=false;
-      BitBtn3.Enabled:=false;
+      ADOQuery2.Close;
+      ADOQuery2.SQL.Clear;
+
+      query:='SELECT Código_Proveedor, DNI FROM Proveedores WHERE Proveedores.CUIT='''+DBEdit5.Text+'''';
+
+      ADOQuery2.SQL.add(query);
+      ADOQuery2.Open;
+      proveedorCuit:=ADOQuery2.FieldByname('CUIT').AsString;
+      codigoProveedor:=ADOQuery2.FieldByname('Código_Proveedor').AsString;
+      ADOQuery2.SQL.Clear;
+
+      if (proveedorCuit <> '') then
+      begin
+        if codigoProveedor = ProveedorAModificar then // Modificando al mismo proveedor
+        begin
+          ADOQuery1.Post;
+          ShowMessage(Saved);
+          DBEdit1.Refresh;
+          BitBtn2.Enabled:=false;
+          BitBtn3.Enabled:=false;
+        end
+        else
+        begin
+          showmessage('No se puede modificar el CUIT de otro ya cargado.');
+          DBEdit1.Clear;
+          DBEdit1.SetFocus;
+          DBEdit1.Refresh;
+          ADOQuery1.CancelUpdates;
+          BitBtn3.Enabled:=true;;
+        end;
+      end
+      else
+      begin //Modificando al proveedor con nuevo cuit
+        ADOQuery1.Post;
+        ShowMessage(Saved);
+        DBEdit1.Refresh;
+        DBEdit1.Enabled:=false;
+        DBEdit2.Enabled:=false;
+        DBEdit3.Enabled:=false;
+        DBEdit4.Enabled:=false;
+        DBEdit5.Enabled:=false;
+        BitBtn2.Enabled:=false;
+        BitBtn3.Enabled:=false;
+        end;
     end;
 
+
+ end;
 end;
 
 
@@ -224,37 +304,97 @@ end;
 procedure TForm4.BitBtn2Click(Sender: TObject);
 var
     proveedorCuit:string;
+    codigoProveedor:string;
+    query:string;
 begin
+  DBGrid1.Enabled:=true;
+  if (DBEdit1.Text='') or
+    (DBEdit2.Text='') or
+    (DBEdit3.Text='') or
+    (DBEdit4.Text='') or
+    (DBEdit5.Text='') then
+  begin
+    showmessage(CompletarCampos)
+  end
+  else
+  begin
 
-      //Validaciones
-      if (DBEdit1.Text='') or
-        (DBEdit2.Text='') or
-        (DBEdit3.Text='') or
-        (DBEdit4.Text='') or
-        (DBEdit5.Text='')
-      then
-        showmessage(CompletarCampos)
-      else
-      begin
+    if (AgregarProveedor = true) then
+    begin
+      ADOQuery2.Close;
+      ADOQuery2.SQL.Clear;
 
-        ADOQuery2.Close;
-        ADOQuery2.SQL.Clear;
-
-        ADOQuery2.SQL.add('SELECT * FROM Proveedores WHERE Proveedores.CUIT='''+DBEdit5.Text+'''');
-        ADOQuery2.Open;
-        proveedorCuit:=ADOQuery2.FieldByname('Código_Proveedor').AsString;
-        ADOQuery2.Close;
-        ADOQuery2.SQL.Clear;
-
+      ADOQuery2.SQL.add('SELECT * FROM Proveedores WHERE Proveedores.CUIT='''+DBEdit5.Text+'''');
+      ADOQuery2.Open;
+      proveedorCuit:=ADOQuery2.FieldByname('Código_Proveedor').AsString;
+      ADOQuery2.Close;
+      ADOQuery2.SQL.Clear;
       if proveedorCuit <> '' then
       begin
         showmessage('No se puede agregar un proveedor con mismo CUIT.');
-        DBEdit5.Clear;
         DBEdit5.SetFocus;
+
       end
       else
       begin
         ADOQuery1.Post;
+        ShowMessage(Saved);
+        DBEdit1.Enabled:=false;
+        DBEdit1.Text:='';
+        DBEdit2.Enabled:=false;
+        DBEdit2.Text:='';
+        DBEdit3.Enabled:=false;
+        DBEdit3.Text:='';
+        DBEdit4.Enabled:=false;
+        DBEdit4.Text:='';
+        DBEdit5.Enabled:=false;
+        DBEdit5.Text:='';
+        Label8.Visible:=false;
+        Label9.Visible:=false;
+        Label10.Visible:=false;
+        Label11.Visible:=false;
+        Label12.Visible:=false;
+        Label13.Visible:=false;
+      end;
+    end
+    else  // MODIFICANDO 
+    begin
+      ADOQuery2.Close;
+      ADOQuery2.SQL.Clear;
+
+      query:='SELECT Código_Proveedor, CUIT FROM Proveedores WHERE Proveedores.CUIT='''+DBEdit5.Text+'''';
+
+      ADOQuery2.SQL.add(query);
+      ADOQuery2.Open;
+      proveedorCuit:=ADOQuery2.FieldByname('CUIT').AsString;
+      codigoProveedor:=ADOQuery2.FieldByname('Código_Proveedor').AsString;
+      ADOQuery2.SQL.Clear;
+
+      if (proveedorCuit <> '') then
+      begin
+        if codigoProveedor = ProveedorAModificar then // Modificando al mismo proveedor
+        begin
+          ADOQuery1.Post;
+          ShowMessage(Saved);
+          DBEdit1.Refresh;
+          BitBtn2.Enabled:=false;
+          BitBtn3.Enabled:=false;
+        end
+        else
+        begin
+          showmessage('No se puede modificar el CUIT de otro ya cargado.');
+          DBEdit5.Clear;
+          DBEdit5.SetFocus;
+          DBEdit5.Refresh;
+          ADOQuery1.CancelUpdates;
+          BitBtn3.Enabled:=true;
+        end;
+      end
+      else
+      begin //Modificando al proveedor con nuevo CUIT
+        ADOQuery1.Post;
+        ShowMessage(Saved);
+        DBEdit1.Refresh;
         DBEdit1.Enabled:=false;
         DBEdit2.Enabled:=false;
         DBEdit3.Enabled:=false;
@@ -262,16 +402,9 @@ begin
         DBEdit5.Enabled:=false;
         BitBtn2.Enabled:=false;
         BitBtn3.Enabled:=false;
-        Label8.Visible:=false;
-        Label9.Visible:=false;
-        Label10.Visible:=false;
-        Label11.Visible:=false;
-        Label12.Visible:=false;
-        Label13.Visible:=false;
-        ShowMessage(Saved);
-        DBGrid1.Refresh;
-      end;
-  end;
+        end;
+    end;
+ end;
 end;
 
 procedure TForm4.FormCreate(Sender: TObject);
@@ -286,7 +419,7 @@ begin
   NoElimino:= 'No se eliminó el proveedor';
   CompletarCampos:= 'Complete todos los campos';
   NoEliminarProveedor:='No se puede eliminar un proveedor con pedidos asociados.';
-
+  ProveedorAModificar:='';
 end;
 
 procedure TForm4.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;

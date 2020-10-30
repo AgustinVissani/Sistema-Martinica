@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 352
-  Top = 169
+  Left = 81
+  Top = 14
   Width = 1244
   Height = 729
   BorderIcons = [biSystemMenu, biMinimize]
@@ -30,71 +30,6 @@ object Form6: TForm6
     Font.Style = []
     ParentFont = False
   end
-  object Label4: TLabel
-    Left = 592
-    Top = 304
-    Width = 55
-    Height = 25
-    Caption = 'Fecha'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -21
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
-  object Label5: TLabel
-    Left = 296
-    Top = 304
-    Width = 94
-    Height = 25
-    Caption = 'Proveedor'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -21
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
-  object Label6: TLabel
-    Left = 936
-    Top = 304
-    Width = 62
-    Height = 25
-    Caption = 'Estado'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -21
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
-  object Label3: TLabel
-    Left = 696
-    Top = 304
-    Width = 64
-    Height = 25
-    Caption = 'Detalle'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -21
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
-  object Label8: TLabel
-    Left = 472
-    Top = 304
-    Width = 64
-    Height = 25
-    Caption = 'Cliente'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -21
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
   object BitBtn1: TBitBtn
     Left = 160
     Top = 56
@@ -112,9 +47,9 @@ object Form6: TForm6
     Kind = bkRetry
   end
   object DBGrid1: TDBGrid
-    Left = 232
+    Left = 176
     Top = 344
-    Width = 841
+    Width = 993
     Height = 233
     DataSource = DataSource2
     Font.Charset = ANSI_CHARSET
@@ -295,7 +230,7 @@ object Form6: TForm6
       
         'SELECT DISTINCT Proveedores.Apellido as [Proveedor], Clientes.Ap' +
         'ellido as [Cliente], Pedidos.Fecha, Pedidos.Detalle, Estados.Det' +
-        'alle as [Estado]'
+        'alle as [Estado], Pedidos.Observaciones'
       'FROM  Pedidos '
       
         'LEFT JOIN Proveedores ON Proveedores.C'#243'digo_Proveedor = Pedidos.' +
@@ -331,6 +266,10 @@ object Form6: TForm6
     object ADOQuery2Estado: TStringField
       DisplayWidth = 14
       FieldName = 'Estado'
+    end
+    object ADOQuery2Observaciones: TStringField
+      FieldName = 'Observaciones'
+      Size = 30
     end
   end
   object DataSource1: TDataSource

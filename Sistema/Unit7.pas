@@ -47,8 +47,8 @@ type
     RichEdit2: TRichEdit;
     Label9: TLabel;
     Label8: TLabel;
-    Label10: TLabel;
     Label11: TLabel;
+    Label10: TLabel;
     procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
