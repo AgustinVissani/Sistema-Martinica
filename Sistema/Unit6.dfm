@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 80
-  Top = 110
+  Left = 352
+  Top = 169
   Width = 1244
   Height = 729
   BorderIcons = [biSystemMenu, biMinimize]

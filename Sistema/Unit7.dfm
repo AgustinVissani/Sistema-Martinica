@@ -1,6 +1,6 @@
 object Form7: TForm7
-  Left = 52
-  Top = 2
+  Left = 362
+  Top = 190
   Width = 1280
   Height = 788
   BorderIcons = [biSystemMenu, biMinimize]
@@ -78,9 +78,9 @@ object Form7: TForm7
     Kind = bkOK
   end
   object Panel1: TPanel
-    Left = 536
+    Left = 504
     Top = 96
-    Width = 369
+    Width = 409
     Height = 193
     TabOrder = 3
     object Label5: TLabel
@@ -131,6 +131,32 @@ object Form7: TForm7
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -21
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label9: TLabel
+      Left = 360
+      Top = 112
+      Width = 9
+      Height = 19
+      Caption = '*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label8: TLabel
+      Left = 360
+      Top = 32
+      Width = 9
+      Height = 19
+      Caption = '*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
@@ -204,7 +230,7 @@ object Form7: TForm7
     Left = 424
     Top = 328
     Width = 569
-    Height = 313
+    Height = 321
     TabOrder = 4
     object Label4: TLabel
       Left = 48
@@ -221,13 +247,39 @@ object Form7: TForm7
     end
     object Label2: TLabel
       Left = 8
-      Top = 232
+      Top = 216
       Width = 134
       Height = 25
       Caption = 'Observaciones'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -21
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label10: TLabel
+      Left = 488
+      Top = 296
+      Width = 74
+      Height = 16
+      Caption = '* Obligatorio'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label11: TLabel
+      Left = 495
+      Top = 56
+      Width = 9
+      Height = 19
+      Caption = '*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False

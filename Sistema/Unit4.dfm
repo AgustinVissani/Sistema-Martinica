@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 40
-  Top = 12
+  Left = 258
+  Top = 92
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -46,7 +46,7 @@ object Form4: TForm4
     Kind = bkRetry
   end
   object DBGrid1: TDBGrid
-    Left = 112
+    Left = 128
     Top = 288
     Width = 1041
     Height = 329
@@ -103,12 +103,12 @@ object Form4: TForm4
   object GroupBox1: TGroupBox
     Left = 224
     Top = 104
-    Width = 865
-    Height = 121
+    Width = 881
+    Height = 129
     Caption = 'Datos Proveedor'
     TabOrder = 4
     object Label3: TLabel
-      Left = 40
+      Left = 48
       Top = 40
       Width = 57
       Height = 19
@@ -121,7 +121,7 @@ object Form4: TForm4
       ParentFont = False
     end
     object Label4: TLabel
-      Left = 336
+      Left = 344
       Top = 40
       Width = 58
       Height = 19
@@ -134,7 +134,7 @@ object Form4: TForm4
       ParentFont = False
     end
     object Label5: TLabel
-      Left = 640
+      Left = 648
       Top = 40
       Width = 62
       Height = 19
@@ -147,7 +147,7 @@ object Form4: TForm4
       ParentFont = False
     end
     object Label6: TLabel
-      Left = 96
+      Left = 104
       Top = 80
       Width = 65
       Height = 19
@@ -160,7 +160,7 @@ object Form4: TForm4
       ParentFont = False
     end
     object Label7: TLabel
-      Left = 448
+      Left = 456
       Top = 80
       Width = 37
       Height = 19
@@ -173,7 +173,7 @@ object Form4: TForm4
       ParentFont = False
     end
     object Label2: TLabel
-      Left = 8
+      Left = 16
       Top = 80
       Width = 50
       Height = 19
@@ -186,8 +186,92 @@ object Form4: TForm4
       ParentFont = False
       Visible = False
     end
+    object Label8: TLabel
+      Left = 280
+      Top = 40
+      Width = 9
+      Height = 19
+      Caption = '*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
+    object Label12: TLabel
+      Left = 432
+      Top = 88
+      Width = 9
+      Height = 19
+      Caption = '*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
+    object Label9: TLabel
+      Left = 688
+      Top = 88
+      Width = 9
+      Height = 19
+      Caption = '*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
+    object Label11: TLabel
+      Left = 600
+      Top = 40
+      Width = 9
+      Height = 19
+      Caption = '*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
+    object Label13: TLabel
+      Left = 792
+      Top = 96
+      Width = 74
+      Height = 16
+      Caption = '* Obligatorio'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
+    object Label10: TLabel
+      Left = 864
+      Top = 40
+      Width = 9
+      Height = 19
+      Caption = '*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
     object DBEdit1: TDBEdit
-      Left = 120
+      Left = 128
       Top = 32
       Width = 137
       Height = 27
@@ -203,7 +287,7 @@ object Form4: TForm4
       TabOrder = 0
     end
     object DBEdit2: TDBEdit
-      Left = 416
+      Left = 424
       Top = 32
       Width = 169
       Height = 27
@@ -219,7 +303,7 @@ object Form4: TForm4
       TabOrder = 1
     end
     object DBEdit3: TDBEdit
-      Left = 712
+      Left = 720
       Top = 32
       Width = 137
       Height = 27
@@ -236,7 +320,7 @@ object Form4: TForm4
       OnKeyPress = DBEdit3KeyPress
     end
     object DBEdit4: TDBEdit
-      Left = 184
+      Left = 192
       Top = 80
       Width = 233
       Height = 27
@@ -252,7 +336,7 @@ object Form4: TForm4
       TabOrder = 3
     end
     object DBEdit5: TDBEdit
-      Left = 512
+      Left = 520
       Top = 80
       Width = 161
       Height = 27
@@ -269,7 +353,7 @@ object Form4: TForm4
       OnKeyPress = DBEdit5KeyPress
     end
     object DBEdit6: TDBEdit
-      Left = 64
+      Left = 72
       Top = 80
       Width = 25
       Height = 28

@@ -1,6 +1,6 @@
 object Form9: TForm9
-  Left = 57
-  Top = 2
+  Left = 252
+  Top = 179
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -193,6 +193,90 @@ object Form9: TForm9
       ParentFont = False
       Visible = False
     end
+    object Label8: TLabel
+      Left = 184
+      Top = 48
+      Width = 9
+      Height = 19
+      Caption = '*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
+    object Label9: TLabel
+      Left = 528
+      Top = 48
+      Width = 9
+      Height = 19
+      Caption = '*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
+    object Label10: TLabel
+      Left = 824
+      Top = 48
+      Width = 9
+      Height = 19
+      Caption = '*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
+    object Label11: TLabel
+      Left = 696
+      Top = 104
+      Width = 9
+      Height = 19
+      Caption = '*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
+    object Label12: TLabel
+      Left = 352
+      Top = 104
+      Width = 9
+      Height = 19
+      Caption = '*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
+    object Label13: TLabel
+      Left = 784
+      Top = 120
+      Width = 74
+      Height = 16
+      Caption = '* Obligatorio'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
     object DBEdit1: TDBEdit
       Left = 80
       Top = 38
@@ -211,7 +295,7 @@ object Form9: TForm9
       OnKeyPress = DBEdit1KeyPress
     end
     object DBEdit2: TDBEdit
-      Left = 352
+      Left = 336
       Top = 38
       Width = 169
       Height = 27
@@ -351,7 +435,7 @@ object Form9: TForm9
     Left = 64
     Top = 24
     object ADOQuery1Cdigo_Cliente: TAutoIncField
-      DisplayWidth = 16
+      DisplayWidth = 15
       FieldName = 'C'#243'digo_Cliente'
       ReadOnly = True
     end
@@ -360,21 +444,21 @@ object Form9: TForm9
       FieldName = 'DNI'
     end
     object ADOQuery1Nombre: TStringField
-      DisplayWidth = 24
+      DisplayWidth = 19
       FieldName = 'Nombre'
       Size = 30
     end
     object ADOQuery1Apellido: TStringField
-      DisplayWidth = 21
+      DisplayWidth = 25
       FieldName = 'Apellido'
       Size = 30
     end
     object ADOQuery1Telfono: TStringField
-      DisplayWidth = 39
+      DisplayWidth = 22
       FieldName = 'Tel'#233'fono'
     end
     object ADOQuery1Domicilio: TStringField
-      DisplayWidth = 12
+      DisplayWidth = 24
       FieldName = 'Domicilio'
       Size = 30
     end

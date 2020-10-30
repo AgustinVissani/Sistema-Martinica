@@ -41,6 +41,12 @@ type
     ADOQuery1Cdigo_Proveedor: TAutoIncField;
     DBEdit6: TDBEdit;
     Label2: TLabel;
+    Label8: TLabel;
+    Label12: TLabel;
+    Label9: TLabel;
+    Label11: TLabel;
+    Label13: TLabel;
+    Label10: TLabel;
     procedure Button2Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -92,6 +98,12 @@ begin
 
    if buttonSelected = mrOK then
       begin
+        Label8.Visible:=true;
+        Label9.Visible:=true;
+        Label10.Visible:=true;
+        Label11.Visible:=true;
+        Label12.Visible:=true;
+        Label13.Visible:=true;
         DBEdit1.Enabled:=true;
         DBEdit2.Enabled:=true;
         DBEdit3.Enabled:=true;
@@ -201,6 +213,12 @@ begin
   DBEdit5.Enabled:=false;
   BitBtn2.Enabled:=false;
   BitBtn3.Enabled:=false;
+  Label8.Visible:=false;
+  Label9.Visible:=false;
+  Label10.Visible:=false;
+  Label11.Visible:=false;
+  Label12.Visible:=false;
+  Label13.Visible:=false;
 end;
 
 procedure TForm4.BitBtn2Click(Sender: TObject);
@@ -244,6 +262,12 @@ begin
         DBEdit5.Enabled:=false;
         BitBtn2.Enabled:=false;
         BitBtn3.Enabled:=false;
+        Label8.Visible:=false;
+        Label9.Visible:=false;
+        Label10.Visible:=false;
+        Label11.Visible:=false;
+        Label12.Visible:=false;
+        Label13.Visible:=false;
         ShowMessage(Saved);
         DBGrid1.Refresh;
       end;

@@ -1,8 +1,8 @@
 object Form10: TForm10
-  Left = 58
-  Top = 5
+  Left = 420
+  Top = 110
   Width = 1271
-  Height = 785
+  Height = 788
   Caption = 'ESTADOS'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -42,10 +42,10 @@ object Form10: TForm10
     ParentFont = False
   end
   object DBGrid1: TDBGrid
-    Left = 184
-    Top = 464
+    Left = 160
+    Top = 440
     Width = 1025
-    Height = 265
+    Height = 297
     DataSource = DataSource2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -98,7 +98,7 @@ object Form10: TForm10
     Left = 136
     Top = 136
     Width = 1017
-    Height = 217
+    Height = 177
     Caption = 'Datos cliente'
     Color = clBtnFace
     Font.Charset = DEFAULT_CHARSET
@@ -189,7 +189,7 @@ object Form10: TForm10
     end
     object Label8: TLabel
       Left = 336
-      Top = 160
+      Top = 136
       Width = 125
       Height = 25
       Caption = 'Estado actual'
@@ -298,7 +298,7 @@ object Form10: TForm10
     end
     object DBEdit6: TDBEdit
       Left = 488
-      Top = 158
+      Top = 134
       Width = 161
       Height = 27
       DataField = 'Estado'
@@ -314,10 +314,10 @@ object Form10: TForm10
     end
   end
   object GroupBox2: TGroupBox
-    Left = 384
-    Top = 368
-    Width = 561
-    Height = 73
+    Left = 368
+    Top = 320
+    Width = 585
+    Height = 89
     Caption = 'Cambiar el estado acutal'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -335,6 +335,32 @@ object Form10: TForm10
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -21
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label11: TLabel
+      Left = 424
+      Top = 32
+      Width = 9
+      Height = 19
+      Caption = '*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label12: TLabel
+      Left = 496
+      Top = 64
+      Width = 74
+      Height = 16
+      Caption = '* Obligatorio'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -13
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
@@ -357,7 +383,7 @@ object Form10: TForm10
       OnClick = DBLookupComboBox2Click
     end
     object Button1: TButton
-      Left = 440
+      Left = 488
       Top = 16
       Width = 89
       Height = 41
@@ -372,6 +398,22 @@ object Form10: TForm10
       WordWrap = True
       OnClick = Button1Click
     end
+  end
+  object Button2: TButton
+    Left = 1088
+    Top = 392
+    Width = 75
+    Height = 33
+    Caption = 'Filtrar por estado'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
+    WordWrap = True
+    OnClick = Button2Click
   end
   object ADOQuery2: TADOQuery
     Active = True
@@ -401,31 +443,31 @@ object Form10: TForm10
       ReadOnly = True
     end
     object ADOQuery2Proveedor: TStringField
-      DisplayWidth = 21
+      DisplayWidth = 23
       FieldName = 'Proveedor'
       Size = 30
     end
     object ADOQuery2Cliente: TStringField
-      DisplayWidth = 20
+      DisplayWidth = 19
       FieldName = 'Cliente'
       Size = 30
     end
     object ADOQuery2Estado: TStringField
-      DisplayWidth = 13
+      DisplayWidth = 17
       FieldName = 'Estado'
     end
     object ADOQuery2Fecha: TWideStringField
-      DisplayWidth = 16
+      DisplayWidth = 13
       FieldName = 'Fecha'
       Size = 10
     end
     object ADOQuery2Detalle: TStringField
-      DisplayWidth = 61
+      DisplayWidth = 35
       FieldName = 'Detalle'
       Size = 100
     end
     object ADOQuery2Observaciones: TStringField
-      DisplayWidth = 39
+      DisplayWidth = 16
       FieldName = 'Observaciones'
       Size = 30
     end
@@ -499,5 +541,34 @@ object Form10: TForm10
       'FROM Clientes')
     Left = 240
     Top = 80
+  end
+  object ADOQuery6: TADOQuery
+    Active = True
+    Connection = Form1.ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT DISTINCT Estados.Detalle as [Estado],Proveedores.Apellido' +
+        ' as [Proveedor], Clientes.Apellido as [Cliente], Pedidos.Fecha, ' +
+        'Pedidos.Detalle'
+      'FROM  Pedidos '
+      
+        'LEFT JOIN Proveedores ON Proveedores.C'#243'digo_Proveedor = Pedidos.' +
+        'C'#243'digo_Proveedor'
+      
+        'LEFT JOIN Estados ON Estados.C'#243'digo_Estado = Pedidos.C'#243'digo_Esta' +
+        'do'
+      
+        'LEFT JOIN Clientes ON Clientes.C'#243'digo_Cliente = Pedidos.C'#243'digo_C' +
+        'liente'
+      'ORDER BY Estados.Detalle')
+    Left = 1176
+    Top = 392
+  end
+  object DataSource6: TDataSource
+    DataSet = ADOQuery6
+    Left = 1208
+    Top = 392
   end
 end

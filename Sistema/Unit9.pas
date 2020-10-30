@@ -40,6 +40,12 @@ type
     Label2: TLabel;
     DBEdit6: TDBEdit;
     ADOQuery1Cdigo_Cliente: TAutoIncField;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -85,6 +91,12 @@ begin
    buttonSelected := MessageDlg(NuevoCliente,mtConfirmation, mbOKCancel, 0);
    if buttonSelected = mrOK then
    begin
+        Label8.Visible:=true;
+        Label9.Visible:=true;
+        Label10.Visible:=true;
+        Label11.Visible:=true;
+        Label12.Visible:=true;
+        Label13.Visible:=true;
         DBEdit1.Enabled:=true;
         DBEdit1.SetFocus;
         DBEdit2.Enabled:=true;
@@ -170,6 +182,12 @@ begin
   DBEdit4.Enabled:=false;
   DBEdit5.Enabled:=false;
   DBGrid1.Enabled:=true;
+  Label8.Visible:=false;
+  Label9.Visible:=false;
+  Label10.Visible:=false;
+  Label11.Visible:=false;
+  Label12.Visible:=false;
+  Label13.Visible:=false;
 end;
 
 
@@ -223,6 +241,12 @@ begin
         DBEdit4.Text:='';
         DBEdit5.Enabled:=false;
         DBEdit5.Text:='';
+        Label8.Visible:=false;
+        Label9.Visible:=false;
+        Label10.Visible:=false;
+        Label11.Visible:=false;
+        Label12.Visible:=false;
+        Label13.Visible:=false;
       end;
     end
     else  // MODIFICANDO 
@@ -268,6 +292,7 @@ begin
         DBEdit5.Enabled:=false;
         BitBtn2.Enabled:=false;
         BitBtn3.Enabled:=false;
+
         end;
     end;
 

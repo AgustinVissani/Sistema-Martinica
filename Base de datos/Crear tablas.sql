@@ -83,3 +83,9 @@ WHERE Pedidos.Código_Cliente=2
 
 
 
+SELECT DISTINCT Estados.Detalle as [Estado],Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente], Pedidos.Fecha, Pedidos.Detalle
+FROM  Pedidos 
+LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor
+LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado
+LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente
+order by Estados.Detalle

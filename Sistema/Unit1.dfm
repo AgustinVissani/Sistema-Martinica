@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 93
-  Top = 36
+  Left = 338
+  Top = 81
   Width = 1216
   Height = 700
   BorderIcons = [biSystemMenu, biMinimize]
@@ -116,12 +116,13 @@ object Form1: TForm1
       'English')
   end
   object ADOConnection1: TADOConnection
+    Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
-      'fo=False;Initial Catalog=Martinica_Decoraciones;Data Source=GUTY' +
-      ';Use Procedure for Prepare=1;Auto Translate=True;Packet Size=409' +
-      '6;Workstation ID=GUTY;Use Encryption for Data=False;Tag with col' +
-      'umn collation when possible=False'
+      'fo=False;Initial Catalog=Martinica_Decoraciones;Data Source=Agus' +
+      'tin;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=' +
+      '4096;Workstation ID=GUTY;Use Encryption for Data=False;Tag with ' +
+      'column collation when possible=False'
     DefaultDatabase = 'Martinica_Decoraciones'
     LoginPrompt = False
     Provider = 'SQLOLEDB.1'

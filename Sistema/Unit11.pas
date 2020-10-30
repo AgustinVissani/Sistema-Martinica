@@ -49,6 +49,11 @@ type
     DBLookupComboBox2: TDBLookupComboBox;
     Button1: TButton;
     ADOQuery2Observaciones: TStringField;
+    Label11: TLabel;
+    Label12: TLabel;
+    Button2: TButton;
+    ADOQuery6: TADOQuery;
+    DataSource6: TDataSource;
     procedure FormCreate(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
  //   procedure BitBtn2Click(Sender: TObject);
@@ -56,6 +61,7 @@ type
     procedure DBLookupComboBox2Click(Sender: TObject);
     procedure DBLookupComboBox1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Button2Click(Sender: TObject);
 //    procedure Label8Click(Sender: TObject);
 //    procedure DBEdit6Change(Sender: TObject);
    // procedure BitBtn2Click(Sender: TObject);
@@ -133,7 +139,7 @@ begin
           ADOQuery2.ExecSQL;
           DBGrid1.DataSource:=DataSource2;
           DBGrid1.Refresh;
-          
+
           
          end
    else
@@ -204,5 +210,22 @@ end;
 
 
 
+
+procedure TForm10.Button2Click(Sender: TObject);
+begin
+          ADOQuery6.SQL.Clear;
+          ADOQuery6.SQL.add('SELECT DISTINCT Estados.Detalle as [Estado],Código_Pedidos, Proveedores.Apellido as [Proveedor], Clientes.Apellido as [Cliente]  ');
+          ADOQuery6.SQL.add('FROM  Pedidos ');
+          ADOQuery6.SQL.add('LEFT JOIN Proveedores ON Proveedores.Código_Proveedor = Pedidos.Código_Proveedor ');
+          ADOQuery6.SQL.add('LEFT JOIN Estados ON Estados.Código_Estado = Pedidos.Código_Estado ');
+          ADOQuery6.SQL.add('LEFT JOIN Clientes ON Clientes.Código_Cliente = Pedidos.Código_Cliente ');
+          ADOQuery6.SQL.Add('ORDER BY Estados.Detalle');
+
+          ADOQuery6.Open;
+          ADOQuery6.ExecSQL;
+          DBGrid1.DataSource:=DataSource6;
+          DBGrid1.Refresh;
+
+end;
 
 end.
