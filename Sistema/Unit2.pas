@@ -78,6 +78,9 @@ procedure TForm2.Cerrarsesin1Click(Sender: TObject);
 begin
 form2.Hide;
 form1.Show;
+form1.Edit1.Clear;
+form1.Edit1.SetFocus;
+form1.Edit2.Clear;
 end;
 
 procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);

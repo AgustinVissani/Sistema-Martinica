@@ -116,6 +116,7 @@ object Form1: TForm1
       'English')
   end
   object ADOConnection1: TADOConnection
+    Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
       'fo=False;Initial Catalog=Martinica_Decoraciones;Data Source=GUTY' +

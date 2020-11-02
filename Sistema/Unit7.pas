@@ -88,7 +88,7 @@ begin
   Left:=(Screen.Width-Width)  div 2;
   Top:=(Screen.Height-Height) div 2;
 
-  NuevoPedido:='¿Quiere agregar un pedido?';
+  NuevoPedido:='¿Quiere agregar un nuevo pedido?';
   Saved:= 'Se guardó con éxito.';
   RichEdit1.Text:='';
   RichEdit2.Text:='';

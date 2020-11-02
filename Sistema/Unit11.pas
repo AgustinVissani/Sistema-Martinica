@@ -79,6 +79,7 @@ var
   Form10: TForm10;
   apellidoCliente,estado,indicador:integer;
   NuevoEstado:string;
+  SeleccioneEstado:string;
 implementation
 
 uses Unit6,unit7;
@@ -90,6 +91,8 @@ begin
   Left:=(Screen.Width-Width)  div 2;
   Top:=(Screen.Height-Height) div 2;
   NuevoEstado:='¿Quiere cambiar el estado del pedido?';
+  SeleccioneEstado:='Seleccione el nuevo estado.';
+  estado:=0;
 end;
 
 
@@ -112,11 +115,14 @@ const
   buttonSelected : Integer;
 
 begin
+  if estado = 0 then
+    showmessage(SeleccioneEstado)
+  else
+  begin
    buttonSelected := MessageDlg(NuevoEstado,mtConfirmation, mbOKCancel, 0);
    if buttonSelected = mrOK then
          begin
           indicador:=StrToInt(ADOQuery2.FieldByname('Código_Pedidos').AsString);
-
 
           ADOQuery2.Close;
           ADOQuery2.SQL.Clear;
@@ -148,6 +154,7 @@ begin
          end
    else
     if buttonSelected = mrCancel then
+   end;
 end;
 
 
@@ -165,11 +172,6 @@ begin
           estado:=StrToInt(ADOQuery4.FieldByname('Código_Estado').AsString);
           ADOQuery4.Close;
           ADOQuery4.SQL.Clear;
-
-
-
-
-
 end;
 
 procedure TForm10.DBLookupComboBox1Click(Sender: TObject);

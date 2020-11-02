@@ -77,6 +77,10 @@ var
   NoEliminarProveedor: string;
   ProveedorAModificar: string;
   AgregarProveedor:boolean;
+  ProveedorMismoCuit: string;
+  NoSePuedeBorrar: string;
+  NoSePuedeModificar: string;
+  ErrorSoloNumeros: string;
 
 implementation
 
@@ -184,7 +188,7 @@ begin
     
     if proveedor <> '' then
     begin
-      showmessage('No se puede eliminar un proveedor con pedidos asociados.');
+      showmessage(NoEliminarProveedor);
     end
     else
     begin
@@ -253,7 +257,7 @@ begin
       ADOQuery2.SQL.Clear;
       if proveedorCuit <> '' then
       begin
-        showmessage('No se puede agregar un proveedor con mismo CUIT.');
+        showmessage(ProveedorMismoCuit);
         DBEdit5.SetFocus;
 
       end
@@ -311,7 +315,7 @@ begin
         end
         else
         begin
-          showmessage('No se puede modificar el CUIT de otro ya cargado.');
+          showmessage(NoSePuedeModificar);
           DBEdit5.Clear;
           DBEdit5.SetFocus;
           DBEdit5.Refresh;
@@ -349,6 +353,11 @@ begin
   CompletarCampos:= 'Complete todos los campos';
   NoEliminarProveedor:='No se puede eliminar un proveedor con pedidos asociados.';
   ProveedorAModificar:='';
+
+  ProveedorMismoCuit:='No se puede agregar un proveedor con mismo CUIT.';
+  NoSePuedeBorrar:='No se puede eliminar un proveedor con pedidos asociados.';
+  NoSePuedeModificar:='No se puede modificar el CUIT de otro ya cargado.';
+  ErrorSoloNumeros:='Error. Debe ingresar solo números';
 end;
 
 procedure TForm4.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
@@ -376,7 +385,7 @@ procedure TForm4.DBEdit3KeyPress(Sender: TObject; var Key: Char);
 begin
 if Key in ['a'..'z', 'A'..'Z'] then
   begin
-   messagedlg('Error debe ingresar solo numeros',mterror,[mbretry],0);
+   messagedlg(ErrorSoloNumeros,mterror,[mbretry],0);
    Key := #0;
   end;
 end;
@@ -388,7 +397,7 @@ begin
 
 if Key in ['a'..'z', 'A'..'Z'] then
   begin
-   messagedlg('Error debe ingresar solo numeros',mterror,[mbretry],0);
+   messagedlg(ErrorSoloNumeros,mterror,[mbretry],0);
    Key := #0;
   end;
 end;

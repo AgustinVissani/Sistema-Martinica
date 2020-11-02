@@ -150,8 +150,6 @@ end;
 
 procedure TForm6.FormShow(Sender: TObject);
 begin
-  //ADOQuery2.Open;
-  //ADOQuery2.ExecSQL;
   ADOQuery2.Close;
   ADOQuery2.Open;
   DBGrid1.DataSource:=DataSource2;

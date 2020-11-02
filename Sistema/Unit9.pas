@@ -67,13 +67,16 @@ type
 
 var
   Form9: TForm9;
+  AgregarCliente: boolean;
   NuevoCliente: string;
   QuiereEliminar: string;
   QuiereEditar: string;
   SiElimino: string;
   NoElimino: string;
-  AgregarCliente: boolean;
   ClienteAModificar: string;
+  ClienteMismoDni: string;
+  NoSePuedeBorrar: string;
+  NoSePuedeModificar: string;
 
 implementation
 uses  Unit1, Unit2, Unit8, Unit4, Unit7;
@@ -138,6 +141,9 @@ begin
   NoElimino:= 'No se eliminó el cliente';
   AgregarCliente:=false;
   ClienteAModificar:='';
+  ClienteMismoDni:='No se puede agregar un cliente con mismo DNI.';
+  NoSePuedeBorrar:='No se puede eliminar un cliente con pedidos asociados.';
+  NoSePuedeModificar:='No se puede modificar el DNI de otro ya cargado.';
 
 end;
 
@@ -223,7 +229,7 @@ begin
       ADOQuery2.SQL.Clear;
       if clienteDNI <> '' then
       begin
-        showmessage('No se puede agregar un cliente con mismo DNI.');
+        showmessage(ClienteMismoDni);
         DBEdit1.Clear;
         DBEdit1.SetFocus;
       end
@@ -279,7 +285,7 @@ begin
         end
         else
         begin
-          showmessage('No se puede modificar el DNI de otro ya cargado.');
+          showmessage(NoSePuedeModificar);
           DBEdit1.Clear;
           DBEdit1.SetFocus;
           DBEdit1.Refresh;
@@ -326,7 +332,7 @@ begin
     
     if cliente <> '' then
     begin
-      showmessage('No se puede eliminar un cliente con pedidos asociados.');
+      showmessage(NoSePuedeBorrar);
     end
     else
     begin
@@ -365,7 +371,7 @@ procedure TForm9.DBEdit4KeyPress(Sender: TObject; var Key: Char);
 begin
 if Key in ['a'..'z', 'A'..'Z'] then
   begin
-   messagedlg('Error debe ingresar solo numeros',mterror,[mbretry],0);
+   messagedlg(ErrorSoloNumeros,mterror,[mbretry],0);
    Key := #0;
   end;
 
@@ -375,7 +381,7 @@ procedure TForm9.DBEdit1KeyPress(Sender: TObject; var Key: Char);
 begin
  if Key in ['a'..'z', 'A'..'Z', '-'] then
   begin
-   messagedlg('Error debe ingresar solo numeros',mterror,[mbretry],0);
+   messagedlg(ErrorSoloNumeros,mterror,[mbretry],0);
    Key := #0;
   end;
 end;

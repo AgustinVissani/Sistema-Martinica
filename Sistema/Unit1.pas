@@ -36,7 +36,7 @@ var
 
 implementation
 
-uses Unit2,Unit3, Unit4,Unit5,unit6,unit7,unit9;
+uses Unit2,Unit3, Unit4,Unit5,unit6,unit7,unit9,unit11;
 
 {$R *.dfm}
 
@@ -126,6 +126,8 @@ begin
   Form2.Ventas2.Caption:='Sales';
   Form2.Clientes1.Caption:='Customers';
   Form2.CajaDiaria1.Caption:='Cash counts';
+  Form2.Cerrarsesin1.Caption:='Log out';
+  Form2.Salir1.Caption:='Exit';
 
   // FORM 3
   Form3.Label1.Caption:='Cash counts';
@@ -158,14 +160,23 @@ begin
   Unit4.QuiereEditar:='Edit supplier?';
   Unit4.SiElimino:= 'Supplier removed';
   Unit4.NoElimino:= 'Supplier wasn not removed';
+  Unit4.ProveedorMismoCuit:='There is a Provider with the same CUIT.';
+  Unit4.NoSePuedeBorrar:='Can not delete provider with orders.';
+  Unit4.NoEliminarProveedor:='Can not delete provider with orders.';
+  Unit4.NoSePuedeModificar:='There is a provider with the same CUIT.';
+  Form4.Label13.Caption:='* Required';
+  Form4.GroupBox1.Caption:='Provider data';
+  Unit4.ErrorSoloNumeros:='Error. Only numbers are allowed.';
+  Unit4.CompletarCampos:='Fill all required fields';
 
     // FORM 6
   Form6.BitBtn1.Caption:='Go back';
- // Form6.Button1.Caption:='Search order';
   Form6.Button2.Caption:='New order';
   Form6.Label1.Caption:='ORDERS TO SUPPLIERS';
   Form6.Label2.Caption:='Customer';
-  //Form6.Label3.Caption:='Customer';
+  Form6.GroupBox1.Caption:='Search by customer';
+  Form6.Button3.Caption:='See all';
+  Form6.Button1.Caption:='Change order''s state';
 
     // FORM 7
   Form7.BitBtn1.Caption:='Go back';
@@ -175,6 +186,10 @@ begin
   Form7.Label2.Caption:='Observations';
   Form7.Label4.Caption:='Detail';
   Form7.Label5.Caption:='Supplier';
+  Form7.Label10.Caption:='* Required';
+  Form7.Label6.Caption:='Customer';
+  Unit7.NuevoPedido:='New order?';
+  Unit7.Saved:='Saved succesfully';
 
   // FORM 9
   Form9.BitBtn1.Caption:='Go back';
@@ -194,7 +209,33 @@ begin
   Unit9.QuiereEditar:='Edit client?';
   Unit9.SiElimino:= 'Client removed';
   Unit9.NoElimino:= 'Client wasn not removed';
+  Unit9.ClienteMismoDni:='There is a customer with the same DNI.';
+  Form9.GroupBox1.Caption:='Customer data';
+  Unit9.NoSePuedeBorrar:='Can not delete customer with orders.';
+  Unit9.NoSePuedeModificar:='There is a customer with the same DNI.';
+  Form9.Label13.Caption:='* Required';
 
+  // Form 10
+  Unit11.NuevoEstado:='Change order''s state?';
+  Form10.Label1.Caption:='STATE OF ORDERS';
+  Form10.Label10.Caption:='Customer';
+  Form10.GroupBox1.Caption:='Provider data';
+  Form10.Button2.Caption:='See all';
+  Form10.Label9.Caption:='Order''s code';
+  Form10.Label2.Caption:='Supplier';
+  Form10.Label10.Caption:='Customer';
+  Form10.Label4.Caption:='Customer';
+  Form10.Label2.Caption:='Supplier';
+  Form10.Label5.Caption:='Date';
+  Form10.Label6.Caption:='Detail';
+  Form10.Label7.Caption:='Observations';
+  Form10.Label8.Caption:='Current state';
+  Form10.GroupBox2.Caption:='Change state';
+  Form10.BitBtn1.Caption:='Go back';
+  Form10.Button1.Caption:='Change state';
+  Form10.Label12.Caption:='Required';
+  Form10.Label3.Caption:='New state';
+  Unit11.SeleccioneEstado:='Select new state';
 
 
 end
@@ -215,6 +256,8 @@ begin
   Form2.Ventas2.Caption:='Ventas';
   Form2.Clientes1.Caption:='Clientes';
   Form2.CajaDiaria1.Caption:='Caja diaria';
+  Form2.Cerrarsesin1.Caption:='Cerrar sesión';
+  Form2.Salir1.Caption:='Salir';
 
   // FORM 3
   Form3.Label1.Caption:='Caja diaria';
@@ -247,12 +290,23 @@ begin
   Unit4.QuiereEditar:='¿Quiere editar un proveedor?';
   Unit4.SiElimino:= 'Se eliminó correctamente';
   Unit4.NoElimino:= 'No se eliminó el proveedor';
+  Unit4.ProveedorMismoCuit:='No se puede agregar un proveedor con mismo CUIT.';
+  Unit4.NoSePuedeBorrar:='No se puede eliminar un proveedor con pedidos asociados.';
+  Unit4.NoEliminarProveedor:='No se puede eliminar un proveedor con pedidos asociados.';
+  Unit4.NoSePuedeModificar:='No se puede modificar el CUIT de otro ya cargado.';
+  Form4.Label13.Caption:='* Obligatorio';
+  Form4.GroupBox1.Caption:='Datos proveedor';
+  Unit4.ErrorSoloNumeros:='Error. Debe ingresar solo números';
 
   // FORM 6
   Form6.BitBtn1.Caption:='Volver';
   Form6.Button2.Caption:='Nuevo pedido';
   Form6.Label1.Caption:='PEDIDOS A PROVEEDORES';
   Form6.Label2.Caption:='Cliente';
+  Form6.GroupBox1.Caption:='Búsqueda de pedidos por cliente';
+  Form6.Button3.Caption:='Ver todos';
+  Form6.Button1.Caption:='Cambiar ordel del pedido';
+
 
   // FORM 7
   Form7.BitBtn1.Caption:='Volver';
@@ -262,6 +316,10 @@ begin
   Form7.Label2.Caption:='Observaciones';
   Form7.Label4.Caption:='Detalle';
   Form7.Label5.Caption:='Proveedor';
+  Form7.Label10.Caption:='* Obligatorio';
+  Form7.Label6.Caption:='Cliente';
+  Unit7.NuevoPedido:='¿Quiere agregar un nuevo pedido?';
+  Unit7.Saved:='Se guardó con éxito';
 
   // FORM 9
   Form9.BitBtn1.Caption:='Volver';
@@ -276,11 +334,41 @@ begin
   Form9.Label5.Caption:='Teléfono';
   Form9.Label6.Caption:='Dirección';
   Form9.Label7.Caption:='DNI';
+  Unit9.ClienteMismoDni:='No se puede agregar un cliente con mismo DNI.';
   Unit9.NuevoCliente:='¿Quiere agregar un cliente?';
   Unit9.QuiereEliminar:='¿Quiere eliminar un cliente?';
   Unit9.QuiereEditar:='¿Quiere editar un cliente?';
   Unit9.SiElimino:= 'Se eliminó correctamente';
   Unit9.NoElimino:= 'No se eliminó el cliente';
+  Form9.GroupBox1.Caption:='Datos cliente';
+  Unit9.NoSePuedeBorrar:='No se puede eliminar un cliente con pedidos asociados.';
+  Unit9.NoSePuedeModificar:='No se puede modificar el DNI de otro ya cargado.';
+  Form9.Label13.Caption:='* Obligatorio';
+
+  // Form 10
+  Unit11.NuevoEstado:='¿Quiere cambiar el estado del pedido?';
+  Form10.Label1.Caption:='ESTADOS DE PEDIDOS';
+  Form10.Label10.Caption:='Cliente';
+  Form10.GroupBox1.Caption:='Datos cliente';
+  Form10.Button2.Caption:='Ver todos';
+  Form10.Label9.Caption:='Cód. Pedido';
+  Form10.Label2.Caption:='Proveedor';
+  Form10.Label10.Caption:='Cliente';
+  Form10.Label4.Caption:='Cliente';
+  Form10.Label2.Caption:='Proveedor';
+  Form10.Label5.Caption:='Fecha';
+  Form10.Label6.Caption:='Detalle';
+  Form10.Label7.Caption:='Observaciones';
+  Form10.Label8.Caption:='Estado actual';
+  Form10.GroupBox2.Caption:='Cambiar el estado actual';
+  Form10.BitBtn1.Caption:='Volver';
+  Form10.Button1.Caption:='Cambiar estado';
+  Form10.Label12.Caption:='Obligatorio';
+  Form10.Label3.Caption:='Nuevo estado';
+  Unit11.SeleccioneEstado:='Seleccione un nuevo estado';
+
+
+
 
 end;
 end;
