@@ -47,9 +47,9 @@ object Form9: TForm9
     Kind = bkRetry
   end
   object DBGrid1: TDBGrid
-    Left = 256
+    Left = 216
     Top = 256
-    Width = 857
+    Width = 945
     Height = 353
     DataSource = DataSource1
     Font.Charset = ANSI_CHARSET

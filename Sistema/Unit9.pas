@@ -167,6 +167,7 @@ begin
    end
    else
     if buttonSelected = mrCancel then
+      DBGrid1.Enabled:=true;
 end;
 
 
@@ -270,6 +271,11 @@ begin
           DBEdit1.Refresh;
           BitBtn2.Enabled:=false;
           BitBtn3.Enabled:=false;
+          DBEdit1.Enabled:=false;
+          DBEdit2.Enabled:=false;
+          DBEdit3.Enabled:=false;
+          DBEdit4.Enabled:=false;
+          DBEdit5.Enabled:=false;
         end
         else
         begin
@@ -293,6 +299,7 @@ begin
         DBEdit5.Enabled:=false;
         BitBtn2.Enabled:=false;
         BitBtn3.Enabled:=false;
+
         end;
     end;
 
@@ -334,7 +341,6 @@ begin
       BitBtn2.Enabled:=false;
       BitBtn3.Enabled:=false;
     end;
-
 end;
 
 procedure TForm9.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
@@ -367,7 +373,7 @@ end;
 
 procedure TForm9.DBEdit1KeyPress(Sender: TObject; var Key: Char);
 begin
- if Key in ['a'..'z', 'A'..'Z'] then
+ if Key in ['a'..'z', 'A'..'Z', '-'] then
   begin
    messagedlg('Error debe ingresar solo numeros',mterror,[mbretry],0);
    Key := #0;
