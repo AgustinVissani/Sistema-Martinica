@@ -11,6 +11,7 @@ object Form13: TForm13
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -54,6 +55,14 @@ object Form13: TForm13
     Top = 48
     Width = 320
     Height = 120
+    DefaultColWidth = 32
+    RowCount = 2
     TabOrder = 3
+    ColWidths = (
+      32
+      65
+      67
+      64
+      61)
   end
 end

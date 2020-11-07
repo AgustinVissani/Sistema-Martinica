@@ -14,6 +14,7 @@ type
     fechaFin: TEdit;
     consultarEgresos: TButton;
     StringGrid1: TStringGrid;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,5 +27,12 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm14.FormCreate(Sender: TObject);
+begin
+  StringGrid1.Cells[1, 0] := 'Fecha';
+  StringGrid1.Cells[2, 0] := 'Descripción';
+  StringGrid1.Cells[3, 0] := 'Monto';
+end;
 
 end.

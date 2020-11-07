@@ -23,7 +23,7 @@ detalles de pagos de las ventas
 	det_pag
 		id_det_pag id_venta tipo_form_pag monto fecha
 
-caja diaria (ingresos y egresos)
+caja diaria
 	caja_diaria
 		id_cd fecha efectivo tarjeta acumulado
 
@@ -60,5 +60,17 @@ CREATE TABLE users(
     rol_id INT NOT NULL,
     CONSTRAINT fk_users_roles FOREIGN KEY(rol_id) REFERENCES roles(id)
 );
+
+*/
+
+use Martinica_Decoraciones
+
+/*
+INSERT INTO Usuarios
+VALUES (1,'a','a');
+ 
+
+
+select * from proveedores
 
 */

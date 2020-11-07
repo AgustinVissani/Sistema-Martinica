@@ -15,7 +15,6 @@ type
     Label3: TLabel;
     ListBox1: TListBox;
     consultarDiez: TButton;
-    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,12 +28,4 @@ implementation
 
 {$R *.dfm}
 
-procedure TForm15.FormCreate(Sender: TObject);
-var
-hMenuHandle: Integer;
-begin
-hMenuHandle := GetSystemMenu(Handle, False);
-if (hMenuHandle <> 0) then
-DeleteMenu(hMenuHandle, SC_CLOSE, MF_BYCOMMAND);
-end;
 end.

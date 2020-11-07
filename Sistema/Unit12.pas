@@ -35,8 +35,8 @@ end;
 procedure TForm12.FormCreate(Sender: TObject);
 begin
   // [Columna, Fila]
-  StringGrid1.Cells[0, 0] := 'Descripción';
-  StringGrid1.Cells[1, 0] := 'Monto';
+  StringGrid1.Cells[1, 0] := 'Descripción';
+  StringGrid1.Cells[2, 0] := 'Monto';
 end;
 
 procedure TForm12.Button1Click(Sender: TObject);

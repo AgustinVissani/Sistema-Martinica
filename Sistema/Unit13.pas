@@ -14,6 +14,7 @@ type
     fechaFin: TEdit;
     consultarCaja: TButton;
     StringGrid1: TStringGrid;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,6 +27,14 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm13.FormCreate(Sender: TObject);
+begin
+  Form13.StringGrid1.Cells[1, 0] := 'Fecha';
+  Form13.StringGrid1.Cells[2, 0] := 'Tarjeta';
+  Form13.StringGrid1.Cells[3, 0] := 'Efectivo';
+  Form13.StringGrid1.Cells[4, 0] := 'Acumulado';
+end;
 
 end.
  

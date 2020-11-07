@@ -1,6 +1,6 @@
 object Form14: TForm14
-  Left = 358
-  Top = 284
+  Left = 820
+  Top = 272
   Width = 537
   Height = 219
   Caption = 'Consulta de egresos'
@@ -11,6 +11,7 @@ object Form14: TForm14
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -52,9 +53,16 @@ object Form14: TForm14
   object StringGrid1: TStringGrid
     Left = 96
     Top = 48
-    Width = 320
+    Width = 329
     Height = 120
-    FixedCols = 0
+    ColCount = 4
+    DefaultColWidth = 32
+    RowCount = 2
     TabOrder = 3
+    ColWidths = (
+      32
+      62
+      131
+      64)
   end
 end

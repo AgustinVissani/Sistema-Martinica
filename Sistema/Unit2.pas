@@ -31,7 +31,6 @@ type
     Label8: TLabel;
     Label9: TLabel;
     Label1: TLabel;
-    ComboBox1: TComboBox;
     Edit1: TEdit;
     Edit2: TEdit;
     altaCliente: TLabel;
@@ -39,10 +38,13 @@ type
     StringGrid2: TStringGrid;
     ingresarPago: TButton;
     agregarProducto: TLabel;
-    agregarFormaPago: TLabel;
     Edit3: TEdit;
     Edit4: TEdit;
     Edit5: TEdit;
+    ComboBox2: TComboBox;
+    Edit6: TEdit;
+    Edit7: TEdit;
+    Button1: TButton;
     procedure FormCreate(Sender: TObject);
     procedure CajaDiaria1Click(Sender: TObject);
     procedure Proveedores1Click(Sender: TObject);
@@ -57,6 +59,7 @@ type
     procedure consultarEgresosClick(Sender: TObject);
     procedure consultarCajaClick(Sender: TObject);
     procedure diezMasVendidosClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -68,18 +71,29 @@ var
 
 implementation
 
-uses  Unit1, Unit3, Unit4, Unit8, Unit9, Unit12, Unit14, Unit13, Unit15;
+uses  Unit1, Unit3, Unit4, Unit8, Unit9, Unit12, Unit14, Unit13, Unit15,
+  Unit16;
 
 {$R *.dfm}
 
 
 
 procedure TForm2.FormCreate(Sender: TObject);
+var
+hMenuHandle: Integer;
 begin
   Left:=(Screen.Width-Width)  div 2;
   Top:=(Screen.Height-Height) div 2;
+  hMenuHandle := GetSystemMenu(Handle, False);
+  if (hMenuHandle <> 0) then
+    DeleteMenu(hMenuHandle, SC_CLOSE, MF_BYCOMMAND);
+  Form2.StringGrid1.Cells[1, 0] := 'Descripción';
+  Form2.StringGrid1.Cells[2, 0] := 'Cantidad';
+  Form2.StringGrid1.Cells[3, 0] := 'P. Unitario';
+  Form2.StringGrid1.Cells[4, 0] := 'Total';
+  Form2.StringGrid2.Cells[1, 0] := 'Forma de pago';
+  Form2.StringGrid2.Cells[2, 0] := 'Monto';
 end;
-
 
 
 
@@ -122,7 +136,6 @@ end;
 
 procedure TForm2.clientesClick(Sender: TObject);
 begin
-Form2.Hide;
 Form9.Show;  //clientes
 end;
 
@@ -134,7 +147,7 @@ end;
 
 procedure TForm2.altaClienteClick(Sender: TObject);
 begin
-Form9.Show;  //clientes
+  Form2.StringGrid1.RowCount := Form2.StringGrid1.RowCount + 1;
 end;
 
 procedure TForm2.cargarEgresosClick(Sender: TObject);
@@ -155,6 +168,11 @@ end;
 procedure TForm2.diezMasVendidosClick(Sender: TObject);
 begin
   Form15.Show;
+end;
+
+procedure TForm2.Button1Click(Sender: TObject);
+begin
+Form16.Show;
 end;
 
 end.

@@ -135,18 +135,6 @@ begin
   Form2.estadisticas.Caption:='Statistics';
   Form2.diezMasVendidos.Caption:='Top ten sold products';
 
-  // FORM 3
-  Form3.Label1.Caption:='Cash counts';
-  Form3.BitBtn1.Caption:='Go back';
-  Form3.Label2.Caption:='Start date';
-  Form3.Label3.Caption:='End date';
-  Form3.Label4.Caption:='Sales';
-  Form3.Label5.Caption:='Cash';
-  Form3.Label6.Caption:='Credit card';
-  Form3.Label7.Caption:='Debit card';
-  Form3.Label9.Caption:='Sales';
-  Form3.Button1.Caption:='Payment';
-
   // FORM 4
   Form4.BitBtn1.Caption:='Go back';
   Form4.BitBtn3.Caption:='Cancel';
@@ -237,18 +225,6 @@ begin
   Form2.proveedores.Caption:='Proveedores';
   Form2.estadisticas.Caption:='Estadísticas';
   Form2.diezMasVendidos.Caption:='10 productos más vendidos';
-
-  // FORM 3
-  Form3.Label1.Caption:='Caja diaria';
-  Form3.BitBtn1.Caption:='Volver';
-  Form3.Label2.Caption:='Fecha inicio';
-  Form3.Label3.Caption:='Fecha fin';
-  Form3.Label4.Caption:='Ventas';
-  Form3.Label5.Caption:='Efectivo';
-  Form3.Label6.Caption:='Tarjeta de crédito';
-  Form3.Label7.Caption:='Tarjeta de débito';
-  Form3.Label9.Caption:='Ventas';
-  Form3.Button1.Caption:='Formas de pago';
 
   // FORM 4
   Form4.BitBtn1.Caption:='Volver';

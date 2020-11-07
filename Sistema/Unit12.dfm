@@ -1,8 +1,8 @@
 object Form12: TForm12
   Left = 424
   Top = 272
-  Width = 393
-  Height = 217
+  Width = 345
+  Height = 207
   Caption = 'Carga de egresos'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,7 +15,7 @@ object Form12: TForm12
   PixelsPerInch = 96
   TextHeight = 13
   object agregarEgreso: TLabel
-    Left = 336
+    Left = 288
     Top = 8
     Width = 30
     Height = 25
@@ -34,13 +34,17 @@ object Form12: TForm12
   object StringGrid1: TStringGrid
     Left = 8
     Top = 8
-    Width = 320
+    Width = 265
     Height = 120
-    ColCount = 2
-    FixedCols = 0
+    ColCount = 3
+    DefaultColWidth = 32
     RowCount = 2
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing]
     TabOrder = 0
+    ColWidths = (
+      32
+      136
+      68)
   end
   object Button1: TButton
     Left = 128
