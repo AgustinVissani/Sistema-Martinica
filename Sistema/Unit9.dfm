@@ -342,7 +342,6 @@ object Form9: TForm9
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
-    OnDataChange = DataSource1DataChange
     Left = 112
     Top = 24
   end

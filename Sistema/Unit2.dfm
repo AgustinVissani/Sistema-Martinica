@@ -95,7 +95,6 @@ object Form2: TForm2
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
-    OnClick = etiquetaEstadoClick
   end
   object altaCliente: TLabel
     Left = 464
@@ -255,25 +254,13 @@ object Form2: TForm2
       21
       24)
   end
-  object TDBGrid
-    Left = 392
-    Top = 208
-    Width = 320
-    Height = 120
-    TabOrder = 12
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
-  end
   object calcularTotal: TButton
     Left = 184
     Top = 344
     Width = 75
     Height = 25
     Caption = 'Calcular Total'
-    TabOrder = 13
+    TabOrder = 12
   end
   object MainMenu1: TMainMenu
     Left = 8

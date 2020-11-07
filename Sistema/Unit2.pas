@@ -70,8 +70,6 @@ type
     procedure consultarCajaClick(Sender: TObject);
     procedure diezMasVendidosClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
-    procedure Edit7Change(Sender: TObject);
-    procedure etiquetaEstadoClick(Sender: TObject);
   private
     { Private declarations }
   public
