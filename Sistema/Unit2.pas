@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Menus, StdCtrls, ExtCtrls,jpeg,Buttons, Grids;
+  Dialogs, Menus, StdCtrls, ExtCtrls,jpeg,Buttons, Grids, DB, ADODB,
+  DBGrids, Mask, DBCtrls;
 type
   TForm2 = class(TForm)
     MainMenu1: TMainMenu;
@@ -22,19 +23,16 @@ type
     consultarCaja: TMenuItem;
     diezMasVendidos: TMenuItem;
     Cliente: TLabel;
-    DNI: TLabel;
-    Apellido: TLabel;
-    Nombre: TLabel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
     Productos: TLabel;
     Formadepago: TLabel;
     Label7: TLabel;
     Label8: TLabel;
     Label9: TLabel;
-    Label1: TLabel;
-    Edit1: TEdit;
-    Edit2: TEdit;
+    etiquetaEstado: TLabel;
     altaCliente: TLabel;
-    StringGrid1: TStringGrid;
     StringGrid2: TStringGrid;
     ingresarPago: TButton;
     agregarProducto: TLabel;
@@ -43,8 +41,20 @@ type
     Edit5: TEdit;
     ComboBox2: TComboBox;
     Edit6: TEdit;
-    Edit7: TEdit;
     Button1: TButton;
+    ADOQuery1: TADOQuery;
+    DataSource1: TDataSource;
+    ADOQuery1Cdigo_Cliente: TAutoIncField;
+    ADOQuery1DNI: TIntegerField;
+    ADOQuery1Nombre: TStringField;
+    ADOQuery1Apellido: TStringField;
+    ADOQuery1Telfono: TStringField;
+    ADOQuery1Domicilio: TStringField;
+    dni: TDBEdit;
+    Nombre: TDBEdit;
+    Apellido: TDBEdit;
+    StringGrid1: TStringGrid;
+    calcularTotal: TButton;
     procedure FormCreate(Sender: TObject);
     procedure CajaDiaria1Click(Sender: TObject);
     procedure Proveedores1Click(Sender: TObject);
@@ -60,6 +70,8 @@ type
     procedure consultarCajaClick(Sender: TObject);
     procedure diezMasVendidosClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure Edit7Change(Sender: TObject);
+    procedure etiquetaEstadoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -141,13 +153,12 @@ end;
 
 procedure TForm2.proveedoresClick(Sender: TObject);
 begin
-form2.Hide;
 Form4.Show;  //proveedores
 end;
 
 procedure TForm2.altaClienteClick(Sender: TObject);
 begin
-  Form2.StringGrid1.RowCount := Form2.StringGrid1.RowCount + 1;
+//  Form2.StringGrid1.RowCount := Form2.StringGrid1.RowCount + 1;
 end;
 
 procedure TForm2.cargarEgresosClick(Sender: TObject);
@@ -174,6 +185,7 @@ procedure TForm2.Button1Click(Sender: TObject);
 begin
 Form16.Show;
 end;
+
 
 end.
 

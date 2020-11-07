@@ -1,6 +1,6 @@
 object Form9: TForm9
-  Left = 89
-  Top = 7
+  Left = 366
+  Top = 226
   Width = 1313
   Height = 720
   BorderIcons = [biSystemMenu, biMinimize]
@@ -342,6 +342,7 @@ object Form9: TForm9
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
+    OnDataChange = DataSource1DataChange
     Left = 112
     Top = 24
   end

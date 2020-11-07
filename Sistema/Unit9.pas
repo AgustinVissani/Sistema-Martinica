@@ -43,7 +43,8 @@ type
     procedure Button2Click(Sender: TObject);
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
-    procedure BitBtn4Click(Sender: TObject);                 
+    procedure BitBtn4Click(Sender: TObject);
+    procedure DataSource1DataChange(Sender: TObject; Field: TField);
   private
     { Private declarations }
   public

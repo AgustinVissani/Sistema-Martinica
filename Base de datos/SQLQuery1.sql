@@ -10,6 +10,12 @@ usuarios
 productos
 	productos
 		id_prod descripcion precio_unitario
+		
+CREATE TABLE productos (
+    id_prod int NOT NULL,
+    descripcion varchar(50),
+    precio_unitario real NOT NULL
+);
 
 ventas
 	ventas

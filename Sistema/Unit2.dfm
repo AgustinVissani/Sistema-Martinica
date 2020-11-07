@@ -24,26 +24,26 @@ object Form2: TForm2
     Height = 13
     Caption = 'Cliente'
   end
-  object DNI: TLabel
+  object Label1: TLabel
     Left = 56
     Top = 40
     Width = 18
     Height = 13
     Caption = 'DNI'
   end
-  object Apellido: TLabel
+  object Label2: TLabel
     Left = 192
     Top = 40
     Width = 37
     Height = 13
-    Caption = 'Apellido'
+    Caption = 'Nombre'
   end
-  object Nombre: TLabel
+  object Label3: TLabel
     Left = 328
     Top = 40
     Width = 37
     Height = 13
-    Caption = 'Nombre'
+    Caption = 'Apellido'
   end
   object Productos: TLabel
     Left = 56
@@ -80,7 +80,7 @@ object Form2: TForm2
     Height = 13
     Caption = 'Dcto. (%)'
   end
-  object Label1: TLabel
+  object etiquetaEstado: TLabel
     Left = 520
     Top = 64
     Width = 225
@@ -95,6 +95,7 @@ object Form2: TForm2
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
+    OnClick = etiquetaEstadoClick
   end
   object altaCliente: TLabel
     Left = 464
@@ -130,40 +131,6 @@ object Form2: TForm2
     ParentFont = False
     OnClick = altaClienteClick
   end
-  object Edit1: TEdit
-    Left = 192
-    Top = 64
-    Width = 121
-    Height = 21
-    TabOrder = 0
-  end
-  object Edit2: TEdit
-    Left = 328
-    Top = 64
-    Width = 121
-    Height = 21
-    TabOrder = 1
-  end
-  object StringGrid1: TStringGrid
-    Left = 56
-    Top = 120
-    Width = 401
-    Height = 153
-    DefaultColWidth = 32
-    RowCount = 4
-    TabOrder = 2
-    ColWidths = (
-      32
-      174
-      48
-      53
-      59)
-    RowHeights = (
-      24
-      24
-      21
-      24)
-  end
   object StringGrid2: TStringGrid
     Left = 520
     Top = 152
@@ -172,7 +139,7 @@ object Form2: TForm2
     ColCount = 3
     DefaultColWidth = 32
     RowCount = 2
-    TabOrder = 3
+    TabOrder = 0
     ColWidths = (
       32
       99
@@ -190,7 +157,7 @@ object Form2: TForm2
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 1
     WordWrap = True
   end
   object Edit3: TEdit
@@ -198,21 +165,21 @@ object Form2: TForm2
     Top = 288
     Width = 121
     Height = 21
-    TabOrder = 5
+    TabOrder = 2
   end
   object Edit4: TEdit
     Left = 312
     Top = 320
     Width = 121
     Height = 21
-    TabOrder = 6
+    TabOrder = 3
   end
   object Edit5: TEdit
     Left = 312
     Top = 352
     Width = 121
     Height = 21
-    TabOrder = 7
+    TabOrder = 4
   end
   object ComboBox2: TComboBox
     Left = 520
@@ -220,7 +187,7 @@ object Form2: TForm2
     Width = 113
     Height = 21
     ItemHeight = 13
-    TabOrder = 8
+    TabOrder = 5
     Items.Strings = (
       'Efectivo'
       'Tarjeta')
@@ -230,14 +197,7 @@ object Form2: TForm2
     Top = 120
     Width = 105
     Height = 21
-    TabOrder = 9
-  end
-  object Edit7: TEdit
-    Left = 56
-    Top = 64
-    Width = 121
-    Height = 21
-    TabOrder = 10
+    TabOrder = 6
   end
   object Button1: TButton
     Left = 520
@@ -251,8 +211,69 @@ object Form2: TForm2
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 11
+    TabOrder = 7
     OnClick = Button1Click
+  end
+  object dni: TDBEdit
+    Left = 56
+    Top = 64
+    Width = 121
+    Height = 21
+    TabOrder = 8
+  end
+  object Nombre: TDBEdit
+    Left = 192
+    Top = 64
+    Width = 121
+    Height = 21
+    TabOrder = 9
+  end
+  object Apellido: TDBEdit
+    Left = 328
+    Top = 64
+    Width = 121
+    Height = 21
+    TabOrder = 10
+  end
+  object StringGrid1: TStringGrid
+    Left = 56
+    Top = 120
+    Width = 401
+    Height = 153
+    DefaultColWidth = 32
+    RowCount = 4
+    TabOrder = 11
+    ColWidths = (
+      32
+      174
+      48
+      53
+      59)
+    RowHeights = (
+      24
+      24
+      21
+      24)
+  end
+  object TDBGrid
+    Left = 392
+    Top = 208
+    Width = 320
+    Height = 120
+    TabOrder = 12
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object calcularTotal: TButton
+    Left = 184
+    Top = 344
+    Width = 75
+    Height = 25
+    Caption = 'Calcular Total'
+    TabOrder = 13
   end
   object MainMenu1: TMainMenu
     Left = 8
@@ -305,5 +326,41 @@ object Form2: TForm2
         OnClick = diezMasVendidosClick
       end
     end
+  end
+  object ADOQuery1: TADOQuery
+    Connection = Form1.ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT * FROM Clientes')
+    Left = 104
+    Top = 8
+    object ADOQuery1Cdigo_Cliente: TAutoIncField
+      FieldName = 'C'#243'digo_Cliente'
+      ReadOnly = True
+    end
+    object ADOQuery1DNI: TIntegerField
+      FieldName = 'DNI'
+    end
+    object ADOQuery1Nombre: TStringField
+      FieldName = 'Nombre'
+      Size = 30
+    end
+    object ADOQuery1Apellido: TStringField
+      FieldName = 'Apellido'
+      Size = 30
+    end
+    object ADOQuery1Telfono: TStringField
+      FieldName = 'Tel'#233'fono'
+    end
+    object ADOQuery1Domicilio: TStringField
+      FieldName = 'Domicilio'
+      Size = 30
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOQuery1
+    Left = 144
+    Top = 8
   end
 end
