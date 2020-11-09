@@ -7,6 +7,7 @@ select * from usuarios
 /*productos
 	productos
 		id_prod descripcion precio_unitario*/
+
 CREATE TABLE productos (
     id_prod int IDENTITY(1,1) PRIMARY KEY,
     descripcion varchar(50),
@@ -23,6 +24,7 @@ select top 10 sum(precio_unitario) as cant, descripcion from productos group by 
 /*ventas
 	ventas
 		id_venta id_cliente id_det_prod_ven id_det_pag fecha total saldada
+select * from ventas order by id_venta desc
 /*
 ventas
 id_venta	Código_Cliente	fecha		total	saldada
@@ -40,11 +42,12 @@ id_det_pag	id_venta	tipo_form_pag	monto	fecha
 
 */
 -- Hay que ver si tenemos tiempo de cambiar los tildes y demas porque tenemos cosas enlazadas de sus tablas como el id del cliente que es el codigo_cliente de su tabla de clientes*/
-
+ALTER TABLE ventas
+ALTER COLUMN fecha varchar(10);
 CREATE TABLE ventas ( 
 	id_venta int IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	Código_Cliente INT CONSTRAINT FK_Código_Cliente_ventas FOREIGN KEY(Código_Cliente) REFERENCES Clientes(Código_Cliente),
-	fecha date,
+	fecha varchar(10),
 	total real,
 	saldada int --saldada puse int porq facu habia dicho que podiamos ponerle -1 a falso y 0 a verdadero o algo asi, sino ponemos boolean
 );
@@ -85,7 +88,7 @@ GROUP BY
     descripcion 
 ORDER BY
     Cantidad DESC
-select * from clientes
+
 insert into clientes (DNI,Nombre,Apellido) values (35140762,'facu','rozada')
 insert into clientes (DNI,Nombre,Apellido) values (40015783,'mate','dspablo')
 insert into clientes (DNI,Nombre,Apellido) values (40190395,'mik','sensino')
@@ -93,20 +96,24 @@ insert into clientes (DNI,Nombre,Apellido) values (40190395,'mik','sensino')
 /*detalles de pagos de las ventas
 	det_pag
 		id_det_pag id_venta tipo_form_pag monto fecha*/
+ALTER TABLE det_pag
+ALTER COLUMN fecha varchar(10);
 CREATE TABLE det_pag(
 	id_det_pag int IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	id_venta INT CONSTRAINT FK_id_venta_2 FOREIGN KEY(id_venta) REFERENCES ventas (id_venta),
 	tipo_form_pag INT CONSTRAINT FK_tipo_form_pag FOREIGN KEY(tipo_form_pag) REFERENCES form_pag(tipo_form_pag),
 	monto real,
-	fecha date
+	fecha varchar(10)
 );
 /*caja diaria
 	caja_diaria
 		id_cd fecha efectivo tarjeta acumulado*/
 
+ALTER TABLE caja_diaria
+ALTER COLUMN fecha varchar(10);
 CREATE TABLE caja_diaria(
 	id_cd int IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	fecha date, 
+	fecha varchar(10), 
 	efectivo real,
 	tarjeta real, 
 	acumulado real
@@ -121,7 +128,7 @@ CREATE TABLE egresos(
 	descripcion varchar(50),
 	monto real
 );
-
+select * from ventas
 /*Y forma de pagos no lo entendi 
 form_pag
 	tipo_form_pag	descripcion 
@@ -160,3 +167,9 @@ select * from det_prod_ven
 select * from egresos
 select * from productos
 select * from ventas
+
+insert into productos (descripcion,precio_unitario) values ('tela',123)
+insert into productos (descripcion,precio_unitario) values ('almohadón',234)
+insert into productos (descripcion,precio_unitario) values ('cortina',345)
+insert into productos (descripcion,precio_unitario) values ('fierro',456)
+insert into productos (descripcion,precio_unitario) values ('cosito',567)
