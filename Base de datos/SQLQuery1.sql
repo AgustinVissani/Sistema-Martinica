@@ -51,18 +51,46 @@ CREATE TABLE ventas (
 /*
 detalle de productos de ventas
 	det_prod_ven
-		id_det_prod_ven id_venta id_producto cantidad (descripcion)
+		id_det_prod_ven id_venta id_producto cantidad descripcion
 */
 CREATE TABLE det_prod_ven(
 	id_det_prod_ven int IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	id_venta INT CONSTRAINT FK_id_venta_1 FOREIGN KEY (id_venta) REFERENCES ventas (id_venta), 
 	id_prod INT CONSTRAINT FK_id_prod_1 FOREIGN KEY (id_prod) REFERENCES productos (id_prod),
-	cantidad real
+	cantidad real,
+	descripcion varchar(50)
 );
 --select top 10 sum(precio_unitario) as cant, descripcion from productos group by descripcion order by cant desc
+insert into det_prod_ven (cantidad, descripcion) values (1,'p1') 
+insert into det_prod_ven (cantidad, descripcion) values (4,'p3') 
+insert into det_prod_ven (cantidad, descripcion) values (2,'p5') 
+insert into det_prod_ven (cantidad, descripcion) values (5,'p7') 
+insert into det_prod_ven (cantidad, descripcion) values (3,'p9') 
+insert into det_prod_ven (cantidad, descripcion) values (6,'p2') 
+insert into det_prod_ven (cantidad, descripcion) values (4,'p4') 
+insert into det_prod_ven (cantidad, descripcion) values (7,'p6') 
+insert into det_prod_ven (cantidad, descripcion) values (5,'p8') 
+insert into det_prod_ven (cantidad, descripcion) values (8,'p10') 
+insert into det_prod_ven (cantidad, descripcion) values (6,'p11') 
+insert into det_prod_ven (cantidad, descripcion) values (9,'p1') 
+insert into det_prod_ven (cantidad, descripcion) values (7,'p2') 
+insert into det_prod_ven (cantidad, descripcion) values (8,'p3') 
+insert into det_prod_ven (cantidad, descripcion) values (1,'p4') 
+SELECT
+    TOP 10 descripcion AS 'Descripción',
+	SUM(cantidad) AS Cantidad
+FROM
+    det_prod_ven 
+GROUP BY
+    descripcion 
+ORDER BY
+    Cantidad DESC
+select * from clientes
+insert into clientes (DNI,Nombre,Apellido) values (35140762,'facu','rozada')
+insert into clientes (DNI,Nombre,Apellido) values (40015783,'mate','dspablo')
+insert into clientes (DNI,Nombre,Apellido) values (40190395,'mik','sensino')
 
-/*
-detalles de pagos de las ventas
+/*detalles de pagos de las ventas
 	det_pag
 		id_det_pag id_venta tipo_form_pag monto fecha*/
 CREATE TABLE det_pag(
