@@ -110,14 +110,14 @@ CREATE TABLE det_pag(
 		id_cd fecha efectivo tarjeta acumulado*/
 
 drop table caja_diaria
-CREATE TABLE caja_diaria(
+CREATE TABLE cajaDiaria(
 	id_cd int IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	fecha varchar(10), 
 	efectivo real,
 	tarjeta real, 
 	acumulado real
 );
-insert into caja_diaria (efectivo,tarjeta,acumulado) values (0,0,15000)
+insert into cajaDiaria (fecha,efectivo,tarjeta,acumulado) values ('9/11/2020',0,0,15000)
 /*egresos
 	id_egreso fecha descripcion monto*/
 
@@ -189,7 +189,11 @@ SELECT TOP 1 acumulado AS acumuladoEfectivo FROM caja_diaria ORDER BY id_cd DESC
 SELECT SUM(monto) AS ingresosEfectivo FROM det_pag WHERE tipo_form_pag = 0 and fecha = 
 
 SELECT TOP 1 acumulado AS acumuladoEfectivo FROM caja_diaria ORDER BY id_cd DESC
+select * from det_pag
+SELECT SUM(monto) AS ingresosEfectivo FROM det_pag WHERE tipo_form_pag = 0 and fecha = '9/11/2020'
+SELECT SUM(monto) AS ingresosTarjeta FROM det_pag WHERE tipo_form_pag = 1 and fecha = '9/11/2020'
+SELECT SUM(monto) AS egresosEfectivo FROM egresos WHERE fecha = '9/11/2020'
 
-SELECT SUM(monto) AS ingresosEfectivo FROM det_pag WHERE tipo_form_pag = 0 and fecha = '9//1/2020'
-SELECT SUM(monto) AS ingresosTarjeta FROM det_pag WHERE tipo_form_pag = 1 and fecha = '9//1/2020'
-SELECT SUM(monto) AS egresosEfectivo FROM egresos WHERE fecha = '9//1/2020'
+
+SELECT * FROM det_pag WHERE tipo_form_pag = 0 and fecha = '9/11/2020'
+SELECT TOP 1 acumulado FROM cajaDiaria
