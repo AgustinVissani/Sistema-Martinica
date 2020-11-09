@@ -4,17 +4,18 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls;
+  Dialogs, StdCtrls,
+  Mask, DBCtrls,
+  DB, ADODB,
+  Grids, DBGrids;
 
 type
   TForm15 = class(TForm)
-    Label1: TLabel;
-    fechaInicio: TEdit;
-    Label2: TLabel;
-    fechaFin: TEdit;
-    Label3: TLabel;
-    ListBox1: TListBox;
-    consultarDiez: TButton;
+    ADOQuery1: TADOQuery;
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    ADOQuery1Descripcin: TStringField;
+    ADOQuery1Cantidad: TFloatField;
   private
     { Private declarations }
   public

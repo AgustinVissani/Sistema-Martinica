@@ -1,8 +1,8 @@
 object Form15: TForm15
-  Left = 340
-  Top = 273
-  Width = 556
-  Height = 251
+  Left = 200
+  Top = 428
+  Width = 444
+  Height = 317
   Caption = '10 productos m'#225's vendidos'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -13,55 +13,48 @@ object Form15: TForm15
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 48
+    Width = 409
+    Height = 217
+    DataSource = DataSource1
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object ADOQuery1: TADOQuery
+    Active = True
+    Connection = Form1.ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT'
+      '    TOP 10 descripcion AS '#39'Descripci'#243'n'#39','
+      '  SUM(cantidad) AS Cantidad'
+      'FROM'
+      '    det_prod_ven '
+      'GROUP BY'
+      '    descripcion '
+      'ORDER BY'
+      '    Cantidad DESC')
     Left = 8
     Top = 8
-    Width = 61
-    Height = 13
-    Caption = 'Fecha Inicio:'
+    object ADOQuery1Descripcin: TStringField
+      FieldName = 'Descripci'#243'n'
+      Size = 50
+    end
+    object ADOQuery1Cantidad: TFloatField
+      FieldName = 'Cantidad'
+      ReadOnly = True
+    end
   end
-  object Label2: TLabel
-    Left = 240
-    Top = 8
-    Width = 50
-    Height = 13
-    Caption = 'Fecha Fin:'
-  end
-  object Label3: TLabel
-    Left = 120
-    Top = 40
-    Width = 189
-    Height = 13
-    Caption = 'Los 10 productos m'#225's vendidos fueron:'
-  end
-  object fechaInicio: TEdit
-    Left = 88
-    Top = 8
-    Width = 121
-    Height = 21
-    TabOrder = 0
-  end
-  object fechaFin: TEdit
-    Left = 304
-    Top = 8
-    Width = 121
-    Height = 21
-    TabOrder = 1
-  end
-  object ListBox1: TListBox
+  object DataSource1: TDataSource
+    DataSet = ADOQuery1
     Left = 48
-    Top = 64
-    Width = 345
-    Height = 137
-    ItemHeight = 13
-    TabOrder = 2
-  end
-  object consultarDiez: TButton
-    Left = 440
     Top = 8
-    Width = 75
-    Height = 25
-    Caption = 'Consultar'
-    TabOrder = 3
   end
 end

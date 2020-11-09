@@ -125,15 +125,10 @@ begin
   Form2.cerrarSesion.Caption:='Log out';
   Form2.salir.Caption:='Exit';
   Form2.egresos.Caption:='Expenditures';
-  Form2.cargarEgresos.Caption:='Add expenditures';
-  Form2.consultarEgresos.Caption:='Check expenditures';
   Form2.cajadiaria.Caption:='Cash';
-  Form2.cerrarCajaDiaria.Caption:='Close cash desk';
-  Form2.consultarCaja.Caption:='Check cash desk';
   Form2.clientes.Caption:='Customers';
   Form2.proveedores.Caption:='Suppliers';
   Form2.estadisticas.Caption:='Statistics';
-  Form2.diezMasVendidos.Caption:='Top ten sold products';
 
   // FORM 4
   Form4.BitBtn1.Caption:='Go back';
@@ -162,17 +157,17 @@ begin
   Form6.Button2.Caption:='New order';
   Form6.Label1.Caption:='ORDERS TO SUPPLIERS';
   Form6.Label2.Caption:='Lastname Customer';
-  Form6.Label4.Caption:='Lastname';
-  Form6.Label5.Caption:='Supplier';
+  //Form6.Label4.Caption:='Lastname';
+ // Form6.Label5.Caption:='Supplier';
   //Form6.Label3.Caption:='Customer';
-  Form6.Label4.Caption:='Date';
-  Form6.Label6.Caption:='State';
+  //Form6.Label4.Caption:='Date';
+  //Form6.Label6.Caption:='State';
 
     // FORM 7
   Form7.BitBtn1.Caption:='Go back';
   Form7.Button1.Caption:='Cancel';
   Form7.Button3.Caption:='Save';
-  Form7.Label1.Caption:='NEW ORDER';
+  //Form7.Label1.Caption:='NEW ORDER';
   Form7.Label2.Caption:='Observations';
   Form7.Label4.Caption:='Detail';
   Form7.Label5.Caption:='Supplier';
@@ -216,15 +211,10 @@ begin
   Form2.cerrarSesion.Caption:='Cerrar sesión';
   Form2.salir.Caption:='Salir';
   Form2.egresos.Caption:='Egresos';
-  Form2.cargarEgresos.Caption:='Cargar egresos';
-  Form2.consultarEgresos.Caption:='Consultar egresos';
   Form2.cajadiaria.Caption:='Caja diaria';
-  Form2.cerrarCajaDiaria.Caption:='Cerrar caja diaria';
-  Form2.consultarCaja.Caption:='Consultar caja';
   Form2.clientes.Caption:='Clientes';
   Form2.proveedores.Caption:='Proveedores';
   Form2.estadisticas.Caption:='Estadísticas';
-  Form2.diezMasVendidos.Caption:='10 productos más vendidos';
 
   // FORM 4
   Form4.BitBtn1.Caption:='Volver';
@@ -253,17 +243,17 @@ begin
   Form6.Button2.Caption:='Nuevo pedido';
   Form6.Label1.Caption:='PEDIDOS A PROVEEDORES';
   Form6.Label2.Caption:='Apellido Cliente';
-  Form6.Label4.Caption:='Apellido';
-  Form6.Label5.Caption:='Proveedor';
+ // Form6.Label4.Caption:='Apellido';
+ // Form6.Label5.Caption:='Proveedor';
   //Form6.Label3.Caption:='Cliente';
-  Form6.Label4.Caption:='Fecha';
-  Form6.Label6.Caption:='Estado';
+ // Form6.Label4.Caption:='Fecha';
+ // Form6.Label6.Caption:='Estado';
 
   // FORM 7
   Form7.BitBtn1.Caption:='Volver';
   Form7.Button1.Caption:='Cancelar';
   Form7.Button3.Caption:='Guardar';
-  Form7.Label1.Caption:='NUEVO PEDIDO';
+ // Form7.Label1.Caption:='NUEVO PEDIDO';
   Form7.Label2.Caption:='Observaciones';
   Form7.Label4.Caption:='Detalle';
   Form7.Label5.Caption:='Proveedor';

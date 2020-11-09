@@ -1,8 +1,8 @@
 object Form9: TForm9
-  Left = 366
-  Top = 226
-  Width = 1313
-  Height = 720
+  Left = 728
+  Top = 218
+  Width = 898
+  Height = 607
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Listado de Clientes'
   Color = clBtnFace
@@ -16,8 +16,8 @@ object Form9: TForm9
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 544
-    Top = 56
+    Left = 24
+    Top = 16
     Width = 118
     Height = 33
     Caption = 'CLIENTES'
@@ -29,8 +29,8 @@ object Form9: TForm9
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 488
-    Top = 144
+    Left = 288
+    Top = 96
     Width = 57
     Height = 19
     Caption = 'Nombre'
@@ -42,8 +42,8 @@ object Form9: TForm9
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 768
-    Top = 144
+    Left = 568
+    Top = 96
     Width = 58
     Height = 19
     Caption = 'Apellido'
@@ -55,8 +55,8 @@ object Form9: TForm9
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 376
-    Top = 208
+    Left = 32
+    Top = 152
     Width = 62
     Height = 19
     Caption = 'Tel'#233'fono'
@@ -68,8 +68,8 @@ object Form9: TForm9
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 656
-    Top = 208
+    Left = 280
+    Top = 160
     Width = 65
     Height = 19
     Caption = 'Direcci'#243'n'
@@ -81,8 +81,8 @@ object Form9: TForm9
     ParentFont = False
   end
   object Label7: TLabel
-    Left = 232
-    Top = 144
+    Left = 40
+    Top = 96
     Width = 28
     Height = 19
     Caption = 'DNI'
@@ -94,14 +94,14 @@ object Form9: TForm9
     ParentFont = False
   end
   object Button1: TButton
-    Left = 776
-    Top = 56
+    Left = 608
+    Top = 8
     Width = 145
     Height = 33
     Caption = 'Nuevo cliente'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -21
+    Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -110,14 +110,14 @@ object Form9: TForm9
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 968
-    Top = 56
+    Left = 768
+    Top = 8
     Width = 89
     Height = 33
     Caption = 'Borrar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -21
+    Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -126,14 +126,14 @@ object Form9: TForm9
     OnClick = Button2Click
   end
   object BitBtn1: TBitBtn
-    Left = 96
-    Top = 56
+    Left = 744
+    Top = 512
     Width = 113
     Height = 33
     Caption = 'Volver'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -21
+    Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -143,10 +143,10 @@ object Form9: TForm9
     Kind = bkRetry
   end
   object DBGrid1: TDBGrid
-    Left = 288
-    Top = 272
-    Width = 769
-    Height = 353
+    Left = 32
+    Top = 216
+    Width = 833
+    Height = 281
     DataSource = DataSource1
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -164,14 +164,14 @@ object Form9: TForm9
     OnDrawColumnCell = DBGrid1DrawColumnCell
   end
   object Button3: TButton
-    Left = 352
-    Top = 56
+    Left = 488
+    Top = 8
     Width = 97
     Height = 33
     Caption = 'Modificar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -21
+    Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -179,8 +179,8 @@ object Form9: TForm9
     OnClick = Button3Click
   end
   object BitBtn3: TBitBtn
-    Left = 416
-    Top = 640
+    Left = 224
+    Top = 512
     Width = 105
     Height = 33
     Caption = 'Cancelar'
@@ -195,8 +195,8 @@ object Form9: TForm9
     Kind = bkCancel
   end
   object BitBtn2: TBitBtn
-    Left = 856
-    Top = 640
+    Left = 32
+    Top = 512
     Width = 105
     Height = 33
     Caption = 'Confirmar'
@@ -211,8 +211,8 @@ object Form9: TForm9
     Kind = bkOK
   end
   object DBEdit1: TDBEdit
-    Left = 312
-    Top = 136
+    Left = 112
+    Top = 88
     Width = 145
     Height = 27
     DataField = 'DNI'
@@ -227,8 +227,8 @@ object Form9: TForm9
     TabOrder = 0
   end
   object DBEdit2: TDBEdit
-    Left = 568
-    Top = 136
+    Left = 376
+    Top = 88
     Width = 169
     Height = 27
     DataField = 'Nombre'
@@ -243,8 +243,8 @@ object Form9: TForm9
     TabOrder = 1
   end
   object DBEdit3: TDBEdit
-    Left = 840
-    Top = 136
+    Left = 640
+    Top = 88
     Width = 185
     Height = 27
     DataField = 'Apellido'
@@ -259,8 +259,8 @@ object Form9: TForm9
     TabOrder = 2
   end
   object DBEdit4: TDBEdit
-    Left = 456
-    Top = 208
+    Left = 112
+    Top = 152
     Width = 145
     Height = 27
     DataField = 'Tel'#233'fono'
@@ -275,8 +275,8 @@ object Form9: TForm9
     TabOrder = 3
   end
   object DBEdit5: TDBEdit
-    Left = 752
-    Top = 208
+    Left = 376
+    Top = 160
     Width = 169
     Height = 27
     DataField = 'Domicilio'
@@ -291,8 +291,8 @@ object Form9: TForm9
     TabOrder = 4
   end
   object BitBtn4: TBitBtn
-    Left = 1152
-    Top = 56
+    Left = 752
+    Top = 144
     Width = 113
     Height = 33
     Caption = 'Paso atras'
@@ -314,35 +314,35 @@ object Form9: TForm9
     SQL.Strings = (
       'SELECT *'
       'FROM Clientes')
-    Left = 64
-    Top = 24
+    Left = 784
+    Top = 184
     object ADOQuery1DNI: TIntegerField
-      DisplayWidth = 14
+      DisplayWidth = 18
       FieldName = 'DNI'
     end
     object ADOQuery1Nombre: TStringField
-      DisplayWidth = 17
+      DisplayWidth = 20
       FieldName = 'Nombre'
       Size = 30
     end
     object ADOQuery1Apellido: TStringField
-      DisplayWidth = 33
+      DisplayWidth = 27
       FieldName = 'Apellido'
       Size = 30
     end
     object ADOQuery1Telfono: TStringField
-      DisplayWidth = 28
+      DisplayWidth = 22
       FieldName = 'Tel'#233'fono'
     end
     object ADOQuery1Domicilio: TStringField
-      DisplayWidth = 25
+      DisplayWidth = 27
       FieldName = 'Domicilio'
       Size = 30
     end
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
-    Left = 112
-    Top = 24
+    Left = 832
+    Top = 184
   end
 end

@@ -17,11 +17,6 @@ type
     clientes: TMenuItem;
     proveedores: TMenuItem;
     estadisticas: TMenuItem;
-    cargarEgresos: TMenuItem;
-    consultarEgresos: TMenuItem;
-    cerrarCajaDiaria: TMenuItem;
-    consultarCaja: TMenuItem;
-    diezMasVendidos: TMenuItem;
     Cliente: TLabel;
     Label1: TLabel;
     Label2: TLabel;
@@ -31,16 +26,9 @@ type
     Label7: TLabel;
     Label8: TLabel;
     Label9: TLabel;
-    etiquetaEstado: TLabel;
     altaCliente: TLabel;
-    StringGrid2: TStringGrid;
     ingresarPago: TButton;
     agregarProducto: TLabel;
-    Edit3: TEdit;
-    Edit4: TEdit;
-    Edit5: TEdit;
-    ComboBox2: TComboBox;
-    Edit6: TEdit;
     Button1: TButton;
     ADOQuery1: TADOQuery;
     DataSource1: TDataSource;
@@ -50,11 +38,35 @@ type
     ADOQuery1Apellido: TStringField;
     ADOQuery1Telfono: TStringField;
     ADOQuery1Domicilio: TStringField;
-    dni: TDBEdit;
+    DNI: TDBEdit;
     Nombre: TDBEdit;
     Apellido: TDBEdit;
-    StringGrid1: TStringGrid;
     calcularTotal: TButton;
+    DBGrid1: TDBGrid;
+    DBGrid2: TDBGrid;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
+    DBEdit4: TDBEdit;
+    DBText1: TDBText;
+    ADOQuery2: TADOQuery;
+    DataSource2: TDataSource;
+    ADOQuery2id_prod: TAutoIncField;
+    ADOQuery2descripcion: TStringField;
+    ADOQuery2precio_unitario: TFloatField;
+    DBNavigator1: TDBNavigator;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    Button5: TButton;
+    StringGrid1: TStringGrid;
+    ComboBox1: TComboBox;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
     procedure FormCreate(Sender: TObject);
     procedure CajaDiaria1Click(Sender: TObject);
     procedure Proveedores1Click(Sender: TObject);
@@ -65,11 +77,21 @@ type
     procedure clientesClick(Sender: TObject);
     procedure proveedoresClick(Sender: TObject);
     procedure altaClienteClick(Sender: TObject);
-    procedure cargarEgresosClick(Sender: TObject);
     procedure consultarEgresosClick(Sender: TObject);
     procedure consultarCajaClick(Sender: TObject);
-    procedure diezMasVendidosClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+    procedure StringGrid1SelectCell(Sender: TObject; ACol, ARow: Integer;
+      var CanSelect: Boolean);
+    procedure ComboBox1CloseUp(Sender: TObject);
+    procedure egresosClick(Sender: TObject);
+    procedure cajadiariaClick(Sender: TObject);
+    procedure estadisticasClick(Sender: TObject);
+    procedure DNIEnter(Sender: TObject);
   private
     { Private declarations }
   public
@@ -78,6 +100,7 @@ type
 
 var
   Form2: TForm2;
+  col, row: Integer;
 
 implementation
 
@@ -97,12 +120,14 @@ begin
   hMenuHandle := GetSystemMenu(Handle, False);
   if (hMenuHandle <> 0) then
     DeleteMenu(hMenuHandle, SC_CLOSE, MF_BYCOMMAND);
-  Form2.StringGrid1.Cells[1, 0] := 'Descripción';
+
+    {los nombres se ingresan con las tablas}
+  Form2.StringGrid1.Cells[0, 0] := 'Descripción';
+  Form2.StringGrid1.Cells[1, 0] := 'P. Unitario';
   Form2.StringGrid1.Cells[2, 0] := 'Cantidad';
-  Form2.StringGrid1.Cells[3, 0] := 'P. Unitario';
-  Form2.StringGrid1.Cells[4, 0] := 'Total';
-  Form2.StringGrid2.Cells[1, 0] := 'Forma de pago';
-  Form2.StringGrid2.Cells[2, 0] := 'Monto';
+  Form2.StringGrid1.Cells[3, 0] := 'Total';
+  //Form2.StringGrid2.Cells[1, 0] := 'Forma de pago';
+  //Form2.StringGrid2.Cells[2, 0] := 'Monto';
 end;
 
 
@@ -156,12 +181,7 @@ end;
 
 procedure TForm2.altaClienteClick(Sender: TObject);
 begin
-//  Form2.StringGrid1.RowCount := Form2.StringGrid1.RowCount + 1;
-end;
-
-procedure TForm2.cargarEgresosClick(Sender: TObject);
-begin
-Form12.Show;  //clientes
+  Form9.Show;  //clientes
 end;
 
 procedure TForm2.consultarEgresosClick(Sender: TObject);
@@ -174,16 +194,104 @@ begin
   Form13.Show;
 end;
 
-procedure TForm2.diezMasVendidosClick(Sender: TObject);
-begin
-  Form15.Show;
-end;
-
 procedure TForm2.Button1Click(Sender: TObject);
 begin
 Form16.Show;
 end;
 
+
+procedure TForm2.Button2Click(Sender: TObject);
+begin
+  ADOQuery2.Append;
+end;
+
+procedure TForm2.Button3Click(Sender: TObject);
+begin
+  ADOQuery2.Edit;
+end;
+
+procedure TForm2.Button4Click(Sender: TObject);
+begin
+  ADOQuery2.Delete;
+end;
+
+procedure TForm2.BitBtn1Click(Sender: TObject);
+begin
+  If (StrToInt(DBEdit3.Text) < 0) Then
+    Begin
+      ShowMessage('ingrese un precio unitario positivo.');
+      ADOQuery2.Cancel;
+    End
+  Else
+    ADOQuery2.Post;
+end;
+
+procedure TForm2.BitBtn2Click(Sender: TObject);
+begin
+  ADOQuery2.Cancel;
+end;
+
+procedure TForm2.StringGrid1SelectCell(Sender: TObject; ACol,
+  ARow: Integer; var CanSelect: Boolean);
+  var R: TRect;
+begin
+  col := ACol;
+  row := ARow;
+  if (ACol = 0) and (ARow <> 0) then
+    begin
+      R := StringGrid1.CellRect(ACol, ARow);
+      R.Left := R.Left + StringGrid1.Left;
+      R.Right := R.Right + StringGrid1.Left;
+      R.Top := R.Top + StringGrid1.Top;
+      R.Bottom := R.Bottom + StringGrid1.Top;
+      ComboBox1.Left := R.Left + 1;
+      ComboBox1.Top := R.Top + 1;
+      ComboBox1.Width := (R.Right + 1) - R.Left;
+      ComboBox1.Height := (R.Bottom + 1) - R.Top;
+      ComboBox1.Visible := true;
+      ComboBox1.DroppedDown := true;
+    end;
+end;
+
+procedure TForm2.ComboBox1CloseUp(Sender: TObject);
+begin
+  StringGrid1.Cells[col, row] := ComboBox1.Items[ComboBox1.ItemIndex];
+  StringGrid1.Cells[1, row] := inttostr(ComboBox1.ItemIndex);
+  ComboBox1.Visible := false;
+end;
+
+procedure TForm2.egresosClick(Sender: TObject);
+begin
+  Form12.Show;
+end;
+
+procedure TForm2.cajadiariaClick(Sender: TObject);
+begin
+  Form3.Show;
+end;
+
+procedure TForm2.estadisticasClick(Sender: TObject);
+begin
+  Form15.Show;
+end;
+
+procedure TForm2.DNIEnter(Sender: TObject);
+begin
+  ADOQuery1.Edit;
+  // select * from clientes where dni = '35140762';
+  ADOQuery1.Close;
+  ADOQuery1.SQL.Clear;
+
+  ADOQuery1.SQL.add('select * from clientes where dni = ' + Edit2.Text);
+  ADOQuery1.Open;
+  ADOQuery1.ExecSQL;
+
+  Edit3.Text := ADOQuery1.FieldByname('Nombre').AsString;
+  //apellidoCliente:=StrToInt(ADOQuery4.FieldByname('Código_Cliente').AsString);
+  ADOQuery1.Close;
+  ADOQuery1.SQL.Clear;
+
+end;
 
 end.
 
