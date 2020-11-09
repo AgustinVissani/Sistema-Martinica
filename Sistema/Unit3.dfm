@@ -1,7 +1,7 @@
 object Form3: TForm3
-  Left = 547
-  Top = 145
-  Width = 499
+  Left = 228
+  Top = 130
+  Width = 497
   Height = 378
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Caja Diaria'
@@ -15,34 +15,28 @@ object Form3: TForm3
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 23
-  object Button1: TButton
-    Left = 120
-    Top = 16
-    Width = 233
-    Height = 57
-    Caption = 'Cerrar Caja Diaria'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -19
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 0
-    WordWrap = True
-    OnClick = Button1Click
-  end
   object DBGrid1: TDBGrid
     Left = 8
     Top = 88
     Width = 465
     Height = 241
     DataSource = DataSource1
-    TabOrder = 1
+    TabOrder = 0
     TitleFont.Charset = ANSI_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -19
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+  end
+  object Button1: TButton
+    Left = 160
+    Top = 16
+    Width = 169
+    Height = 57
+    Caption = 'Cerrar Caja Diaria'
+    TabOrder = 1
+    WordWrap = True
+    OnClick = Button1Click
   end
   object ADOQuery1: TADOQuery
     Active = True
@@ -50,10 +44,14 @@ object Form3: TForm3
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'select * from caja_diaria order by id_cd desc')
+      'SELECT *  FROM cajaDiaria')
     Left = 8
     Top = 8
-    object ADOQuery1fecha: TWideStringField
+    object ADOQuery1id_cd: TAutoIncField
+      FieldName = 'id_cd'
+      ReadOnly = True
+    end
+    object ADOQuery1fecha: TStringField
       FieldName = 'fecha'
       Size = 10
     end

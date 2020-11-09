@@ -11,11 +11,12 @@ uses
 
 type
   TForm3 = class(TForm)
-    Button1: TButton;
-    DBGrid1: TDBGrid;
     ADOQuery1: TADOQuery;
     DataSource1: TDataSource;
-    ADOQuery1fecha: TWideStringField;
+    DBGrid1: TDBGrid;
+    Button1: TButton;
+    ADOQuery1id_cd: TAutoIncField;
+    ADOQuery1fecha: TStringField;
     ADOQuery1efectivo: TFloatField;
     ADOQuery1tarjeta: TFloatField;
     ADOQuery1acumulado: TFloatField;
@@ -57,15 +58,45 @@ const
   mbYesNoCancel = [mbYes, mbNO, mbCancel];
 var
   buttonSelected : Integer;
-  total: real;
+  acumuladoEfectivo, ingresosEfectivo, ingresosTarjeta, egresosEfectivo: real;
 begin
   buttonSelected := MessageDlg('¿Desea cerrar la caja diaria?', mtConfirmation, mbOKCancel, 0);
   if buttonSelected = mrOK then
     begin
-      ADOQuery3.SQL.Clear;
-      ADOQuery3.SQL.Add('SELECT SUM(monto) AS total FROM det_pag WHERE fecha = ' + DateToStr(Now));
-      ADOQuery3.Open;
-      total := ADOQuery1.FieldByname('Nombre').AsString;
+//      Form3.ADOQuery1.Close;
+//      Form3.ADOQuery1.SQL.Clear;
+  //    Form3.ADOQuery1.SQL.Add('SELECT TOP 1 acumulado FROM cajaDiaria');
+    //  Form3.ADOQuery1.Open;
+      //acumuladoEfectivo := strtofloat(ADOQuery1.FieldByname('acumulado').AsString);
+
+      Form3.ADOQuery1.Close;
+      Form3.ADOQuery1.SQL.Clear;
+      Form3.ADOQuery1.SQL.Add('SELECT SUM(monto) AS ingresosEfectivo FROM det_pag WHERE tipo_form_pag = 0 and fecha = ' + QuotedStr(DateToStr(Now)));
+      Form3.ADOQuery1.Open;
+      ingresosEfectivo := strtofloat(ADOQuery1.FieldByname('ingresosEfectivo').AsString);
+
+      Form3.ADOQuery1.Close;
+      Form3.ADOQuery1.SQL.Clear;
+      Form3.ADOQuery1.SQL.Add('SELECT SUM(monto) AS ingresosTarjeta FROM det_pag WHERE tipo_form_pag = 1 and fecha = ' + QuotedStr(DateToStr(Now)));
+      Form3.ADOQuery1.Open;
+      ingresosTarjeta := strtofloat(ADOQuery1.FieldByname('ingresosTarjeta').AsString);
+
+      Form3.ADOQuery1.Close;
+      Form3.ADOQuery1.SQL.Clear;
+      Form3.ADOQuery1.SQL.Add('SELECT SUM(monto) AS egresosEfectivo FROM egresos WHERE fecha = ' + QuotedStr(DateToStr(Now)));
+      Form3.ADOQuery1.Open;
+      egresosEfectivo := strtofloat(ADOQuery1.FieldByname('egresosEfectivo').AsString);
+
+//	caja_diaria
+	//	id_cd fecha efectivo tarjeta acumulado*/
+
+      Form3.ADOQuery1.SQL.Clear;
+      Form3.ADOQuery1.SQL.Add('insert into cajaDiaria (fecha, efectivo, tarjeta, acumulado) values (');
+      Form3.ADOQuery1.SQL.Add(QuotedStr(DateToStr(Now)) + ',');
+      Form3.ADOQuery1.SQL.Add(floattostr(ingresosEfectivo - egresosEfectivo) + ',');
+      Form3.ADOQuery1.SQL.Add(floattostr(ingresosTarjeta) + ',');
+      Form3.ADOQuery1.SQL.Add(floattostr(acumuladoEfectivo) + ')');
+      Form3.ADOQuery1.ExecSQL;
 
     end
 

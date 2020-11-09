@@ -1,5 +1,5 @@
 object Form6: TForm6
-  Left = 170
+  Left = 231
   Top = 106
   Width = 930
   Height = 518
