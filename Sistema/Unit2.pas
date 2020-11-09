@@ -25,20 +25,12 @@ type
     Label9: TLabel;
     altaCliente: TLabel;
     ingresarPago: TButton;
-    Button1: TButton;
     calcularTotal: TButton;
-    DBGrid1: TDBGrid;
-    DBEdit1: TDBEdit;
     ADOQuery2: TADOQuery;
     DataSource2: TDataSource;
     ADOQuery2id_prod: TAutoIncField;
     ADOQuery2descripcion: TStringField;
     ADOQuery2precio_unitario: TFloatField;
-    Button2: TButton;
-    Button3: TButton;
-    Button4: TButton;
-    BitBtn1: TBitBtn;
-    BitBtn2: TBitBtn;
     Button5: TButton;
     StringGrid1: TStringGrid;
     ComboBox1: TComboBox;
@@ -68,6 +60,14 @@ type
     ADOQuery3: TADOQuery;
     DataSource3: TDataSource;
     id_venta: TEdit;
+    Button1: TButton;
+    DBGrid1: TDBGrid;
+    DBEdit1: TDBEdit;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
     procedure FormCreate(Sender: TObject);
     procedure CajaDiaria1Click(Sender: TObject);
     procedure Proveedores1Click(Sender: TObject);
@@ -110,7 +110,8 @@ var
 implementation
 
 uses  Unit1, Unit3, Unit4, Unit8, Unit9, Unit12, Unit14, Unit13, Unit15,
-  Unit16;
+  Unit16,
+  Unit18;
 
 {$R *.dfm}
 
@@ -278,7 +279,7 @@ end;
 
 procedure TForm2.cajadiariaClick(Sender: TObject);
 begin
-  Form3.Show;
+  Form18.Show;
 end;
 
 procedure TForm2.estadisticasClick(Sender: TObject);

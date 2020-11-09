@@ -1,8 +1,8 @@
 object Form2: TForm2
-  Left = 338
-  Top = 9
+  Left = 192
+  Top = 45
   Width = 1256
-  Height = 735
+  Height = 734
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Sistema Martinica'
   Color = clBtnFace
@@ -13,7 +13,6 @@ object Form2: TForm2
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
-  Visible = True
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 19
@@ -156,97 +155,15 @@ object Form2: TForm2
     WordWrap = True
     OnClick = ingresarPagoClick
   end
-  object Button1: TButton
-    Left = 816
-    Top = 416
-    Width = 225
-    Height = 25
-    Caption = 'Cargar Venta Anterior'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 1
-    OnClick = Button1Click
-  end
   object calcularTotal: TButton
     Left = 352
     Top = 368
     Width = 83
     Height = 41
     Caption = 'Calcular Total'
-    TabOrder = 2
+    TabOrder = 1
     WordWrap = True
     OnClick = calcularTotalClick
-  end
-  object DBGrid1: TDBGrid
-    Left = 88
-    Top = 528
-    Width = 705
-    Height = 161
-    DataSource = DataSource2
-    TabOrder = 3
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -16
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
-  end
-  object DBEdit1: TDBEdit
-    Left = 392
-    Top = 488
-    Width = 121
-    Height = 27
-    DataField = 'id_prod'
-    DataSource = DataSource2
-    TabOrder = 4
-  end
-  object Button2: TButton
-    Left = 912
-    Top = 472
-    Width = 75
-    Height = 25
-    Caption = 'Nuevo'
-    TabOrder = 5
-    OnClick = Button2Click
-  end
-  object Button3: TButton
-    Left = 912
-    Top = 512
-    Width = 75
-    Height = 25
-    Caption = 'Modificar'
-    TabOrder = 6
-    OnClick = Button3Click
-  end
-  object Button4: TButton
-    Left = 912
-    Top = 552
-    Width = 75
-    Height = 25
-    Caption = 'Borrar'
-    TabOrder = 7
-    OnClick = Button4Click
-  end
-  object BitBtn1: TBitBtn
-    Left = 912
-    Top = 592
-    Width = 75
-    Height = 25
-    Caption = 'Confirmar'
-    TabOrder = 8
-    Kind = bkOK
-  end
-  object BitBtn2: TBitBtn
-    Left = 912
-    Top = 632
-    Width = 75
-    Height = 25
-    TabOrder = 9
-    OnClick = BitBtn2Click
-    Kind = bkCancel
   end
   object Button5: TButton
     Left = 424
@@ -254,7 +171,7 @@ object Form2: TForm2
     Width = 75
     Height = 25
     Caption = 'Buscar'
-    TabOrder = 10
+    TabOrder = 2
     OnClick = Button5Click
   end
   object StringGrid1: TStringGrid
@@ -267,7 +184,7 @@ object Form2: TForm2
     FixedCols = 0
     RowCount = 2
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing]
-    TabOrder = 11
+    TabOrder = 3
     OnSelectCell = StringGrid1SelectCell
     ColWidths = (
       302
@@ -281,7 +198,7 @@ object Form2: TForm2
     Width = 306
     Height = 27
     ItemHeight = 19
-    TabOrder = 12
+    TabOrder = 4
     OnChange = ComboBox1Change
     OnCloseUp = ComboBox1CloseUp
   end
@@ -290,29 +207,28 @@ object Form2: TForm2
     Top = 72
     Width = 121
     Height = 27
-    TabOrder = 13
+    TabOrder = 5
   end
   object nombre: TEdit
     Left = 152
     Top = 72
     Width = 121
     Height = 27
-    TabOrder = 14
+    TabOrder = 6
   end
   object apellido: TEdit
     Left = 288
     Top = 72
     Width = 121
     Height = 27
-    TabOrder = 15
+    TabOrder = 7
   end
   object id_cliente: TEdit
     Left = 16
     Top = 104
     Width = 121
     Height = 27
-    TabOrder = 16
-    Text = '1'
+    TabOrder = 8
     Visible = False
   end
   object Edit1: TEdit
@@ -320,14 +236,14 @@ object Form2: TForm2
     Top = 304
     Width = 121
     Height = 27
-    TabOrder = 17
+    TabOrder = 9
   end
   object Edit2: TEdit
     Left = 536
     Top = 344
     Width = 121
     Height = 27
-    TabOrder = 18
+    TabOrder = 10
     Text = '0'
   end
   object Edit3: TEdit
@@ -335,7 +251,7 @@ object Form2: TForm2
     Top = 384
     Width = 121
     Height = 27
-    TabOrder = 19
+    TabOrder = 11
   end
   object ComboBox2: TComboBox
     Left = 736
@@ -343,9 +259,7 @@ object Form2: TForm2
     Width = 145
     Height = 27
     ItemHeight = 19
-    ItemIndex = 0
-    TabOrder = 20
-    Text = 'Efectivo'
+    TabOrder = 12
     Items.Strings = (
       'Efectivo'
       'Tarjeta')
@@ -355,8 +269,7 @@ object Form2: TForm2
     Top = 136
     Width = 105
     Height = 27
-    TabOrder = 21
-    Text = '1'
+    TabOrder = 13
   end
   object StringGrid2: TStringGrid
     Left = 736
@@ -366,7 +279,7 @@ object Form2: TForm2
     ColCount = 2
     FixedCols = 0
     RowCount = 2
-    TabOrder = 22
+    TabOrder = 14
     ColWidths = (
       131
       93)
@@ -376,7 +289,98 @@ object Form2: TForm2
     Top = 96
     Width = 105
     Height = 27
+    TabOrder = 15
+    Visible = False
+  end
+  object Button1: TButton
+    Left = 816
+    Top = 416
+    Width = 225
+    Height = 25
+    Caption = 'Cargar Venta Anterior'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 16
+    Visible = False
+    OnClick = Button1Click
+  end
+  object DBGrid1: TDBGrid
+    Left = 88
+    Top = 528
+    Width = 705
+    Height = 161
+    DataSource = DataSource2
+    TabOrder = 17
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -16
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Visible = False
+  end
+  object DBEdit1: TDBEdit
+    Left = 392
+    Top = 488
+    Width = 121
+    Height = 27
+    DataField = 'id_prod'
+    DataSource = DataSource2
+    TabOrder = 18
+    Visible = False
+  end
+  object Button2: TButton
+    Left = 912
+    Top = 472
+    Width = 75
+    Height = 25
+    Caption = 'Nuevo'
+    TabOrder = 19
+    Visible = False
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 912
+    Top = 512
+    Width = 75
+    Height = 25
+    Caption = 'Modificar'
+    TabOrder = 20
+    Visible = False
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 912
+    Top = 552
+    Width = 75
+    Height = 25
+    Caption = 'Borrar'
+    TabOrder = 21
+    Visible = False
+    OnClick = Button4Click
+  end
+  object BitBtn1: TBitBtn
+    Left = 912
+    Top = 592
+    Width = 75
+    Height = 25
+    Caption = 'Confirmar'
+    TabOrder = 22
+    Visible = False
+    Kind = bkOK
+  end
+  object BitBtn2: TBitBtn
+    Left = 912
+    Top = 632
+    Width = 75
+    Height = 25
     TabOrder = 23
+    Visible = False
+    OnClick = BitBtn2Click
+    Kind = bkCancel
   end
   object MainMenu1: TMainMenu
     Left = 288

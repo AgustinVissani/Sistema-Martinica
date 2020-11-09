@@ -194,6 +194,11 @@ SELECT SUM(monto) AS ingresosEfectivo FROM det_pag WHERE tipo_form_pag = 0 and f
 SELECT SUM(monto) AS ingresosTarjeta FROM det_pag WHERE tipo_form_pag = 1 and fecha = '9/11/2020'
 SELECT SUM(monto) AS egresosEfectivo FROM egresos WHERE fecha = '9/11/2020'
 
-
+select * from cajaDiaria
+update cajaDiaria set fecha = '8/11/2020' where id_cd = 1
 SELECT * FROM det_pag WHERE tipo_form_pag = 0 and fecha = '9/11/2020'
 SELECT TOP 1 acumulado FROM cajaDiaria
+UPDATE det_pag SET tipo_form_pag = 1 where id_det_pag > 9
+
+SELECT COUNT(fecha) AS registrosDeHoy FROM cajaDiaria	WHERE fecha = '9/11/2020'
+select * from det_prod_ven
