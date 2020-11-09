@@ -1,42 +1,89 @@
 object Form3: TForm3
-  Left = 228
-  Top = 130
-  Width = 497
-  Height = 378
-  BorderIcons = [biSystemMenu, biMinimize]
-  Caption = 'Caja Diaria'
+  Left = 251
+  Top = 171
+  Width = 894
+  Height = 470
+  Caption = 'Form3'
   Color = clBtnFace
-  Font.Charset = ANSI_CHARSET
+  Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -19
+  Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 23
+  TextHeight = 13
   object DBGrid1: TDBGrid
-    Left = 8
-    Top = 88
-    Width = 465
-    Height = 241
+    Left = 40
+    Top = 78
+    Width = 705
+    Height = 161
     DataSource = DataSource1
     TabOrder = 0
-    TitleFont.Charset = ANSI_CHARSET
+    TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -19
+    TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
   end
-  object Button1: TButton
-    Left = 160
-    Top = 16
-    Width = 169
-    Height = 57
-    Caption = 'Cerrar Caja Diaria'
+  object Button2: TButton
+    Left = 760
+    Top = 78
+    Width = 75
+    Height = 25
+    Caption = 'Nuevo'
     TabOrder = 1
-    WordWrap = True
-    OnClick = Button1Click
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 760
+    Top = 118
+    Width = 75
+    Height = 25
+    Caption = 'Modificar'
+    TabOrder = 2
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 760
+    Top = 158
+    Width = 75
+    Height = 25
+    Caption = 'Borrar'
+    TabOrder = 3
+    OnClick = Button4Click
+  end
+  object BitBtn1: TBitBtn
+    Left = 760
+    Top = 198
+    Width = 75
+    Height = 25
+    Caption = 'Confirmar'
+    TabOrder = 4
+    OnClick = BitBtn1Click
+    Kind = bkOK
+  end
+  object BitBtn2: TBitBtn
+    Left = 760
+    Top = 238
+    Width = 75
+    Height = 25
+    TabOrder = 5
+    Kind = bkCancel
+  end
+  object DBEdit1: TDBEdit
+    Left = 120
+    Top = 24
+    Width = 121
+    Height = 21
+    TabOrder = 6
+  end
+  object DBEdit2: TDBEdit
+    Left = 264
+    Top = 24
+    Width = 121
+    Height = 21
+    TabOrder = 7
   end
   object ADOQuery1: TADOQuery
     Active = True
@@ -44,30 +91,24 @@ object Form3: TForm3
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT *  FROM cajaDiaria')
-    Left = 8
-    Top = 8
-    object ADOQuery1id_cd: TAutoIncField
-      FieldName = 'id_cd'
+      'select * from productos')
+    Left = 640
+    Top = 320
+    object ADOQuery1id_prod: TAutoIncField
+      FieldName = 'id_prod'
       ReadOnly = True
     end
-    object ADOQuery1fecha: TStringField
-      FieldName = 'fecha'
-      Size = 10
+    object ADOQuery1descripcion: TStringField
+      FieldName = 'descripcion'
+      Size = 50
     end
-    object ADOQuery1efectivo: TFloatField
-      FieldName = 'efectivo'
-    end
-    object ADOQuery1tarjeta: TFloatField
-      FieldName = 'tarjeta'
-    end
-    object ADOQuery1acumulado: TFloatField
-      FieldName = 'acumulado'
+    object ADOQuery1precio_unitario: TFloatField
+      FieldName = 'precio_unitario'
     end
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
-    Left = 8
-    Top = 48
+    Left = 416
+    Top = 344
   end
 end

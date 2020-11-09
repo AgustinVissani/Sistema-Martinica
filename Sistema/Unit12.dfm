@@ -1,6 +1,6 @@
 object Form12: TForm12
-  Left = 258
-  Top = 263
+  Left = 363
+  Top = 370
   Width = 508
   Height = 304
   Caption = 'Egresos'

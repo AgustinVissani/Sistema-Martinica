@@ -1,6 +1,6 @@
 object Form13: TForm13
-  Left = 13
-  Top = 295
+  Left = 18
+  Top = 415
   Width = 613
   Height = 257
   Caption = 'Consulta de caja diaria'

@@ -70,6 +70,7 @@ type
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
     BitBtn4: TBitBtn;
+    Label6: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure CajaDiaria1Click(Sender: TObject);
     procedure Proveedores1Click(Sender: TObject);
@@ -101,6 +102,7 @@ type
     procedure ingresarPagoClick(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
+    procedure Label6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -133,12 +135,24 @@ begin
     DeleteMenu(hMenuHandle, SC_CLOSE, MF_BYCOMMAND);
 
     {los nombres se ingresan con las tablas}
+if Form1.ComboBox1.ItemIndex = 1 then //English
+  begin
+  Form2.StringGrid1.Cells[0, 0] := 'Description';
+  Form2.StringGrid1.Cells[1, 0] := 'Unit Price';
+  Form2.StringGrid1.Cells[2, 0] := 'Quantity';
+  Form2.StringGrid1.Cells[3, 0] := 'Total';
+  Form2.StringGrid2.Cells[0, 0] := 'Payment method';
+  Form2.StringGrid2.Cells[1, 0] := 'Amount';
+  end
+else
+  begin
   Form2.StringGrid1.Cells[0, 0] := 'Descripción';
   Form2.StringGrid1.Cells[1, 0] := 'P. Unitario';
   Form2.StringGrid1.Cells[2, 0] := 'Cantidad';
   Form2.StringGrid1.Cells[3, 0] := 'Total';
   Form2.StringGrid2.Cells[0, 0] := 'Forma de pago';
   Form2.StringGrid2.Cells[1, 0] := 'Monto';
+  end;
   ADOQuery2.SQL.Clear;
   ADOQuery2.SQL.Add('select * from productos');
   ADOQuery2.Open;
@@ -322,6 +336,10 @@ var
   acumulado, iva, descuento, total: real;
   i: integer;
 begin
+  if form1.ComboBox1.ItemIndex = 1 then //English
+    label5.Caption:= 'DEBT'
+  else
+    label5.Caption:='ADEUDA';
   Label5.Visible := true;
   acumulado := 0;
   i := 1;
@@ -348,7 +366,8 @@ begin
   if (ComboBox2.Text <> '')
   and (Edit4.Text <> '')
   and (strtofloat(Edit4.Text) > 0)
-  and (Label5.Caption = 'ADEUDA')
+  and ((Label5.Caption = 'ADEUDA')
+  or (Label5.Caption = 'DEBT'))
   and (id_cliente.Text <> '') then
     begin
       saldada := 0;
@@ -365,7 +384,10 @@ begin
         end;
       if (acumulado >= strtofloat(Edit3.Text)) then
         begin
-          Label5.Caption := 'SALDADA';
+          if form1.ComboBox1.ItemIndex = 1 then //English
+            Label5.Caption := 'DEBT-FREE'
+          else
+            Label5.Caption := 'SALDADA';
           Label5.Color := clGreen;
           saldada := -1;
           ingresarPago.Enabled := false;
@@ -472,6 +494,11 @@ begin
 
    for i:=1 to stringgrid1.RowCount -1 do
    StringGrid2.Rows[i].Clear;
+end;
+
+procedure TForm2.Label6Click(Sender: TObject);
+begin
+Form3.show;
 end;
 
 end.

@@ -1,8 +1,8 @@
 object Form18: TForm18
-  Left = 91
-  Top = 150
+  Left = 1
+  Top = 767
   Width = 563
-  Height = 209
+  Height = 216
   Caption = 'Form18'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -17,37 +17,67 @@ object Form18: TForm18
   object Label1: TLabel
     Left = 8
     Top = 48
-    Width = 29
-    Height = 13
+    Width = 47
+    Height = 19
     Caption = 'Fecha'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label2: TLabel
     Left = 144
     Top = 48
-    Width = 39
-    Height = 13
+    Width = 65
+    Height = 19
     Caption = 'Efectivo'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label3: TLabel
     Left = 280
     Top = 48
-    Width = 35
-    Height = 13
+    Width = 61
+    Height = 19
     Caption = 'Tarjeta'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label4: TLabel
     Left = 416
     Top = 48
-    Width = 52
-    Height = 13
+    Width = 90
+    Height = 19
     Caption = 'Acumulado'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Button1: TButton
-    Left = 224
+    Left = 192
     Top = 120
-    Width = 113
-    Height = 25
+    Width = 169
+    Height = 41
     Caption = 'Cerrar Caja Diaria'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
     TabOrder = 0
     OnClick = Button1Click
   end
@@ -55,28 +85,52 @@ object Form18: TForm18
     Left = 8
     Top = 80
     Width = 121
-    Height = 21
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 1
   end
   object Edit2: TEdit
     Left = 144
     Top = 80
     Width = 121
-    Height = 21
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
   end
   object Edit3: TEdit
     Left = 280
     Top = 80
     Width = 121
-    Height = 21
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 3
   end
   object Edit4: TEdit
     Left = 416
     Top = 80
     Width = 121
-    Height = 21
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 4
   end
   object ADOQuery1: TADOQuery

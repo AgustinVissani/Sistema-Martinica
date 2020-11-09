@@ -1,6 +1,6 @@
 object Form2: TForm2
-  Left = 189
-  Top = 25
+  Left = 274
+  Top = 169
   Width = 1151
   Height = 668
   BorderIcons = [biSystemMenu, biMinimize]
@@ -146,6 +146,14 @@ object Form2: TForm2
     ParentColor = False
     ParentFont = False
     Visible = False
+  end
+  object Label6: TLabel
+    Left = 664
+    Top = 210
+    Width = 24
+    Height = 19
+    Caption = '++'
+    OnClick = Label6Click
   end
   object ingresarPago: TButton
     Left = 1016

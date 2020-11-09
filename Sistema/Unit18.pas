@@ -32,6 +32,8 @@ var
 
 implementation
 
+uses Unit1;
+
 {$R *.dfm}
 
 procedure TForm18.Button1Click(Sender: TObject);
@@ -41,7 +43,10 @@ var
   registrosDeHoy, buttonSelected : Integer;
   acumuladoEfectivo, ingresosEfectivo, ingresosTarjeta, egresosEfectivo: real;
 begin
-  buttonSelected := MessageDlg('¿Desea cerrar la caja diaria?', mtConfirmation, mbOKCancel, 0);
+  if Form1.ComboBox1.ItemIndex = 1 then //English
+    buttonSelected := MessageDlg('Do you wish to check the cash desk?', mtConfirmation, mbOKCancel, 0)
+  else
+    buttonSelected := MessageDlg('¿Desea cerrar la caja diaria?', mtConfirmation, mbOKCancel, 0);
   if buttonSelected = mrOK then
     begin
       Form18.ADOQuery1.Close;

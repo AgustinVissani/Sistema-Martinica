@@ -82,7 +82,7 @@ if not ADOQuery1.Eof then
   end
   else
   ShowMessage(contrasenaErronea);
- end; 
+ end;
 end;
 
 procedure TForm1.Edit2KeyPress(Sender: TObject; var Key: Char);
@@ -116,10 +116,12 @@ procedure TForm1.ComboBox1Change(Sender: TObject);
 begin
 
 
-if ComboBox1.ItemIndex = 1 then //English
+if Form1.ComboBox1.ItemIndex = 1 then //English
 begin
   contrasenaErronea:='Wrong user or password.';
-
+form18.Label2.caption:= 'Cash';
+form18.Label3.caption:= 'Credit';
+form18.Label4.caption:= 'Accumulated';
   // FORM 1
   Label1.Caption:='Martinica Decoraciones';
   Label2.Caption:='User';
@@ -136,9 +138,10 @@ begin
   Form2.proveedores.Caption:='Suppliers';
   Form2.estadisticas.Caption:='Statistics';
   form2.Cliente.Caption:='Customer';
-form2.Label1.Caption:='DNI';
-form2.Label2.Caption:='Name';  
-form2.Label1.Caption:='Lastname'; 
+  form2.Button5.Caption:='Find';
+form2.Label1.Caption:='ID';
+form2.Label2.Caption:='Name';
+form2.Label3.Caption:='Lastname'; 
 form2.Productos.Caption:='Products';
 form2.calcularTotal.Caption:='Calculate totals';
  form2.Label7.Caption:='I.V.A';
@@ -202,29 +205,29 @@ form5.GroupBox1.Caption:='New supplier';
 
 
     // FORM 7
- Form7.BitBtn1.Caption:='Go back';  
+ Form7.BitBtn1.Caption:='Go back';
 Form7.Button1.Caption:='Cancel';
  Form7.Button3.Caption:='Save';
  form7.GroupBox1.Caption:='NEW ORDER';
  form7.Caption:='New Order'; 
- Form7.Label2.Caption:='Observations'; 
+ Form7.Label2.Caption:='Observations';
  Form7.Label4.Caption:='Detail';
  Form7.Label5.Caption:='Supplier';
   form7.Label3.Caption:='CUIT';
   
 form7.Label6.Caption:='Customer';
- 
+
  form7.Label3.Caption:='DNI';
  //Form 8
 
   form8.Caption:='Customer';
- 
+
  form8.GroupBox1.Caption:='NEW CUSTOMER';
  
  form8.Label2.Caption:='Code';
  
  form8.Label3.Caption:='DNI';
- 
+
  form8.Label4.Caption:='Name';
  
  form8.Label5.Caption:='Lastname';
@@ -235,7 +238,7 @@ form7.Label6.Caption:='Customer';
  
  form8.Button1.Caption:='Save'; 
  form8.Button2.Caption:='Cancel';
- 
+
  form8.BitBtn1.Caption:='Go back';
   // FORM 9
   Form9.BitBtn1.Caption:='Go back';
@@ -262,13 +265,13 @@ form10.Caption:='States';
   form10.Label1.Caption:='ORDER STATUS';
  
  form10.Label3.Caption:='State';
- 
+
  form10.Label4.Caption:='Customer';
   
 form10.Label5.Caption:='Date';
   
 form10.Label2.Caption:='Supplier';
- 
+
  form10.Label10.Caption:='Customer';
   
 form10.Label9.Caption:='Order Code';
@@ -290,42 +293,18 @@ form10.Label9.Caption:='Order Code';
 
   form12.DBGrid1.Columns[0].Title.caption:='Detail';
   form12.DBGrid1.Columns[1].Title.caption:='Amount';
-  //Form 13
- form13.Caption:='Check cash desk';
- form13.Label1.Caption:='Starting date';
 
-form13.Label2.Caption:='End date';
-
-  form13.consultarCaja.Caption:='Consult';
-
-form13.DBGrid1.Columns[0].Title.caption:='Date';
-
- form13.DBGrid1.Columns[1].Title.caption:='Card';
-  form13.DBGrid1.Columns[2].Title.caption:='Cash';
-  form13.DBGrid1.Columns[3].Title.caption:='Accumulated';
-   //Form14
-form14.Label1.Caption:='Starting date';
-
- form14.Label2.Caption:='End date';
- form14.consultarEgresos.Caption:='Consult';
- 
- form14.Caption:='Check expenditures'; 
- form14.DBGrid1.Columns[0].Title.caption:='Date';
-
-  form14.DBGrid1.Columns[1].Title.caption:='Description';
-
-  form14.DBGrid1.Columns[2].Title.caption:='Amount';
 //Form 15
  form15.Caption:='Top ten sold products';
 //Form 16
    //Form 16
- 
+
  form16.Label1.Caption:='DNI';
  
  form16.Label2.Caption:='Name';
  
  form16.Label3.Caption:='Lastname';
-  
+
 form16.Button1.Caption:='Charge sale';
  
  form16.Caption:='Previous sales';
@@ -333,12 +312,6 @@ form16.Button1.Caption:='Charge sale';
  form16.Label4.Caption:='List of outstanding sales';
  
  form16.DBGrid1.Columns[0].Title.caption:='Sales number';
- 
- form16.DBGrid1.Columns[1].Title.caption:='Date';
-  form16.DBGrid1.Columns[2].Title.caption:='Total';
-  form16.DBGrid1.Columns[3].Title.caption:='Debt';
-
-
 
  //form 18
  form18.Caption:='Daily box';
@@ -347,7 +320,7 @@ form16.Button1.Caption:='Charge sale';
  form18.Label1.Caption:='Card';
  form18.Label1.Caption:='Accumulated';
  form18.Button1.Caption:='Check cash desk';
- 
+
 
 
 end
@@ -361,6 +334,9 @@ begin
   Label2.Caption:='Usuario';
   Label3.Caption:='Contraseña';
   Button1.Caption:='Iniciar sesión';
+form18.Label2.caption:= 'Efectivo';
+form18.Label3.caption:= 'Tarjeta';
+form18.Label4.caption:= 'Acumulado';
 
   // FORM 2
   Form2.sesion.Caption:='Sesión';
@@ -372,6 +348,7 @@ begin
   Form2.proveedores.Caption:='Proveedores';
   Form2.estadisticas.Caption:='Estadísticas';
   //
+  form2.Button5.Caption:='Buscar';
   form2.Cliente.Caption:='Cliente';
   form2.Label1.Caption:='DNI';
   form2.Label2.Caption:='Nombre';
@@ -500,24 +477,6 @@ begin
 
   form12.DBGrid1.Columns[0].Title.caption:='Descripcion';
   form12.DBGrid1.Columns[1].Title.caption:='Monto';
-  //Form 13
-  form13.Caption:='Consulta caja diaria';
-  form13.Label1.Caption:='Fecha Inicio';
-  form13.Label2.Caption:='Fecha fin';
-  form13.consultarCaja.Caption:='Consular';
-  form13.DBGrid1.Columns[0].Title.caption:='Fecha';
-  form13.DBGrid1.Columns[1].Title.caption:='Tarjeta';
-  form13.DBGrid1.Columns[2].Title.caption:='Efectivo';
-  form13.DBGrid1.Columns[3].Title.caption:='Acumulado';
-   //Form14
-
- form14.Label1.Caption:='Fecha Inicio';
- form14.Label2.Caption:='Fecha fin';
- form14.consultarEgresos.Caption:='Consular';
- form14.Caption:='Consulta de egresos';
- form14.DBGrid1.Columns[0].Title.caption:='Fecha';
- form14.DBGrid1.Columns[1].Title.caption:='Descripción';
- form14.DBGrid1.Columns[2].Title.caption:='Monto';
 //Form 15
   form15.Caption:='10 productos mas vendidos';
 //Form 16
@@ -528,9 +487,6 @@ begin
   form16.Caption:='Ventas anteriores';
   form16.Label4.Caption:='Lista de ventas sin saldar';
   form16.DBGrid1.Columns[0].Title.caption:='Nro. Venta';
-  form16.DBGrid1.Columns[1].Title.caption:='Fecha';
-  form16.DBGrid1.Columns[2].Title.caption:='Total';
-  form16.DBGrid1.Columns[3].Title.caption:='Deuda';
 
  //form 18
  form18.Caption:='Caja Diaria';
