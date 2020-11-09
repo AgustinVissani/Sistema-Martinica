@@ -11,15 +11,7 @@ uses
 
 type
   TForm3 = class(TForm)
-    Label2: TLabel;
-    Label3: TLabel;
     Button1: TButton;
-    Label1: TLabel;
-    DBEdit1: TDBEdit;
-    DBEdit2: TDBEdit;
-    DBEdit3: TDBEdit;
-    Label4: TLabel;
-    DBEdit4: TDBEdit;
     DBGrid1: TDBGrid;
     ADOQuery1: TADOQuery;
     DataSource1: TDataSource;
@@ -65,10 +57,16 @@ const
   mbYesNoCancel = [mbYes, mbNO, mbCancel];
 var
   buttonSelected : Integer;
+  total: real;
 begin
   buttonSelected := MessageDlg('¿Desea cerrar la caja diaria?', mtConfirmation, mbOKCancel, 0);
   if buttonSelected = mrOK then
     begin
+      ADOQuery3.SQL.Clear;
+      ADOQuery3.SQL.Add('SELECT SUM(monto) AS total FROM det_pag WHERE fecha = ' + DateToStr(Now));
+      ADOQuery3.Open;
+      total := ADOQuery1.FieldByname('Nombre').AsString;
+
     end
 
 end;

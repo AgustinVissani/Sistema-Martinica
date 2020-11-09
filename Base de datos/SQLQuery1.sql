@@ -31,7 +31,7 @@ id_venta	Código_Cliente	fecha		total	saldada
 1			23				2020-11-08	1000	0
 
 det_prod_ven
-id_det_prod_ven id_venta	id_producto cantidad	descripcion)
+id_det_prod_ven id_venta	id_producto cantidad	descripcion
 1				1			4			7			almohadas
 2				1			2			3			frazadas
 
@@ -162,14 +162,23 @@ PENDIENTE AGREGAR CAMPOS admin (true/false) Y activo (true/false)
 */
 
 select * from caja_diaria order by id_cd desc
-select * from det_pag
-select * from det_prod_ven
+select * from ventas where id_venta =       42
+select * from det_prod_ven where id_venta = 42
+select * from det_pag where id_venta =      42
 select * from egresos
 select * from productos
-select * from ventas
 
 insert into productos (descripcion,precio_unitario) values ('tela',123)
 insert into productos (descripcion,precio_unitario) values ('almohadón',234)
 insert into productos (descripcion,precio_unitario) values ('cortina',345)
 insert into productos (descripcion,precio_unitario) values ('fierro',456)
 insert into productos (descripcion,precio_unitario) values ('cosito',567)
+
+SELECT
+    SUM(monto) AS total 
+FROM
+    det_pag 
+WHERE
+    fecha = '9/11/2020'
+--update det_pag set fecha = '8/11/2020' where id_det_pag in (2,3,4)
+

@@ -1,6 +1,6 @@
 object Form16: TForm16
-  Left = 356
-  Top = 343
+  Left = 254
+  Top = 245
   Width = 572
   Height = 313
   Caption = 'Ventas anteriores'

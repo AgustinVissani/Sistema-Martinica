@@ -289,7 +289,7 @@ end;
 procedure TForm2.Button5Click(Sender: TObject);
 begin
   ADOQuery1.SQL.Clear;
-  ADOQuery1.SQL.Add('select * from clientes where dni = ' + QuotedStr(dni.Text));
+  ADOQuery1.SQL.Add('select * from clientes where dni = ' + dni.Text);
   ADOQuery1.Open;
   nombre.Text := ADOQuery1.FieldByname('Nombre').AsString;
   apellido.Text := ADOQuery1.FieldByname('Apellido').AsString;
@@ -301,8 +301,9 @@ begin
   ADOQuery2.SQL.Clear;
   ADOQuery2.SQL.Add('select * from productos where id_prod = ' + QuotedStr(Copy(ComboBox1.Text, 1, AnsiPos('.', ComboBox1.Text) - 1)));
   ADOQuery2.Open;
-  StringGrid1.Cells[0, row] := ADOQuery2.FieldByname('descripcion').AsString;
+  StringGrid1.Cells[0, row] := ADOQuery2.FieldByname('id_prod').AsString + '.' + ADOQuery2.FieldByname('descripcion').AsString;
   StringGrid1.Cells[1, row] := ADOQuery2.FieldByname('precio_unitario').AsString;
+  StringGrid1.Cells[2, row] := '1';
   //nombre.Text := ADOQuery1.FieldByname('Nombre').AsString;
 end;
 
@@ -314,7 +315,7 @@ end;
 procedure TForm2.calcularTotalClick(Sender: TObject);
 var
   acumulado, iva, descuento, total: real;
-  i, j: integer;
+  i: integer;
 begin
   acumulado := 0;
   i := 1;
@@ -334,18 +335,22 @@ end;
 procedure TForm2.ingresarPagoClick(Sender: TObject);
 var
   acumulado: real;
-  i, saldada, inserto: integer;
+  i, saldada, inserto, punto: integer;
+  cadena, cadena2: string;
 begin
   inserto := 0;
   if (ComboBox2.Text <> '')
   and (Edit4.Text <> '')
   and (strtofloat(Edit4.Text) > 0)
-  and (Label5.Caption = 'ADEUDA') then
+  and (Label5.Caption = 'ADEUDA')
+  and (id_cliente.Text <> '') then
     begin
       saldada := 0;
       acumulado := 0;
       if (StringGrid2.Cells[0, 1] = '') then
-        inserto := -1;
+        inserto := -1
+      else
+        StringGrid2.RowCount := StringGrid2.RowCount + 1;
       StringGrid2.Cells[0, StringGrid2.RowCount - 1] := ComboBox2.Text;
       StringGrid2.Cells[1, StringGrid2.RowCount - 1] := Edit4.Text;
       for i := 1 to fila do
@@ -361,23 +366,53 @@ begin
         end
       else
         begin
-          StringGrid2.RowCount := StringGrid2.RowCount + 1;
           fila := fila + 1;
         end;
       if (inserto = -1) then
         begin
+          // deshabilito el boton calcularTotal para que no se pueda modificar
+          // el total y se generen inconsistencias en la base
+          calcularTotal.Enabled := false;
+
           // inserto en la tabla ventas
           ADOQuery3.SQL.Clear;
           ADOQuery3.SQL.Add('insert into ventas (Código_Cliente, fecha, total, saldada) values (');
           ADOQuery3.SQL.Add(id_cliente.Text + ',');
-          ADOQuery3.SQL.Add(DateToStr(Now) + ',');
-          ADOQuery3.SQL.Add(Edit3.Text + ',');
+          ADOQuery3.SQL.Add(QuotedStr(DateToStr(Now)) + ',');
+          ADOQuery3.SQL.Add(stringreplace(Edit3.Text, ',', '.', [rfReplaceAll, rfIgnoreCase]) + ',');
           ADOQuery3.SQL.Add(inttostr(saldada) + ')');
           ADOQuery3.ExecSQL;
+
+          // recupero el id_venta de la venta que acabo de insertar
           ADOQuery3.SQL.Clear;
           ADOQuery3.SQL.Add('select top 1 id_venta from ventas order by id_venta desc');
           ADOQuery3.Open;
           id_venta.Text := ADOQuery3.FieldByname('id_venta').AsString;
+
+          // inserto en la tabla det_prod_ven
+          for i := 1 to (StringGrid1.RowCount - 1) do
+            begin
+              cadena := StringGrid1.Cells[0, i];
+              ADOQuery3.SQL.Clear;
+              ADOQuery3.SQL.Add('insert into det_prod_ven (id_venta, id_prod, cantidad, descripcion) values (');
+              ADOQuery3.SQL.Add(id_venta.Text + ',');
+              punto := AnsiPos('.', cadena) - 1;
+              ADOQuery3.SQL.Add(Copy(cadena, 1, punto) + ',');
+              cadena2 := StringGrid1.Cells[2, i];
+              ADOQuery3.SQL.Add(cadena2 + ',');
+              ADOQuery3.SQL.Add(QuotedStr(Copy(cadena, AnsiPos('.', cadena) + 1, Length(cadena))) + ')');
+              ADOQuery3.ExecSQL;
+            end;
+
+          // inserto en la tabla det_pag
+          ADOQuery3.SQL.Clear;
+          ADOQuery3.SQL.Add('insert into det_pag (id_venta, tipo_form_pag, monto, fecha) values (');
+          ADOQuery3.SQL.Add(id_venta.Text + ',');
+          ADOQuery3.SQL.Add(inttostr(ComboBox2.ItemIndex) + ',');
+          ADOQuery3.SQL.Add(Edit4.Text + ',');
+          ADOQuery3.SQL.Add(QuotedStr(DateToStr(Now)) + ')');
+          ADOQuery3.ExecSQL;
+
         end
       else
         begin
@@ -388,6 +423,13 @@ begin
               ADOQuery3.SQL.Add('update ventas set saldada = -1 where id_venta = ' + id_venta.Text);
               ADOQuery3.ExecSQL;
             end;
+          ADOQuery3.SQL.Clear;
+          ADOQuery3.SQL.Add('insert into det_pag (id_venta, tipo_form_pag, monto, fecha) values (');
+          ADOQuery3.SQL.Add(id_venta.Text + ',');
+          ADOQuery3.SQL.Add(inttostr(ComboBox2.ItemIndex) + ',');
+          ADOQuery3.SQL.Add(StringGrid2.Cells[1, StringGrid2.RowCount - 1] + ',');
+          ADOQuery3.SQL.Add(QuotedStr(DateToStr(Now)) + ')');
+          ADOQuery3.ExecSQL;
         end;
     end
 

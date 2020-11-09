@@ -1,8 +1,8 @@
 object Form2: TForm2
-  Left = 511
-  Top = 158
+  Left = 117
+  Top = 0
   Width = 1256
-  Height = 826
+  Height = 735
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Sistema Martinica'
   Color = clBtnFace
@@ -307,11 +307,12 @@ object Form2: TForm2
     TabOrder = 15
   end
   object id_cliente: TEdit
-    Left = 152
-    Top = 144
+    Left = 16
+    Top = 104
     Width = 121
     Height = 27
     TabOrder = 16
+    Text = '1'
     Visible = False
   end
   object Edit1: TEdit
@@ -342,7 +343,9 @@ object Form2: TForm2
     Width = 145
     Height = 27
     ItemHeight = 19
+    ItemIndex = 0
     TabOrder = 20
+    Text = 'Efectivo'
     Items.Strings = (
       'Efectivo'
       'Tarjeta')
@@ -353,6 +356,7 @@ object Form2: TForm2
     Width = 105
     Height = 27
     TabOrder = 21
+    Text = '1'
   end
   object StringGrid2: TStringGrid
     Left = 736
