@@ -1,6 +1,6 @@
 object Form12: TForm12
-  Left = 129
-  Top = 280
+  Left = 258
+  Top = 263
   Width = 508
   Height = 304
   Caption = 'Egresos'
@@ -120,6 +120,16 @@ object Form12: TForm12
     TabOrder = 8
     OnClick = BitBtn2Click
     Kind = bkCancel
+  end
+  object BitBtn3: TBitBtn
+    Left = 416
+    Top = 72
+    Width = 41
+    Height = 25
+    Caption = '&'
+    TabOrder = 9
+    OnClick = BitBtn3Click
+    Kind = bkRetry
   end
   object ADOQuery1: TADOQuery
     Active = True

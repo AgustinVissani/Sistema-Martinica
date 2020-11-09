@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 206
-  Top = 36
+  Left = 194
+  Top = 75
   Width = 1218
   Height = 700
   BorderIcons = [biSystemMenu, biMinimize]
@@ -113,7 +113,6 @@ object Form1: TForm1
       'English')
   end
   object ADOConnection1: TADOConnection
-    Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
       'fo=False;Initial Catalog=Martinica_Decoraciones;Data Source=DESK' +

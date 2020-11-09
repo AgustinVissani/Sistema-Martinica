@@ -68,6 +68,8 @@ type
     Button4: TButton;
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
+    BitBtn3: TBitBtn;
+    BitBtn4: TBitBtn;
     procedure FormCreate(Sender: TObject);
     procedure CajaDiaria1Click(Sender: TObject);
     procedure Proveedores1Click(Sender: TObject);
@@ -97,6 +99,8 @@ type
     procedure Label4Click(Sender: TObject);
     procedure calcularTotalClick(Sender: TObject);
     procedure ingresarPagoClick(Sender: TObject);
+    procedure BitBtn4Click(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -318,6 +322,7 @@ var
   acumulado, iva, descuento, total: real;
   i: integer;
 begin
+  Label5.Visible := true;
   acumulado := 0;
   i := 1;
   if (StringGrid1.Cells[1, i] <> '') and (StringGrid1.Cells[2, i] <> '') then
@@ -435,6 +440,38 @@ begin
     end
 
 
+end;
+
+procedure TForm2.BitBtn4Click(Sender: TObject);
+var
+ i:integer;
+begin
+  calcularTotal.Enabled := true;
+  dni.Clear;
+  nombre.Clear;
+  apellido.Clear;
+  edit1.Clear;
+  edit2.Clear;
+  edit3.Clear;
+  id_cliente.Clear;
+for i:=1 to stringgrid1.RowCount -1 do
+   StringGrid1.Rows[i].Clear;
+end;
+
+procedure TForm2.BitBtn3Click(Sender: TObject);
+var
+ i:integer;
+begin
+  Label5.Visible := false;
+ ingresarPago.Enabled := true;
+ id_venta.Clear;
+ ComboBox2.ItemIndex := 0;
+ edit4.Clear;
+ Label5.Color := clRed;
+ Label5.Caption := 'ADEUDA'; 
+
+   for i:=1 to stringgrid1.RowCount -1 do
+   StringGrid2.Rows[i].Clear;
 end;
 
 end.
